@@ -27,6 +27,14 @@ body {
     }
 }
 
+.navbar{
+    background-color: #5cb85c;
+}
+
+.navbar-default .navbar-brand{
+    color: #ffffff
+}
+
 .navbar-top-links {
     margin-right: 0;
 }
@@ -296,7 +304,7 @@ table.dataTable thead .sorting:after {
 }
 
 .huge {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .panel-green {
