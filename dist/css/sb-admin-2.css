@@ -369,3 +369,8 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.progress{
+    padding: 0px;
+    margin: 0px;
+}
