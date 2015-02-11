@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Genghis"
-AuthUserFile /pswd
-Require valid-user
