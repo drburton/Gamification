@@ -1,1 +1,4 @@
-AuthType BasicAuthName "Genghis"AuthUserFile /pswdRequire valid-user
+AuthType Basic
+AuthName "Genghis"
+AuthUserFile /var/www/html/pswd/g.htpasswd
+Require valid-user
