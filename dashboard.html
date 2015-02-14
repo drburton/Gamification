@@ -158,9 +158,11 @@
                                         </tr>
                                         <tr>
                                             <td> <?php 
-                                                    $id = '54de6ba436b5d57a478b4567';
-                                                    $results = $test1::findOne(array('_id' => new MongoId($id)));
-                                                    print($results)
+                                                    $test1 = $dbname->selectCollection('test1');
+
+                                                    $result = $test1::find();
+
+                                                    print($result)
                                                  ?>
                                             </td>
                                             <td><span class="label label-success">Complete!</span></td>
