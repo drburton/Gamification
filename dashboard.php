@@ -167,7 +167,7 @@
                                         <tr>
                                             <td> 
                                                 <?php 
-                                                    $results = $collection->find(array('name'));
+                                                    $results = $collection->find(array('name'=>'Quest2'));
                                                     foreach ($results as $result)
                                                     {
                                                         echo sprintf("Name: %s", $result['name'], PHP_EOL);
