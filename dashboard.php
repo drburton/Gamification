@@ -1,3 +1,10 @@
+<? php
+    $connection = new Mongo();
+    $test1 = $dbname->selectCollection('test1');
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -159,10 +166,6 @@
                                         <tr>
                                             <td> 
                                                 <?php 
-
-                                                    $connection = new Mongo();
-
-                                                    $test1 = $dbname->selectCollection('test1');
 
                                                     $result = $test1::find();
 
