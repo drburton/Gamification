@@ -157,7 +157,11 @@
                                             <th>Status</th>
                                         </tr>
                                         <tr>
-                                            <td> <?php 
+                                            <td> 
+                                                <?php 
+
+                                                    $connection = new Mongo();
+
                                                     $test1 = $dbname->selectCollection('test1');
 
                                                     $result = $test1::find();
