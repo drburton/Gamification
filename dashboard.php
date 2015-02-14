@@ -1,7 +1,8 @@
 <? php
-    $connection = new Mongo();
-    $dbname = $connection->selectDB('test');
-    $collection = $dbname->selectCollection('test1');
+    $m = new MongoClient();
+    $db = $m->selectDB("test");
+    $collection= new MongoCollection( $db, "test1");
+
 ?>
 
 
@@ -167,8 +168,8 @@
                                         <tr>
                                             <td> 
                                                 <?php 
-                                                    $result = $test1::find();
-                                                    print($result);
+                                                    $cursor = $collection->find();
+                                                    var_dump(iterator_to_array($cursor));
                                                  ?>
                                             </td>
                                             <td><span class="label label-success">Complete!</span></td>
