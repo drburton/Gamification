@@ -1,7 +1,7 @@
 <? php
     $connection = new Mongo();
     $dbname = $connection->selectDB('test');
-    $test1 = $dbname->selectCollection('test1');
+    $collection = $dbname->selectCollection('test1');
 ?>
 
 
@@ -167,10 +167,8 @@
                                         <tr>
                                             <td> 
                                                 <?php 
-
                                                     $result = $test1::find();
-
-                                                    print($result)
+                                                    print($result);
                                                  ?>
                                             </td>
                                             <td><span class="label label-success">Complete!</span></td>
