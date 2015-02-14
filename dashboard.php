@@ -1,7 +1,7 @@
 <?php
     $m = new MongoClient();
     $db = $m->selectDB("test");
-    $collection= new MongoCollection( $db, "test1");
+    $collection = new MongoCollection( $db, "test1");
 ?>
 
 
@@ -167,8 +167,11 @@
                                         <tr>
                                             <td> 
                                                 <?php 
-                                                    $cursor = $collection->find();
-                                                    var_dump(iterator_to_array($cursor));
+                                                    $results = $collection->find(array('name'));
+                                                    foreach ($results as $result)
+                                                    {
+                                                        echo sprintf("Name: %s", $result['name'], PHP_EOL);
+                                                    }
                                                  ?>
                                             </td>
                                             <td><span class="label label-success">Complete!</span></td>
