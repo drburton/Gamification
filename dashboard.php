@@ -1,5 +1,6 @@
 <? php
     $connection = new Mongo();
+    $dbname = $connection->selectDB('test');
     $test1 = $dbname->selectCollection('test1');
 ?>
 
