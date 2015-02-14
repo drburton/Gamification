@@ -157,7 +157,12 @@
                                             <th>Status</th>
                                         </tr>
                                         <tr>
-                                            <td>Flash Animation</td>
+                                            <td> <?php 
+                                                    $id = '54de6ba436b5d57a478b4567';
+                                                    $results = $test1::findOne(array('_id' => new MongoId($id)));
+                                                    print($results)
+                                                 ?>
+                                            </td>
                                             <td><span class="label label-success">Complete!</span></td>
                                         </tr>
                                         
