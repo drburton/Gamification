@@ -1,7 +1,7 @@
 <?php
-    $m = new MongoClient();
-    $db = $m->selectDB("test");
-    $collection = new MongoCollection( $db, "test1");
+    // $m = new MongoClient();
+    // $db = $m->selectDB("test");
+    // $collection = new MongoCollection( $db, "test1");
 ?>
 
 
@@ -106,12 +106,12 @@
                    
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
+                        <li>
                             <a href="dashboard.html">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-university"></i>
                                 <span>My Courses</span>                             
@@ -142,53 +142,14 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
+                        DET 210
                     </h1>
                 </section>
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">DET 210</h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="box">
-                                <div class="box-body table-responsive no-padding">
-                                    <table class="table table-hover">
-                                        <tr>
-                                            <th>Quest</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        <tr>
-                                            <td> 
-                                                <?php 
-                                                    $results = $collection->find(array('name'=>'Quest2'));
-                                                    foreach ($results as $result)
-                                                    {
-                                                        echo sprintf("Name: %s", $result['name'], PHP_EOL);
-                                                    }
-                                                 ?>
-                                            </td>
-                                            <td><span class="label label-success">Complete!</span></td>
-                                        </tr>
-                                        
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                60%
-                              </div>
-                            </div>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
+                        
                     </div>
 
                 </section><!-- right col -->
