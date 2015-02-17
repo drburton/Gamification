@@ -63,7 +63,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
-                                <li class="user-header" style="background-image: url(img/stucco1.png)">
+                                <li class="user-header">
                                     <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                                     <p>
                                         Garrett Yamada
@@ -147,7 +147,7 @@
                 </section>
 
                 <!-- Main content -->
-                <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
+                <section class="content" >
                     <div class="col-md-4">
                     <div class="box">
                         <div class="box-header">
