@@ -39,12 +39,12 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="dashboard.html" class="logo" style="background-image: url(img/stucco2.png)">
+            <a href="dashboard.html" class="logo" >
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 EduQuest
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation" style="background-image: url(img/stucco1.png)"; background-repeat="repeat-x">
+            <nav class="navbar navbar-static-top" role="navigation" >
                 <!-- Sidebar toggle button-->
                 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
