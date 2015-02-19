@@ -185,7 +185,9 @@ img {
   background-color: #eaeaec !important;
 }
 .bg-black {
-  background-color: #222222 !important;
+  background-image: url(../img/wood4.png) !important;
+  background-repeat: repeat;
+  height:100vh;
 }
 .bg-red {
   background-color: #f56954 !important;
@@ -2414,7 +2416,8 @@ Component: timeline
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background: #3d9970;
+  background: #444;
+  background-image: url(../img/stucco1.png);
   box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.2);
   padding: 20px 10px;
   text-align: center;

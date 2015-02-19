@@ -1,7 +1,7 @@
 <?php
     $m = new MongoClient();
-    $db = $m->selectDB("test");
-    $collection = new MongoCollection( $db, "test1");
+    $db = $m->selectDB("gamification_db");
+    $collection = new MongoCollection( $db, "users-courses");
 ?>
 
 
@@ -161,20 +161,34 @@
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tr>
-                                            <th>Quest</th>
+                                            <th>Course</th>
                                             <th>Status</th>
                                         </tr>
                                         <tr>
                                             <td> 
                                                 <?php 
-                                                    $results = $collection->find(array('name'=>'Quest2'));
+                                                    $results = $collection->find(array('user_id'=>'jad00a'));
                                                     foreach ($results as $result)
                                                     {
-                                                        echo sprintf("Name: %s", $result['name'], PHP_EOL);
+                                                        echo sprintf("Course: %s", $result[
+                                                            $results2 = $collection->find(array('course_id'));
+                                                                foreach ($results2 as $result2){
+                                                                    echo sprintf($result2);
+                                                                }
+                                                            ], PHP_EOL);
                                                     }
                                                  ?>
                                             </td>
-                                            <td><span class="label label-success">Complete!</span></td>
+                                            <td><span class="label label-success">
+                                                <?php 
+                                                    $results = $collection->find(array('name'=>'Quest2'));
+                                                    foreach ($results as $result)
+                                                    {
+                                                        echo sprintf("Course: %s", $result['name'], PHP_EOL);
+                                                    }
+                                                 ?>
+                                            </span>
+                                            </td>
                                         </tr>
                                         
                                     </table>
