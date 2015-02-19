@@ -173,7 +173,7 @@
                                                         echo sprintf("Course: %s", $result[
                                                             $results2 = $collection->find(array('course_id'));
                                                                 foreach ($results2 as $result2){
-                                                                    echo sprintf($result2);
+                                                                    echo sprintf($result2), PHP_EOL
                                                                 }
                                                             ], PHP_EOL);
                                                     }
