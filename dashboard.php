@@ -166,27 +166,10 @@
                                         </tr>
                                         <tr>
                                             <td> 
-                                                <?php 
-                                                    $results = $collection->find(array('user_id'=>'jad00a'));
-                                                    foreach ($results as $result)
-                                                    {
-                                                        echo sprintf("Course: %s", $result[
-                                                            $results2 = $collection->find(array('course_id'));
-                                                                foreach ($results2 as $result2){
-                                                                    echo sprintf($result2), PHP_EOL
-                                                                }
-                                                            ], PHP_EOL);
-                                                    }
-                                                 ?>
+                                   
                                             </td>
                                             <td><span class="label label-success">
-                                                <?php 
-                                                    $results = $collection->find(array('name'=>'Quest2'));
-                                                    foreach ($results as $result)
-                                                    {
-                                                        echo sprintf("Course: %s", $result['name'], PHP_EOL);
-                                                    }
-                                                 ?>
+                                
                                             </span>
                                             </td>
                                         </tr>
