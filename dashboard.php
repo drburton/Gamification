@@ -173,7 +173,11 @@
                                                   $cursor = $collection->find($results);
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
-                                                    echo implode($doc[1]);
+
+                                                    
+                                                    foreach ($doc as $k => $v) {
+                                                      echo "\$a[$k] => $v.\n";
+                                                    }
 
                                                   }
 
