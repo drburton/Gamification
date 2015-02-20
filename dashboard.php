@@ -170,9 +170,9 @@
 
                                                     $results = array('user_id' => 'jad00a');
 
-                                                    $cursor = $collection->find($results { xp: 1});
+                                                    $cursor = $collection->find($results);
                                                     foreach ($cursor as $doc) {
-                                                    var_dump($doc);
+                                                    print_r($doc);
                                                     }
 
                                                  ?>
