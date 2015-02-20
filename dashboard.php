@@ -169,14 +169,19 @@
                                               <?php
 
                                                   $results = array('user_id' => 'jad00a');
-
+                                                  $count=1;
                                                   $cursor = $collection->find($results);
-                                                  $cursor->fields(array("xp" => true));
+                                                  $cursor->fields(array("course_id" => true));
                                                   foreach ($cursor as $doc) {
 
-                                                    
                                                     foreach ($doc as $k => $v) {
-                                                      echo "\$a[$k] => $v.\n";
+
+                                                      if($count%2==0){
+                                                        echo "\$a[$k] => $v.\n";
+                                                      }
+
+                                                      $count++
+
                                                     }
 
                                                   }
