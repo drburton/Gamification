@@ -174,7 +174,7 @@
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
                                                         $z=array($doc);
-                                                        echo $z;
+                                                        echo $z['xp'];
                                                   }
 
                                                ?>
