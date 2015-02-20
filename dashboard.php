@@ -151,7 +151,7 @@
                     <div class="col-md-4">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">DET 210</h3>
+                            <h3 class="box-title">Some Courses</h3>
                             <div class="box-tools pull-right">
                                 <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
                             </div>
@@ -161,7 +161,7 @@
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tr>
-                                            <th>Course</th>
+                                            <th>Course List</th>
                                             <th>Status</th>
                                         </tr>
                                         <tr>
@@ -177,7 +177,7 @@
                                                     foreach ($doc as $k => $v) {
 
                                                       if($count%2==0){
-                                                        echo "\$a[$k] => $v.\n";
+                                                        echo "$v,\n";
                                                       }
 
                                                       $count++;
