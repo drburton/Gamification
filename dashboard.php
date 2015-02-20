@@ -173,11 +173,7 @@
                                                   $cursor = $collection->find($results);
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
-                                                      foreach($doc as $d){
-                                                        foreach($d as $v){
-                                                          echo $v."\n";
-                                                        }
-                                                      }
+                                                    echo implode('<br>', $doc[1]);
 
                                                   }
 
