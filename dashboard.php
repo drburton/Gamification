@@ -174,7 +174,9 @@
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
                                                         $qresult=print_r($doc);
-                                                        echo $qresult['xp'];
+                                                        echo '<pre>';
+                                                        print_r($qresult);
+                                                        echo '</pre>';
 
                                                   }
 
