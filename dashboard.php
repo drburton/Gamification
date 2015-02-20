@@ -107,7 +107,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="dashboard.html">
+                            <a href="dashboard.php">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -173,7 +173,7 @@
                                                     $cursor = $collection->find($results);
                                                     foreach ($cursor as $doc) {
                                                       $xp=$doc->fields(array("xp" => true));
-                                                      print_r($xp);
+                                                      print($xp);
                                                     }
 
                                                  ?>
