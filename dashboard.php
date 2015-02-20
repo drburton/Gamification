@@ -173,9 +173,9 @@
                                                   $cursor = $collection->find($results);
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
-                                                        $qresult=print_r($doc);
+                                                        // $qresult=print_r($doc);
                                                         echo '<pre>';
-                                                        print_r($qresult);
+                                                        print_r($doc);
                                                         echo '</pre>';
 
                                                   }
