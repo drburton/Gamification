@@ -164,7 +164,6 @@
                                             <th>Course List</th>
                                             <th>Status</th>
                                         </tr>
-                                        <tr>
                                               <?php
 
                                                   $results = array('user_id' => 'jad00a');
@@ -176,7 +175,7 @@
                                                     foreach ($doc as $k => $v) {
 
                                                       if($count%2==0){
-                                                        print "<td>$v\n</td>";
+                                                        print "<tr><td>$v\n</td></tr>";
                                                       }
 
                                                       $count++;
@@ -186,12 +185,6 @@
                                                   }
 
                                                ?>
-                                            <td><span class="label label-success">
-
-                                            </span>
-                                            </td>
-                                        </tr>
-
                                     </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
