@@ -166,17 +166,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <?php
-
-                                                    $results = array('user_id' => 'jad00a');
-
-                                                    $cursor = $collection->find($results);
-                                                    foreach ($cursor as $doc) {
-                                                      $xp=$doc->fields(array("xp" => true));
-                                                      print($xp);
-                                                    }
-
-                                                 ?>
+                                                
 
                                             </td>
                                             <td><span class="label label-success">
