@@ -165,7 +165,6 @@
                                             <th>Status</th>
                                         </tr>
                                         <tr>
-                                            <td>
                                               <?php
 
                                                   $results = array('user_id' => 'jad00a');
@@ -177,7 +176,7 @@
                                                     foreach ($doc as $k => $v) {
 
                                                       if($count%2==0){
-                                                        echo "$v,\n";
+                                                        print "<td>$v\n</td>";
                                                       }
 
                                                       $count++;
@@ -187,8 +186,6 @@
                                                   }
 
                                                ?>
-
-                                            </td>
                                             <td><span class="label label-success">
 
                                             </span>
