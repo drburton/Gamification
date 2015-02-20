@@ -172,7 +172,8 @@
 
                                                     $cursor = $collection->find($results);
                                                     foreach ($cursor as $doc) {
-                                                    print_r($doc);
+                                                      $xp=$cursor->fields(array("xp" => true));
+                                                      print_r($xp);
                                                     }
 
                                                  ?>
