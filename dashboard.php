@@ -173,10 +173,11 @@
                                                   $cursor = $collection->find($results);
                                                   $cursor->fields(array("xp" => true));
                                                   foreach ($cursor as $doc) {
-                                                        // $qresult=print_r($doc);
-                                                        echo '<pre>';
-                                                        print_r($doc);
-                                                        echo '</pre>';
+                                                      foreach($doc as $d){
+                                                        foreach($d as $v){
+                                                          echo $v."\n";
+                                                        }
+                                                      }
 
                                                   }
 
