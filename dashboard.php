@@ -180,7 +180,7 @@
                                                         echo "\$a[$k] => $v.\n";
                                                       }
 
-                                                      $count++
+                                                      $count++;
 
                                                     }
 
