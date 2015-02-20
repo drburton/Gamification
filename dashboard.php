@@ -117,8 +117,28 @@
                                 <span>My Courses</span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> DET 210</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> DET 310</a></li>
+                              <?php
+
+                                  $results = array('user_id' => 'jad00a');
+                                  $count=1;
+                                  $cursor = $collection->find($results);
+                                  $cursor->fields(array("course_id" => true));
+                                  foreach ($cursor as $doc) {
+
+                                    foreach ($doc as $k => $v) {
+
+                                      if($count%2==0){
+                                        print "<li><a href=\"#\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                                      }
+
+                                      $count++;
+
+                                    }
+
+                                  }
+
+                               ?>
+
                             </ul>
                         </li>
                         <li>
@@ -164,27 +184,7 @@
                                             <th>Course List</th>
                                             <th>Status</th>
                                         </tr>
-                                              <?php
 
-                                                  $results = array('user_id' => 'jad00a');
-                                                  $count=1;
-                                                  $cursor = $collection->find($results);
-                                                  $cursor->fields(array("course_id" => true));
-                                                  foreach ($cursor as $doc) {
-
-                                                    foreach ($doc as $k => $v) {
-
-                                                      if($count%2==0){
-                                                        print "<tr><td>$v\n</td></tr>";
-                                                      }
-
-                                                      $count++;
-
-                                                    }
-
-                                                  }
-
-                                               ?>
                                     </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
