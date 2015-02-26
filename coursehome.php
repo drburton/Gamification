@@ -54,7 +54,7 @@
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                            
+
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -71,7 +71,7 @@
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-                         
+
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -103,7 +103,7 @@
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
                     </div>
-                   
+
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
@@ -114,7 +114,7 @@
                         <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-university"></i>
-                                <span>My Courses</span>                             
+                                <span>My Courses</span>
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> DET 210</a></li>
@@ -131,7 +131,7 @@
                                 <i class="fa fa-gear"></i> <span>Settings</span>
                             </a>
                         </li>
-                   
+
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -149,7 +149,9 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <div class="col-md-4">
-                        
+                        <p>
+                          Hey
+                        </p>
                     </div>
 
                 </section><!-- right col -->
