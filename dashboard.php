@@ -196,7 +196,7 @@
                                               foreach ($doc as $k => $v) {
 
                                                 if($count%2==0){
-                                                  print "<td>$v</td>";
+                                                  print "<td>\"$v\"</td>";
                                                 }
 
                                                 $count++;
