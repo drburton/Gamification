@@ -148,10 +148,11 @@
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
-                    <div class="col-md-4">
-                        <p>
-                          Hey
-                        </p>
+                    <div class="col-md-6">
+                      <div class="callout callout-info">
+                          <h4>Notification Test</h4>
+                          <p>Do this one quest and stuff.</p>
+                      </div>
                     </div>
 
                 </section><!-- right col -->
