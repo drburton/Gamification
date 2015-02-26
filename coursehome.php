@@ -1,8 +1,8 @@
-<?php
+<!--<?php
     // $m = new MongoClient();
     // $db = $m->selectDB("test");
     // $collection = new MongoCollection( $db, "test1");
-?>
+?>-->
 
 
 
@@ -148,12 +148,25 @@
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
+                    <!-- Notification from teacher -->
                     <div class="col-md-6">
-                      <div class="callout callout-info">
-                          <h4>Notification Test</h4>
-                          <p>Do this one quest and stuff.</p>
-                      </div>
+                        <div class="callout callout-info">
+                            <h4>Notification Test</h4>
+                            <p>Do this one quest and stuff.</p>
+                        </div>
                     </div>
+                    <!-- Course Progress -->
+                    <div class="col-md-6">
+                        <div class="callout callout-info">
+                            <h4>Course Progress</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <span class="sr-only">40% Complete (success)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
