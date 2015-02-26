@@ -184,6 +184,7 @@
                                             <th>Course List</th>
                                             <th>Status</th>
                                         </tr>
+                                        <tr>
                                         <?php
 
                                             $results = array('user_id' => 'jad00a');
@@ -205,7 +206,7 @@
                                             }
 
                                          ?>
-
+                                         <tr>
                                     </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
