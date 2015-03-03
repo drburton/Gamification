@@ -5,29 +5,18 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Dashboard</title>
+        <title>AdminLTE | Quests</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- Morris chart -->
-        <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
-        <!-- jvectormap -->
-        <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-        <!-- Date Picker -->
-        <link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
-        <!-- Daterange picker -->
-        <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,7 +27,7 @@
     </head>
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
-        <header class="header">
+                <header class="header">
             <a href="dashboard.html" class="logo" >
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 EduQuest
@@ -96,7 +85,7 @@
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
-                        <div class="pull-left image">
+                    	<div class="pull-left image">
                             <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
@@ -105,7 +94,7 @@
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
                     </div> <!-- /Sidebar user panel -->
-
+                        
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
@@ -164,124 +153,57 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
+                        Quests
+                        <small>Choose wisely.</small>
                     </h1>
                 </section>
 
                 <!-- Main content -->
-                <section class="content" >
-                    <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">Some Courses</h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
                             <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Available Quests</h3>
+                                </div><!-- /.box-header -->
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tr>
-                                            <th>Course List</th>
+                                            <th>Quest</th>
+                                            <th>XP</th>
+                                            <th>Due Date</th>
                                             <th>Status</th>
+                                            
                                         </tr>
-                                        <?php
-
-                                            $results = array('user_id' => 'jad00a');
-                                            $count=1;
-                                            $cursor = $collection->find($results);
-                                            $cursor->fields(array("course_id" => true));
-                                            foreach ($cursor as $doc) {
-
-                                              foreach ($doc as $k => $v) {
-
-                                                if($count%2==0){
-                                                  print "<tr><td>$v</td></tr>";
-                                                }
-
-                                                $count++;
-
-                                              }
-
-                                            }
-
-                                         ?>
+                                        <tr>
+                                            <td>Build a Website</td>
+                                            <td>500</td>
+                                            <td>5-1-15</td>
+                                            <td><span class="label label-success">Approved</span></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Gamification Essay</td>
+                                            <td>100</td>
+                                            <td>4-5-2015</td>
+                                            <td><span class="label label-warning">Pending</span></td>                 
+                                        </tr>
+                                     
                                     </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                60%
-                              </div>
-                            </div>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
-                    </div>
-
-                    <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">DET 310</h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-                            </div>
                         </div>
-                        <div class="box-body">
-
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                60%
-                              </div>
-                            </div>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
                     </div>
-
-                </section><!-- right col -->
-                    </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
-
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
-        <!-- Morris.js charts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>
-        <!-- Sparkline -->
-        <script src="js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
-        <!-- jvectormap -->
-        <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-        <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <!-- datepicker -->
-        <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
-        <!-- iCheck -->
-        <script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-
         <!-- AdminLTE App -->
-        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
-
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>
-
+        <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
-        <script src="js/AdminLTE/demo.js" type="text/javascript"></script>
-
+        <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
     </body>
 </html>
