@@ -153,7 +153,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Quests
+                        (Course Name) Quests
                         <small>Choose wisely.</small>
                     </h1>
                 </section>
@@ -179,14 +179,14 @@
                                             <td>Build a Website</td>
                                             <td>500</td>
                                             <td>5-1-15</td>
-                                            <td><span class="label label-success">Approved</span></td>
+                                            <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
                                             
                                         </tr>
                                         <tr>
                                             <td>Gamification Essay</td>
                                             <td>100</td>
                                             <td>4-5-2015</td>
-                                            <td><span class="label label-warning">Pending</span></td>                 
+                                            <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>                 
                                         </tr>
                                      
                                     </table>
