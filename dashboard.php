@@ -140,7 +140,7 @@
                                   }
 
                                ?>
-                               <li><a href="coursehome.php"><i class="fa fa-angle-double-right\"></i>Some Text</a></li>
+                               <li><a href="coursehome.php"><i class="fa fa-angle-double-right\"></i>Not PHP Course</a></li>
 
 
                             </ul>

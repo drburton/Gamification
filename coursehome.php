@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Dashboard</title>
+        <title>EduQuest | Course Home</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -107,7 +107,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
-                            <a href="dashboard.html">
+                            <a href="dashboard.php">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                         <!-- Link to Quests & Awards -->
-                        <button class="btn btn-primary btn-lg">Quests</button>
+                        <a href="quests.php"><button class="btn btn-primary btn-lg">Quests</button></a>
                         <button class="btn btn-primary btn-lg">Awards</button>
                     </div>
                     <!-- Course Progress -->
