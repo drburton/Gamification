@@ -140,6 +140,8 @@
                                   }
 
                                ?>
+                               <li><a href="coursehome.php"><i class="fa fa-angle-double-right\"></i>../</a></li>
+
 
                             </ul>
                         </li>
