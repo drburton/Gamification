@@ -126,19 +126,13 @@
                                   $cursor = $collection->find($results);
                                   $cursor->fields(array("course_id" => true));
                                   foreach ($cursor as $doc) {
-
                                     foreach ($doc as $k => $v) {
-
                                       if($count%2==0){
                                         print "<li><a href=\"#\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
-
                                       $count++;
-
                                     }
-
                                   }
-
                                ?>
                                <li><a href="coursehome.php"><i class="fa fa-angle-double-right\"></i>Not PHP Course</a></li>
 
