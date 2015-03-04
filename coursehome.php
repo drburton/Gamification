@@ -151,14 +151,14 @@
                     <!-- Notification from teacher -->
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="callout callout-info">
+                            <div class="callout">
                                 <h4>Notification Test</h4>
                                 <p>Do this one quest and stuff.</p>
                             </div>
                         </div>
                         <!-- Link to Quests & Awards -->
-                        <a href="quests.php"><button class="btn btn-primary btn-lg">Quests</button></a>
-                        <button class="btn btn-primary btn-lg">Awards</button>
+                        <a href="quests.php"><button class="btn btn-default btn-lg">Quests</button></a>
+                        <button class="btn btn-default btn-lg">Awards</button>
                     </div>
                     <!-- Course Progress -->
                     <div class="row">
@@ -174,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-        
+
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
