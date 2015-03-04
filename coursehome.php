@@ -151,7 +151,7 @@
                     <!-- Notification from teacher -->
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="callout">
+                            <div class="callout callout-info">
                                 <h4>Notification Test</h4>
                                 <p>Do this one quest and stuff.</p>
                             </div>

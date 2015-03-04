@@ -2072,8 +2072,8 @@ Component: timeline
   border-color: #f1e7bc;
 }
 .callout.callout-info {
-  background-color: #f0f7fd;
-  border-color: #d0e3f0;
+  background-color: #d3d3d3;
+  border-color: #939393;
 }
 .callout.callout-danger h4 {
   color: #B94A48;
