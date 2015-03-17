@@ -176,26 +176,26 @@
                 	              </div>
                 	              <div class="modal-body">
                 	                <!-- Create Quest Form -->
-                	                <form>
+                	                <form action="newquest.php">
                 	                  <div class="form-group">
                 	                    <label>Title</label>
-                	                    <input type="text" class="form-control" placeholder="Quest Title">
+                	                    <input type="text" class="form-control" placeholder="Quest Title" name="title">
                 	                  </div>
                 	                  <div class="form-group">
                 	                    <label>XP</label>
-                	                    <input type="number" class="form-control" placeholder="100">
+                	                    <input type="number" class="form-control" placeholder="100" name="xp">
                 	                  </div>
                 	                  <div class="form-group">
                 	                    <label>Description</label>
-                	                    <textarea class="form-control" rows="3"></textarea>
-                	                  </div>
-                	                </form>
-                	                <!-- /Create Quest Form -->
+                	                    <textarea class="form-control" rows="3" name="desc"></textarea>
+                	                  </div>        	                
                 	              </div>
                 	              <div class="modal-footer">
                 	                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 	                <button type="button submit" class="btn btn-primary">Create</button>
                 	              </div>
+                	              </form>
+                	              <!-- /Create Quest Form -->
                 	            </div>
                 	          </div>
                 	        </div>
