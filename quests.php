@@ -176,7 +176,7 @@
                 	              </div>
                 	              <div class="modal-body">
                 	                <!-- Create Quest Form -->
-                	                <form action="newquest.php" method="post">
+                	                <form action="quests.php" method="post">
                 	                  <div class="form-group">
                 	                    <label>Title</label>
                 	                    <input type="text" class="form-control" placeholder="Quest Title" name="title">
@@ -196,6 +196,21 @@
                 	              </div>
                 	              </form>
                 	              <!-- /Create Quest Form -->
+
+                                <!-- PHP Database Interaction -->
+
+                                <?php
+
+                                	$m = new MongoClient();
+                                    $db = $m->selectDB("gamification_db");
+                                    $collection = new MongoCollection( $db, "quests");
+
+                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"]);
+                                	$collection->save($newquest);
+
+                                ?>
+
+
                 	            </div>
                 	          </div>
                 	        </div>
