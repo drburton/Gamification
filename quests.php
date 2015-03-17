@@ -95,7 +95,7 @@
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
                     </div> <!-- /Sidebar user panel -->
-                        
+
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
@@ -161,7 +161,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                	<div class="row"> 
+                	<div class="row">
                 	    <div class="col-md-4" >
                 	   <!-- Button trigger modal -->
                 	    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Create New Quest </button>
@@ -176,7 +176,7 @@
                 	              </div>
                 	              <div class="modal-body">
                 	                <!-- Create Quest Form -->
-                	                <form action="newquest.php">
+                	                <form action="newquest.php" method="post">
                 	                  <div class="form-group">
                 	                    <label>Title</label>
                 	                    <input type="text" class="form-control" placeholder="Quest Title" name="title">
@@ -188,7 +188,7 @@
                 	                  <div class="form-group">
                 	                    <label>Description</label>
                 	                    <textarea class="form-control" rows="3" name="desc"></textarea>
-                	                  </div>        	                
+                	                  </div>
                 	              </div>
                 	              <div class="modal-footer">
                 	                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -201,7 +201,7 @@
                 	        </div>
                 	    </div>
                 	</div> <!-- /row -->
-                	<br>                
+                	<br>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="box">
@@ -215,22 +215,22 @@
                                             <th>XP</th>
                                             <th>Due Date</th>
                                             <th>Status</th>
-                                            
+
                                         </tr>
                                         <tr>
                                             <td>Build a Website</td>
                                             <td>500</td>
                                             <td>5-1-15</td>
                                             <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
-                                            
+
                                         </tr>
                                         <tr>
                                             <td>Gamification Essay</td>
                                             <td>100</td>
                                             <td>4-5-2015</td>
-                                            <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>                 
+                                            <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
                                         </tr>
-                                     
+
                                     </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
