@@ -243,23 +243,18 @@
                                         <tr>
                                             <?php
 
-                                                $results = array('course_id' => 'DET 210');
-                                                $count=1;
-                                                $cursor = $collection2->find($results);
-                                                $cursor->fields(array("title" => true));
-                                                foreach ($cursor as $doc) {
+                                            	$results = array('course_id' => 'DET 210');
+                                            	$cursor = $collection2->find($results);
+                                            	$cursor->fields(array("course_id" => true, 'due_date' => true, 'exp' => true, '_id' => false));
+                                            	foreach ($cursor as $doc) {
 
-                                                  foreach ($doc as $k => $v) {
+                                            	  foreach ($doc as $k => $v) {
+                                            	      print "<td>$v</td>";
+                                            	    }
 
-                                                    if($count%2==0){
-                                                      print "<td>$v</td>";
-                                                    }
 
-                                                    $count++;
-
-                                                  }
-
-                                                }
+                                            	  }
+                                          		
 
                                              ?>                                     
 
