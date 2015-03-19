@@ -205,7 +205,7 @@
                                     $db = $m->selectDB("gamification_db");
                                     $collection = new MongoCollection( $db, "quests");
 
-                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id' => 'DET210');
+                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id' => 'DET 210');
                                 	$collection->save($newquest);
 
                                 ?>
@@ -243,17 +243,23 @@
                                         <tr>
                                             <?php
 
-                                                $results = array('course_id' => 'DET210');
-
-                                                $cursor = $collection2->find($results);     
+                                                $results = array('course_id' => 'DET 210');
+                                                $count=1;
+                                                $cursor = $collection2->find($results);
+                                                $cursor->fields(array("title" => true));
                                                 foreach ($cursor as $doc) {
 
                                                   foreach ($doc as $k => $v) {
+
+                                                    if($count%2==0){
                                                       print "<td>$v</td>";
                                                     }
 
+                                                    $count++;
 
                                                   }
+
+                                                }
 
                                              ?>                                     
 
