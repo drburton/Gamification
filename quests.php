@@ -205,7 +205,7 @@
                                     $db = $m->selectDB("gamification_db");
                                     $collection = new MongoCollection( $db, "quests");
 
-                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"]);
+                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id' => 'DET210');
                                 	$collection->save($newquest);
 
                                 ?>
@@ -241,9 +241,22 @@
 
                                         </tr>
                                         <tr>
-                                            <td>Gamification Essay</td>
-                                            <td>100</td>
-                                            <td>4-5-2015</td>
+                                            <?php
+
+                                                $results = array('course_id' => 'DET210');
+
+                                                $cursor = $collection2->find($results);     
+                                                foreach ($cursor as $doc) {
+
+                                                  foreach ($doc as $k => $v) {
+                                                      print "<td>$v</td>";
+                                                    }
+
+
+                                                  }
+
+                                             ?>                                     
+
                                             <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
                                         </tr>
 
