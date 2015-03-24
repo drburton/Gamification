@@ -168,13 +168,6 @@
 
                                 <!-- PHP Database Interaction -->
 
-                                <?php
-
-                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"],);
-                                	$collection2->save($newquest);
-
-                                ?>
-
                                 <!-- End PHP Database Interaction -->
 
                 	       </div>
@@ -327,7 +320,7 @@
                     </div>
                     <div class="modal-body">
                       <!-- Create Quest Form -->
-                      <form action="quests.php" method="post">
+                      <form action="createquest.php" method="post">
                         <div class="form-group">
                           <label>Title</label>
                           <input type="text" class="form-control" placeholder="Quest Title" name="title">
