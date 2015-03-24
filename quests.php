@@ -205,12 +205,8 @@
 
                                 <?php
 
-                                	$m = new MongoClient();
-                                    $db = $m->selectDB("gamification_db");
-                                    $collection = new MongoCollection( $db, "quests");
-
-                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id' => 'DET 210');
-                                	$collection->save($newquest);
+                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"]);
+                                	$collection2->save($newquest);
 
                                 ?>
 
@@ -252,7 +248,11 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
+<<<<<<< HEAD
                                             	$cursor->fields(array("course_id" => true, 'due_date' => true, 'exp' => true, '_id' => false));
+=======
+                                            	$cursor->fields(array('name'=> true, 'due_date' => true, 'exp' => true, '_id' => false));
+>>>>>>> origin/master
                                             	foreach ($cursor as $doc) {
 
                                             	  foreach ($doc as $k => $v) {
