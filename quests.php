@@ -163,7 +163,7 @@
                 <section class="content">
                 	<div class="row">
                 	    <div class="col-md-4" >
-                	   <!-- Button trigger modal -->
+                	   <!-- Create New Quest, Button trigger modal -->
                 	    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createnewquest"> Create New Quest </button>
 
                                 <!-- PHP Database Interaction -->
@@ -179,7 +179,9 @@
 
                 	       </div>
                 	   </div> <!-- /row -->
-                	<br>
+                     <!-- /Create New Quest Trigger -->
+                  <br>
+
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="box">
@@ -256,6 +258,29 @@
               </div>
             </div>
          <!-- /Delete Quest Modal -->
+
+         <!-- View Details Modal -->
+             <div class="modal fade" id="viewdetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title" id="myModalLabel">Quest Details</h4>
+                   </div>
+                   <div class="modal-body">
+                     <h6>Title</h6>
+                     <p>Quest Title</p>
+                     <h6>XP</h6>
+                     <p>XXX</p>
+                     <h6>Description</h6>
+                     <p>Details about the quest such as what it entails.</p>
+                   </div>
+                   <div class="modal-footer">
+                   </div>
+                 </div>
+               </div>
+             </div>
+          <!-- /View Details Modal -->
 
          <!-- Edit Quest Modal -->
              <div class="modal fade" id="editquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
