@@ -248,7 +248,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("course_id" => true, 'due_date' => true, 'exp' => true, '_id' => false));
+                                            	$cursor->fields(array('due_date' => true, 'exp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
 
                                             	  foreach ($doc as $k => $v) {
