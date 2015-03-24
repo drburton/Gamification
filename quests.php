@@ -231,6 +231,8 @@
                                             <th>XP</th>
                                             <th>Due Date</th>
                                             <th>Status</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
 
                                         </tr>
                                         <tr>
@@ -238,7 +240,8 @@
                                             <td>500</td>
                                             <td>5-1-15</td>
                                             <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
-
+                                            <td><a href="#"><button class="btn btn-default btn-sm">Edit</button></a></td>
+                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td>
                                         </tr>
                                         <tr>
                                             <?php
@@ -254,11 +257,13 @@
 
 
                                             	  }
-                                          		
 
-                                             ?>                                     
+
+                                             ?>
 
                                             <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
+                                            <td><a href="#"><button class="btn btn-default btn-sm">Edit</button></a></td>
+                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td>
                                         </tr>
 
                                     </table>
@@ -276,6 +281,6 @@
         <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
-        
+
     </body>
 </html>
