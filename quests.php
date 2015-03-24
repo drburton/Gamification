@@ -248,11 +248,10 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-<<<<<<< HEAD
-                                            	$cursor->fields(array("course_id" => true, 'due_date' => true, 'exp' => true, '_id' => false));
-=======
+
+                                            
                                             	$cursor->fields(array('name'=> true, 'due_date' => true, 'exp' => true, '_id' => false));
->>>>>>> origin/master
+
                                             	foreach ($cursor as $doc) {
 
                                             	  foreach ($doc as $k => $v) {
