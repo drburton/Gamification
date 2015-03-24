@@ -166,47 +166,16 @@
                 	   <!-- Button trigger modal -->
                 	    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createnewquest"> Create New Quest </button>
 
-                	    <!-- Modal -->
-                	        <div class="modal fade" id="createnewquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                	          <div class="modal-dialog">
-                	            <div class="modal-content">
-                	              <div class="modal-header">
-                	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                	                <h4 class="modal-title" id="myModalLabel">New Quest</h4>
-                	              </div>
-                	              <div class="modal-body">
-                	                <!-- Create Quest Form -->
-                	                <form action="quests.php" method="post">
-                	                  <div class="form-group">
-                	                    <label>Title</label>
-                	                    <input type="text" class="form-control" placeholder="Quest Title" name="title">
-                	                  </div>
-                	                  <div class="form-group">
-                	                    <label>XP</label>
-                	                    <input type="number" class="form-control" placeholder="100" name="xp">
-                	                  </div>
-                	                  <div class="form-group">
-                	                    <label>Description</label>
-                	                    <textarea class="form-control" rows="3" name="desc"></textarea>
-                	                  </div>
-                                  </form>
-                                  <!-- /Create Quest Form -->
-                	              </div>
-                	              <div class="modal-footer">
-                	                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                	                <button type="button submit" class="btn btn-primary">Create</button>
-                	              </div>
-                              </div>
-                            </div>
-                          </div>
-                	     <!-- /Create Quest Form Modal -->
-
                                 <!-- PHP Database Interaction -->
 
                                 <?php
 
-                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"]);
-                                	$collection2->save($newquest);
+                                	$m = new MongoClient();
+                                    $db = $m->selectDB("gamification_db");
+                                    $collection = new MongoCollection( $db, "quests");
+
+                                	$newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id' => 'DET 210');
+                                	$collection->save($newquest);
 
                                 ?>
 
@@ -248,10 +217,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-
-                                            
-                                            	$cursor->fields(array('name'=> true, 'due_date' => true, 'exp' => true, '_id' => false));
-
+                                            	$cursor->fields(array("course_id" => true, 'due_date' => true, 'exp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
 
                                             	  foreach ($doc as $k => $v) {
@@ -270,70 +236,158 @@
                                         </tr>
 
                                     </table>
-
-                                    <!-- Delete Quest Modal -->
-                              	        <div class="modal fade" id="deletequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                              	          <div class="modal-dialog">
-                              	            <div class="modal-content">
-                              	              <div class="modal-header">
-                              	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              	                <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
-                              	              </div>
-                              	              <div class="modal-body">
-                              	                <p>Are you sure you want to delete this quest forever?</p>
-                              	              </div>
-                              	              <div class="modal-footer">
-                              	                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                              	                <button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
-                              	              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                              	     <!-- /Delete Quest Modal -->
-
-                                     <!-- Edit Quest Modal -->
-                                         <div class="modal fade" id="editquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                           <div class="modal-dialog">
-                                             <div class="modal-content">
-                                               <div class="modal-header">
-                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                 <h4 class="modal-title" id="myModalLabel">Edit Quest</h4>
-                                               </div>
-                                               <div class="modal-body">
-                                                 <!-- Create Quest Form -->
-                                                 <form action="quests.php" method="post">
-                                                   <div class="form-group">
-                                                     <label>Title</label>
-                                                     <input type="text" class="form-control" placeholder="Quest Title" name="title">
-                                                   </div>
-                                                   <div class="form-group">
-                                                     <label>XP</label>
-                                                     <input type="number" class="form-control" placeholder="100" name="xp">
-                                                   </div>
-                                                   <div class="form-group">
-                                                     <label>Description</label>
-                                                     <textarea class="form-control" rows="3" name="desc"></textarea>
-                                                   </div>
-                                                 </form>
-                                                 <!-- /Create Quest Form -->
-                                               </div>
-                                               <div class="modal-footer">
-                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                 <button type="button submit" class="btn btn-primary">Save Changes</button>
-                                               </div>
-                                             </div>
-                                           </div>
-                                         </div>
-                                      <!-- /Edit Quest Modal -->
-
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
                     </div>
+                    <!-- Delete Quest Modal -->
+                        <div class="modal fade" id="deletequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>Are you sure you want to delete this quest forever?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                     <!-- /Delete Quest Modal -->
+
+                     <!-- Edit Quest Modal -->
+                         <div class="modal fade" id="editquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                             <div class="modal-content">
+                               <div class="modal-header">
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                 <h4 class="modal-title" id="myModalLabel">Edit Quest</h4>
+                               </div>
+                               <div class="modal-body">
+                                 <!-- Create Quest Form -->
+                                 <form action="quests.php" method="post">
+                                   <div class="form-group">
+                                     <label>Title</label>
+                                     <input type="text" class="form-control" placeholder="Quest Title" name="title">
+                                   </div>
+                                   <div class="form-group">
+                                     <label>XP</label>
+                                     <input type="number" class="form-control" placeholder="100" name="xp">
+                                   </div>
+                                   <div class="form-group">
+                                     <label>Description</label>
+                                     <textarea class="form-control" rows="3" name="desc"></textarea>
+                                   </div>
+                                 </form>
+                                 <!-- /Create Quest Form -->
+                               </div>
+                               <div class="modal-footer">
+                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                 <button type="button submit" class="btn btn-primary">Save Changes</button>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                      <!-- /Edit Quest Modal -->
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
+        
+        <!-- Delete Quest Modal -->
+            <div class="modal fade" id="deletequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to delete this quest forever?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+         <!-- /Delete Quest Modal -->
+
+         <!-- Edit Quest Modal -->
+             <div class="modal fade" id="editquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title" id="myModalLabel">Edit Quest</h4>
+                   </div>
+                   <div class="modal-body">
+                     <!-- Create Quest Form -->
+                     <form action="quests.php" method="post">
+                       <div class="form-group">
+                         <label>Title</label>
+                         <input type="text" class="form-control" placeholder="Quest Title" name="title">
+                       </div>
+                       <div class="form-group">
+                         <label>XP</label>
+                         <input type="number" class="form-control" placeholder="100" name="xp">
+                       </div>
+                       <div class="form-group">
+                         <label>Description</label>
+                         <textarea class="form-control" rows="3" name="desc"></textarea>
+                       </div>
+                     </form>
+                     <!-- /Create Quest Form -->
+                   </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                     <button type="button submit" class="btn btn-primary">Save Changes</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          <!-- /Edit Quest Modal -->
+
+          <!-- Create Quest Modal -->
+              <div class="modal fade" id="createnewquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">New Quest</h4>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Create Quest Form -->
+                      <form action="quests.php" method="post">
+                        <div class="form-group">
+                          <label>Title</label>
+                          <input type="text" class="form-control" placeholder="Quest Title" name="title">
+                        </div>
+                        <div class="form-group">
+                          <label>XP</label>
+                          <input type="number" class="form-control" placeholder="100" name="xp">
+                        </div>
+                        <div class="form-group">
+                          <label>Description</label>
+                          <textarea class="form-control" rows="3" name="desc"></textarea>
+                        </div>
+                      </form>
+                      <!-- /Create Quest Form -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="button submit" class="btn btn-primary">Create</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           <!-- /Create Quest Form Modal -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
