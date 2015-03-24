@@ -181,11 +181,8 @@
 
                                 <!-- End PHP Database Interaction -->
 
-                	            </div>
-                	          </div>
-                	        </div>
-                	    </div>
-                	</div> <!-- /row -->
+                	       </div>
+                	   </div> <!-- /row -->
                 	<br>
                     <div class="row">
                         <div class="col-xs-12">
