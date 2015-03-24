@@ -320,7 +320,7 @@
                     </div>
                     <div class="modal-body">
                       <!-- Create Quest Form -->
-                      <form action="createquest.php" method="post">
+                      <form action="createquest.php" method="POST">
                         <div class="form-group">
                           <label>Title</label>
                           <input type="text" class="form-control" placeholder="Quest Title" name="title">
@@ -333,13 +333,15 @@
                           <label>Description</label>
                           <textarea class="form-control" rows="3" name="desc"></textarea>
                         </div>
-                      </form>
+                      
                       <!-- /Create Quest Form -->
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                       <button type="button submit" class="btn btn-primary">Create</button>
                     </div>
+
+                    </form>
                   </div>
                 </div>
               </div>

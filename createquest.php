@@ -6,5 +6,5 @@
     $newquest=array('title' => $_POST["title"], 'xp' => $_POST["xp"], 'desc' => $_POST["desc"], 'course_id'=> 'DET 210');
     $collection2->save($newquest);
 
-    header("Location: http://gamedev.garrettyamada.com/quests.php")
+    header("http://gamedev.garrettyamada.com/quests.php")
 ?>
