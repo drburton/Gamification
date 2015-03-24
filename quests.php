@@ -164,10 +164,10 @@
                 	<div class="row">
                 	    <div class="col-md-4" >
                 	   <!-- Button trigger modal -->
-                	    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Create New Quest </button>
+                	    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createnewquest"> Create New Quest </button>
 
                 	    <!-- Modal -->
-                	        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                	        <div class="modal fade" id="createnewquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 	          <div class="modal-dialog">
                 	            <div class="modal-content">
                 	              <div class="modal-header">
@@ -233,7 +233,6 @@
                                             <th>Status</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
-
                                         </tr>
                                         <tr>
                                             <td>Build a Website</td>
@@ -241,7 +240,8 @@
                                             <td>5-1-15</td>
                                             <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
                                             <td><a href="#"><button class="btn btn-default btn-sm">Edit</button></a></td>
-                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td>
+                                            <td><a href="#"><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletequest">Delete</button></a></td>
+
                                         </tr>
                                         <tr>
                                             <?php
@@ -267,6 +267,28 @@
                                         </tr>
 
                                     </table>
+
+                                    <!-- Delete Quest Modal -->
+                              	        <div class="modal fade" id="deletequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              	          <div class="modal-dialog">
+                              	            <div class="modal-content">
+                              	              <div class="modal-header">
+                              	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              	                <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
+                              	              </div>
+                              	              <div class="modal-body">
+                              	                <p>Are you sure you want to delete this quest forever?</p>
+                              	              </div>
+                              	              <div class="modal-footer">
+                              	                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                              	                <button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
+                              	              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                              	     <!-- /Delete Quest Modal -->
+
+
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
