@@ -211,6 +211,10 @@
                                             	  foreach ($doc as $k => $v) {
                                             	      print "<td>$v</td>";
                                             	    }
+
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\">See Details</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\">Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\">Delete</button></a></td>";
                                                 print "</tr>";
 
                                             	  }
@@ -218,9 +222,7 @@
 
                                              ?>
 
-                                            <!-- <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
-                                            <td><a href="#"><button class="btn btn-default btn-sm">Edit</button></a></td>
-                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td> -->
+
 
 
                                     </table>
