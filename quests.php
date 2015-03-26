@@ -209,7 +209,7 @@
                                             	foreach ($cursor as $doc) {
 
                                             	  foreach ($doc as $k => $v) {
-                                            	      print "<td>$v</td>";
+                                            	      print "<tr><td>$v</td></tr>";
                                             	    }
 
 
