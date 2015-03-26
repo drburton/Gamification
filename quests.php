@@ -212,9 +212,9 @@
                                             	      print "<td>$v</td>";
                                             	    }
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\">See Details</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\">Edit</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\">Delete</button></a></td>";
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\">See Details</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
                                                 print "</tr>";
 
                                             	  }
