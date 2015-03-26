@@ -207,11 +207,11 @@
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("name" => true, 'due_date' => true, 'exp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
-                                                print "<tr>"
+                                                print "<tr>";
                                             	  foreach ($doc as $k => $v) {
                                             	      print "<tr><td>$v</td></tr>";
                                             	    }
-                                                print "</tr>"
+                                                print "</tr>";
 
                                             	  }
 
