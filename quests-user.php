@@ -161,7 +161,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                	
+
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="box">
@@ -182,7 +182,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("name" => true, 'due_date' => true, 'exp' => true, '_id' => false));
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
