@@ -200,28 +200,28 @@
                                             <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletequest">Delete</button></td>
 
                                         </tr>
-                                        <tr>
+
                                             <?php
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("name" => true, 'due_date' => true, 'exp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
-
+                                                print "<tr>"
                                             	  foreach ($doc as $k => $v) {
                                             	      print "<tr><td>$v</td></tr>";
                                             	    }
-
+                                                print "</tr>"
 
                                             	  }
 
 
                                              ?>
 
-                                            <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
+                                            <!-- <td><a href="#"><button class="btn btn-default btn-sm">See Details</button></a></td>
                                             <td><a href="#"><button class="btn btn-default btn-sm">Edit</button></a></td>
-                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td>
-                                        </tr>
+                                            <td><a href="#"><button class="btn btn-danger btn-sm">Delete</button></a></td> -->
+
 
                                     </table>
                                 </div><!-- /.box-body -->
@@ -333,7 +333,7 @@
                           <label>Description</label>
                           <textarea class="form-control" rows="3" name="desc"></textarea>
                         </div>
-                      
+
                       <!-- /Create Quest Form -->
                     </div>
                     <div class="modal-footer">
