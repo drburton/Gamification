@@ -191,16 +191,8 @@
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
-                                        <tr>
-                                            <td>Build a Website</td>
-                                            <td>500</td>
-                                            <td>5-1-15</td>
-                                            <td><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#seedetails">See Details</button></td>
-                                            <td><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#editquest">Edit</button></td>
-                                            <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletequest">Delete</button></td>
 
-                                        </tr>
-
+                                        <!-- PHP to pull quest data and put in table -->
                                             <?php
 
                                             	$results = array('course_id' => 'DET 210');
@@ -221,9 +213,6 @@
 
 
                                              ?>
-
-
-
 
                                     </table>
                                 </div><!-- /.box-body -->
