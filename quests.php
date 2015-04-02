@@ -19,7 +19,7 @@
         <!-- Theme style -->
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
       <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
-        <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css"> 
+        <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -289,22 +289,18 @@
                        </div>
                        <div class="form-group">
                          <label>Due Date</label>
-                         <div class="well">
-                            <div id="datetimepicker4" class="input-append">
-                              <input data-format="yyyy-MM-dd" type="text"></input>
-                              <span class="add-on">
-                                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                                </i>
-                              </span>
-                            </div>
-                          </div>
-                          <script type="text/javascript">
-                            $(function() {
-                              $('#datetimepicker4').datetimepicker({
-                                pickTime: false
-                              });
-                            });
-                          </script>
+                         <div id="datetimepicker" class="input-append date">
+                           <input type="text"></input>
+                           <span class="add-on">
+                             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                           </span>
+                         </div>
+                         <script type="text/javascript">
+                           $('#datetimepicker').datetimepicker({
+                             format: 'dd/MM/yyyy hh:mm:ss',
+                             language: 'en'
+                           });
+                         </script>
                        </div>
                        <div class="form-group">
                          <label>Description</label>
