@@ -292,6 +292,7 @@
                          <!-- date time picker -->
                          <!-- <div id="datetimepicker" class="input-append date"> -->
                          <span class="add-on">
+                           <button type="button" class="btn btn-default">Pick Date</button>
                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                          </span>
                            <input type="text" class="form-control"></input>
