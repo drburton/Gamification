@@ -19,7 +19,7 @@
         <!-- Theme style -->
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
       <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
-        <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css" />
+        <link href="../css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -287,19 +287,12 @@
                          <label>XP</label>
                          <input type="number" class="form-control" placeholder="100" name="xp">
                        </div>
-                      <div class="form-group input-append date" id="datetimepicker">
+                      <div class="form-group" id="date-picker">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                         <!-- <div id="datetimepicker" class="input-append date"> -->
-                         <span class="add-on">
-                           <button type="button" class="btn btn-default">Pick Date</button>
-                           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-                         </span>
                            <input type="text" class="form-control"></input>
-
-                         </div>
                          <!-- /date time picker -->
-                    <!--  </div> -->
+                      </div>
                        <div class="form-group">
                          <label>Description</label>
                          <textarea class="form-control" rows="3" name="desc"></textarea>
@@ -359,13 +352,9 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
-        <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
-        <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
-
+        <script src="../js/bootstrap-datepicker"></script>
         <script type="text/javascript">
-          $('#datetimepicker').datetimepicker({
-            language: 'en',
-            pick12HourFormat: true
+        $('#date-picker input').datepicker({
           });
         </script>
     </body>
