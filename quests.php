@@ -287,10 +287,10 @@
                          <label>XP</label>
                          <input type="number" class="form-control" placeholder="100" name="xp">
                        </div>
-                      <div class="form-group" id="date-picker">
+                      <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" type="text" class="form-control"></input>
+                           <input type="text" id="date-picker" class="form-control"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
@@ -352,7 +352,7 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
-        <script src="../js/bootstrap-datepicker"></script>
+        <script src="../js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
           $('#date-picker').datepicker({
           });
