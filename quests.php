@@ -291,7 +291,7 @@
                          <label>Due Date</label>
                          <!-- date time picker -->
                          <div id="datetimepicker" class="input-append date">
-                           <input type="text" class="form-control"></input>
+                           <input  class="form-control"></input>
                            <span class="add-on">
                              <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                            </span>
