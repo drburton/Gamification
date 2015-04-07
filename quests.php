@@ -290,7 +290,7 @@
                       <div class="form-group" id="date-picker">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" class="form-control"></input>
+                           <input type="text" type="text" class="form-control"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
