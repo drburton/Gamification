@@ -354,7 +354,7 @@
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker"></script>
         <script type="text/javascript">
-        $('#date-picker input').datepicker({
+          $('#date-picker').datepicker({
           });
         </script>
     </body>
