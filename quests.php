@@ -290,14 +290,14 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                         <div id="datetimepicker" class="input-append date">
-                           <input  class="form-control"></input>
+                        <!-- <div id="datetimepicker" class="input-append date"> -->
+                           <input type="text" class="form-control" id="datetimepicker" class="input-append date"></input>
                            <span class="add-on">
                              <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                            </span>
                          </div>
                          <!-- /date time picker -->
-                      </div>
+                    <!--  </div> -->
                        <div class="form-group">
                          <label>Description</label>
                          <textarea class="form-control" rows="3" name="desc"></textarea>
