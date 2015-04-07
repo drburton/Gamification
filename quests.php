@@ -287,7 +287,7 @@
                          <label>XP</label>
                          <input type="number" class="form-control" placeholder="100" name="xp">
                        </div>
-                      <!-- <div class="form-group"> -->
+                      <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
                          <div id="datetimepicker" class="input-append date">
@@ -297,7 +297,7 @@
                            </span>
                          </div>
                          <!-- /date time picker -->
-                    <!--   </div> -->
+                      </div>
                        <div class="form-group">
                          <label>Description</label>
                          <textarea class="form-control" rows="3" name="desc"></textarea>
