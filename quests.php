@@ -329,6 +329,12 @@
                           <input type="number" class="form-control" placeholder="100" name="xp">
                         </div>
                         <div class="form-group">
+                           <label>Due Date</label>
+                           <!-- date time picker -->
+                             <input type="text" id="date-picker" class="form-control"></input>
+                           <!-- /date time picker -->
+                        </div>
+                        <div class="form-group">
                           <label>Description</label>
                           <textarea class="form-control" rows="3" name="desc"></textarea>
                         </div>
