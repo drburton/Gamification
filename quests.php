@@ -287,11 +287,11 @@
                          <label>XP</label>
                          <input type="number" class="form-control" placeholder="100" name="xp">
                        </div>
-                      <div class="form-group">
+                      <div class="form-group input-append date" id="datetimepicker">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                        <!-- <div id="datetimepicker" class="input-append date"> -->
-                           <input type="text" class="form-control" id="datetimepicker" class="input-append date"></input>
+                         <!-- <div id="datetimepicker" class="input-append date"> -->
+                           <input type="text" class="form-control"></input>
                            <span class="add-on">
                              <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                            </span>
