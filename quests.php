@@ -331,7 +331,7 @@
                         <div class="form-group">
                            <label>Due Date</label>
                            <!-- date time picker -->
-                             <input type="text" id="date-picker" class="form-control"></input>
+                             <input type="text" id="date-picker2" class="form-control"></input>
                            <!-- /date time picker -->
                         </div>
                         <div class="form-group">
@@ -361,6 +361,10 @@
         <script src="../js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
           $('#date-picker').datepicker({
+          });
+        </script>
+        <script type="text/javascript">
+          $('#date-picker2').datepicker({
           });
         </script>
     </body>
