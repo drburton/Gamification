@@ -291,11 +291,11 @@
                          <label>Due Date</label>
                          <!-- date time picker -->
                          <!-- <div id="datetimepicker" class="input-append date"> -->
-                         <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                         <span class="add-on">
+                           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                         </span>
                            <input type="text" class="form-control"></input>
-                           <span class="add-on">
-                             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-                           </span>
+
                          </div>
                          <!-- /date time picker -->
                     <!--  </div> -->
