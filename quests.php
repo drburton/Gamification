@@ -329,13 +329,14 @@
                          <label>Description</label>
                          <textarea class="form-control" rows="3" id="editDesc" name="desc"></textarea>
                        </div>
-                     </form>
+                     <!--</form>-->
                      <!-- /Create Quest Form -->
                    </div>
                    <div class="modal-footer">
                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                      <button type="button submit" class="btn btn-primary">Save Changes</button>
                    </div>
+				   </form>
                  </div>
                </div>
              </div>
