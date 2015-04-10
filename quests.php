@@ -199,7 +199,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => true));
 												$title="";
 												$due_date="";
 												$xp="";
@@ -208,24 +208,22 @@
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-													  if ($k != "desc"){
-														  if($k=="title"){
-															$title=$v;
-														  }
-														  if($k=="due_date"){
-															$due_date=$v;
-														  }
-														  if($k=="xp"){
-															$xp=$v;
-														  }
-														  print "<td>$v</td>";														  
-														}
-														if($k=='desc'){
+														if ($k!='_id'){
+														  if ($k != "desc"){
+															  if($k=="title"){
+																$title=$v;
+															  }
+															  if($k=="due_date"){
+																$due_date=$v;
+															  }
+															  if($k=="xp"){
+																$xp=$v;
+															  }
+															  print "<td>$v</td>";														  
+															}
 															$desc=$v;
 														}
-														if ($k=='_id'){
-															$dbid=$v;
-														}
+														$dbid=$v;
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
