@@ -5,5 +5,7 @@
     $collection = new MongoCollection( $db, "quests");
 
     $collection->remove(array('title'=>'something'));
+	
+	header("Location: http://gamedev.garrettyamada.com/quests.php");
 
 ?>
