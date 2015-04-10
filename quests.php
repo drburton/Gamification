@@ -219,7 +219,7 @@
 															  if($k=="xp"){
 																$xp=$v;
 															  }
-															  print "<td>$v</td>";														  
+															  print "<td>$k: $v</td>";														  
 															}
 															$desc=$v;
 														}
