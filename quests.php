@@ -305,33 +305,34 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
-				    <!--<div class="form-group">
-						<input type="text" class="form-control" placeholder="ID" id="dbid" name="dbid">
-                    </div>-->
+				   
                    <div class="modal-body">
-                      <!-- Create Quest Form -->
-                      <form action="createquest.php" method="POST">
-                        <div class="form-group">
-                          <label>Title</label>
-                          <input type="text" class="form-control" placeholder="Quest Title" name="title">
-                        </div>
-                        <div class="form-group">
-                          <label>XP</label>
-                          <input type="number" class="form-control" placeholder="100" name="xp">
-                        </div>
-                        <div class="form-group">
-                           <label>Due Date</label>
-                           <!-- date time picker -->
-                             <input type="text" id="date-picker2" class="form-control" name="due_date"></input>
-                           <!-- /date time picker -->
-                        </div>
-                        <div class="form-group">
-                          <label>Description</label>
-                          <textarea class="form-control" rows="3" name="desc"></textarea>
-                        </div>
-
-                      <!-- /Create Quest Form -->
-                    </div>
+                     <!-- Create Quest Form -->
+                     <form action="editquest.php" method="POST">
+					   <div class="form-group">
+                         <input type="text" class="form-control" placeholder="ID" id="dbid" name="dbid">
+                       </div>
+                       <div class="form-group">
+                         <label>Title</label>
+                         <input type="text" class="form-control" placeholder="Quest Title" id="editTitle" name="title">
+                       </div>
+                       <div class="form-group">
+                         <label>XP</label>
+                         <input type="number" class="form-control" placeholder="100" id="editXp" name="xp">
+                       </div>
+                      <div class="form-group">
+                         <label>Due Date</label>
+                         <!-- date time picker -->
+                           <input type="text" id="date-picker" class="form-control dueDate" name="due_date"></input>
+                         <!-- /date time picker -->
+                      </div>
+                       <div class="form-group">
+                         <label>Description</label>
+                         <textarea class="form-control" rows="3" id="editDesc" name="desc"></textarea>
+                       </div>
+                     <!--</form>-->
+                     <!-- /Create Quest Form -->
+                   </div>
                    <div class="modal-footer">
                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                      <button type="button submit" class="btn btn-primary">Save Changes</button>
