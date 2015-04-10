@@ -440,7 +440,7 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  modal.find('.dueDate').val(questDue)
+			  //modal.find('.dueDate').val(questDue)
 			})
 		</script>
     </body>
