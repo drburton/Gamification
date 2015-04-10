@@ -223,7 +223,7 @@
 															}
 															$desc=$v;
 														}
-														print "$id"
+														print "$id";
 														$dbid='test';
                                             	    }
 
