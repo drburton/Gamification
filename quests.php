@@ -224,7 +224,7 @@
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
+                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
                                                 print "</tr>";
 
                                             	  }
@@ -247,13 +247,14 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
+                    <h4 class="modal-title" id="deleteLabel">Delete Quest</h4>
                   </div>
                   <div class="modal-body">
                     <p>Are you sure you want to delete this quest forever?</p>
                   </div>
                   <div class="modal-footer">
                     <form action="deletequest.php" method="POST">
+					<input type="text" id="deleteTitle" hidden="true"></input>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					<button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
 					</form>
@@ -402,6 +403,16 @@
 			  modal.find('#detailsXp').text(questXp)
 			  modal.find('#detailsDesc').text(questDesc)
 			  modal.find('#detailsDue').text(questDue)
+			  <!--modal.find('.modal-body input').val(recipient)-->
+			})
+			$('#deletequest').on('show.bs.modal', function (event) {
+			  var button = $(event.relatedTarget) // Button that triggered the modal
+			  var questId = button.data('id') // Extract info from data-* attributes
+			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+			  var modal = $(this)
+			  modal.find('#deleteLabel').text("Delete Quest: "+questId)
+			  modal.find('#deleteTitle').input(questId)
 			  <!--modal.find('.modal-body input').val(recipient)-->
 			})
 		</script>
