@@ -222,7 +222,7 @@
 														$desc=$v;		
                                             	    }
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=#due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
                                                 print "</tr>";
