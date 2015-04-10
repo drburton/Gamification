@@ -226,7 +226,7 @@
 															}
 														}
 														else{
-															$dbid="ObjectId($v)";
+															$dbid=($v);
 														}
                                             	    }
 
