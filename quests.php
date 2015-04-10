@@ -201,6 +201,7 @@
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
                                             	foreach ($cursor as $doc) {
+												print "<tr><td>$doc</td></tr>";
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
                                             	      print "<td>$v</td>";
