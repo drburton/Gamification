@@ -199,18 +199,30 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
-												$t="";
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
+												$title="";
+												$due_date="";
+												$xp="";
+												$desc="";
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-													  if($k=="title"){
-														$t=$v;
-													  }
-                                            	      print "<td>$v</td>";
+													  if ($k != "desc"){
+														  if($k=="title"){
+															$title=$v;
+														  }
+														  if($k=="due_date"){
+															$due_date=$v;
+														  }
+														  if($k=="xp"){
+															$xp=$v;
+														  }
+														  print "<td>$v</td>";														  
+														}
+														$desc=$v;		
                                             	    }
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$t>See Details</button></a></td>
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=#due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
                                                 print "</tr>";
@@ -259,11 +271,11 @@
                    </div>
                    <div class="modal-body">
                      <h6>Title</h6>
-                     <p>Quest Title</p>
+                     <p id="detailsTitle">Quest Title</p>
                      <h6>XP</h6>
-                     <p>XXX</p>
+                     <p id="detailsXp">XXX</p>
                      <h6>Description</h6>
-                     <p>Details about the quest such as what it entails.</p>
+                     <p id="detailsDesc">Details about the quest such as what it entails.</p>
                    </div>
                    <div class="modal-footer">
                    </div>
@@ -375,10 +387,15 @@
 			$('#seedetails').on('show.bs.modal', function (event) {
 			  var button = $(event.relatedTarget) // Button that triggered the modal
 			  var questId = button.data('id') // Extract info from data-* attributes
+			  var questDue = button.data('due')
+			  var questXp = button.data('xp')
+			  var questDesc = button.data('desc')
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
 			  modal.find('#detailsLabel').text(questId)
+			  modal.find('#detailsTitle').text(questId)
+			  modal.find('#detailsXp').text(questXp)
 			  <!--modal.find('.modal-body input').val(recipient)-->
 			})
 		</script>
