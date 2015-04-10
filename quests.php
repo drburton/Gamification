@@ -253,7 +253,6 @@
                     <p>Are you sure you want to delete this quest forever?</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <form action="deletequest.php" method="POST">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					<button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
