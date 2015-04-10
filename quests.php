@@ -223,7 +223,7 @@
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
                                                 print "</tr>";
 
@@ -295,28 +295,28 @@
                  <div class="modal-content">
                    <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="myModalLabel">Edit Quest</h4>
+                     <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="quests.php" method="post">
                        <div class="form-group">
                          <label>Title</label>
-                         <input type="text" class="form-control" placeholder="Quest Title" name="title">
+                         <input type="text" class="form-control" placeholder="Quest Title" id="editTitle" name="title">
                        </div>
                        <div class="form-group">
                          <label>XP</label>
-                         <input type="number" class="form-control" placeholder="100" name="xp">
+                         <input type="number" class="form-control" placeholder="100" id="editXp" name="xp">
                        </div>
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control"></input>
+                           <input type="text" id="date-picker" class="form-control editDate"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
                          <label>Description</label>
-                         <textarea class="form-control" rows="3" name="desc"></textarea>
+                         <textarea class="form-control" rows="3" id="editDesc" name="desc"></textarea>
                        </div>
                      </form>
                      <!-- /Create Quest Form -->
@@ -414,6 +414,19 @@
 			  modal.find('#deleteLabel').text("Delete Quest: "+questId)
 			  modal.find('#deleteTitle').val(questId)
 			  <!--modal.find('.modal-body input').val(recipient)-->
+			})
+			$('#editquest').on('show.bs.modal', function (event) {
+			  var button = $(event.relatedTarget) // Button that triggered the modal
+			  var questId = button.data('id') // Extract info from data-* attributes
+			  var questDue = button.data('due')
+			  var questXp = button.data('xp')
+			  var questDesc = button.data('desc')
+			  var modal = $(this)
+			  modal.find('#editLabel').text("Edit Quest: "+questId)
+			  modal.find('#editTitle').val(questId)
+			  modal.find('#editXp').val(questXp)
+			  modal.find('#editDesc').val(questDesc)
+			  modal.find('.editDate').val(questDue)
 			})
 		</script>
     </body>
