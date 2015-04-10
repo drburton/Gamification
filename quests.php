@@ -200,7 +200,6 @@
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
-												print "<tr><td>$cursor</td></tr>";
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
