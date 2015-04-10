@@ -208,7 +208,7 @@
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-														if ($k!='_id'){
+														//if ($k!='_id'){
 														  if ($k != "desc"){
 															  if($k=="title"){
 																$title=$v;
@@ -223,8 +223,8 @@
 															}
 															$desc=$v;
 														}
-														$dbid='test';
-                                            	    }
+														//$dbid='test';
+                                            	    //}
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
