@@ -254,7 +254,7 @@
                   </div>
                   <div class="modal-footer">
                     <form action="deletequest.php" method="POST">
-					<input type="text" id="deleteTitle" hidden="true"></input>
+					<input type="text" id="deleteTitle"></input>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					<button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
 					</form>
