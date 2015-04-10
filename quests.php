@@ -223,7 +223,7 @@
 															}
 															$desc=$v;
 														}
-														print "<td>$k</td>";
+														print "<td>\"a value: \"$v</td>";
 														$dbid='test';
                                             	    }
 
