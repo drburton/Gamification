@@ -396,6 +396,7 @@
 			  modal.find('#detailsLabel').text(questId)
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
+			  modal.find('#detailsDesc').text(questDesc)
 			  <!--modal.find('.modal-body input').val(recipient)-->
 			})
 		</script>
