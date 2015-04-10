@@ -306,8 +306,8 @@
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="post">
-						<div class="form-group">
-                         <input type="text" class="form-control" placeholder="Quest Title" id="dbId" name="_id">
+					   <div class="form-group">
+                         <input type="text" class="form-control" placeholder="ID" id="dbId" name="dbId>
                        </div>
                        <div class="form-group">
                          <label>Title</label>
@@ -389,9 +389,9 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
           $('#date-picker').datepicker({
-          });-->
+          });
         </script>
         <script type="text/javascript">
           $('#date-picker2').datepicker({
@@ -438,7 +438,6 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('.editDate').val(questDue)
-			  $('#date-picker').datepicker({});
 			})
 		</script>
     </body>
