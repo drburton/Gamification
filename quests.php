@@ -307,7 +307,7 @@
                    </div>
                    <div class="modal-body">
                      <!-- Create Quest Form -->
-                     <form action="editquest.php" method="post">
+                     <form action="editquest.php" method="Post">
 					   <div class="form-group">
                          <input type="text" class="form-control" placeholder="ID" id="dbid" name="dbid">
                        </div>
