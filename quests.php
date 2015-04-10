@@ -437,7 +437,7 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  modal.find('.editDate').val(questDue)
+			  modal.find('#date-picker').val(questDue)
 			})
 		</script>
     </body>
