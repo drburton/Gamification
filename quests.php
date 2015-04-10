@@ -200,12 +200,12 @@
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
-												$t=""
+												$t="";
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
 													  if($k=="title"){
-														$t=$v
+														$t=$v;
 													  }
                                             	      print "<td>$v</td>";
                                             	    }
