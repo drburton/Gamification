@@ -213,12 +213,13 @@
 															  if($k=="title"){
 																$title=$v;
 															  }
-															  elseif($k=="due_date"){
+															  if($k=="due_date"){
 																$due_date=$v;
 															  }
-															  elseif($k=="xp"){
+															  if($k=="xp"){
 																$xp=$v;
-															  }													  
+															  }
+															  print "<td>$v</td>";														  
 															}
 															else{
 																$desc=$v;
