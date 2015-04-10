@@ -227,7 +227,7 @@
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbId=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
                                                 print "</tr>";
 
@@ -305,7 +305,7 @@
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="post">
 					   <div class="form-group">
-                         <input type="text" class="form-control" placeholder="ID" id="dbId" name="dbId">
+                         <input type="text" class="form-control" placeholder="ID" id="dbid" name="dbid">
                        </div>
                        <div class="form-group">
                          <label>Title</label>
@@ -428,10 +428,10 @@
 			  var questDue = button.data('due')
 			  var questXp = button.data('xp')
 			  var questDesc = button.data('desc')
-			  var questDbId = button.data('dbId')
+			  var questDbId = button.data('dbid')
 			  var modal = $(this)
 			  modal.find('#editLabel').text("Edit Quest: "+questId)
-			  modal.find('#dbId').val(questDbId)
+			  modal.find('#dbid').val(questDbId)
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
