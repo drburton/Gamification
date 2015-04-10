@@ -223,7 +223,7 @@
 															}
 															$desc=$v;
 														}
-														print "$id";
+														print "<td>\"I hit the _id\"</td>";
 														$dbid='test';
                                             	    }
 
