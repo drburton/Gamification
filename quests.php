@@ -200,14 +200,17 @@
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, '_id' => false));
-												print "<tr><td>$cursor</td></tr>";
+												$t=""
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
+													  if($k=="title"){
+														$t=$v
+													  }
                                             	      print "<td>$v</td>";
                                             	    }
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=\"Test1\">See Details</button></a></td>
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=\$t\">See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
                                                 print "</tr>";
