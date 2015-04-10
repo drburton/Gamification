@@ -380,9 +380,9 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
           $('#date-picker').datepicker({
-          });
+          });-->
         </script>
         <script type="text/javascript">
           $('#date-picker2').datepicker({
@@ -427,6 +427,7 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('.editDate').val(questDue)
+			  $('#date-picker').datepicker({});
 			})
 		</script>
     </body>
