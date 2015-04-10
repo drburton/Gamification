@@ -274,6 +274,8 @@
                      <p id="detailsTitle">Quest Title</p>
                      <h6>XP</h6>
                      <p id="detailsXp">XXX</p>
+					 <h6>Due Date</h6>
+                     <p id="detailsDue"></p>
                      <h6>Description</h6>
                      <p id="detailsDesc">Details about the quest such as what it entails.</p>
                    </div>
@@ -397,6 +399,7 @@
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
 			  modal.find('#detailsDesc').text(questDesc)
+			  modal.find('#detailsDue').text(questDue)
 			  <!--modal.find('.modal-body input').val(recipient)-->
 			})
 		</script>
