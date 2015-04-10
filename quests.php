@@ -322,7 +322,7 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control"></input>
+                           <input type="text" id="date-picker" class="form-control dueDate"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
@@ -364,7 +364,7 @@
                         <div class="form-group">
                            <label>Due Date</label>
                            <!-- date time picker -->
-                             <input type="text" id="date-picker2" class="form-control" name="due_date"></input>
+                             <input type="text" id="date-picker" class="form-control" name="due_date"></input>
                            <!-- /date time picker -->
                         </div>
                         <div class="form-group">
@@ -396,10 +396,10 @@
           $('#date-picker').datepicker({
           });
         </script>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
           $('#date-picker2').datepicker({
           });
-        </script>
+        </script>-->
 		<script type="text/javascript">
 			$('#seedetails').on('show.bs.modal', function (event) {
 			  var button = $(event.relatedTarget) // Button that triggered the modal
@@ -440,7 +440,7 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  modal.find('#date-picker').val(questDue)
+			  modal.find('.dueDate').val(questDue)
 			})
 		</script>
     </body>
