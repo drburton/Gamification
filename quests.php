@@ -213,18 +213,20 @@
 															  if($k=="title"){
 																$title=$v;
 															  }
-															  if($k=="due_date"){
+															  elseif($k=="due_date"){
 																$due_date=$v;
 															  }
-															  if($k=="xp"){
+															  elseif($k=="xp"){
 																$xp=$v;
-															  }
-															  print "<td>$k: $v</td>";														  
+															  }													  
 															}
-															$desc=$v;
+															else{
+																$desc=$v;
+															}
 														}
-														print "<td>\"a value: \"$v</td>";
-														$dbid='test';
+														else{
+															$dbid=$v;
+														}
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
