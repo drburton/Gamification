@@ -223,7 +223,7 @@
 															}
 															$desc=$v;
 														}
-														$dbid=$v;
+														$dbid='test';
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
