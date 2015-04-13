@@ -442,7 +442,7 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  //$('#date-picker').datepicker({});
-			  //$("#datepicker").datepicker("update", questDue);
+			  $("#datepicker").datepicker("setDate", questDue);
 			  //modal.find('#date-picker').val(questDue)
 			});
 		</script>
