@@ -417,7 +417,7 @@
 			  modal.find('#detailsDesc').text(questDesc)
 			  modal.find('#detailsDue').text(questDue)
 			  <!--modal.find('.modal-body input').val(recipient)-->
-			})
+			});
 			$('#deletequest').on('show.bs.modal', function (event) {
 			  var button = $(event.relatedTarget) // Button that triggered the modal
 			  var questId = button.data('id') // Extract info from data-* attributes
@@ -427,7 +427,7 @@
 			  modal.find('#deleteLabel').text("Delete Quest: "+questId)
 			  modal.find('#deleteTitle').val(questId)
 			  <!--modal.find('.modal-body input').val(recipient)-->
-			})
+			});
 			$('#editquest').on('show.bs.modal', function (event) {
 			  var button = $(event.relatedTarget) // Button that triggered the modal
 			  var questId = button.data('id') // Extract info from data-* attributes
@@ -441,10 +441,10 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  $('#date-picker').datepicker({});
-			  $("#datepicker").datepicker("update", questDue);
-			  //modal.find('#date-picker').val(questDue)
-			})
+			  //$('#date-picker').datepicker({});
+			  //$("#datepicker").datepicker("update", questDue);
+			  modal.find('#date-picker').val(questDue)
+			});
 		</script>
     </body>
 </html>
