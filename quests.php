@@ -443,6 +443,7 @@
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('#date-picker').val(questDue)
 			  $('#date-picker').datepicker(function(e){
+			  e.stopPropagation();
 			  this.focus();});
 			  //$("#datepicker").datepicker("setDate", questDue);
 			});
