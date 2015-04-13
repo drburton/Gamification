@@ -393,10 +393,10 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
           $('#date-picker').datepicker({
           });
-        </script>-->
+        </script>
         <script type="text/javascript">
           $('#date-picker2').datepicker({
           });
@@ -443,7 +443,7 @@
 			  modal.find('#editDesc').val(questDesc)
 			  //$('#date-picker').datepicker({});
 			  //$("#datepicker").datepicker("update", questDue);
-			  modal.find('#date-picker').val(questDue)
+			  //modal.find('#date-picker').val(questDue)
 			});
 		</script>
     </body>
