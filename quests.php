@@ -323,7 +323,7 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control dueDate" name="due_date"></input>
+                           <input type="text" id="date-picker" class="form-control" name="due_date"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
@@ -393,10 +393,10 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
           $('#date-picker').datepicker({
           });
-        </script>
+        </script>-->
         <script type="text/javascript">
           $('#date-picker2').datepicker({
           });
@@ -441,7 +441,9 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  //modal.find('.dueDate').val(questDue)
+			  $(".datepicker").datepicker("update", questDue);
+			  $('#date-picker').datepicker({});
+			  //modal.find('#date-picker').val(questDue)
 			})
 		</script>
     </body>
