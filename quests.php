@@ -409,10 +409,11 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <!--<script type="text/javascript">
-          $('#date-picker').datepicker({
+        <script type="text/javascript">
+          $('#date-picker').datepicker(function(e){
+		  this.focus()
           });
-        </script>-->
+        </script>
         <script type="text/javascript">
           $('#date-picker2').datepicker({
           });
@@ -458,10 +459,7 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('#date-picker').val(questDue)
-			  //$('#date-picker').datepicker({}); function(e){
-			$('#date-picker').datepicker(function(e){
-			this.focus();
-			});
+			  //$('#date-picker').datepicker({});
 			  //$("#datepicker").datepicker("setDate", questDue);
 			});
 		</script>
