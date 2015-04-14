@@ -228,28 +228,6 @@
                           }
 
 
-														// if ($k!='_id'){
-														//   if ($k != "desc"){
-														// 	  if($k=="title"){
-														// 		$title=$v;
-														// 	  }
-														// 	  if($k=="due_date"){
-														// 		$due_date=$v;
-														// 	  }
-														// 	  if($k=="xp"){
-														// 		$xp=$v;
-														// 	  }
-														// 	  print "<td>$v</td>";
-														// 	}
-														// 	else{
-														// 		$desc=$v;
-														// 	}
-														// }
-														// else{
-														// 	$dbid=($v);
-														// }
-
-                                            	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
