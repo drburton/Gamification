@@ -199,7 +199,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => true));
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
 												$title="";
 												$due_date="";
 												$xp="";
@@ -208,27 +208,22 @@
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-														if ($k!='_id'){
-														  if ($k != "desc"){
-															  if($k=="title"){
-																$title=$v;
-															  }
-															  if($k=="due_date"){
-																$due_date=$v;
-															  }
-															  if($k=="xp"){
-																$xp=$v;
-															  }
-															  print "<td>$v</td>";														  
-															}
-															else{
-																$desc=$v;
-															}
+													if ($k != "desc"){
+														if($k=="title"){
+															$title=$v;
 														}
-														else{
-															$dbid=($v);
+														if($k=="due_date"){
+															$due_date=$v;
 														}
-                                            	    }
+														if($k=="xp"){
+															$xp=$v;
+														}
+														print "<td>$v</td>";														  
+													}
+													else{
+														$desc=$v;
+													}
+													}
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
@@ -393,10 +388,10 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
           $('#date-picker').datepicker({
           });
-        </script>-->
+        </script>
         <script type="text/javascript">
           $('#date-picker2').datepicker({
           });
@@ -442,11 +437,6 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('#date-picker').val(questDue)
-			  //$('#date-picker').datepicker({}); function(e){
-			$('#date-picker').datepicker(function(e){
-			this.focus();
-			});
-			  //$("#datepicker").datepicker("setDate", questDue);
 			});
 		</script>
     </body>
