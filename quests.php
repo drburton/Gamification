@@ -222,6 +222,7 @@
 													}
 													else{
 														$desc=$v;
+														print "<td>$desc</td>";
 													}
 													}
 
