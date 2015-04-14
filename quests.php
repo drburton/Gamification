@@ -428,7 +428,7 @@
 			  var questDesc = button.data('desc')
 			  var questDbId = button.data('dbid')
 			  var modal = $(this)
-			  modal.find('#editLabel').val(questId)//.text("Edit Quest: "+questId)
+			  modal.find('#editLabel').text("Edit Quest: "+questId)
 			  modal.find('#current').val(questId)
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
