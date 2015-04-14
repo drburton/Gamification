@@ -226,7 +226,7 @@
 													}
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
                                                 print "</tr>";
 
@@ -304,9 +304,6 @@
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
-					   <div class="form-group">
-                         <input type="text" class="form-control" placeholder="ID" id="current" name="current">
-                       </div>
                        <div class="form-group">
                          <label>Title</label>
                          <input type="text" class="form-control" placeholder="Quest Title" id="editTitle" name="title">
@@ -431,7 +428,7 @@
 			  var questDesc = button.data('desc')
 			  var questDbId = button.data('dbid')
 			  var modal = $(this)
-			  modal.find('#editLabel').text("Edit Quest: "+questId)
+			  modal.find('#editLabel').val(questId)//.text("Edit Quest: "+questId)
 			  modal.find('#current').val(questId)
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
