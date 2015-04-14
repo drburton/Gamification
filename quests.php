@@ -223,12 +223,16 @@
 													else{
 														$desc=$v;
 													}
+													print "</tr>";
+													print "<tr>";
+													print "<td>$v</td>";
+													print "</tr>";
 													}
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
-                                                print "</tr>";
+                                                //print "</tr>";
 
                                             	  }
 
