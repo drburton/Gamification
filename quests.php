@@ -208,7 +208,6 @@
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-<<<<<<< HEAD
 													if ($k != "desc"){
 														if($k=="title"){
 															$title=$v;
@@ -225,28 +224,6 @@
 														$desc=$v;
 													}
 													}
-=======
-
-													  if ($k != "desc"){
-														  if($k=="title"){
-															$title=$v;
-														  }
-														  if($k=="due_date"){
-															$due_date=$v;
-														  }
-														  if($k=="xp"){
-															$xp=$v;
-														  }
-														  print "<td>$v</td>";
-														}
-                            else{
-                              $desc=$v;
-                            }
-
-                          }
-
-
->>>>>>> origin/master
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
@@ -323,7 +300,7 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
-
+				   
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
@@ -341,7 +318,7 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control"></input>
+                           <input type="text" id="date-picker" class="form-control" name="due_date"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
@@ -412,15 +389,11 @@
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
-<<<<<<< HEAD
           $('#date-picker').datepicker({
-=======
-          $('#date-picker').datepicker{
->>>>>>> origin/master
           });
         </script>
         <script type="text/javascript">
-          $('#date-picker2').datepicker{
+          $('#date-picker2').datepicker({
           });
         </script>
 		<script type="text/javascript">
