@@ -221,7 +221,12 @@
 														  }
 														  print "<td>$v</td>";
 														}
-														$desc=$v;
+                            else{
+                              $desc=$v;
+                            }
+
+                          }
+
 
 														// if ($k!='_id'){
 														//   if ($k != "desc"){
@@ -410,12 +415,11 @@
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
-          $('#date-picker').datepicker(function(e){
-		  this.focus()
+          $('#date-picker').datepicker{
           });
         </script>
         <script type="text/javascript">
-          $('#date-picker2').datepicker({
+          $('#date-picker2').datepicker{
           });
         </script>
 		<script type="text/javascript">
@@ -459,8 +463,6 @@
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
 			  modal.find('#date-picker').val(questDue)
-			  //$('#date-picker').datepicker({});
-			  //$("#datepicker").datepicker("setDate", questDue);
 			});
 		</script>
     </body>
