@@ -223,26 +223,26 @@
 														}
 														$desc=$v;
 
-														if ($k!='_id'){
-														  if ($k != "desc"){
-															  if($k=="title"){
-																$title=$v;
-															  }
-															  if($k=="due_date"){
-																$due_date=$v;
-															  }
-															  if($k=="xp"){
-																$xp=$v;
-															  }
-															  print "<td>$v</td>";
-															}
-															else{
-																$desc=$v;
-															}
-														}
-														else{
-															$dbid=($v);
-														}
+														// if ($k!='_id'){
+														//   if ($k != "desc"){
+														// 	  if($k=="title"){
+														// 		$title=$v;
+														// 	  }
+														// 	  if($k=="due_date"){
+														// 		$due_date=$v;
+														// 	  }
+														// 	  if($k=="xp"){
+														// 		$xp=$v;
+														// 	  }
+														// 	  print "<td>$v</td>";
+														// 	}
+														// 	else{
+														// 		$desc=$v;
+														// 	}
+														// }
+														// else{
+														// 	$dbid=($v);
+														// }
 
                                             	    }
 
