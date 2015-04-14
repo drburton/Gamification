@@ -199,7 +199,7 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => true));
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
 												$title="";
 												$due_date="";
 												$xp="";
@@ -208,7 +208,7 @@
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-<<<<<<< HEAD
+
 													  if ($k != "desc"){
 														  if($k=="title"){
 															$title=$v;
@@ -222,7 +222,7 @@
 														  print "<td>$v</td>";
 														}
 														$desc=$v;
-=======
+
 														if ($k!='_id'){
 														  if ($k != "desc"){
 															  if($k=="title"){
@@ -234,7 +234,7 @@
 															  if($k=="xp"){
 																$xp=$v;
 															  }
-															  print "<td>$v</td>";														  
+															  print "<td>$v</td>";
 															}
 															else{
 																$desc=$v;
@@ -243,7 +243,7 @@
 														else{
 															$dbid=($v);
 														}
->>>>>>> origin/master
+
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
@@ -321,7 +321,7 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
-				   
+
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
