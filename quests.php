@@ -217,9 +217,9 @@
 														  if($k=="xp"){
 															$xp=$v;
 														  }
-														  print "<td>$v</td>";														  
+														  print "<td>$v</td>";
 														}
-														$desc=$v;		
+														$desc=$v;
                                             	    }
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=#due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
@@ -306,7 +306,7 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control"></input>
+                           <input type="text" id="date-picker" class="form-control" name="due_date"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
