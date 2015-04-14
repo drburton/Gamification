@@ -199,14 +199,16 @@
 
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
-                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
+                                            	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => true));
 												$title="";
 												$due_date="";
 												$xp="";
 												$desc="";
+												$dbid="";
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
+<<<<<<< HEAD
 													  if ($k != "desc"){
 														  if($k=="title"){
 															$title=$v;
@@ -220,11 +222,33 @@
 														  print "<td>$v</td>";
 														}
 														$desc=$v;
+=======
+														if ($k!='_id'){
+														  if ($k != "desc"){
+															  if($k=="title"){
+																$title=$v;
+															  }
+															  if($k=="due_date"){
+																$due_date=$v;
+															  }
+															  if($k=="xp"){
+																$xp=$v;
+															  }
+															  print "<td>$v</td>";														  
+															}
+															else{
+																$desc=$v;
+															}
+														}
+														else{
+															$dbid=($v);
+														}
+>>>>>>> origin/master
                                             	    }
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=#due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\">Edit</button></a></td>
-                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\">Delete</button></a></td>";
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-dbid=$dbid data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
+                                                <td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#deletequest\" data-id=$title>Delete</button></a></td>";
                                                 print "</tr>";
 
                                             	  }
@@ -247,14 +271,17 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Delete Quest</h4>
+                    <h4 class="modal-title" id="deleteLabel">Delete Quest</h4>
                   </div>
                   <div class="modal-body">
                     <p>Are you sure you want to delete this quest forever?</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <form action="deletequest.php" method="POST"><button type="button submit" class="btn btn-danger">Delete Quest Forever</button></form>
+                    <form action="deletequest.php" method="POST">
+					<input type="text" id="deleteTitle" name="deleteTitle" hidden="true"></input>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
+					</form>
                   </div>
                 </div>
               </div>
@@ -274,6 +301,8 @@
                      <p id="detailsTitle">Quest Title</p>
                      <h6>XP</h6>
                      <p id="detailsXp">XXX</p>
+					 <h6>Due Date</h6>
+                     <p id="detailsDue"></p>
                      <h6>Description</h6>
                      <p id="detailsDesc">Details about the quest such as what it entails.</p>
                    </div>
@@ -290,18 +319,22 @@
                  <div class="modal-content">
                    <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="myModalLabel">Edit Quest</h4>
+                     <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
+				   
                    <div class="modal-body">
                      <!-- Create Quest Form -->
-                     <form action="quests.php" method="post">
+                     <form action="editquest.php" method="POST">
+					   <div class="form-group">
+                         <input type="text" class="form-control" placeholder="ID" id="current" name="current">
+                       </div>
                        <div class="form-group">
                          <label>Title</label>
-                         <input type="text" class="form-control" placeholder="Quest Title" name="title">
+                         <input type="text" class="form-control" placeholder="Quest Title" id="editTitle" name="title">
                        </div>
                        <div class="form-group">
                          <label>XP</label>
-                         <input type="number" class="form-control" placeholder="100" name="xp">
+                         <input type="number" class="form-control" placeholder="100" id="editXp" name="xp">
                        </div>
                       <div class="form-group">
                          <label>Due Date</label>
@@ -311,15 +344,16 @@
                       </div>
                        <div class="form-group">
                          <label>Description</label>
-                         <textarea class="form-control" rows="3" name="desc"></textarea>
+                         <textarea class="form-control" rows="3" id="editDesc" name="desc"></textarea>
                        </div>
-                     </form>
+                     <!--</form>-->
                      <!-- /Create Quest Form -->
                    </div>
                    <div class="modal-footer">
                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                      <button type="button submit" class="btn btn-primary">Save Changes</button>
                    </div>
+				   </form>
                  </div>
                </div>
              </div>
@@ -375,10 +409,10 @@
         <!-- AdminLTE for demo purposes -->
         <!-- Date-time picker -->
         <script src="../js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
           $('#date-picker').datepicker({
           });
-        </script>
+        </script>-->
         <script type="text/javascript">
           $('#date-picker2').datepicker({
           });
@@ -397,8 +431,39 @@
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
 			  modal.find('#detailsDesc').text(questDesc)
+			  modal.find('#detailsDue').text(questDue)
 			  <!--modal.find('.modal-body input').val(recipient)-->
-			})
+			});
+			$('#deletequest').on('show.bs.modal', function (event) {
+			  var button = $(event.relatedTarget) // Button that triggered the modal
+			  var questId = button.data('id') // Extract info from data-* attributes
+			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+			  var modal = $(this)
+			  modal.find('#deleteLabel').text("Delete Quest: "+questId)
+			  modal.find('#deleteTitle').val(questId)
+			  <!--modal.find('.modal-body input').val(recipient)-->
+			});
+			$('#editquest').on('show.bs.modal', function (event) {
+			  var button = $(event.relatedTarget) // Button that triggered the modal
+			  var questId = button.data('id') // Extract info from data-* attributes
+			  var questDue = button.data('due')
+			  var questXp = button.data('xp')
+			  var questDesc = button.data('desc')
+			  var questDbId = button.data('dbid')
+			  var modal = $(this)
+			  modal.find('#editLabel').text("Edit Quest: "+questId)
+			  modal.find('#current').val(questId)
+			  modal.find('#editTitle').val(questId)
+			  modal.find('#editXp').val(questXp)
+			  modal.find('#editDesc').val(questDesc)
+			  modal.find('#date-picker').val(questDue)
+			  //$('#date-picker').datepicker({}); function(e){
+			$('#date-picker').datepicker(function(e){
+			this.focus();
+			});
+			  //$("#datepicker").datepicker("setDate", questDue);
+			});
 		</script>
     </body>
 </html>
