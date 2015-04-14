@@ -232,6 +232,7 @@
                                                 print "</tr>";
 
                                             	  }
+												  print"<tr><td>$desc</td><td>$title</td></tr>"
 
 
                                              ?>
