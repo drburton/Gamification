@@ -307,7 +307,7 @@
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
                         <div class="form-group">
-                         <input type="text" hidden="true" class="form-control" placeholder="Quest Title" id="oldTitle" name="oldTitle">
+                         <input type="hidden" class="form-control" placeholder="Quest Title" id="oldTitle" name="oldTitle">
                        </div>
                        <div class="form-group">
                          <label>Title</label>
