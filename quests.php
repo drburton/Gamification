@@ -306,6 +306,9 @@
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
+                        <div class="form-group">
+                         <input type="text" class="form-control" placeholder="Quest Title" id="oldTitle" name="oldTitle">
+                       </div>
                        <div class="form-group">
                          <label>Title</label>
                          <input type="text" class="form-control" placeholder="Quest Title" id="editTitle" name="title">
@@ -447,7 +450,7 @@
               }
 			  var modal = $(this)
 			  modal.find('#editLabel').text("Edit Quest: "+questId)
-			  modal.find('#current').val(questId)
+			  modal.find('#oldTitle').val(questId)
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
