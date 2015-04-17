@@ -232,7 +232,7 @@
                                                 print "</tr>";
 
                                             	  }
-                                                  $var = str_replace(" ","_",$title)
+                                                  $var = str_replace(" ","_","Hello World!")
 												  print"<tr><td>$desc</td><td>$var</td></tr>"
 
 
