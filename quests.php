@@ -232,6 +232,7 @@
                                                 print "</tr>";
 
                                             	  }
+                                                  str_replace(" ","_",$title)
 												  print"<tr><td>$desc</td><td>$title</td></tr>"
 
 
