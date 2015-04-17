@@ -317,7 +317,7 @@
                       <div class="form-group">
                          <label>Due Date</label>
                          <!-- date time picker -->
-                           <input type="text" id="date-picker" class="form-control" name="due_date"></input>
+                           <input type="text" id="date-picker" class="form-control datePicker" name="due_date"></input>
                          <!-- /date time picker -->
                       </div>
                        <div class="form-group">
@@ -404,10 +404,10 @@
 			  var questDesc = button.data('desc')
               while (questId.search("_")!=-1){
                 questId=questId.replace("_"," ")
-              }
-              while (questDesc.search("_")!=-1){
-              questDesc=questDesc.replace("_"," ")
-          }
+                }
+                while (questDesc.search("_")!=-1){
+                    questDesc=questDesc.replace("_"," ")
+                }
 			  //console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -442,7 +442,7 @@
 			  modal.find('#editTitle').val(questId)
 			  modal.find('#editXp').val(questXp)
 			  modal.find('#editDesc').val(questDesc)
-			  modal.find('#date-picker').val(questDue)
+			  modal.find('.datePicker').val(questDue)
 			});
 		</script>
     </body>
