@@ -424,6 +424,9 @@
 			  var questId = button.data('id') // Extract info from data-* attributes
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              while (questId.search("_")!=-1){
+                questId=questId.replace("_"," ")
+                }
 			  var modal = $(this)
 			  modal.find('#deleteLabel').text("Delete Quest: "+questId)
 			  modal.find('#deleteTitle').val(questId)
@@ -436,6 +439,12 @@
 			  var questXp = button.data('xp')
 			  var questDesc = button.data('desc')
 			  var questDbId = button.data('dbid')
+              while (questId.search("_")!=-1){
+                questId=questId.replace("_"," ")
+              }
+              while (questDesc.search("_")!=-1){
+                questDesc=questDesc.replace("_"," ")
+              }
 			  var modal = $(this)
 			  modal.find('#editLabel').text("Edit Quest: "+questId)
 			  modal.find('#current').val(questId)
