@@ -200,7 +200,7 @@
                                             	$results = array('course_id' => 'DET 210');
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
-                                                $cursor=$cursor::sort(array("title"));
+                                                $cursor=$cursor->sort(array("title"=>1));
 												$title="";
 												$due_date="";
 												$xp="";
