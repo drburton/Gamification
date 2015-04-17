@@ -225,6 +225,7 @@
 														print "<td>$desc</td>";
 													}
 													}
+                                                    $title = str_replace(" ","_",$title);
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
@@ -232,8 +233,6 @@
                                                 print "</tr>";
 
                                             	  }
-                                                  $var = str_replace(" ","_",$title);
-												  print"<tr><td>$desc</td><td>$var</td></tr>"
 
 
                                              ?>
@@ -403,7 +402,8 @@
 			  var questDue = button.data('due')
 			  var questXp = button.data('xp')
 			  var questDesc = button.data('desc')
-			  console.log(questDesc)
+              questId.replace("_"," ")
+			  //console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
