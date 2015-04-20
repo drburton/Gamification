@@ -34,7 +34,7 @@
     <body class="skin-blue">
     	<h1>Test</h1>
     	<?php
-    		print"<p>$course</p>"
+    		print"<p>$course</p>";
     	?>
     </body>
     </html>
