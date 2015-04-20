@@ -1,12 +1,11 @@
 <?php
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
-    $collection = new MongoCollection( $db, "users-courses");
+    $collection = new MongoCollection( $db, "courses");
     $collection2 = new MongoCollection( $db, "quests");
     $course=$_GET["course"];
     $course = str_replace("_"," ",$course);
     //console.log(array("course" => $_GET["course"]));
-    $test="Test Line";
 
     //header("Location: http://gamedev.garrettyamada.com/quests.php");
 ?>
@@ -33,10 +32,24 @@
         <![endif]-->
     </head>
     <body class="skin-blue">
-    	<h1>Test</h1>
-    	<?php
-    		print"<p>$course</p>";
-    		print"<p>$test</p>";
-    	?>
+        <?php
+            $results = array('course_id' => 'jad00a');
+            $count=1;
+            $cursor = $collection->find($results);
+            $cursor->fields(array("course_id" => true));
+            foreach ($cursor as $doc) {
+                foreach ($doc as $k => $v) {
+                    if($count%2==0){
+                        $new = str_replace(" ","_",$v);
+                        print "<li><a href=\"test.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                    }
+
+                    $count++;
+
+                }
+
+            }
+            print"<h1>Test</h1>";
+    		print"<p>$course</p>";;
     </body>
     </html>

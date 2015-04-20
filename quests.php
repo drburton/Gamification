@@ -224,6 +224,7 @@
 													}
 													else{
 														$desc=$v;
+                                                        print "<td>$v</td>";
 													}
 													}
                                                     $title = str_replace(" ","_",$title);
