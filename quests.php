@@ -122,7 +122,8 @@
                                     foreach ($doc as $k => $v) {
 
                                       if($count%2==0){
-                                        print "<li><a href=\"test.php?course=" . $v . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                                        $new = str_replace(" ","_",$v);
+                                        print "<li><a href=\"test.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
 
                                       $count++;
