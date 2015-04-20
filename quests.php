@@ -121,9 +121,9 @@
 
                                     foreach ($doc as $k => $v) {
 
-                                      //if($count%2==0){
-                                        print "<li><a href=\"#\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
-                                      //}
+                                      if($count%2==0){
+                                        print "<li><a href=\"test.php/course='. $v .'\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                                      }
 
                                       $count++;
 
