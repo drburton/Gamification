@@ -34,5 +34,6 @@
         <![endif]-->
     </head>
     <body class="skin-blue">
+    	<h1>Test</h1>
     </body>
     </html>
