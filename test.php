@@ -4,7 +4,7 @@
     $collection = new MongoCollection( $db, "users-courses");
     $collection2 = new MongoCollection( $db, "quests");
     $course=$_GET["course"];
-    $course = str_replace(" ","_",$course);
+    $course = str_replace("%20"," ",$course);
     //console.log(array("course" => $_GET["course"]));
 
     //header("Location: http://gamedev.garrettyamada.com/quests.php");
