@@ -6,6 +6,7 @@
     $course=$_GET["course"];
     $course = str_replace("%20"," ",$course);
     //console.log(array("course" => $_GET["course"]));
+    $test="Test Line";
 
     //header("Location: http://gamedev.garrettyamada.com/quests.php");
 ?>
@@ -35,6 +36,7 @@
     	<h1>Test</h1>
     	<?php
     		print"<p>$course</p>";
+    		print"<p>$test</p>";
     	?>
     </body>
     </html>
