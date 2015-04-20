@@ -4,7 +4,7 @@
     $collection2 = new MongoCollection( $db, "quests");
 
     console.log(array("title" => $_POST["oldTitle"]));
-    print($_POST["due_date"]);
+    print'$_POST["desc"]';
     print"This is a \ntest!!!";
 
     $newquest=array('$set'=>array('title' => $_POST["title"], 'xp' => (int)$_POST["xp"],  'due_date' => $_POST["due_date"], 'desc' => $_POST["desc"], 'course_id'=>"DET 210"));
