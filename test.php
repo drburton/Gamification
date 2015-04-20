@@ -6,8 +6,6 @@
     $course=$_GET["course"];
     $course = str_replace(" ","_",$course);
     //console.log(array("course" => $_GET["course"]));
-    console.log($course);
-    console.log("This is a test!!!");
 
     //header("Location: http://gamedev.garrettyamada.com/quests.php");
 ?>
@@ -35,5 +33,8 @@
     </head>
     <body class="skin-blue">
     	<h1>Test</h1>
+    	<?php
+    		print"<p>$course</p>"
+    	?>
     </body>
     </html>
