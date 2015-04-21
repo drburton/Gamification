@@ -1,10 +1,17 @@
 <?php
-function newUser($login, $password)
+function newUser($login, $name, $password)
+// old function--{
+// 	global $coll;
+// 	$coll->insert(array('login' => $login, 'password' => md5($password)));
+// 	return true;
+// }
 {
 	global $coll;
-	$coll->insert(array('login' => $login, 'password' => md5($password)));
+	$coll->insert(array('_id' => $login, 'name'=>$name,'password' => md5($password)));
 	return true;
 }
+
+
 function checkPass($login, $password) 
 {
 	global $coll;
