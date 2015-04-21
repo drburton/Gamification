@@ -288,7 +288,8 @@
 					 <h6>Due Date</h6>
                      <p id="detailsDue"></p>
                      <h6>Description</h6>
-                     <p id="detailsDesc">Details about the quest such as what it entails.</p>
+                     <!--<p id="detailsDesc">Details about the quest such as what it entails.</p>-->
+                     <textarea id="detailsDesc" readonly="true"></textarea>
                    </div>
                    <div class="modal-footer">
                    </div>
@@ -416,7 +417,7 @@
               }
                 while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~","\r\n")
+                    questDesc=questDesc.replace("~","\n")
                     //console.log("in loop")
                 }
 			  //console.log(questDesc)
