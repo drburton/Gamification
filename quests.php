@@ -415,7 +415,7 @@
                     questDesc=questDesc.replace("_"," ")
                 }
                 while (questDesc.search("**")!=-1){
-                    questDesc=questDesc.replace("**","\n")
+                    questDesc=questDesc.replace("**","AA")//"\n")
                 }
 			  console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
