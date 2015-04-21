@@ -414,10 +414,9 @@
               while (questDesc.search("_")!=-1){
                 questDesc=questDesc.replace("_"," ")
               }
-              var newline = String.fromCharCode(13, 10);
               while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~",newline)
+                    questDesc=questDesc.replace("~","<br/>")
                     //console.log("in loop")
                 }
 			  //console.log(questDesc)
