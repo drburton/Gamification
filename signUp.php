@@ -10,7 +10,7 @@ if(isset($_POST["submit"])){
 	else{
     $query = $coll->findOne(array('_id' => $_POST['login']));
   	if(empty($query)){
-  	 	newUser($_POST["login"], $_POST["name"], $_POST["password"]);
+  	 	newUser($_POST["login"], $_POST["password"]);
   	 	cleanMemberSession($_POST["login"], $_POST["password"]);
   	 	header("Location: members.php");
     }
@@ -50,10 +50,6 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                         <input type="text" name="login" class="form-control" placeholder="ACU ID" 
                         value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your name" 
-                        value="<?php print isset($_POST["name"]) ? $_POST["name"] : "" ; ?>"maxlength="25">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password"/>
