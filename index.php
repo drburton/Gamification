@@ -1,5 +1,5 @@
 <?php
-    //include_once("config.php");
+    include_once"config.php";
     //if (loggedIn()){
     //    header("Location: http://gamedev.garrettyamada.com/dashboard.php");
     //}
