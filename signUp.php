@@ -4,9 +4,9 @@ if(loggedIn()){
   header('Location: dashboard.php');
 }
 if(isset($_POST["submit"])){
-	// if(!($_POST["password"] == $_POST["password2"])){
-	// 	print "<p>Your passwords did not match</p>";
- //  }
+	 if(!($_POST["password"] == $_POST["password2"])){
+	 	print "<p>Your passwords did not match</p>";
+   }
 	
  //  $query = $coll->findOne(array('login' => $_POST['login']));
 	// if(empty($query)){
