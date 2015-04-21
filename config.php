@@ -9,9 +9,9 @@ $coll = new MongoCollection( $db, "users");
 // $coll = $db->users;
 //include_once("functions.php");
 session_start();
-//session_register("login");
-//session_register("password");
-//session_register("loggedIn");
+session_register("login");
+session_register("password");
+session_register("loggedIn");
 ?>
 <!DOCTYPE html>
 <html>
