@@ -407,7 +407,7 @@
 			  var questId = button.data('id') // Extract info from data-* attributes
 			  var questDue = button.data('due')
 			  var questXp = button.data('xp')
-			  var questDesc = button.data('desc')
+			  var questDesc = "<p>"+button.data('desc')
               while (questId.search("_")!=-1){
                 questId=questId.replace("_"," ")
                 }
@@ -415,8 +415,9 @@
                     questDesc=questDesc.replace("_"," ")
                 }
                 //while (questDesc.search("**")!=-1){
-                    questDesc=questDesc.replace("**","\n")
+                    questDesc=questDesc.replace("**","</p><p>")//"\r\n")
                 //}
+              questDesc=questDesc+"</p>"  
 			  console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
