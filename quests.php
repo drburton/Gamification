@@ -416,7 +416,7 @@
               }
                 //while (questDesc.search("**")!=-1){
                     console.log(questDesc.search("**"))
-                    questDesc=questDesc.replace("**","\r\n")
+                    //questDesc=questDesc.replace("**","\r\n")
                     //console.log("in loop")
                 //}
 			  console.log(questDesc)
