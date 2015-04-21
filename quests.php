@@ -416,11 +416,11 @@
               }
                 //while (questDesc.search("**")!=-1){
                     questDesc=questDesc.replace("**","\r\n")
-                    var star = questDesc.search("**")
+                    //var star = questDesc.search("**")
                     //console.log("in loop")
                 //}
 			  console.log(questDesc)
-              console.log(star)
+              //console.log(star)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
