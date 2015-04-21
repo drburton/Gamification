@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("config.php");
 if(loggedIn()){
   header('Location: dashboard.php');
@@ -6,7 +6,6 @@ if(loggedIn()){
 if(isset($_POST["submit"])){
 	if(!($_POST["password"] == $_POST["password2"])){
 		print "<p>Your passwords did not match</p>";
-		exit;
   }
 	
   $query = $coll->findOne(array('login' => $_POST['login']));

@@ -1,4 +1,4 @@
-<?
+<?php
 function newUser($login, $password)
 {
 	global $coll;
