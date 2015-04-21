@@ -288,8 +288,7 @@
 					 <h6>Due Date</h6>
                      <p id="detailsDue"></p>
                      <h6>Description</h6>
-                     <!--<p id="detailsDesc">Details about the quest such as what it entails.</p>-->
-                     <textarea id="detailsDesc" class="form-control" readonly="true" rows="3" disabled="true"></textarea>
+                     <p id="detailsDesc">Details about the quest such as what it entails.</p>
                    </div>
                    <div class="modal-footer">
                    </div>
@@ -415,9 +414,10 @@
               while (questDesc.search("_")!=-1){
                 questDesc=questDesc.replace("_"," ")
               }
-                while (questDesc.search("~")!=-1){
+              var newline = String.fromCharCode(13, 10);
+              while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~","\n")
+                    questDesc=questDesc.replace("~",newline)
                     //console.log("in loop")
                 }
 			  //console.log(questDesc)
@@ -427,7 +427,7 @@
 			  modal.find('#detailsLabel').text(questId)
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
-			  modal.find('#detailsDesc').text(questDesc)
+			  modal.find('#detailsDesc').textContent(questDesc)
 			  modal.find('#detailsDue').text(questDue)
 			  //<!--modal.find('.modal-body input').val(recipient)-->
 			});
