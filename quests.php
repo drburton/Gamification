@@ -410,16 +410,17 @@
 			  var questDesc = "<p>"+button.data('desc')
               while (questId.search("_")!=-1){
                 questId=questId.replace("_"," ")
-                }
-                while (questDesc.search("_")!=-1){
-                    questDesc=questDesc.replace("_"," ")
-                }
-                console.log(questDesc.search("**"))
+              }
+              while (questDesc.search("_")!=-1){
+                questDesc=questDesc.replace("_"," ")
+              }
                 //while (questDesc.search("**")!=-1){
-                    //questDesc=questDesc.replace("**","\r\n")
+                    questDesc=questDesc.replace("**","\r\n")
+                    var star = questDesc.search("**")
                     //console.log("in loop")
                 //}
 			  console.log(questDesc)
+              console.log(star)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
