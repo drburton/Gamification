@@ -289,7 +289,7 @@
                      <p id="detailsDue"></p>
                      <h6>Description</h6>
                      <!--<p id="detailsDesc">Details about the quest such as what it entails.</p>-->
-                     <textarea id="detailsDesc" readonly="true"></textarea>
+                     <textarea id="detailsDesc" readonly="true" rows="3" disabled="true"></textarea>
                    </div>
                    <div class="modal-footer">
                    </div>
