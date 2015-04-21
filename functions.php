@@ -29,7 +29,7 @@ function flushMemberSession()
 }
 function loggedIn()
 {
-	if($_SESSION['loggedIn']){
+	if($_SESSION['loggedIn']==true){
 	  return true;
 	}
 	else{
