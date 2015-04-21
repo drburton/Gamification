@@ -456,6 +456,11 @@
               while (questDesc.search("_")!=-1){
                 questDesc=questDesc.replace("_"," ")
               }
+              while (questDesc.search("~")!=-1){
+                    //console.log(questDesc.search("~"))
+                    questDesc=questDesc.replace("~","\r\n")
+                    //console.log("in loop")
+                }
 			  var modal = $(this)
 			  modal.find('#editLabel').text("Edit Quest: "+questId)
 			  modal.find('#oldTitle').val(questId)
