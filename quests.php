@@ -416,7 +416,7 @@
               }
                 while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~","&#10;")
+                    questDesc=questDesc.replace("~","\r\n")
                     //console.log("in loop")
                 }
 			  //console.log(questDesc)
@@ -426,7 +426,7 @@
 			  modal.find('#detailsLabel').text(questId)
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
-			  modal.find('#detailsDesc').text(questDesc)
+			  modal.find('#detailsDesc').val(questDesc)
 			  modal.find('#detailsDue').text(questDue)
 			  //<!--modal.find('.modal-body input').val(recipient)-->
 			});
