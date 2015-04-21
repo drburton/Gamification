@@ -427,7 +427,7 @@
 			  modal.find('#detailsLabel').text(questId)
 			  modal.find('#detailsTitle').text(questId)
 			  modal.find('#detailsXp').text(questXp)
-			  modal.find('#detailsDesc').textContent(questDesc)
+			  modal.find('#detailsDesc').html(questDesc)
 			  modal.find('#detailsDue').text(questDue)
 			  //<!--modal.find('.modal-body input').val(recipient)-->
 			});
