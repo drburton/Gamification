@@ -6,18 +6,18 @@ if(loggedIn()){
 if(isset($_POST["submit"])){
 	if(!($_POST["password"] == $_POST["password2"])){
 	 print "<p>Your passwords did not match</p>";
-   exit;
-  }
-	
-  $query = $coll->findOne(array('login' => $_POST['login']));
-	if(empty($query)){
-	 	newUser($_POST["login"], $_POST["password"]);
-	 	cleanMemberSession($_POST["login"], $_POST["password"]);
-	 	header("Location: members.php");
   }
 	else{
-	  print '<p>Username already exists, please choose another username.</p>';
-	}
+    $query = $coll->findOne(array('login' => $_POST['login']));
+  	if(empty($query)){
+  	 	newUser($_POST["login"], $_POST["password"]);
+  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
+  	 	header("Location: members.php");
+    }
+  	else{
+  	  print '<p>Username already exists, please choose another username.</p>';
+  	}
+  }
 }
   print"<p>Hello</p>"
 ?>
