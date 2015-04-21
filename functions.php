@@ -9,9 +9,9 @@ function checkPass($login, $password)
 {
 	global $coll;
 	$res = $coll->findOne(array('login' => $login, 'password' => md5($password)));
-	if($res):
+	if($res){
 	return true;
-	endif;
+	}
 }
 function cleanMemberSession($login, $password)
 {
@@ -29,10 +29,11 @@ function flushMemberSession()
 }
 function loggedIn()
 {
-	if($_SESSION['loggedIn']):
+	if($_SESSION['loggedIn']){
 	  return true;
-	else:
+	}
+	else{
 	  return false;
-	endif;
+	}
 }
 ?>
