@@ -7,17 +7,17 @@ $coll = new MongoCollection( $db, "users");
 // $m    = new Mongo();
 // $db   = $m->test;
 // $coll = $db->users;
-//include_once("functions.php");
+include_once("functions.php");
 session_start();
 $_SESSION["login"]=null;
 $_SESSION["password"]=null;
 $_SESSION["loggedIn"]=null;
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
   <head>
   </head>
   <body>
   	<h1>Hello</h1>
   </body>
-<html>
+<html>-->
