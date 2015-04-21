@@ -10,7 +10,7 @@ function checkPass($login, $password)
 	global $coll;
 	$res = $coll->findOne(array('login' => $login, 'password' => md5($password)));
 	if($res){
-	return true;
+		return true;
 	}
 }
 function cleanMemberSession($login, $password)
