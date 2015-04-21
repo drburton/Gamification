@@ -413,6 +413,7 @@
                 }
                 while (questDesc.search("_")!=-1){
                     questDesc=questDesc.replace("_"," ")
+                    questDesc=questDesc.replace("**","\r\n")
                 }
 			  //console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
