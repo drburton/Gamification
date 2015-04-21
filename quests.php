@@ -415,7 +415,7 @@
                 questDesc=questDesc.replace("_"," ")
               }
                 //while (questDesc.search("**")!=-1){
-                    console.log(questDesc.search("**"))
+                    console.log(questDesc.search("~"))
                     //questDesc=questDesc.replace("**","\r\n")
                     //console.log("in loop")
                 //}
