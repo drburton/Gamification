@@ -407,7 +407,7 @@
 			  var questId = button.data('id') // Extract info from data-* attributes
 			  var questDue = button.data('due')
 			  var questXp = button.data('xp')
-			  var questDesc = "<p>"+button.data('desc')
+			  var questDesc = button.data('desc')
               while (questId.search("_")!=-1){
                 questId=questId.replace("_"," ")
               }
@@ -416,7 +416,7 @@
               }
                 //while (questDesc.search("**")!=-1){
                     questDesc=questDesc.replace("**","\r\n")
-                    //var star = questDesc.search("**")
+                    var star = questDesc.search("**")
                     //console.log("in loop")
                 //}
 			  console.log(questDesc)
