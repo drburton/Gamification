@@ -8,7 +8,7 @@ $coll = new MongoCollection( $db, "users");
 // $db   = $m->test;
 // $coll = $db->users;
 //include_once("functions.php");
-//session_start();
+session_start();
 //session_register("login");
 //session_register("password");
 //session_register("loggedIn");
