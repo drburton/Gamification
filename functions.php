@@ -1,5 +1,5 @@
 <?php
-function newUser($login, $name, $password)
+function newUser($login, $password)
 // old function--{
 // 	global $coll;
 // 	$coll->insert(array('login' => $login, 'password' => md5($password)));
@@ -7,7 +7,7 @@ function newUser($login, $name, $password)
 // }
 {
 	global $coll;
-	$coll->insert(array('_id' => $login, 'name'=>$name,'password' => md5($password)));
+	$coll->insert(array('_id' => $login, 'password' => md5($password)));
 	return true;
 }
 
