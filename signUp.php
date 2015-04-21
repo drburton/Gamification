@@ -17,6 +17,7 @@ if(isset($_POST["submit"])){
 	// else{
 	//   print '<p>Username already exists, please choose another username.</p>';
 	// }
+}
   print"<p>Hello</p>"
 ?>
 
