@@ -288,7 +288,7 @@
 					 <h6>Due Date</h6>
                      <p id="detailsDue"></p>
                      <h6>Description</h6>
-                     <p id="detailsDesc">Details about the quest such as what it entails.</p>
+                     <pre><p id="detailsDesc">Details about the quest such as what it entails.</p></pre>
                    </div>
                    <div class="modal-footer">
                    </div>
