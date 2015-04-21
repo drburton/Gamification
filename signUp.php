@@ -8,7 +8,6 @@ if(isset($_POST["submit"])){
 		echo "<p>Your passwords did not match</p>";
 		exit;
   }
-}
 	
   $query = $coll->findOne(array('login' => $_POST['login']));
 	if(empty($query)){
