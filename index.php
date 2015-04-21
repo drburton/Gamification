@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <button type="button" class="btn bg-primary btn-block"><a href="signUp.php" style="color:white;">Sign Up</a></button>
+                    <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block">Sign Up</button></a>
                     <button type="submit" class="btn bg-primary btn-block">Sign me in</button>
                 </div>
             </form>
