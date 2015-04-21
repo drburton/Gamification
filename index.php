@@ -1,3 +1,10 @@
+<?
+    include_once("config.php");
+    if (loggedIn()){
+        header("Location: http://gamedev.garrettyamada.com/dashboard.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html class="bg-black">
     <head>
@@ -32,6 +39,7 @@
                     </div>
                 </div>
                 <div class="footer">
+                    <button class="btn bg-primary btn-block"><a href="signUp.php">Sign Up</a></button>
                     <button type="submit" class="btn bg-primary btn-block">Sign me in</button>
                 </div>
             </form>
