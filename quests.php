@@ -416,7 +416,7 @@
               }
                 while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~","\n")
+                    questDesc=questDesc.replace("~","&#10;")
                     //console.log("in loop")
                 }
 			  //console.log(questDesc)
@@ -428,7 +428,7 @@
 			  modal.find('#detailsXp').text(questXp)
 			  modal.find('#detailsDesc').text(questDesc)
 			  modal.find('#detailsDue').text(questDue)
-			  <!--modal.find('.modal-body input').val(recipient)-->
+			  //<!--modal.find('.modal-body input').val(recipient)-->
 			});
 			$('#deletequest').on('show.bs.modal', function (event) {
 			  var button = $(event.relatedTarget) // Button that triggered the modal
