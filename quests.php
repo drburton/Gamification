@@ -228,7 +228,7 @@
 													}
                                                     $title = str_replace(" ","_",$title);
                                                     $desc = str_replace(" ","_",$desc);
-                                                    print "<td>$desc</td>";
+                                                    //print "<td>$desc</td>";
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
@@ -416,10 +416,10 @@
               }
                 while (questDesc.search("~")!=-1){
                     //console.log(questDesc.search("~"))
-                    questDesc=questDesc.replace("~","\r\n")
+                    questDesc=questDesc.replace("~","\n")
                     //console.log("in loop")
                 }
-			  console.log(questDesc)
+			  //console.log(questDesc)
 			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 			  var modal = $(this)
