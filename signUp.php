@@ -5,7 +5,7 @@ if(loggedIn()){
 }
 if(isset($_POST["submit"])){
 	if(!($_POST["password"] == $_POST["password2"])){
-		echo "<p>Your passwords did not match</p>";
+		print "<p>Your passwords did not match</p>";
 		exit;
   }
 	
@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
 		header("Location: members.php");
   }
 	else{
-	  echo '<p>Username already exists, please choose another username.</p>';
+	  print '<p>Username already exists, please choose another username.</p>';
 	}
 ?>
 
