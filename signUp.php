@@ -40,14 +40,11 @@ if(isset($_POST["submit"])){
         <div class="form-box" id="login-box">
 
             <div class="header">EduQuest</div>
-            <p>Hello</p>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
                   <?php
-                    // if(!($_POST["password"] == $_POST["password2"])){
-                    //  print "<p>Your passwords did not match</p>";
-                    // }
+                    print $submitted;
                     if($submitted==true){
                       $query = $coll->findOne(array('_id' => $_POST['login']));
                       if(empty($query)){
