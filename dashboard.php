@@ -241,9 +241,9 @@
 
                     <p>Session Vars</p>
                     <?php
-                    print "<p>Session - login: " . $_SESSION["login"];
-                    print "<p>Session - pass: " . $_SESSION["password"];
-                    print "<p>Session - loggedIn: " . $_SESSION["loggedIn"];
+                    print "<p>Session - login: " . $_SESSION["login"] . "</p>";
+                    print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
+                    print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
                     ?>
 
                 </section><!-- right col -->
