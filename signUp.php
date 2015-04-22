@@ -4,6 +4,7 @@ if(loggedIn()){
   header('Location: dashboard.php');
 }
 $submitted=false;
+$test="test";
 if(isset($_POST["submit"])){
   $submitted=true;
 	// if(!($_POST["password"] == $_POST["password2"])){
@@ -44,7 +45,7 @@ if(isset($_POST["submit"])){
 
                 <div class="body bg-gray">
                   <?php
-                    print"<p>Sign Up!" . $submitted . "</p>";
+                    print"<p>Sign Up!" . $test . "</p>";
                     if($submitted==true){ 
                       if(!($_POST["password"] == $_POST["password2"])){
                        print "<p>Your passwords did not match</p>";
