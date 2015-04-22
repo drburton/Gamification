@@ -24,7 +24,7 @@
         <![endif]-->
     </head>
     <body class="bg-black">
-
+        <p>Hello World</p>
         <div class="form-box" id="login-box">
 
             <div class="header">EduQuest</div>

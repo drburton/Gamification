@@ -44,16 +44,20 @@ if(isset($_POST["submit"])){
 
                 <div class="body bg-gray">
                   <?php
-                    print $submitted;
-                    if($submitted==true){
-                      $query = $coll->findOne(array('_id' => $_POST['login']));
-                      if(empty($query)){
-                        newUser($_POST["login"], $_POST["password"]);
-                        cleanMemberSession($_POST["login"], $_POST["password"]);
-                        header("Location: dashboard.php");
+                    if($submitted==true){ 
+                      if(!($_POST["password"] == $_POST["password2"])){
+                       print "<p>Your passwords did not match</p>";
                       }
                       else{
-                        print '<p>Username already exists, please choose another username.</p>';
+                        $query = $coll->findOne(array('_id' => $_POST['login']));
+                        if(empty($query)){
+                          newUser($_POST["login"], $_POST["password"]);
+                          cleanMemberSession($_POST["login"], $_POST["password"]);
+                          header("Location: dashboard.php");
+                        }
+                        else{
+                          print '<p>Username already exists, please choose another username.</p>';
+                        }
                       }
                     }
                   ?>
@@ -67,13 +71,6 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                         <input type="password" name="password2" class="form-control" placeholder="Re-enter Password"/>
                     </div>
-                    <?php
-                    if($submitted==true){ 
-                      if(!($_POST["password"] == $_POST["password2"])){
-                       print "<p>Your passwords did not match</p>";
-                      }
-                    }
-                    ?>
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn bg-primary btn-block">Sign Me Up</button>
