@@ -44,6 +44,7 @@ if(isset($_POST["submit"])){
 
                 <div class="body bg-gray">
                   <?php
+                    print"<p>Sign Up!</p>"
                     if($submitted==true){ 
                       if(!($_POST["password"] == $_POST["password2"])){
                        print "<p>Your passwords did not match</p>";
@@ -66,10 +67,10 @@ if(isset($_POST["submit"])){
                         value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password"/>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password2" class="form-control" placeholder="Re-enter Password"/>
+                        <input type="password" name="password2" class="form-control" placeholder="Re-enter Password">
                     </div>
                 </div>
                 <div class="footer">
