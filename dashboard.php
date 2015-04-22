@@ -243,7 +243,7 @@
                     <?php
                     print "<p>Session - login: " . $_SESSION["login"] . "</p>";
                     print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
-                    if($_SESSION["loggedIn"]==true){
+                    if($_SESSION["loggedIn"]==True){
                         print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
                     }
                     else{

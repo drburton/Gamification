@@ -11,5 +11,5 @@ include_once("functions.php");
 session_start();
 $_SESSION["login"]="test";
 $_SESSION["password"]="pass";
-$_SESSION["loggedIn"]=false;
+$_SESSION["loggedIn"]=False;
 ?>

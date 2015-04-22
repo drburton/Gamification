@@ -24,7 +24,7 @@ function cleanMemberSession($login, $password)
 {
 	$_SESSION["login"]=$login;
 	$_SESSION["password"]=$password;
-	$_SESSION["loggedIn"]=true;
+	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
 {
@@ -37,10 +37,10 @@ function flushMemberSession()
 function loggedIn()
 {
 	if($_SESSION['loggedIn']==true){
-	  return true;
+	  return True;
 	}
 	else{
-	  return false;
+	  return False;
 	}
 }
 ?>
