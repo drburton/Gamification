@@ -247,7 +247,7 @@
                         print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
                     }
                     else{
-                        print "<p>Not Logged In</p>"
+                        print "<p>Not Logged In</p>";
                     }
                     ?>
 
