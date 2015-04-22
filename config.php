@@ -13,11 +13,3 @@ $_SESSION["login"]=null;
 $_SESSION["password"]=null;
 $_SESSION["loggedIn"]=null;
 ?>
-<!--<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-  	<h1>Hello</h1>
-  </body>
-<html>-->

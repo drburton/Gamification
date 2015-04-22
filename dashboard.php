@@ -239,6 +239,13 @@
                     </div><!-- /.box -->
                     </div>
 
+                    <p>Session Vars</p>
+                    <?php
+                    print $_SESSION["login"]=$login;
+                    print $_SESSION["password"]=$password;
+                    print $_SESSION["loggedIn"]=true;
+                    ?>
+
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
 
