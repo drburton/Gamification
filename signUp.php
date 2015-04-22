@@ -3,21 +3,21 @@ include_once("config.php");
 if(loggedIn()){
   header('Location: dashboard.php');
 }
-if(isset($_POST["submit"])){
-	if(!($_POST["password"] == $_POST["password2"])){
-	 print "<p>Your passwords did not match</p>";
-  }
-	else{
-    $query = $coll->findOne(array('_id' => $_POST['login']));
-  	if(empty($query)){
-  	 	newUser($_POST["login"], $_POST["password"]);
-  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
-  	 	header("Location: members.php");
-    }
-  	else{
-  	  print '<p>Username already exists, please choose another username.</p>';
-  	}
-  }
+// if(isset($_POST["submit"])){
+// 	if(!($_POST["password"] == $_POST["password2"])){
+// 	 print "<p>Your passwords did not match</p>";
+//   }
+// 	else{
+//     $query = $coll->findOne(array('_id' => $_POST['login']));
+//   	if(empty($query)){
+//   	 	newUser($_POST["login"], $_POST["password"]);
+//   	 	cleanMemberSession($_POST["login"], $_POST["password"]);
+//   	 	header("Location: members.php");
+//     }
+//   	else{
+//   	  print '<p>Username already exists, please choose another username.</p>';
+//   	}
+//   }
 }
 ?>
 
@@ -44,6 +44,24 @@ if(isset($_POST["submit"])){
         <div class="form-box" id="login-box">
 
             <div class="header">EduQuest</div>
+            <?php
+              if(isset($_POST["submit"])){
+                if(!($_POST["password"] == $_POST["password2"])){
+                  print "<p>Your passwords did not match</p>";
+                }
+                else{
+                  $query = $coll->findOne(array('_id' => $_POST['login']));
+                  if(empty($query)){
+                  newUser($_POST["login"], $_POST["password"]);
+                  cleanMemberSession($_POST["login"], $_POST["password"]);
+                  header("Location: members.php");
+                  }
+                  else{
+                    print '<p>Username already exists, please choose another username.</p>';
+                  }
+                }
+              }
+            ?>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
