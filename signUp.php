@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
   	if(empty($query)){
   	 	newUser($_POST["login"], $_POST["password"]);
   	 	cleanMemberSession($_POST["login"], $_POST["password"]);
-  	 	header("Location: members.php");
+  	 	header("Location: dashboard.php");
     }
   	else{
   	  print '<p>Username already exists, please choose another username.</p>';

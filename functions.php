@@ -7,7 +7,7 @@ function newUser($login, $password)
 // }
 {
 	global $coll;
-	$coll->insert(array('login' => $login, 'password' => md5($password)));
+	$coll->insert(array('_id' => $login, 'password' => md5($password)));
 	return true;
 }
 
