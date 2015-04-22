@@ -3,21 +3,23 @@ include_once("config.php");
 if(loggedIn()){
   header('Location: dashboard.php');
 }
+$submitted=false;
 if(isset($_POST["submit"])){
-	if(!($_POST["password"] == $_POST["password2"])){
-	 print "<p>Your passwords did not match</p>";
-  }
-	else{
-    $query = $coll->findOne(array('_id' => $_POST['login']));
-  	if(empty($query)){
-  	 	newUser($_POST["login"], $_POST["password"]);
-  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
-  	 	header("Location: dashboard.php");
-    }
-  	else{
-  	  print '<p>Username already exists, please choose another username.</p>';
-  	}
-  }
+  $submitted=true;
+	// if(!($_POST["password"] == $_POST["password2"])){
+	//  print "<p>Your passwords did not match</p>";
+ //  }
+	// else{
+ //    $query = $coll->findOne(array('_id' => $_POST['login']));
+ //  	if(empty($query)){
+ //  	 	newUser($_POST["login"], $_POST["password"]);
+ //  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
+ //  	 	header("Location: dashboard.php");
+ //    }
+ //  	else{
+ //  	  print '<p>Username already exists, please choose another username.</p>';
+ //  	}
+ //  }
 }
 ?>
 
@@ -42,6 +44,22 @@ if(isset($_POST["submit"])){
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
+                  <?php
+                    // if(!($_POST["password"] == $_POST["password2"])){
+                    //  print "<p>Your passwords did not match</p>";
+                    // }
+                    if($submitted==true){
+                      $query = $coll->findOne(array('_id' => $_POST['login']));
+                      if(empty($query)){
+                        newUser($_POST["login"], $_POST["password"]);
+                        cleanMemberSession($_POST["login"], $_POST["password"]);
+                        header("Location: dashboard.php");
+                      }
+                      else{
+                        print '<p>Username already exists, please choose another username.</p>';
+                      }
+                    }
+                  ?>
                     <div class="form-group">
                         <input type="text" name="login" class="form-control" placeholder="ACU ID" 
                         value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6">
@@ -52,6 +70,13 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                         <input type="password" name="password2" class="form-control" placeholder="Re-enter Password"/>
                     </div>
+                    <?php
+                    if($submitted==true){ 
+                      if(!($_POST["password"] == $_POST["password2"])){
+                       print "<p>Your passwords did not match</p>";
+                      }
+                    }
+                    ?>
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn bg-primary btn-block">Sign Me Up</button>
