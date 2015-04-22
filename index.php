@@ -43,9 +43,11 @@
                     <?php
                     print "<p>Session - login: " . $_SESSION["login"] . "</p>";
                     print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
+                    if($_SESSION["loggedIn"]==False){
                         print "<p>Session - loggedIn: False</p>";
                     }
                     else{
+                        print "<p>Session - loggedIn: True</p>";
                     }
                     ?>
                 </div>
