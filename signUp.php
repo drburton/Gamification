@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
 }
 ?>
 
-<!-- <!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html class="bg-black">
     <head>
         <meta charset="UTF-8">
@@ -29,7 +29,7 @@ if(isset($_POST["submit"])){
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <!-- Theme style --
+        <!-- Theme style -->
         <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
     </head>
@@ -63,24 +63,24 @@ if(isset($_POST["submit"])){
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
 
     </body>
-</html> -->
+</html>
 
 
 <!--Old html-->
 
-<html>
+<!-- <html>
 <head>
   <title>Simple Authentication with MongoDB</title>
 </head>
 <body>
-<form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
+<form action="<?//=$_SERVER["PHP_SELF"];?>" method="POST">
   <table>
   <tr>
     <td>
       Login:
     </td>
     <td>
-      <input type="text" name="login" value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="15">
+      <input type="text" name="login" value="<?php// print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="15">
     </td>
   </tr>
   <tr>
@@ -110,4 +110,4 @@ if(isset($_POST["submit"])){
 </table>
 </form>
 </body>
-</html>
+</html> -->
