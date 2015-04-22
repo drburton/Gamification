@@ -243,7 +243,12 @@
                     <?php
                     print "<p>Session - login: " . $_SESSION["login"] . "</p>";
                     print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
-                    print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
+                    if($_SESSION["loggedIn"]==true){
+                        print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
+                    }
+                    else{
+                        print "<p>Not Logged In</p>"
+                    }
                     ?>
 
                 </section><!-- right col -->
