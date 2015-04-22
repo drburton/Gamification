@@ -73,14 +73,14 @@ if(isset($_POST["submit"])){
   <title>Simple Authentication with MongoDB</title>
 </head>
 <body>
-<form action="<?=$_SERVER[//"PHP_SELF"];?>" method="POST">
+<form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
   <table>
   <tr>
     <td>
       Login:
     </td>
     <td>
-      <input type="text" name="login" value="<?php //print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="15">
+      <input type="text" name="login" value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="15">
     </td>
   </tr>
   <tr>
