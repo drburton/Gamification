@@ -244,7 +244,7 @@
                     print "<p>Session - login: " . $_SESSION["login"] . "</p>";
                     print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
                     if($_SESSION["loggedIn"]==True){
-                        print "<p>Session - loggedIn: " . $_SESSION["loggedIn"] . "</p>";
+                        print "<p>Session - loggedIn: True</p>";
                     }
                     else{
                         print "<p>Not Logged In</p>";

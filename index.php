@@ -41,14 +41,15 @@
                     <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block">Sign Up</button></a><br/>
                     <button type="submit" class="btn bg-primary btn-block">Sign me in</button>
                     <?php
-                    print "<p>Session - login: " . $_SESSION["login"] . "</p>";
-                    print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
-                    if($_SESSION["loggedIn"]==False){
-                        print "<p>Session - loggedIn: False</p>";
-                    }
-                    else{
-                        print "<p>Session - loggedIn: True</p>";
-                    }
+                    // print "<p>Session - login: " . $_SESSION["login"] . "</p>";
+                    // print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
+                    // if($_SESSION["loggedIn"]==False){
+                    //     print "<p>Session - loggedIn: False</p>";
+                    // }
+                    // else{
+                    //     print "<p>Session - loggedIn: True</p>";
+                    // }
+                    print "<p>" . $Session . "</p>"
                     ?>
                 </div>
             </form>

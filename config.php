@@ -1,5 +1,5 @@
 <?php
-//ob_start();
+ob_start();
 //error_reporting(E_ALL);
 $m = new MongoClient();
 $db = $m->selectDB("gamification_db");
@@ -8,8 +8,9 @@ $coll = new MongoCollection( $db, "users");
 // $db   = $m->test;
 // $coll = $db->users;
 include_once("functions.php");
-session_start();
-$_SESSION["login"]="test";
-$_SESSION["password"]="pass";
-$_SESSION["loggedIn"]=False;
+$Session=$_SESSION;
+// session_start();
+// $_SESSION["login"]="test";
+// $_SESSION["password"]="pass";
+// $_SESSION["loggedIn"]=False;
 ?>
