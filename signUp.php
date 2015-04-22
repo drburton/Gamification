@@ -44,7 +44,7 @@ if(isset($_POST["submit"])){
 
                 <div class="body bg-gray">
                   <?php
-                    print"<p>Sign Up!</p>";
+                    print"<p>Sign Up!" . $submitted . "</p>";
                     if($submitted==true){ 
                       if(!($_POST["password"] == $_POST["password2"])){
                        print "<p>Your passwords did not match</p>";
