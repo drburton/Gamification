@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
 
         <div class="form-box" id="login-box">
 
-            <div class="header">EduQuest</div>
+            <div class="header">EduQuest Registration</div>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
