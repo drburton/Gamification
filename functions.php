@@ -25,9 +25,9 @@ function checkPass($login, $password)
 }
 function cleanMemberSession($login)
 {
-	$name = $coll->findOne(array('_id' => $login), array('name'));
+	//$name = $coll->findOne(array('_id' => $login), array('name'));
 	$_SESSION["login"]=$login;
-	$_SESSION["name"]=$name;
+	$_SESSION["name"]=" ";//$name;
 	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
