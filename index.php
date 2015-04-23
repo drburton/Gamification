@@ -46,7 +46,7 @@
                 <div class="body bg-gray">
                     <?php
                         if($passMiss){
-                            print "<div class='alert alert-danger'><b>Incorrect Information. &#13;&#10;Try Again.</b></div>";
+                            print "<div class='alert alert-danger'><b><p>Incorrect Information.</p><p>Please Try Again.</p></b></div>";
                         }
                     ?>
                     <div class="form-group">
@@ -57,8 +57,9 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block">Sign Up</button></a><br/>
-                    <button type="submit" name="submit" class="btn bg-primary btn-block">Sign me in</button>
+                    <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block" 
+                        style="width:45%; float:right;">Sign Up</button></a><br/>
+                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%; float:right;">Sign me in</button>
                     <?php
                     // if(!$Session){
                     //     print "<p>The Var Does Not Exist!</p>";
