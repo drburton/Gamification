@@ -1,5 +1,5 @@
-<?
+<?php
 include_once("config.php");
 flushMemberSession();
-header('Location: index.php');
+header('Location: dashboard.php');
 ?>
