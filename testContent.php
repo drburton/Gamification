@@ -7,7 +7,8 @@
     $collection = new MongoCollection( $db, "users-courses");
     include_once "testDash.php";
 ?>
-
+<html>
+<body>
 <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
