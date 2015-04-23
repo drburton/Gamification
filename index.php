@@ -57,10 +57,11 @@
                         <input type="password" name="password" class="form-control" placeholder="Password"/>
                     </div>
                 </div>
-                <div class="footer">
-                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%; display:inline-block;">Sign In</button>
-                    <button type="button" class="btn bg-primary btn-block" onClick="location.href='/signUp.php';" 
-                        style="color:white; width:45%; display:inline-block;">Create Account</button><br/>
+                <div class="footer" align="center">
+                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:46%; display:inline-block;">Sign In</button>
+                    <div style="width:8%; display:inline-block;"></div>
+                    <button type="button" class="btn bg-primary" onClick="location.href='/signUp.php';" 
+                        style="color:white; width:46%; display:inline-block;">Create Account</button><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
                     <?php
                     // if(!$Session){
