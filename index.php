@@ -38,7 +38,7 @@
         <div class="form-box" id="login-box">
 
             <div class="header">EduQuest</div>
-            <form action="dashboard.php" method="post">
+            <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
                     <div class="form-group">
