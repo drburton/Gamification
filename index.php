@@ -59,8 +59,8 @@
                 </div>
                 <div class="footer">
                     <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%; display:inline-block;">Sign me in</button>
-                    <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block" 
-                        style="width:45%; display:inline-block;">Sign Up</button></a><br/>
+                    <a href="signUp.php" style="font-color:white; width:45%; display:inline-block;"><button type="button" class="btn bg-primary btn-block" 
+                        >Sign Up</button></a><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
                     <?php
                     // if(!$Session){
