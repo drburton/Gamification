@@ -32,7 +32,7 @@ function cleanMemberSession($login)
 		}
 	}
 	$_SESSION["login"]=$login;
-	$_SESSION["name"]=$name;
+	$_SESSION["name"]=$login;//$name;
 	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
