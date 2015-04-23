@@ -22,7 +22,7 @@
 <html class="bg-black">
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Log in</title>
+        <title>EduQuest | Log in</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -60,7 +60,7 @@
                 <div class="footer" align="center">
                     <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:46%; display:inline-block;">Sign In</button>
                     <div style="width:6%; display:inline-block;"></div>
-                    <button type="button" class="btn bg-primary" onClick="location.href='/signUp.php';" 
+                    <button type="button" class="btn bg-primary" onClick="location.href='/signUp.php';"
                         style="width:46%; display:inline-block;">Create Account</button><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
                     <?php
@@ -81,4 +81,3 @@
 
     </body>
 </html>
-

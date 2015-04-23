@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Quests</title>
+        <title>EduQuest | Quests</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -220,7 +220,7 @@
 														if($k=="xp"){
 															$xp=$v;
 														}
-														print "<td>$v</td>";														  
+														print "<td>$v</td>";
 													}
 													else{
 														$desc=$v;
@@ -305,7 +305,7 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="editLabel">Edit Quest</h4>
                    </div>
-				   
+
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
