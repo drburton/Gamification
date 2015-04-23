@@ -46,7 +46,7 @@
                 <div class="body bg-gray">
                     <?php
                         if($passMiss){
-                            print "<div class='alert alert-danger'>Incorrect Information. &#13;$#10;Try Again.</div>";
+                            print "<div class='alert alert-danger'><b>Incorrect Information. &#13;&#10;Try Again.</b></div>";
                         }
                     ?>
                     <div class="form-group">
