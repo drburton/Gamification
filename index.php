@@ -49,8 +49,12 @@
                     // else{
                     //     print "<p>Session - loggedIn: True</p>";
                     // }
-                    print "<p>" . $Session . "</p>";
-                    print "<p>Hello</p>";
+                    if(!$Session){
+                        print "<p>The Var Does Not Exist!</p>";
+                    }
+                    else{
+                        print "<p>The Vars Exist</p>";
+                    }
                     ?>
                 </div>
             </form>

@@ -9,7 +9,7 @@ $coll = new MongoCollection( $db, "users");
 // $coll = $db->users;
 include_once("functions.php");
 session_start();
-$Session=array($_SESSION);
+$Session=$_SESSION;
 // $_SESSION["login"]="test";
 // $_SESSION["password"]="pass";
 // $_SESSION["loggedIn"]=False;
