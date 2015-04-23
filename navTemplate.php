@@ -32,14 +32,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span><?php print $_SESSION["name"]; ?><i class="caret"></i></span>
+                                <span>Profile<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
                                     <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                                     <p>
-                                        Garrett Yamada
+                                        <?php print $_SESSION["name"]; ?>
                                         <small>Level 25 Web Developer</small>
                                     </p>
                                 </li>
@@ -73,7 +73,7 @@
                             <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Greetings, Garrett!</p>
+                            <p>Greetings, <?php print $_SESSION["name"]; ?></p>
 
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
