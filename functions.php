@@ -26,7 +26,7 @@ function checkPass($login, $password)
 function cleanMemberSession($login, $password)
 {
 	$_SESSION["login"]=$login;
-	$_SESSION["password"]=$password;
+	$_SESSION["password"]=md5($password);
 	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
