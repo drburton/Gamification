@@ -27,13 +27,13 @@ function cleanMemberSession($login)
 {
 	global $coll;
 	$name = $coll->findOne(array('_id' => $login), array('name'));
-	// foreach ($name as $k => $v){
-	// 	if($k=='name'){
-	// 		$name=$v;
-	// 	}
-	// }
+	foreach ($name as $k => $v){
+		if($k=='name'){
+			$name=$v;
+		}
+	}
 	$_SESSION["login"]=$login;
-	$_SESSION["name"]=$login;//$name;
+	$_SESSION["name"]=$name;
 	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
