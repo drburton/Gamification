@@ -1,5 +1,6 @@
 <?php
     include_once "config.php";
+    $passMiss=false;
     if (loggedIn()){
         header("Location: http://gamedev.garrettyamada.com/dashboard.php");
     }
