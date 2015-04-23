@@ -46,7 +46,7 @@
                 <div class="body bg-gray">
                     <?php
                         if($passMiss){
-                            print "<div class='alert alert-danger' align='center'><b>Incorrect Information.<br/>Please Try Again.</b></div>";
+                            print "<div class='alert alert-danger' align='center'><b>Incorrect Information. Please Try Again.</b></div>";
                         }
                     ?>
                     <div class="form-group">
@@ -58,9 +58,9 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button>
+                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%; display:inline-block;">Sign me in</button>
                     <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block" 
-                        style="width:45%; float:right;">Sign Up</button></a><br/>
+                        style="width:45%; display:inline-block;">Sign Up</button></a><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
                     <?php
                     // if(!$Session){
