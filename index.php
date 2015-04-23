@@ -63,14 +63,6 @@
                     <button type="button" class="btn bg-primary" onClick="location.href='/signUp.php';"
                         style="width:46%; display:inline-block;">Create Account</button><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
-                    <?php
-                    // if(!$Session){
-                    //     print "<p>The Var Does Not Exist!</p>";
-                    // }
-                    // else{
-                    //     print "<p>The Vars Exist</p>";
-                    // }
-                    ?>
                 </div>
             </form>
 
