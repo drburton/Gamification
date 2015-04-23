@@ -25,12 +25,12 @@ function checkPass($login, $password)
 }
 function cleanMemberSession($login)
 {
-	$name = $coll->findOne(array('_id' => $login), array('name'));
-	foreach ($name as $k => $v){
-		if($k=='name'){
-			$name=$v;
-		}
-	}
+	// $name = $coll->findOne(array('_id' => $login), array('name'));
+	// foreach ($name as $k => $v){
+	// 	if($k=='name'){
+	// 		$name=$v;
+	// 	}
+	// }
 	$_SESSION["login"]=$login;
 	$_SESSION["name"]=$login;//$name;
 	$_SESSION["loggedIn"]=True;
