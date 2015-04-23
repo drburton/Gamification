@@ -8,6 +8,8 @@
     //include_once "testDash.php";
 ?>
 <html>
+<head>
+</head>
 <body>
     <h1>TEST!</h1>
 </body>
