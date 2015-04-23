@@ -50,6 +50,7 @@
                     //     print "<p>Session - loggedIn: True</p>";
                     // }
                     print "<p>" . $Session . "</p>"
+                    print "<p>Hello</p>"
                     ?>
                 </div>
             </form>
