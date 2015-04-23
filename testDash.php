@@ -4,7 +4,7 @@
     $collection = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: http://gamedev.garrettyamada.com/index.php");
+        header("Location: /index.php");
     }
 ?>
 
