@@ -51,16 +51,17 @@
                     ?>
                     <div class="form-group">
                         <input type="text" name="userid" class="form-control" placeholder="User ID"
-                        value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>/>
+                        value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>"/>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password"/>
                     </div>
                 </div>
                 <div class="footer">
+                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button>
                     <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block" 
                         style="width:45%; float:right;">Sign Up</button></a><br/>
-                    <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button>
+                    <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
                     <?php
                     // if(!$Session){
                     //     print "<p>The Var Does Not Exist!</p>";
