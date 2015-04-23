@@ -19,6 +19,9 @@ function checkPass($login, $password)
 	if($res){
 		return true;
 	}
+	else{
+		return false;
+	}
 }
 function cleanMemberSession($login, $password)
 {
