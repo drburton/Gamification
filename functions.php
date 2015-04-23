@@ -23,16 +23,17 @@ function checkPass($login, $password)
 		return false;
 	}
 }
-function cleanMemberSession($login, $password)
+function cleanMemberSession($login)
 {
+	$name = $coll->findOne(array('_id' => $login), array('name'));
 	$_SESSION["login"]=$login;
-	$_SESSION["password"]=md5($password);
+	$_SESSION["name"]=$name;
 	$_SESSION["loggedIn"]=True;
 }
 function flushMemberSession()
 {
 	unset($_SESSION["login"]);
-	unset($_SESSION["password"]);
+	unset($_SESSION["name"]);
 	unset($_SESSION["loggedIn"]);
 	session_destroy();
 	return true;

@@ -11,7 +11,7 @@
             $passMiss=true;
           }
           else{
-              cleanMemberSession($_POST["userid"], $_POST["password"]);
+              cleanMemberSession($_POST["userid"]);
               header("Location: dashboard.php");
           }
       }
