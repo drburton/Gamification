@@ -242,18 +242,6 @@
                     </div><!-- /.box -->
                     </div>
 
-                    <p>Session Vars</p>
-                    <?php
-                    print "<p>Session - login: " . $_SESSION["login"] . "</p>";
-                    print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
-                    if($_SESSION["loggedIn"]==True){
-                        print "<p>Session - loggedIn: True</p>";
-                    }
-                    else{
-                        print "<p>Not Logged In</p>";
-                    }
-                    ?>
-
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
 

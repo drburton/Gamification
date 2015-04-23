@@ -43,6 +43,11 @@
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
+                    <?php
+                        if($passMiss){
+                            print "<p style='color:red'>Incorrect Information. Try Again.</p>";
+                        }
+                    ?>
                     <div class="form-group">
                         <input type="text" name="userid" class="form-control" placeholder="User ID"/>
                     </div>
@@ -54,16 +59,12 @@
                     <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block">Sign Up</button></a><br/>
                     <button type="submit" name="submit" class="btn bg-primary btn-block">Sign me in</button>
                     <?php
-                    if($passMiss){
-                        print "<p>Incorrect Information. Try Again.</p>";
-                    }
-
-                    if(!$Session){
-                        print "<p>The Var Does Not Exist!</p>";
-                    }
-                    else{
-                        print "<p>The Vars Exist</p>";
-                    }
+                    // if(!$Session){
+                    //     print "<p>The Var Does Not Exist!</p>";
+                    // }
+                    // else{
+                    //     print "<p>The Vars Exist</p>";
+                    // }
                     ?>
                 </div>
             </form>
