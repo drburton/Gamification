@@ -13,7 +13,7 @@
 
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="dashboard.html" class="logo" >
+            <a href="dashboard.php" class="logo" >
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 EduQuest
             </a>
