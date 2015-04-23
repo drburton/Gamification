@@ -10,8 +10,10 @@
             //echo "<p>Incorrect login/password, try again</p>";
             $passMiss=true;
           }
-          cleanMemberSession($_POST["userid"], $_POST["password"]);
-          header("Location: dashboard.php");
+          else{
+              cleanMemberSession($_POST["userid"], $_POST["password"]);
+              header("Location: dashboard.php");
+          }
       }
     }
 
