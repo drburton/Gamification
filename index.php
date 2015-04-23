@@ -1,8 +1,18 @@
 <?php
     include_once "config.php";
-    //if (loggedIn()){
-    //    header("Location: http://gamedev.garrettyamada.com/dashboard.php");
-    //}
+    if (loggedIn()){
+        header("Location: http://gamedev.garrettyamada.com/dashboard.php");
+    }
+    else{
+        if(isset($_POST["submit"])){
+          if(!($row = checkPass($_POST["userid"], $_POST["password"]))){
+            //echo "<p>Incorrect login/password, try again</p>";
+            $passMiss=true;
+          }
+          cleanMemberSession($_POST["userid"], $_POST["password"]);
+          header("Location: dashboard.php");
+      }
+    }
 
 ?>
 <!DOCTYPE html>
@@ -41,14 +51,10 @@
                     <a href="signUp.php" style="font-color:white;"><button type="button" class="btn bg-primary btn-block">Sign Up</button></a><br/>
                     <button type="submit" class="btn bg-primary btn-block">Sign me in</button>
                     <?php
-                    // print "<p>Session - login: " . $_SESSION["login"] . "</p>";
-                    // print "<p>Session - pass: " . $_SESSION["password"] . "</p>";
-                    // if($_SESSION["loggedIn"]==False){
-                    //     print "<p>Session - loggedIn: False</p>";
-                    // }
-                    // else{
-                    //     print "<p>Session - loggedIn: True</p>";
-                    // }
+                    if($passMiss){
+                        print "<p>Incorrect Information. Try Again.</p>";
+                    }
+
                     if(!$Session){
                         print "<p>The Var Does Not Exist!</p>";
                     }
