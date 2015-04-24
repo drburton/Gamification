@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <title>EduQuest | Dashboard</title>
-        <?php include_once "navTemplate.php"; ?>
+        <?php include_once "headStyle.php"; ?>
     </head>
     <body class="skin-blue">
         <?php include_once "navTemplate.php";?>
