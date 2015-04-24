@@ -24,7 +24,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php $_POST["desc"]; ?><!-- DET 210 -->
+                        <?php $_POST["courseId"]; ?><!-- DET 210 -->
                     </h1>
                 </section>
 
