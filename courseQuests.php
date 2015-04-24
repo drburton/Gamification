@@ -31,19 +31,6 @@
 
                 <!-- Main content -->
                 <section class="content">
-                  <div class="row">
-                      <div class="col-md-4" >
-                     <!-- Create New Quest, Button trigger modal -->
-                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createnewquest"> Create New Quest </button>
-
-                                <!-- PHP Database Interaction -->
-
-                                <!-- End PHP Database Interaction -->
-
-                         </div>
-                     </div> <!-- /row -->
-                     <!-- /Create New Quest Trigger -->
-                  <br>
 
                     <div class="row">
                         <div class="col-xs-12">
