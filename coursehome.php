@@ -7,8 +7,13 @@
         header("Location: /index.php");
     }
     else{
-        $course=$_GET["course"];
-        $course = str_replace("_"," ",$course);
+        if($_GET["course"]=""){
+            $course=$_GET["course"];
+            $course = str_replace("_"," ",$course);
+        }
+        else{
+            header("Location: 404.php");
+        }
     }
 ?>
 
