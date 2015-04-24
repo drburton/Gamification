@@ -7,7 +7,7 @@
         header("Location: /index.php");
     }
     else{
-        if($_GET["course"]=""){
+        if($_GET["course"]!=""){
             $course=$_GET["course"];
             $course = str_replace("_"," ",$course);
         }
