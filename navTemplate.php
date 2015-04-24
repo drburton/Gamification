@@ -94,7 +94,7 @@
                             <ul class="treeview-menu">
                               <?php
 
-                                  $results = array('user_id' => 'jad00a');
+                                  $results = array('user_id' => $_SESSION["login"]);//'jad00a');
                                   $count=1;
                                   $cursor = $collection->find($results);
                                   $cursor->fields(array("course_id" => true));
