@@ -99,14 +99,13 @@
                                   $cursor = $collection->find($results);
                                   $cursor->fields(array("course_id" => true));
                                   foreach ($cursor as $doc) {
-
                                     foreach ($doc as $k => $v) {
 
                                       if($count%2==0){
                                         $new = str_replace(" ","_",$v);
-                                        print "<li><form action='coursehome.php' method='POST'>
-                                        <button type='button submit'>
-                                        $v</button></li>";
+                                        print "<li><form name='course" . $count . "' action='coursehome.php' method='POST'>
+                                        <input hidden='true' name='courseId' value='$v'>
+                                        <a href='#' onclick='document.course" . $count . ".submit();return false;'>$v</a>";
                                         //print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                         //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
