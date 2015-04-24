@@ -107,7 +107,7 @@
                                         print "<li><form action='coursehome.php' method='POST'>
                                         <button type='button submit' style='background:none!important; border:none; 
                                         padding:0!important; font: inherit; cursor: pointer;'>
-                                        $v</button></li>"
+                                        $v</button></li>";
                                         //print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                         //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
