@@ -104,8 +104,8 @@
 
                                       if($count%2==0){
                                         $new = str_replace(" ","_",$v);
-                                        //print "<li><a href=\"test.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
-                                        print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                                        print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                                        //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
 
                                       $count++;
