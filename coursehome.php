@@ -6,6 +6,9 @@
     if (!loggedIn()){
         header("Location: /index.php");
     }
+    else{
+        $course=$_GET["course"];
+    }
 ?>
 
 
@@ -24,7 +27,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php print $_POST["course"]; ?><!-- DET 210 -->
+                        <?php print $course; ?><!-- DET 210 -->
                     </h1>
                 </section>
 
