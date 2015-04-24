@@ -8,6 +8,7 @@
     }
     else{
         $course=$_GET["course"];
+        $course = str_replace("_"," ",$course);
     }
 ?>
 
