@@ -105,7 +105,8 @@
                                         $new = str_replace(" ","_",$v);
                                         print "<li><form name='course" . $count . "' action='coursehome.php' method='POST'>
                                         <input hidden='true' name='courseId' value='$v'>
-                                        <a href='#' onclick='document.course" . $count . ".submit();return false;'>$v</a>";
+                                        <a href='#' onclick='document.course" . $count . ".submit();return false;'>
+                                        <i class=\"fa fa-angle-double-right\"></i>$v</a>";
                                         //print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                         //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
                                       }
