@@ -1,8 +1,12 @@
-<!--<?php
-    // $m = new MongoClient();
+<?php
+    $m = new MongoClient();
     // $db = $m->selectDB("test");
     // $collection = new MongoCollection( $db, "test1");
-?>-->
+    include_once "config.php";
+    if (!loggedIn()){
+        header("Location: /index.php");
+    }
+?>
 
 
 

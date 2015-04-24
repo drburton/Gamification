@@ -3,6 +3,10 @@
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "users-courses");
     $collection2 = new MongoCollection( $db, "quests");
+    include_once "config.php";
+    if (!loggedIn()){
+        header("Location: /index.php");
+    }
 ?>
 
 
