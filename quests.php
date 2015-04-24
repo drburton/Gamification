@@ -57,7 +57,7 @@
                                             <th>Quest</th>
                                             <th>XP</th>
                                             <th>Due Date</th>
-                                            <th>Status</th>
+                                            <th>Details</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
