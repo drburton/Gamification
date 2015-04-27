@@ -11,9 +11,9 @@
             $course=$_GET["course"];
             $course = str_replace("_"," ",$course);
             $name = $collection->findOne(array('c_number' => $course));
-            if(!$name){
-                header("Location: 404.php");
-            }
+            //if(!$name){
+            //   header("Location: 404.php");
+            //}
         }
         else{
             header("Location: 404.php");
@@ -37,7 +37,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php print $course; ?><!-- DET 210 -->
+                        <?php print $course; print $name;?><!-- DET 210 -->
                     </h1>
                 </section>
 
