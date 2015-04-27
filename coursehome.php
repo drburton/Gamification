@@ -1,7 +1,7 @@
 <?php
     $m = new MongoClient();
     // $db = $m->selectDB("test");
-    // $collection = new MongoCollection( $db, "test1");
+    $collection = new MongoCollection( $db, "courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
@@ -10,6 +10,10 @@
         if($_GET["course"]!=""){
             $course=$_GET["course"];
             $course = str_replace("_"," ",$course);
+            $name = $collection->findOne(array('c_number' => $course));
+            if(!$name){
+                header("Location: 404.php");
+            }
         }
         else{
             header("Location: 404.php");
