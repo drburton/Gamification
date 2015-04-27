@@ -1,6 +1,6 @@
 <?php
     $m = new MongoClient();
-    // $db = $m->selectDB("test");
+    $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "courses");
     include_once "config.php";
     if (!loggedIn()){
