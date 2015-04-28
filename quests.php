@@ -34,9 +34,10 @@
         $role=$v;
       }
     }
-    if($role!="admin"){
-      header("Location: /courseQuests.php?course=".$course);
-    }
+    // if($role!="admin"){
+    //   header("Location: /courseQuests.php?course=".$course);
+    //   exit;
+    // }
 ?>
 
 
@@ -58,7 +59,7 @@
               <!-- Content Header (Page header) -->
               <section class="content-header">
                   <h1>
-                      (Course Name) Quests
+                      <?php print $role;//(Course Name) Quests ?>
                       <small>Choose wisely.</small>
                   </h1>
               </section>
