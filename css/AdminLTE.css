@@ -1868,7 +1868,7 @@ Component: timeline
     Component: Buttons
 -------------------------
 */
-.btn {
+/*.btn {
   font-weight: 500;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -2043,7 +2043,7 @@ Component: timeline
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-}
+}*/
 /*
     Component: callout
 ------------------------
