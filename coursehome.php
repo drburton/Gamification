@@ -12,14 +12,12 @@
             $course=$_GET["course"];
             $course = str_replace("_"," ",$course);
             $name = $collection->findOne(array('c_number' => $course));
-            if(!$name){
-               header("Location: 404.php");
-               exit;
-            }
+            //if(!$name){
+            //   header("Location: 404.php");
+            //}
         }
         else{
             header("Location: 404.php");
-            exit;
         }
         //$results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         //$cursor = $collection2->find($results);
