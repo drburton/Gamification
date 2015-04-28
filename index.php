@@ -50,7 +50,7 @@
                         }
                     ?>
                     <div class="form-group">
-                        <input type="text" name="userid" class="form-control" placeholder="User ID"
+                        <input type="text" name="userid" class="form-control" placeholder="ACU Username"
                         value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>"/>
                     </div>
                     <div class="form-group">
