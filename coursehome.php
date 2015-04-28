@@ -44,7 +44,7 @@
                 }
             }
         }
-        $cPercent=($xp/$cMax)*100;
+        $cPercent=floor(($xp/$cMax)*100);
     }
 ?>
 
