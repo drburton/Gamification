@@ -88,7 +88,7 @@
                             <div class="callout callout-info">
                                 <h4>Course Progress</h4>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow=<?php $cPercent ?> aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <!--<span class="sr-only">40% Complete (success)</span>-->
                                         40%
                                     </div>
