@@ -7,7 +7,7 @@
     if (!loggedIn()){
         header("Location: /index.php"); //Kick unauthenticated users back to login page
     }
-    
+
 ?>
 
 
@@ -29,7 +29,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        (Course Name) Quests
+                        <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                     </h1>
                 </section>

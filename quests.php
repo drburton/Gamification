@@ -59,7 +59,7 @@
               <!-- Content Header (Page header) -->
               <section class="content-header">
                   <h1>
-                      <?php print $role;//(Course Name) Quests ?>
+                      <?php print $course." Quests";//(Course Name) Quests ?>
                       <small>Choose wisely.</small>
                   </h1>
               </section>
