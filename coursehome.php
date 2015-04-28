@@ -21,7 +21,7 @@
         }
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->findOne($results);
-        $cursor->fields(array("xp" => true, 'user_role' => true));
+        //$cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
         //$role="";
         //$xp="";
