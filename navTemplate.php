@@ -10,13 +10,16 @@
 
 
 
-        <!-- header logo: style can be found in header.less -->
+        <!-- header logo -->
         <header class="header">
             <a href="dashboard.php" class="logo" >
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 EduQuest
             </a>
-            <!-- Header Navbar: style can be found in header.less -->
+
+            <!-- Header Navbar
+            --------------------------------------------- -->
+
             <nav class="navbar navbar-static-top" role="navigation" >
                 <!-- Sidebar toggle button-->
                 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -28,8 +31,10 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
 
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
+                      <!-- - User Account, Top right drop down
+                      --------------------------------------------- -->
+
+                      <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
                                 <span>Profile<i class="caret"></i></span>
@@ -43,7 +48,7 @@
                                         <small>Level 25 Web Developer</small>
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
+                                <!-- /Menu Body -->
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
@@ -56,18 +61,27 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- / User Account, Top right drop down -->
+
                     </ul>
                 </div>
             </nav>
+            <!-- /Header Navbar -->
         </header>
         <!-- /header -->
 
         <div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
+
+            <!-- Left side column. contains the logo and sidebar
+            --------------------------------------------- -->
+
             <aside class="left-side sidebar-offcanvas">
-                <!-- sidebar: style can be found in sidebar.less -->
+                <!-- sidebar -->
                 <section class="sidebar">
-                    <!-- Sidebar user panel -->
+
+                    <!-- Sidebar user panel
+                    --------------------------------------------- -->
+
                     <div class="user-panel">
                         <div class="pull-left image">
                             <img src="img/avatar5.png" class="img-circle" alt="User Image" />
@@ -77,9 +91,12 @@
 
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
-                    </div> <!-- /Sidebar user panel -->
+                    </div>
+                    <!-- /Sidebar user panel -->
 
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <!-- Sidebar Menu 
+                    --------------------------------------------- -->
+
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="dashboard.php">
@@ -129,6 +146,7 @@
                         </li>
 
                     </ul>
+                    <!-- /Sidebar Menu -->
                 </section>
                 <!-- /.sidebar -->
             </aside>
