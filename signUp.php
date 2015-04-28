@@ -46,7 +46,7 @@ if(isset($_POST["submit"])){
 
                 <div class="body bg-gray">
                   <?php
-                    if($submitted==true){ 
+                    if($submitted==true){
                       if(!($_POST["password"] == $_POST["password2"])){
                        //print "<p>Your passwords did not match</p>";
                         print "<div class='alert alert-danger' align='center'><b>Your passwords do not match.<br/>Please try again.</b></div>";
@@ -66,11 +66,11 @@ if(isset($_POST["submit"])){
                     }
                   ?>
                     <div class="form-group">
-                        <input type="text" name="login" class="form-control" placeholder="ACU ID" 
+                        <input type="text" name="login" class="form-control" placeholder="ACU ID (abc12d)"
                         value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" 
+                        <input type="text" name="name" class="form-control" placeholder="Your Name"
                         value="<?php print isset($_POST["name"]) ? $_POST["name"] : "" ; ?>"maxlength="50">
                     </div>
                     <div class="form-group">
