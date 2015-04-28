@@ -34,10 +34,10 @@
         $role=$v;
       }
     }
-    // if($role!="admin"){
-    //   header("Location: /courseQuests.php?course=".$course);
-    //   exit;
-    // }
+    if($role!="admin"){
+      header("Location: /courseQuests.php?course=".$course);
+      exit;
+    }
 ?>
 
 
