@@ -1,13 +1,43 @@
 <?php
     $m = new MongoClient();
-    $db = $m->selectDB("gamification_db"); //Connect to database
-    $collection = new MongoCollection( $db, "users-courses"); //Connect to collection users-courses
-    $collection2 = new MongoCollection( $db, "quests"); //Connect to collection for quests
+    $db = $m->selectDB("gamification_db");
+    $collection = new MongoCollection( $db, "users-courses");
+    $collection2 = new MongoCollection( $db, "quests");
+    $collection3 = new MongoCollection( $db, "courses");
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: /index.php"); //Kick unauthenticated users back to login page
+        header("Location: /index.php");
+    }
+    else{
+      if($_GET["course"]!=""){
+        $course=$_GET["course"];
+        $course = str_replace("_"," ",$course);
+        $courseCursor = $collection3->find(array('c_number' => $course));
+        if(!$courseCursor){
+          header("Location: 404.php");
+          exit;
+        }
+      }
+      else{
+        header("Location: 404.php");
+        exit;
+      }
     }
 
+    $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
+    $cursor = $collection->find($results);
+    $cursor->fields(array('user_role' => true,'_id' => false));
+    //$cursor=$cursor->sort(array("title"=>1));
+    $role="";
+    foreach ($cursor as $doc) {
+      foreach ($doc as $k => $v) {
+        $role=$v;
+      }
+    }
+    if($role=="admin"){
+      header("Location: /quests.php?course=".$course);
+      exit;
+    }
 ?>
 
 
