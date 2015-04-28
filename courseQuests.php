@@ -1,11 +1,11 @@
 <?php
     $m = new MongoClient();
-    $db = $m->selectDB("gamification_db");
-    $collection = new MongoCollection( $db, "users-courses");
-    $collection2 = new MongoCollection( $db, "quests");
+    $db = $m->selectDB("gamification_db"); //Connect to database
+    $collection = new MongoCollection( $db, "users-courses"); //Connect to collection users-courses
+    $collection2 = new MongoCollection( $db, "quests"); //Connect to collection for quests
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: /index.php");
+        header("Location: /index.php"); //Kick unauthenticated users back to login page
     }
 ?>
 
@@ -51,17 +51,17 @@
                                             <?php
 
                                               $results = array('course_id' => 'DET 210');
-                                              $cursor = $collection2->find($results);
-                                              $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
-                                              $cursor=$cursor->sort(array("title"=>1));
+                                              $cursor = $collection2->find($results); //Return a quest result set
+                                              $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
+                                              $cursor=$cursor->sort(array("title"=>1)); //Sort by title
                                               $title="";
                                               $due_date="";
                                               $xp="";
                                               $desc='';
                                               $dbid="";
-                                              foreach ($cursor as $doc) {
+                                              foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                                 print "<tr>";
-                                                foreach ($doc as $k => $v) {
+                                                foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                   if ($k != "desc"){
                                                     if($k=="title"){
                                                       $title=$v;
@@ -126,7 +126,6 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-        <!-- AdminLTE for demo purposes -->
         <script type="text/javascript">
           $('#seedetails').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -144,17 +143,15 @@
                         //console.log(questDesc.search("~"))
                         questDesc=questDesc.replace("~","<br/>")
                         //console.log("in loop")
-                    }
-            //console.log(questDesc)
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                  }
+
             var modal = $(this)
-            modal.find('#detailsLabel').text(questId)
+            modal.find('#detailsLabel').text(questId) //Input results returned into the modals.
             modal.find('#detailsTitle').text(questId)
             modal.find('#detailsXp').text(questXp)
             modal.find('#detailsDesc').html(questDesc)
             modal.find('#detailsDue').text(questDue)
-            //<!--modal.find('.modal-body input').val(recipient)-->
+
         });
       </script>
     </body>

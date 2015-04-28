@@ -1,5 +1,5 @@
 <?php
-    include_once "config.php";
+    include_once "config.php"; //Connecting to database and handling auth.
     $passMiss=false;
     if (loggedIn()){
         header("Location: http://gamedev.garrettyamada.com/dashboard.php");
@@ -7,7 +7,6 @@
     else{
         if(isset($_POST["submit"])){
           if(!($row = checkPass($_POST["userid"], $_POST["password"]))){
-            //echo "<p>Incorrect login/password, try again</p>";
             $passMiss=true;
           }
           else{
@@ -16,7 +15,6 @@
           }
       }
     }
-
 ?>
 <!DOCTYPE html>
 <html class="bg-black">
@@ -30,12 +28,6 @@
         <!-- Theme style -->
         <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body class="bg-black">
         <div class="form-box" id="login-box">
