@@ -23,18 +23,18 @@
         $cursor = $collection2->findOne($results);
         //$cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
-        //$role="";
-        //$xp="";
-        //foreach ($cursor as $doc) {
-        //    foreach ($doc as $k => $v) {
-        //        if($k=='xp'){
-        //            $xp=$v;
-        //        }
-        //        else{
-        //            $role=$v;
-        //        }
-        //    }
-        //}
+        $role="";
+        $xp="";
+        foreach ($cursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=='xp'){
+                    $xp=$v;
+                }
+                else{
+                    $role=$v;
+                }
+            }
+        }
     }
 ?>
 
