@@ -21,20 +21,20 @@
         }
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->findOne($results);
-        $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false, 'user_id'=>false, 'course_id'=> false));
+        //$cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
-        //$role="";
-        //$xp="";
-        //foreach ($cursor as $doc) {
-        //    foreach ($doc as $k => $v) {
-        //        if($k=='xp'){
-        //            $xp=$v;
-        //        }
-        //        else{
-        //            $role=$v;
-        //        }
-        //    }
-        //}
+        $role="";
+        $xp="";
+        foreach ($cursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=='xp'){
+                    $xp=$v;
+                }
+                else{
+                    $role=$v;
+                }
+            }
+        }
     }
 ?>
 
@@ -55,6 +55,12 @@
                 <section class="content-header">
                     <h1>
                         <?php print $course; ?><!-- DET 210 -->
+                    </h1>
+                    <h1>
+                        <?php print $role; ?><!-- DET 210 -->
+                    </h1>
+                    <h1>
+                        <?php print $xp; ?><!-- DET 210 -->
                     </h1>
                 </section>
 
