@@ -89,7 +89,7 @@
                                 <h4>Course Progress</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <!--<span class="sr-only">40% Complete (success)</span>-->
+                                        <span class="sr-only">60% Complete</span>
                                         40%
                                     </div>
                                 </div>
