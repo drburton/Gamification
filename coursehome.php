@@ -56,7 +56,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php $course;?><!-- DET 210 -->
+                        <?php $course; ?><!-- DET 210 -->
                     </h1>
                 </section>
 
