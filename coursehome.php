@@ -56,6 +56,12 @@
                     <h1>
                         <?php print $course; ?><!-- DET 210 -->
                     </h1>
+                    <h1>
+                        <?php print $role; ?><!-- DET 210 -->
+                    </h1>
+                    <h1>
+                        <?php print $xp; ?><!-- DET 210 -->
+                    </h1>
                 </section>
 
                 <!-- Main content -->
