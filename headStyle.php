@@ -4,7 +4,7 @@
 <!-- Date Picker -->
 <link href="css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
 <!-- Daterange picker -->
-<link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+<!--deleted--><!--<link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />-->
 <!-- bootstrap wysihtml5 - text editor -->
 <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 <!-- Theme style -->
