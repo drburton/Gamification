@@ -22,6 +22,7 @@
         <meta charset="UTF-8">
         <title>EduQuest | Log in</title>
         <?php include_once "headStyle.php"; ?>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"><!-- for enhanced bootstrap theming-->
 
     </head>
     <body class="bg-black">
