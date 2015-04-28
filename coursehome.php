@@ -11,14 +11,23 @@
         if($_GET["course"]!=""){
             $course=$_GET["course"];
             $course = str_replace("_"," ",$course);
-            $name = $collection->findOne(array('c_number' => $course));
-            //if(!$name){
-            //   header("Location: 404.php");
-            //}
+            $courseCursor = $collection->find(array('c_number' => $course));
+            if(!$courseCursor){
+               header("Location: 404.php");
+            }
         }
         else{
             header("Location: 404.php");
         }
+        $cMax=0;
+         foreach ($courseCursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=="max_points"){
+                    $cMax=$v;
+                }
+            }
+        }
+
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
@@ -30,11 +39,12 @@
                 if($k=="xp"){
                     $xp=$v;
                 }
-                elseif($k=="user_role"){
+                else{
                     $role=$v;
                 }
             }
         }
+        $cPercent=($xp/$cMax)*100;
     }
 ?>
 
@@ -57,10 +67,7 @@
                         <?php print $course; ?><!-- DET 210 -->
                     </h1>
                     <h1>
-                        <?php print $role; ?>
-                    </h1>
-                    <h1>
-                        <?php print $xp; ?>
+                        <?php print $cPercent; ?><!-- DET 210 -->
                     </h1>
                 </section>
 
