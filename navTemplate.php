@@ -73,7 +73,7 @@
                             <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Greetings, <?php print $_SESSION["name"]; ?></p>
+                            <p><?php print $_SESSION["name"]; ?></p>
 
                             <a href="#"><i class="fa fa-trophy"></i> Web Developer</a>
                         </div>
