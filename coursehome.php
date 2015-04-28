@@ -24,7 +24,7 @@
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION['login']);
         $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false, 'user_id'=>false, 'course_id'=> false));
-        $cursor=$cursor->sort(array("title"=>1));
+        //$cursor=$cursor->sort(array("title"=>1));
         $role="";
         $xp="";
         foreach ($cursor as $doc) {
