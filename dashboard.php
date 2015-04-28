@@ -16,7 +16,11 @@
         <?php include_once "headStyle.php"; ?>
     </head>
     <body class="skin-blue">
+
+        <!-- Header Navbar and left User Sidebar
+        --------------------------------------------- -->
         <?php include_once "navTemplate.php";?>
+
 <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
