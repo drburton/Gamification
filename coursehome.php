@@ -91,7 +91,7 @@
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
                                         <span class="sr-only">60% Complete</span>
-                                        <?php print $xp."points / ".$cMax." points" ?>
+                                        <?php print $xp." points / ".$cMax." points" ?>
                                     </div>
                                 </div>
                             </div>
