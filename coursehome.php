@@ -30,7 +30,7 @@
                 if($k=="xp"){
                     $xp=$v;
                 }
-                elseif($=="user_role"){
+                elseif($k=="user_role"){
                     $role=$v;
                 }
             }
