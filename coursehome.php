@@ -21,22 +21,22 @@
             header("Location: 404.php");
             exit;
         }
-        $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
-        $cursor = $collection2->find($results);
-        $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false, 'user_id'=>false, 'course_id'=> false));
+        //$results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
+        //$cursor = $collection2->find($results);
+        //$cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false, 'user_id'=>false, 'course_id'=> false));
         //$cursor=$cursor->sort(array("title"=>1));
-        $role="";
-        $xp="";
-        foreach ($cursor as $doc) {
-            foreach ($doc as $k => $v) {
-                if($k=='xp'){
-                    $xp=$v;
-                }
-                else{
-                    $role=$v;
-                }
-            }
-        }
+        //$role="";
+        //$xp="";
+        //foreach ($cursor as $doc) {
+        //    foreach ($doc as $k => $v) {
+        //        if($k=='xp'){
+        //            $xp=$v;
+        //        }
+        //        else{
+        //            $role=$v;
+        //        }
+        //    }
+        //}
     }
 ?>
 
