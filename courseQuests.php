@@ -7,6 +7,7 @@
     if (!loggedIn()){
         header("Location: /index.php"); //Kick unauthenticated users back to login page
     }
+    
 ?>
 
 
