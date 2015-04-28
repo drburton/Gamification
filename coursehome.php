@@ -2,6 +2,7 @@
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "courses");
+    $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
@@ -19,6 +20,22 @@
         else{
             header("Location: 404.php");
             exit;
+        }
+        $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION['login']);
+        $cursor = $collection2->find($results);
+        $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false, 'user_id'=>false, 'course_id'=> false));
+        $cursor=$cursor->sort(array("title"=>1));
+        $role="";
+        $xp="";
+        foreach ($cursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=='xp'){
+                    $xp=$v;
+                }
+                else{
+                    $role=$v;
+                }
+            }
         }
     }
 ?>
@@ -39,7 +56,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php print $course;?><!-- DET 210 -->
+                        <?php print $xp; print $role;//$course;?><!-- DET 210 -->
                     </h1>
                 </section>
 

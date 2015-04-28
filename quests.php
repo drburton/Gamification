@@ -12,22 +12,22 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>EduQuest | Quests</title>
-        <?php include_once "headStyle.php"; ?>
-    </head>
-    <body class="skin-blue">
-        <?php include_once "navTemplate.php";?>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        (Course Name) Quests
-                        <small>Choose wisely.</small>
-                    </h1>
-                </section>
+  <head>
+      <meta charset="UTF-8">
+      <title>EduQuest | Quests</title>
+      <?php include_once "headStyle.php"; ?>
+  </head>
+  <body class="skin-blue">
+      <?php include_once "navTemplate.php";?>
+          <!-- Right side column. Contains the navbar and content of the page -->
+          <aside class="right-side">
+              <!-- Content Header (Page header) -->
+              <section class="content-header">
+                  <h1>
+                      (Course Name) Quests
+                      <small>Choose wisely.</small>
+                  </h1>
+              </section>
 
                 <!-- Main content -->
                 <section class="content">
@@ -69,33 +69,33 @@
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
                                                 $cursor=$cursor->sort(array("title"=>1));
-												$title="";
-												$due_date="";
-												$xp="";
-												$desc='';
-												$dbid="";
+                        												$title="";
+                        												$due_date="";
+                        												$xp="";
+                        												$desc='';
+                        												$dbid="";
                                             	foreach ($cursor as $doc) {
                                                 print "<tr>";
                                             	  foreach ($doc as $k => $v) {
-													if ($k != "desc"){
-														if($k=="title"){
-															$title=$v;
-														}
-														if($k=="due_date"){
-															$due_date=$v;
-														}
-														if($k=="xp"){
-															$xp=$v;
-														}
-														print "<td>$v</td>";
-													}
-													else{
-														$desc=$v;
-													}
-													}
-                                                    $title = str_replace(" ","_",$title);
-                                                    $desc = str_replace(" ","_",$desc);
-                                                    //print "<td>$desc</td>";
+                        													if ($k != "desc"){
+                        														if($k=="title"){
+                        															$title=$v;
+                        														}
+                        														if($k=="due_date"){
+                        															$due_date=$v;
+                        														}
+                        														if($k=="xp"){
+                        															$xp=$v;
+                        														}
+                        														print "<td>$v</td>";
+                        													}
+                        													else{
+                        														$desc=$v;
+                        													}
+                        													}
+                                                  $title = str_replace(" ","_",$title);
+                                                  $desc = str_replace(" ","_",$desc);
+                                                  //print "<td>$desc</td>";
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>
                                                 <td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#editquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Edit</button></a></td>
