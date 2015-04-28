@@ -27,7 +27,7 @@
         $xp="";
         foreach ($cursor as $doc) {
             foreach ($doc as $k => $v) {
-                if($k=='xp'){
+                if($k=="xp"){
                     $xp=$v;
                 }
                 else{
@@ -57,10 +57,10 @@
                         <?php print $course; ?><!-- DET 210 -->
                     </h1>
                     <h1>
-                        <?php print $role; ?><!-- DET 210 -->
+                        <?php print $role; ?>
                     </h1>
                     <h1>
-                        <?php print $xp; ?><!-- DET 210 -->
+                        <?php print $xp; ?>
                     </h1>
                 </section>
 
