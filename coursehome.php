@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <!-- Link to Quests & Awards -->
-                        <a href="quests.php"><button class="btn btn-default btn-lg">Quests</button></a>
+                        <?php print"<a href=\"quests.php?course=\".$course><button class=\"btn btn-default btn-lg\">Quests</button></a>"; ?>
                         <button class="btn btn-default btn-lg">Awards</button>
                     </div>
                     <!-- Course Progress -->
