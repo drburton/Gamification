@@ -127,34 +127,34 @@
         <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
-      <script type="text/javascript">
-        $('#seedetails').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var questId = button.data('id') // Extract info from data-* attributes
-          var questDue = button.data('due')
-          var questXp = button.data('xp')
-          var questDesc = button.data('desc')
-                while (questId.search("_")!=-1){
-                  questId=questId.replace("_"," ")
-                }
-                while (questDesc.search("_")!=-1){
-                  questDesc=questDesc.replace("_"," ")
-                }
-                while (questDesc.search("~")!=-1){
-                      //console.log(questDesc.search("~"))
-                      questDesc=questDesc.replace("~","<br/>")
-                      //console.log("in loop")
+        <script type="text/javascript">
+          $('#seedetails').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var questId = button.data('id') // Extract info from data-* attributes
+            var questDue = button.data('due')
+            var questXp = button.data('xp')
+            var questDesc = button.data('desc')
+                  while (questId.search("_")!=-1){
+                    questId=questId.replace("_"," ")
                   }
-          //console.log(questDesc)
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('#detailsLabel').text(questId)
-          modal.find('#detailsTitle').text(questId)
-          modal.find('#detailsXp').text(questXp)
-          modal.find('#detailsDesc').html(questDesc)
-          modal.find('#detailsDue').text(questDue)
-          //<!--modal.find('.modal-body input').val(recipient)-->
+                  while (questDesc.search("_")!=-1){
+                    questDesc=questDesc.replace("_"," ")
+                  }
+                  while (questDesc.search("~")!=-1){
+                        //console.log(questDesc.search("~"))
+                        questDesc=questDesc.replace("~","<br/>")
+                        //console.log("in loop")
+                    }
+            //console.log(questDesc)
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('#detailsLabel').text(questId)
+            modal.find('#detailsTitle').text(questId)
+            modal.find('#detailsXp').text(questXp)
+            modal.find('#detailsDesc').html(questDesc)
+            modal.find('#detailsDue').text(questDue)
+            //<!--modal.find('.modal-body input').val(recipient)-->
         });
       </script>
     </body>
