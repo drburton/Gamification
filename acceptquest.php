@@ -7,9 +7,9 @@
     $newDesc = str_replace("\r\n",'~',$newDesc);
     //print $newDesc;
 
-    $newquest=array('$set'=>array('title' => $_POST["title"], 'xp' => (int)$_POST["xp"],  'due_date' => $_POST["due_date"], 
-        'desc' => $newDesc, 'course_id'=>$_POST["course"]));
-    //$collection2->save($newquest);
+    $newquest=array('title' => $_POST["title"], 'xp' => (int)$_POST["xp"],  'due_date' => $_POST["due_date"], 
+        'desc' => $newDesc, 'course_id'=>$_POST["course"]);
+    $collection2->save($newquest);
 
-    header("Location: http://gamedev.garrettyamada.com/courseQuests.php?course=".$_POST["course"]);
+    header("Location: http://gamedev.garrettyamada.com/courseQuests.php?course=".$_POST["course"]);//Kick user back to quests page after inputting new quest into database
 ?>
