@@ -35,7 +35,8 @@
       }
     }
     if($role!="admin"){
-      header("Location: /courseQuests.php?course=".$course);
+      $new = str_replace(" ","_",$course);
+      header("Location: /courseQuests.php?course=".$new);
       exit;
     }
 ?>
