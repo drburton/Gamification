@@ -258,9 +258,9 @@
                   while (questDesc.search("_")!=-1){
                     questDesc=questDesc.replace("_"," ")
                   }
-                  while (questCourse.search("_")!=-1){
-                    questCourse=questCourse.replace("_"," ")
-                  }
+                  // while (questCourse.search("_")!=-1){
+                  //   questCourse=questCourse.replace("_"," ")
+                  // }
                   while (questDesc.search("~")!=-1){
                         //console.log(questDesc.search("~"))
                         questDesc=questDesc.replace("~","<br/>")
