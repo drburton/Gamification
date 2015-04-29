@@ -126,7 +126,8 @@
                                                 foreach ($courseCursor as $doc) { //Turn cursor (results) human readable
                                                 print "<tr>";
                                                 foreach ($doc as $k => $v) 
-                                                  print "<td>$v</td>";
+                                                  print "<td>".$v."</td>";
+                                                  print "<td>TEST</td>";
                                                 }
                                              ?>
 
