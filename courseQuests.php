@@ -170,8 +170,8 @@
                    </div>
                    <div class="modal-body">
                     <form action="editquest.php" method="POST">
-                        <div class="form-group">
-                          <h2>Are You Sure You Want To Accept This Quest?</h2>
+                        <div class="form-group" align="center">
+                          <h4>Are You Sure You Want To Accept This Quest?</h4>
                    </div>
                    <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
