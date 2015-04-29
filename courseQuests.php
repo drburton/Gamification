@@ -173,7 +173,7 @@
                         <div class="form-group" align="center">
                           <h4>Are You Sure You Want To Accept This Quest?</h4>
                         </div>
-                       <div class="form-group">
+                       <!-- <div class="form-group">
                          <input type="hidden" class="form-control" id="acceptTitle" name="title">
                        </div>
                        <div class="form-group">
@@ -187,6 +187,21 @@
                        </div>
                        <div class="form-group">
                          <input type="hidden" class="form-control" id="acceptCourse" name="course"></input>
+                       </div> -->
+                       <div class="form-group">
+                         <input type="text" class="form-control" id="acceptTitle" name="title">
+                       </div>
+                       <div class="form-group">
+                         <input type="text" class="form-control" id="acceptXp" name="xp">
+                       </div>
+                      <div class="form-group">
+                           <input type="text" id="acceptDue" name="due_date"></input>
+                      </div>
+                       <div class="form-group">
+                         <input type="text" class="form-control" id="acceptDesc" name="desc"></input>
+                       </div>
+                       <div class="form-group">
+                         <input type="text" class="form-control" id="acceptCourse" name="course"></input>
                        </div>
                    </div>
                    <div class="modal-footer">
