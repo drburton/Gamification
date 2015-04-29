@@ -129,6 +129,7 @@
                                                     print "<td>".$v."</td>";
                                                     print "<td>TEST</td>";
                                                   }
+                                                  print "</tr>"
                                                 }
                                              ?>
 
