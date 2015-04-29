@@ -160,6 +160,28 @@
              </div>
           <!-- /View Details Modal -->
 
+          <!-- Accept Quest Modal -->
+             <div class="modal fade" id="seedetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title" id="detailsLabel">Quest Details</h4>
+                   </div>
+                   <div class="modal-body">
+                    <form action="editquest.php" method="POST">
+                        <div class="form-group">
+                          <h2>Are You Sure You Want To Accept This Quest?</h2>
+                   </div>
+                   <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button submit" class="btn btn-primary">Save Changes</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          <!-- /Accept Quest Modal -->
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
