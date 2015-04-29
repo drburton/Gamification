@@ -81,6 +81,7 @@
                                             <th>XP</th>
                                             <th>Due Date</th>
                                             <th>Details</th>
+                                            <th>Accept</th>
                                         </tr>
 
                                         <!-- PHP to pull quest data and put in table -->
@@ -119,6 +120,7 @@
                                                   //print "<td>$desc</td>";
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Accept Quest</button></a></td>";
                                                 print "</tr>";
 
                                                 }
