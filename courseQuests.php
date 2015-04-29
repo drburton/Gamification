@@ -10,8 +10,8 @@
     }
     else{
       if($_GET["course"]!=""){
-        $course=$_GET["course"];
-        $course = str_replace("_"," ",$course);
+        $Ucourse=$_GET["course"];
+        $course = str_replace("_"," ",$Ucourse);
         $courseCursor = $collection3->find(array('c_number' => $course));
         if(!$courseCursor){
           header("Location: 404.php");
@@ -120,7 +120,7 @@
                                                   //print "<td>$desc</td>";
 
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Accept Quest</button></a></td>";
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>Accept Quest</button></a></td>";
                                                 print "</tr>";
 
                                                 }
@@ -166,17 +166,34 @@
                  <div class="modal-content">
                    <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="detailsLabel">Quest Details</h4>
+                     <h4 class="modal-title" id="acceptLabel">Quest Details</h4>
                    </div>
                    <div class="modal-body">
-                    <form action="editquest.php" method="POST">
+                    <form action="acceptquest.php" method="POST">
                         <div class="form-group" align="center">
                           <h4>Are You Sure You Want To Accept This Quest?</h4>
+                        </div>
+                       <div class="form-group">
+                         <input type="hidden" class="form-control" id="acceptTitle" name="title">
+                       </div>
+                       <div class="form-group">
+                         <input type="hidden" class="form-control" id="acceptXp" name="xp">
+                       </div>
+                      <div class="form-group">
+                           <input type="hidden" id="acceptDue" name="due_date"></input>
+                      </div>
+                       <div class="form-group">
+                         <input type="hidden" class="form-control" id="acceptDesc" name="desc"></input>
+                       </div>
+                       <div class="form-group">
+                         <input type="hidden" class="form-control" id="acceptCourse" name="course"></input>
+                       </div>
                    </div>
                    <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button submit" class="btn btn-primary">Save Changes</button>
                    </div>
+                   </form>
                  </div>
                </div>
              </div>
@@ -212,6 +229,35 @@
             modal.find('#detailsDesc').html(questDesc)
             modal.find('#detailsDue').text(questDue)
 
+        });
+        $('#acceptquest').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var questId = button.data('id') // Extract info from data-* attributes
+            var questDue = button.data('due')
+            var questCourse = button.data('course')
+            var questXp = button.data('xp')
+            var questDesc = button.data('desc')
+                  while (questId.search("_")!=-1){
+                    questId=questId.replace("_"," ")
+                  }
+                  while (questDesc.search("_")!=-1){
+                    questDesc=questDesc.replace("_"," ")
+                  }
+                  while (questCourse.search("_")!=-1){
+                    questCourse=questCourse.replace("_"," ")
+                  }
+                  while (questDesc.search("~")!=-1){
+                        //console.log(questDesc.search("~"))
+                        questDesc=questDesc.replace("~","<br/>")
+                        //console.log("in loop")
+                  }
+            var modal = $(this)
+            modal.find('#acceptLabel').val(questId) //Input results returned into the modals.
+            modal.find('#acceptTitle').val(questId)
+            modal.find('#acceptXp').val(questXp)
+            modal.find('#acceptDesc').val(questDesc)
+            modal.find('#acceptDue').val(questDue)
+            modal.find('#acceptCourse').val(questCourse)
         });
       </script>
     </body>
