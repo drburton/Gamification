@@ -267,7 +267,7 @@
                         //console.log("in loop")
                   }
             var modal = $(this)
-            modal.find('#acceptLabel').val(questId) //Input results returned into the modals.
+            modal.find('#acceptLabel').text(questId) //Input results returned into the modals.
             modal.find('#acceptTitle').val(questId)
             modal.find('#acceptXp').val(questXp)
             modal.find('#acceptDesc').val(questDesc)
