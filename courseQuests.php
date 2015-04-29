@@ -13,7 +13,7 @@
         $Ucourse=$_GET["course"];
         $course = str_replace("_"," ",$Ucourse);
         $courseCursor = $collection3->find(array('c_number' => $course));
-        if(!$courseCursor){
+        if(empty($courseCursor)){
           header("Location: 404.php");
           exit;
         }
