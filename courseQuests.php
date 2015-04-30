@@ -68,8 +68,8 @@
                         foreach ($courseCursor as $doc) {
                           print $doc;
                            foreach ($doc as $k => $v) {
-                            print $k;
-                            print $v;
+                            print "K: ".$k." ";
+                            print "V: ".$v." // ";
                           }
                         }?>
                     </h1>
