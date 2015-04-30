@@ -66,6 +66,7 @@
                         <small>Choose wisely.</small>
                         <?php
                         foreach ($courseCursor as $doc) {
+                          print $doc;
                            foreach ($doc as $k => $v) {
                             print $k;
                             print $v;
