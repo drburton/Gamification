@@ -69,6 +69,11 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
+                        <?php
+                           foreach ($courseCursor as $doc) {
+                            print empty($doc);
+                           }
+                        ?>
                     </h1>
                 </section>
 
