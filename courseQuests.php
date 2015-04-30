@@ -70,6 +70,8 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
+                          print ($courseCursor);
+                          print empty($courseCursor);
                            foreach ($courseCursor as $doc) {
                             print empty($doc);
                             print $doc;
