@@ -72,6 +72,7 @@
                         <?php
                            foreach ($courseCursor as $doc) {
                             print empty($doc);
+                            print $doc;
                            }
                         ?>
                     </h1>
