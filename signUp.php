@@ -11,10 +11,11 @@ if(isset($_POST["submit"])){
 	 print "<p>Your passwords did not match</p>";
   }
 	else{
-    $query = $coll->findOne(array('_id' => $_POST['login']));
+    $username=strtolower($_POST['login']);
+    $query = $coll->findOne(array('_id' => $username));
   	if(empty($query)){
-  	 	newUser($_POST["login"], $_POST["name"], $_POST["password"]);
-  	 	cleanMemberSession($_POST["login"]);
+  	 	newUser($username, $_POST["name"], $_POST["password"]);
+  	 	cleanMemberSession($username);
   	 	header("Location: dashboard.php");
     }
   	else{
