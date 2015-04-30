@@ -63,7 +63,8 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
-                        <?php print sizeof($courseCursor); ?>
+                        <?php print sizeof($courseCursor);
+                        print_r $courseCursor; ?>
                     </h1>
                 </section>
 
