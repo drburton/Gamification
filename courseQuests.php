@@ -15,15 +15,15 @@
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
-        foreach ($courseCursor as $doc) {
-          if(empty($doc)){
-              header("Location: 404.php");
-              exit;
-            }
-          // foreach ($doc as $k => $v) {
+        // foreach ($courseCursor as $doc) {
+        //   if(empty($doc)){
+        //       header("Location: 404.php");
+        //       exit;
+        //     }
+        //   // foreach ($doc as $k => $v) {
             
-          // }
-        }
+        //   // }
+        // }
       }
       else{
         header("Location: 404.php");
