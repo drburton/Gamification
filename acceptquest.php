@@ -1,4 +1,5 @@
 <?php
+    include_once "config.php";
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection2 = new MongoCollection( $db, "users-quests");
