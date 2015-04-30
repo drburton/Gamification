@@ -71,10 +71,16 @@
                             print $v;
                           }
                           //print print_r($doc);
-                          // $results = array('course_id' => 'DET 210');
-                          // $cursor = $collection2->find($results); //Return a quest result set
-                          // $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
-                          // $cursor=$cursor->sort(array("title"=>1)); //Sort by title
+                          $results = array('course_id' => 'DET 210');
+                          $cursor = $collection2->find($results); //Return a quest result set
+                          $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
+                          $cursor=$cursor->sort(array("title"=>1)); //Sort by title
+                          foreach ($cursor as $doc) { //Turn cursor (results) human readable
+                            foreach ($doc as $k => $v) {
+                              print "k ".$k." ";
+                              print "v ".$v."//";
+                            }
+                          }
                         }?>
                     </h1>
                 </section>
