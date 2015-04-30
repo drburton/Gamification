@@ -65,10 +65,10 @@
                         <small>Choose wisely.</small>
                         <?php
                         foreach ($cursor as $doc) {
-                          print $doc;
+                          print print_r($doc);
                         }
-                        print sizeof($courseCursor);
-                        print_r($courseCursor); ?>
+                        //print sizeof($courseCursor);
+                        //print_r($courseCursor); ?>
                     </h1>
                 </section>
 
