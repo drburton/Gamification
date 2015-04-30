@@ -72,10 +72,10 @@
                         <?php
                           print ($courseCursor);
                           print empty($courseCursor);
-                           foreach ($courseCursor as $doc) {
-                            print empty($doc);
-                            print $doc;
-                           }
+                           // foreach ($courseCursor as $doc) {
+                           //  print empty($doc);
+                           //  print $doc;
+                           // }
                         ?>
                     </h1>
                 </section>
