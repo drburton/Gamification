@@ -66,9 +66,7 @@
                         <?php
                         foreach ($cursor as $doc) {
                           print print_r($doc);
-                        }
-                        //print sizeof($courseCursor);
-                        //print_r($courseCursor); ?>
+                        }?>
                     </h1>
                 </section>
 
