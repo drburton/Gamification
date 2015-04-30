@@ -71,7 +71,12 @@
                         <small>Choose wisely.</small>
                         <?php
                           print_r($courseCursor);
-                          print empty($courseCursor);
+                          if(empty($courseCursor)){
+                            print "EMPTY";
+                          }
+                          else{
+                            print "NOT NULL";
+                          }
                            // foreach ($courseCursor as $doc) {
                            //  print empty($doc);
                            //  print $doc;
