@@ -12,7 +12,7 @@
       if($_GET["course"]!=""){
         $Ucourse=$_GET["course"];
         $course = str_replace("_"," ",$Ucourse);
-        $search=array('course_number' => $course);
+        $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
         if(sizeof($courseCursor)==0){
