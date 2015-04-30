@@ -16,12 +16,13 @@
         $courseCursor = $collection3->find($search);
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
         foreach ($courseCursor as $doc) {
-          foreach ($doc as $k => $v) {
-            if($k==""){
+          if(empty($doc)){
               header("Location: 404.php");
               exit;
             }
-          }
+          // foreach ($doc as $k => $v) {
+            
+          // }
         }
       }
       else{
