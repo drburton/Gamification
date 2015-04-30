@@ -15,9 +15,13 @@
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
-        if(sizeof($courseCursor)==0){
-          header("Location: 404.php");
-          exit;
+        foreach ($courseCursor as $doc) {
+          foreach ($doc as $k => $v) {
+            if(!$k){
+              header("Location: 404.php");
+              exit;
+            }
+          }
         }
       }
       else{
@@ -64,13 +68,6 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
-                        <?php
-                        foreach ($courseCursor as $doc) {
-                           foreach ($doc as $k => $v) {
-                            print "K: ".$k." ";
-                            print "V: ".$v." /New Set/ ";
-                          }
-                        }?>
                     </h1>
                 </section>
 
