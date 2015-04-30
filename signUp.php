@@ -8,7 +8,7 @@ $test="test";
 if(isset($_POST["submit"])){
   $submitted=true;
 	if(!($_POST["password"] == $_POST["password2"])){
-	 print "<p>Your passwords did not match</p>";
+	 $error='Password';
   }
 	else{
     $username=strtolower($_POST['login']);
@@ -19,7 +19,7 @@ if(isset($_POST["submit"])){
   	 	header("Location: dashboard.php");
     }
   	else{
-  	  print '<p>Username already exists, please choose another username.</p>';
+  	  $error='Name';
   	}
   }
 }
@@ -43,18 +43,12 @@ if(isset($_POST["submit"])){
                 <div class="body bg-gray">
                   <?php
                     if($submitted==true){
-                      if(!($_POST["password"] == $_POST["password2"])){
+                      if($error='Password'){
                        //print "<p>Your passwords did not match</p>";
                         print "<div class='alert alert-danger' align='center'><b>Your passwords do not match.<br/>Please try again.</b></div>";
                       }
                       else{
-                        $query = $coll->findOne(array('_id' => $_POST['login']));
-                        if(empty($query)){
-                          newUser($_POST["login"], $_POST["name"], $_POST["password"]);
-                          cleanMemberSession($_POST["login"]);
-                          header("Location: dashboard.php");
-                        }
-                        else{
+                        if($error='Name'){
                           //print '<p>Username already exists, please choose another username.</p>';
                           print "<div class='alert alert-danger' align='center'><b>That username already exists.<br/>Please Try Again.</b></div>";
                         }
