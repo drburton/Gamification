@@ -7,20 +7,20 @@ $submitted=false;
 $test="test";
 if(isset($_POST["submit"])){
   $submitted=true;
-	// if(!($_POST["password"] == $_POST["password2"])){
-	//  print "<p>Your passwords did not match</p>";
- //  }
-	// else{
- //    $query = $coll->findOne(array('_id' => $_POST['login']));
- //  	if(empty($query)){
- //  	 	newUser($_POST["login"], $_POST["password"]);
- //  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
- //  	 	header("Location: dashboard.php");
- //    }
- //  	else{
- //  	  print '<p>Username already exists, please choose another username.</p>';
- //  	}
- //  }
+	if(!($_POST["password"] == $_POST["password2"])){
+	 print "<p>Your passwords did not match</p>";
+  }
+	else{
+    $query = $coll->findOne(array('_id' => $_POST['login']));
+  	if(empty($query)){
+  	 	newUser($_POST["login"], $_POST["password"]);
+  	 	cleanMemberSession($_POST["login"], $_POST["password"]);
+  	 	header("Location: dashboard.php");
+    }
+  	else{
+  	  print '<p>Username already exists, please choose another username.</p>';
+  	}
+  }
 }
 ?>
 
@@ -67,17 +67,17 @@ if(isset($_POST["submit"])){
                   ?>
                     <div class="form-group">
                         <input type="text" name="login" class="form-control" placeholder="ACU ID (abc12d)"
-                        value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6">
+                        value="<?php print isset($_POST["login"]) ? $_POST["login"] : "" ; ?>"maxlength="6" required="true">
                     </div>
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Your Name"
-                        value="<?php print isset($_POST["name"]) ? $_POST["name"] : "" ; ?>"maxlength="50">
+                        value="<?php print isset($_POST["name"]) ? $_POST["name"] : "" ; ?>"maxlength="50" required="true">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required="true">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password2" class="form-control" placeholder="Re-enter Password">
+                        <input type="password" name="password2" class="form-control" placeholder="Re-enter Password" required="true">
                     </div>
                 </div>
                 <div class="footer">
