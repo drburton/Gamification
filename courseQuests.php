@@ -65,6 +65,10 @@
                         <small>Choose wisely.</small>
                         <?php
                         foreach ($cursor as $doc) {
+                           foreach ($doc as $k => $v) {
+                            print $k;
+                            print $v;
+                          }
                           print print_r($doc);
                         }?>
                     </h1>
