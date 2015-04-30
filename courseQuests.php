@@ -17,7 +17,7 @@
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
         foreach ($courseCursor as $doc) {
           foreach ($doc as $k => $v) {
-            if(!$k){
+            if($k==""){
               header("Location: 404.php");
               exit;
             }
