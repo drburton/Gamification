@@ -5,7 +5,7 @@
     //print $_POST["desc"];
     $newDesc = $_POST["desc"];
     $newDesc = str_replace("\r\n",'~',$newDesc);
-    $name=$_SESSION["login"]
+    $name=$_SESSION["login"];
     //print $newDesc;
 
     $newquest=array('title' => $_POST["title"], 'xp' => (int)$_POST["xp"],  'due_date' => $_POST["due_date"], 
