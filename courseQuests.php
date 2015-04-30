@@ -65,7 +65,7 @@
                         <small>Choose wisely.</small>
                         <?php
                         foreach ($cursor as $doc) {
-                          print doc
+                          print $doc;
                         }
                         print sizeof($courseCursor);
                         print_r($courseCursor); ?>
