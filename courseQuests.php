@@ -12,7 +12,8 @@
       if($_GET["course"]!=""){
         $Ucourse=$_GET["course"];
         $course = str_replace("_"," ",$Ucourse);
-        $courseCursor = $collection3->find(array('c_number' => $course));
+        $search=array('course_id' => $course);
+        $courseCursor = $collection3->find($search);
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
         if(sizeof($courseCursor)==0){
           header("Location: 404.php");
@@ -69,7 +70,11 @@
                             print $k;
                             print $v;
                           }
-                          print print_r($doc);
+                          //print print_r($doc);
+                          // $results = array('course_id' => 'DET 210');
+                          // $cursor = $collection2->find($results); //Return a quest result set
+                          // $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
+                          // $cursor=$cursor->sort(array("title"=>1)); //Sort by title
                         }?>
                     </h1>
                 </section>
