@@ -14,7 +14,7 @@
         $course = str_replace("_"," ",$Ucourse);
         $courseCursor = $collection3->find(array('c_number' => $course));
         $courseCursor->fields(array('c_number'=>true,'_id' => false));
-        if(empty($courseCursor)){
+        if($courseCursor==""){
           header("Location: 404.php");
           exit;
         }
