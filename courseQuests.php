@@ -76,7 +76,10 @@
                         <small>Choose wisely.</small>
                         <?php
                           print "HELLO";
-                          print_r($curQuests);
+                          //print_r($curQuests);
+                          foreach($curQuests as $v){
+                            print $v;
+                          }
                         ?>
                     </h1>
                 </section>
