@@ -75,12 +75,12 @@
                             print "EMPTY";
                           }
                           else{
-                            print "NOT NULL";
+                            print "NOT NULL <br/>";
                           }
-                           // foreach ($courseCursor as $doc) {
-                           //  print empty($doc);
-                           //  print $doc;
-                           // }
+                          foreach ($courseCursor as $doc) {
+                            print empty($doc);
+                            print $doc;
+                          }
                         ?>
                     </h1>
                 </section>
