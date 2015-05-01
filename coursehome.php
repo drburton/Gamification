@@ -8,20 +8,27 @@
         header("Location: /index.php");
     }
     else{
-      if($_GET["course"]!=""){
-        $Ucourse=$_GET["course"];
-        $course = str_replace("_"," ",$Ucourse);
-        $search=array('c_number' => $course);
-        $courseCursor = $collection3->find($search);
-        if($courseCursor->count()==0){
-          header("Location: 404.php");
+        if($_GET["course"]!=""){
+            $course=$_GET["course"];
+            $course = str_replace("_"," ",$course);
+            $courseCursor = $collection->find(array('c_number' => $course));
+            if(!$courseCursor){
+               header("Location: 404.php");
+            }
         }
-      }
-      else{
-        header("Location: 404.php");
-        exit;
-      }
-        $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
+        else{
+            header("Location: 404.php");
+        }
+        $cMax=0;
+         foreach ($courseCursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=="max_points"){
+                    $cMax=$v;
+                }
+            }
+        }
+
+        $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
