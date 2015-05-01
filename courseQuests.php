@@ -14,15 +14,8 @@
         $course = str_replace("_"," ",$Ucourse);
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
-        $courseCursor->fields(array('c_number'=>true,'_id' => false));
-        foreach ($courseCursor as $doc) {
-          if(empty($doc)){
-              header("Location: 404.php");
-              exit;
-            }
-          // foreach ($doc as $k => $v) {
-            
-          // }
+        if($courseCursor->count()==0){
+          header("Location: 404.php");
         }
       }
       else{
@@ -69,16 +62,6 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
-                        <?php
-                          print_r($courseCursor);
-                          if(empty($courseCursor)){
-                                  print " Cursor EMPTY";
-                          }
-                          else{
-                            print " Cursor NOT NULL <br/>";
-                          }
-                          print $courseCursor->count();
-                        ?>
                     </h1>
                 </section>
 
