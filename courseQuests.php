@@ -70,7 +70,7 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
-                          print $courseCursor;
+                          print_r($courseCursor);
                           if(empty($courseCursor)){
                                   print " Cursor EMPTY";
                           }
