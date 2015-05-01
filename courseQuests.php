@@ -70,16 +70,9 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
-                          print_r($courseCursor);
-                          if(empty($courseCursor)){
-                            print "EMPTY";
-                          }
-                          else{
-                            print "NOT NULL <br/>";
-                          }
                           foreach ($courseCursor as $doc) {
                             print $doc;
-                            if(empty($courseCursor)){
+                            if(empty($doc)){
                               print " EMPTY";
                             }
                             else{
