@@ -78,8 +78,13 @@
                             print "NOT NULL <br/>";
                           }
                           foreach ($courseCursor as $doc) {
-                            print empty($doc);
                             print $doc;
+                            if(empty($courseCursor)){
+                              print " EMPTY";
+                            }
+                            else{
+                              print " NOT NULL <br/>";
+                            }
                           }
                         ?>
                     </h1>
