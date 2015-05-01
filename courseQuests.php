@@ -71,6 +71,12 @@
                         <small>Choose wisely.</small>
                         <?php
                           foreach ($courseCursor as $doc) {
+                            if(empty($courseCursor)){
+                                print " EMPTY";
+                              }
+                              else{
+                                print " NOT NULL <br/>";
+                              }
                             foreach ($doc as $k=>$v){
                               if(empty($doc)){
                                 print " EMPTY";
