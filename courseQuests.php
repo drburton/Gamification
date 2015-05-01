@@ -4,6 +4,7 @@
     $collection = new MongoCollection( $db, "users-courses");
     $collection2 = new MongoCollection( $db, "quests");
     $collection3 = new MongoCollection( $db, "courses");
+    $collection4 = new MongoCollection( $db, "users-quests");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
@@ -87,7 +88,7 @@
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
 
-                                              $results = array('course_id' => 'DET 210');
+                                              $results = array('course_id' => 'DET 210');//$course);
                                               $cursor = $collection2->find($results); //Return a quest result set
                                               $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
                                               $cursor=$cursor->sort(array("title"=>1)); //Sort by title
@@ -123,6 +124,75 @@
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
                                                 print "</tr>";
                                                 }
+                                             ?>
+
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Current Quests</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body table-responsive no-padding">
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>Quest</th>
+                                            <th>XP</th>
+                                            <th>Due Date</th>
+                                            <th>Details</th>
+                                            <th>Drop</th>
+                                        </tr>
+
+                                        <!-- PHP to pull quest data and put in table -->
+                                            <?php
+
+                                              $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
+                                              $cursor = $collection4->find($results); //Return a quest result set
+                                              $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
+                                              foreach($cursor as $doc){
+                                                foreach($doc as $k=>$v){
+                                                  $title=$v;
+                                                  $results = array('title'=>$title,'course_id' => 'DET 210');//$course);
+                                                  $cursor2 = $collection2->find($results); 
+                                                  $due_date="";
+                                                  $xp="";
+                                                  $desc='';
+                                                  $dbid="";
+                                                  foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
+                                                    print "<tr>";
+                                                    foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
+                                                      if ($k != "desc"){
+                                                        if($k=="title"){
+                                                          $title=$v;
+                                                        }
+                                                        if($k=="due_date"){
+                                                          $due_date=$v;
+                                                        }
+                                                        if($k=="xp"){
+                                                          $xp=$v;
+                                                        }
+                                                        print "<td>$v</td>";
+                                                      }
+                                                      else{
+                                                        $desc=$v;
+                                                      }
+                                                      }
+                                                      $title = str_replace(" ","_",$title);
+                                                      $desc = str_replace(" ","_",$desc);
+                                                      //print "<td>$desc</td>";
+
+                                                    print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
+                                                    print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
+                                                    print "</tr>";
+                                                    }
+
+                                                }
+                                              }
                                              ?>
 
                                     </table>
