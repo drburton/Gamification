@@ -75,6 +75,7 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
+                          print "HELLO";
                           print_r($currQuests);
                         ?>
                     </h1>
