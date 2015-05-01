@@ -75,11 +75,9 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
-                          print "HELLO";
+                          print "HELLO ";
+                          print count($curQuests);
                           //print_r($curQuests);
-                          foreach($curQuests as $v){
-                            print $v;
-                          }
                         ?>
                     </h1>
                 </section>
