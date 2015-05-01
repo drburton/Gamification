@@ -197,9 +197,7 @@
                                              ?>
 
                                     </table>
-                                    <?php
-                                      print_r($curquests);
-                                    ?>
+                                    
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
