@@ -78,13 +78,7 @@
                             print " Cursor NOT NULL <br/>";
                           }
                           foreach ($courseCursor as $doc) {
-                            print_r($doc);
-                            if(empty($doc)){
-                                print " EMPTY";
-                              }
-                              else{
-                                print " NOT NULL <br/>";
-                              }
+                            print $doc;
                             // foreach ($doc as $k=>$v){
                             //   if(empty($doc)){
                             //     print " EMPTY";
