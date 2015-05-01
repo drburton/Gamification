@@ -76,7 +76,7 @@
                         <small>Choose wisely.</small>
                         <?php
                           print "HELLO";
-                          print $curQuests;
+                          print_r($curQuests);
                         ?>
                     </h1>
                 </section>
