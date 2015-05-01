@@ -48,7 +48,7 @@
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
         //$title=$v;
-        array_push($curQuests,$v)
+        array_push($curQuests,$v);
       }
     }
 ?>
@@ -197,7 +197,6 @@
                                              ?>
 
                                     </table>
-                                    
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
