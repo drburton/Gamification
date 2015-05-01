@@ -72,14 +72,14 @@
                         <?php
                           foreach ($courseCursor as $doc) {
                             foreach ($doc as $k=>$v){
-                              // if(empty($doc)){
-                              //   print " EMPTY";
-                              // }
-                              // else{
-                              //   print " NOT NULL <br/>";
-                              // }
-                              print $k.":";
-                              print $v."<br/>";
+                              if(empty($doc)){
+                                print " EMPTY";
+                              }
+                              else{
+                                print " NOT NULL <br/>";
+                              }
+                              // print $k.":";
+                              // print $v."<br/>";
                             }
                           }
                         ?>
