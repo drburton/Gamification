@@ -74,6 +74,9 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
+                        <?php
+                          print_r($currQuests);
+                        ?>
                     </h1>
                 </section>
 
@@ -197,9 +200,6 @@
                                              ?>
 
                                     </table>
-                                    <?php
-                                      print_r($currQuests);
-                                    ?>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
