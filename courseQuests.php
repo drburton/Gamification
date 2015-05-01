@@ -42,8 +42,8 @@
     }
 
     $curQuests=array();
-    $results = array('course_id' => 'DET 210');//, 'user_id'=>$_SESSION['login']);//$course);
-    $cursor = $collection2->find($results); //Return a quest result set
+    $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
+    $cursor = $collection4->find($results); //Return a quest result set
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
@@ -76,7 +76,7 @@
                         <small>Choose wisely.</small>
                         <?php
                           print "HELLO";
-                          print $currQuests;
+                          print $curQuests;
                         ?>
                     </h1>
                 </section>
