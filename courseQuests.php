@@ -71,12 +71,15 @@
                         <small>Choose wisely.</small>
                         <?php
                           foreach ($courseCursor as $doc) {
-                            print $doc;
-                            if(empty($doc)){
-                              print " EMPTY";
-                            }
-                            else{
-                              print " NOT NULL <br/>";
+                            foreach ($doc as $k=>$v){
+                              // if(empty($doc)){
+                              //   print " EMPTY";
+                              // }
+                              // else{
+                              //   print " NOT NULL <br/>";
+                              // }
+                              print $k.":";
+                              print $v."<br/>";
                             }
                           }
                         ?>
