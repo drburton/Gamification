@@ -40,6 +40,17 @@
       header("Location: /quests.php?course=".$new);
       exit;
     }
+
+    $curQuests=array()
+    $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
+    $cursor = $collection4->find($results); //Return a quest result set
+    $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
+    foreach($cursor as $doc){
+      foreach($doc as $k=>$v){
+        //$title=$v;
+        array_push($curQuests,$v)
+      }
+    }
 ?>
 
 
@@ -150,52 +161,44 @@
 
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
-
-                                              $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
-                                              $cursor = $collection4->find($results); //Return a quest result set
-                                              $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
-                                              foreach($cursor as $doc){
-                                                foreach($doc as $k=>$v){
-                                                  $title=$v;
-                                                  $results = array('title'=>$title,'course_id' => 'DET 210');//$course);
-                                                  $cursor2 = $collection2->find($results); 
-                                                  $due_date="";
-                                                  $xp="";
-                                                  $desc='';
-                                                  $dbid="";
-                                                  foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                                    print "<tr>";
-                                                    foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                      if ($k != "desc"){
-                                                        if($k=="title"){
-                                                          $title=$v;
-                                                        }
-                                                        if($k=="due_date"){
-                                                          $due_date=$v;
-                                                        }
-                                                        if($k=="xp"){
-                                                          $xp=$v;
-                                                        }
-                                                        print "<td>$v</td>";
-                                                      }
-                                                      else{
-                                                        $desc=$v;
-                                                      }
-                                                      }
-                                                      $title = str_replace(" ","_",$title);
-                                                      $desc = str_replace(" ","_",$desc);
-                                                      //print "<td>$desc</td>";
-
-                                                    print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                                    print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
-                                                    print "</tr>";
+                                              $results = array('title'=>$title,'course_id' => 'DET 210');//$course);
+                                              $cursor2 = $collection2->find($results); 
+                                              $due_date="";
+                                              $xp="";
+                                              $desc='';
+                                              $dbid="";
+                                              foreach ($cursor as $doc) { //Turn cursor (results) human readable
+                                                print "<tr>";
+                                                foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
+                                                  if ($k != "desc"){
+                                                    if($k=="title"){
+                                                      $title=$v;
                                                     }
+                                                    if($k=="due_date"){
+                                                      $due_date=$v;
+                                                    }
+                                                    if($k=="xp"){
+                                                      $xp=$v;
+                                                    }
+                                                    print "<td>$v</td>";
+                                                  }
+                                                  else{
+                                                    $desc=$v;
+                                                  }
+                                                  }
+                                                  $title = str_replace(" ","_",$title);
+                                                  $desc = str_replace(" ","_",$desc);
+                                                  //print "<td>$desc</td>";
 
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
+                                                print "</tr>";
                                                 }
-                                              }
                                              ?>
 
                                     </table>
+                                    <?php
+                                      print_r($curquests);
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
