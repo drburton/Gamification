@@ -77,19 +77,7 @@
                           else{
                             print " Cursor NOT NULL <br/>";
                           }
-                          foreach ($courseCursor as $doc) {
-                            print $doc;
-                            // foreach ($doc as $k=>$v){
-                            //   if(empty($doc)){
-                            //     print " EMPTY";
-                            //   }
-                            //   else{
-                            //     print " NOT NULL <br/>";
-                            //   }
-                            //   // print $k.":";
-                            //   // print $v."<br/>";
-                            // }
-                          }
+                          print reset($courseCursor);
                         ?>
                     </h1>
                 </section>
