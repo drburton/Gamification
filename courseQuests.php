@@ -77,14 +77,14 @@
                           else{
                             print " Cursor NOT NULL <br/>";
                           }
-                          //foreach ($courseCursor as $doc) {
-                            // print "DOC: ".$doc;
-                            // if(empty($doc)){
-                            //     print " EMPTY";
-                            //   }
-                            //   else{
-                            //     print " NOT NULL <br/>";
-                            //   }
+                          foreach ($courseCursor as $doc) {
+                            print_r($doc);
+                            if(empty($doc)){
+                                print " EMPTY";
+                              }
+                              else{
+                                print " NOT NULL <br/>";
+                              }
                             // foreach ($doc as $k=>$v){
                             //   if(empty($doc)){
                             //     print " EMPTY";
@@ -94,8 +94,8 @@
                             //   }
                             //   // print $k.":";
                             //   // print $v."<br/>";
-                            //}
-                          //}
+                            // }
+                          }
                         ?>
                     </h1>
                 </section>
