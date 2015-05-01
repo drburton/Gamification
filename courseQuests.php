@@ -70,8 +70,14 @@
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
                         <?php
+                        if(empty($doc)){
+                                print " Cursor EMPTY";
+                              }
+                              else{
+                                print " Cursor NOT NULL <br/>";
+                              }
                           foreach ($courseCursor as $doc) {
-                            if(empty($courseCursor)){
+                            if(empty($doc)){
                                 print " EMPTY";
                               }
                               else{
