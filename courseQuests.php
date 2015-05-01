@@ -77,7 +77,7 @@
                             print " Cursor NOT NULL <br/>";
                           }
                           foreach ($courseCursor as $doc) {
-                            print $doc;
+                            print "DOC: ".$doc;
                             if(empty($doc)){
                                 print " EMPTY";
                               }
