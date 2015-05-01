@@ -77,7 +77,7 @@
                           else{
                             print " Cursor NOT NULL <br/>";
                           }
-                          print reset($courseCursor);
+                          print $courseCursor->count();
                         ?>
                     </h1>
                 </section>
