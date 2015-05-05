@@ -167,7 +167,7 @@
 
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
-                                               $results = array('course_id' => $course,'user_id'=>$SESSION['login']);//$course);
+                                               $results = array('course_id' => $course,);//'user_id'=>$SESSION['login']);//$course);
                                                $cursor2 = $collection4->find($results); 
                                                $due_date="";
                                                $xp="";
@@ -301,9 +301,6 @@
             var button = $(event.relatedTarget) // Button that triggered the modal
             var questId = button.data('id') // Extract info from data-* attributes
             var questCourse = button.data('course')
-                  while (questId.search("_")!=-1){
-                    questId=questId.replace("_"," ")
-                  }
             var modal = $(this)
             modal.find('#acceptLabel').text("Accept Quest: "+questId) //Input results returned into the modals.
             modal.find('#acceptTitle').val(questId)
