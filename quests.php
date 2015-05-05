@@ -258,6 +258,7 @@
                       <!-- Create Quest Form -->
                       <form action="createquest.php" method="POST">
                         <div class="form-group">
+                          <input type="hidden" class="form-control" placeholder="course" name="course" <?php print "value='$course'";?>>
                           <label>Title</label>
                           <input type="text" class="form-control" placeholder="Quest Title" name="title">
                         </div>

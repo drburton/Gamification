@@ -7,6 +7,7 @@
     $newDesc = $_POST["desc"];
     $newDesc = str_replace("\r\n",'~',$newDesc);
     $name=$_SESSION["login"];
+    $course=$_POST["course"];
     //print $newDesc;
 
     $newquest=array('title' => $_POST["title"], 'course_id'=>$_POST["course"], 'user_id'=>$name);
