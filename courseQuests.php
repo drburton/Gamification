@@ -174,25 +174,34 @@
                                                $xp="";
                                                $desc='';
                                                $dbid="";
+                                               $title="";
                                                foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                                 print "<tr>";
-                                                 foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                   if ($k != "desc"){
-                                                     if($k=="title"){
-                                                       $title=$v;
+                                                 foreach ($doc as $k => $v) {
+                                                  if($k=="title"){
+                                                    $title=$v
+                                                  }
+                                                 }
+                                                  $results = array('title'=> $title,'course_id' => $course);//$course);
+                                                  $cursor = $collection2->find($results); //Return a quest result set
+                                                  $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
+                                                  $cursor=$cursor->sort(array("title"=>1));
+                                                  foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
+                                                   print "<tr>";
+                                                   foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
+                                                     if ($k != "desc"){
+                                                         if($k=="due_date"){
+                                                           $due_date=$v;
+                                                         }
+                                                         if($k=="xp"){
+                                                           $xp=$v;
+                                                         }
+                                                         print "<td>$v</td>";
+                                                       }
+                                                       else{
+                                                         $desc=$v;
+                                                       }
                                                      }
-                                                     if($k=="due_date"){
-                                                       $due_date=$v;
-                                                     }
-                                                     if($k=="xp"){
-                                                       $xp=$v;
-                                                     }
-                                                     print "<td>$v</td>";
-                                                   }
-                                                   else{
-                                                     $desc=$v;
-                                                   }
-                                                   }
+                                                  }
                                                    $title = str_replace(" ","_",$title);
                                                    $desc = str_replace(" ","_",$desc);
                                                    //print "<td>$desc</td>";
