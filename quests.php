@@ -101,7 +101,7 @@
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
 
-                                            	$results = array('course_id' => 'DET 210');
+                                            	$results = array('course_id' => $course);
                                             	$cursor = $collection2->find($results);
                                             	$cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false));
                                                 $cursor=$cursor->sort(array("title"=>1));
