@@ -167,13 +167,13 @@
 
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
-                                               $results = array('title'=>$title,'course_id' => 'DET 210');//$course);
+                                               $results = array('title'=>$title,'course_id' => $course,'user_id'=>$SESSION['login']);//$course);
                                                $cursor2 = $collection4->find($results); 
                                                $due_date="";
                                                $xp="";
                                                $desc='';
                                                $dbid="";
-                                               foreach ($cursor as $doc) { //Turn cursor (results) human readable
+                                               foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
                                                  print "<tr>";
                                                  foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                    if ($k != "desc"){
