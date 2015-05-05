@@ -166,6 +166,7 @@
                   <div class="modal-footer">
                     <form action="deletequest.php" method="POST">
 					<input type="text" id="deleteTitle" name="deleteTitle" hidden="true"></input>
+          <input type="hidden" class="form-control" placeholder="course" name="course" <?php print "value='$course'";?>>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					<button type="button submit" class="btn btn-danger">Delete Quest Forever</button>
 					</form>
@@ -212,6 +213,7 @@
                    <div class="modal-body">
                      <!-- Create Quest Form -->
                      <form action="editquest.php" method="POST">
+                      <input type="hidden" class="form-control" placeholder="course" name="course" <?php print "value='$course'";?>>
                         <div class="form-group">
                          <input type="hidden" class="form-control" placeholder="Quest Title" id="oldTitle" name="oldTitle">
                        </div>
@@ -257,8 +259,8 @@
                     <div class="modal-body">
                       <!-- Create Quest Form -->
                       <form action="createquest.php" method="POST">
+                        <input type="hidden" class="form-control" placeholder="course" name="course" <?php print "value='$course'";?>>
                         <div class="form-group">
-                          <input type="hidden" class="form-control" placeholder="course" name="course" <?php print "value='$course'";?>>
                           <label>Title</label>
                           <input type="text" class="form-control" placeholder="Quest Title" name="title">
                         </div>
