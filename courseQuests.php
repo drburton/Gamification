@@ -75,11 +75,6 @@
                     <h1>
                         <?php print $course." Quests";//(Course Name) Quests ?>
                         <small>Choose wisely.</small>
-                        <?php
-                          print "HELLO ";
-                          print count($curQuests);
-                          //print_r($curQuests);
-                        ?>
                     </h1>
                 </section>
 
