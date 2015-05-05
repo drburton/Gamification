@@ -167,7 +167,7 @@
 
                                         <!-- PHP to pull quest data and put in table -->
                                             <?php
-                                               $results = array('course_id' => $course,'user_id'=>$SESSION['login']);//$course);
+                                               $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                                $cursor2 = $collection4->find($results);
                                                $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
                                                $due_date="";
