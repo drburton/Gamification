@@ -25,7 +25,7 @@
       }
     }
 
-    $results = array('course_id' => 'DET_350', 'user_id'=> $_SESSION["login"]);
+    $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
     $cursor = $collection->find($results);
     $cursor->fields(array('user_role' => true,'_id' => false));
     //$cursor=$cursor->sort(array("title"=>1));
@@ -169,8 +169,8 @@
                                             $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
                                             $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
 
-                                            echo($_SESSION['login']);
-                                            $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
+                                            //echo($_SESSION['login']);
+                                            $results = array('course_id' => 'DET_350','user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
                                             $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
                                             //print($cursor2);
