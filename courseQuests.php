@@ -100,7 +100,7 @@
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
 
-                                            $results = array('course_id' => $course);//$course);
+                                            /*$results = array('course_id' => $course);//$course);
                                             $cursor = $collection2->find($results); //Return a quest result set
                                             $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
                                             $cursor=$cursor->sort(array("title"=>1)); //Sort by title
@@ -135,7 +135,7 @@
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
                                               print "</tr>";
-                                              }
+                                              }*/
                                            ?>
 
                                   </table>
