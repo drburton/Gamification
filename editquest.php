@@ -12,5 +12,5 @@
     $newquest=array('$set'=>array('title' => $_POST["title"], 'xp' => (int)$_POST["xp"],  'due_date' => $_POST["due_date"], 'desc' => $newDesc, 'course_id'=>$course));
     $collection2->update(array("title" => $_POST["oldTitle"]),$newquest);
 
-    header("Location: http://gamedev.garrettyamada.com/quests.php?course=".$new);
+    header("Location: /quests.php?course=".$new);
 ?>
