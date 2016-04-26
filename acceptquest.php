@@ -11,9 +11,9 @@
     //print $newDesc;
     $new = str_replace(" ","_",$course);
 
-    $newquest=array('title' => $_POST["title"], 'course_id'=>$_POST["course"], 'user_id'=>$name);
+    $newquest=array('title' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name);
     $collection2->save($newquest);
 
-    print("/courseQuests.php?course=".$new);
-    //header("Location: /courseQuests.php?course=".$new);//Kick user back to quests page after inputting new quest into database
+    //print("/courseQuests.php?course=".$course);
+    header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
 ?>
