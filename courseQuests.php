@@ -172,7 +172,7 @@
                                             $xp="";
                                             $desc='';
                                             $dbid="";
-                                            foreach ($cursor as $doc) { //Turn cursor (results) human readable
+                                            foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
