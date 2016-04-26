@@ -171,14 +171,14 @@
 
                                             $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
-                                            //$cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
-                                            print($cursor2);
+                                            $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
+                                            //print($cursor2);
                                             $due_date="";
                                             $xp="";
                                             $desc='';
                                             $dbid="";
                                             $title="";
-                                            foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
+                                            foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
