@@ -134,7 +134,7 @@
                                                 //print "<td>$desc</td>";
 
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course data-id=$title>Accept Quest</button></a></td>";
                                               print "</tr>";
                                               }
                                            ?>
@@ -164,13 +164,7 @@
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
 
-                                            /*$results = array('course_id' => $course);//$course);
-                                            $cursor = $collection2->find($results); //Return a quest result set
-                                            $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
-                                            $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
-
-                                            //echo($_SESSION['login']);
-                                            $results = array('course_id' => 'DET_350','user_id'=>$_SESSION['login']);//$course);
+                                            $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
                                             $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
                                             //print($cursor2);
@@ -179,9 +173,7 @@
                                             $desc='';
                                             $dbid="";
                                             $title="";
-                                            echo(count($cursor2));
                                             foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                              print "Inside";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
                                                   if($k=="title"){
@@ -204,7 +196,7 @@
                                                 //print "<td>$desc</td>";
 
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course data-id=$title>Accept Quest</button></a></td>";
                                               print "</tr>";
                                               }
                                               print("After Loop");
