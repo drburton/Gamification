@@ -172,21 +172,20 @@
                                               $desc='';
                                               $dbid="";
                                               $title="";
-                                              foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                                echo ("AAAAHHHHH!");
+                                              foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                                 //foreach ($doc as $k => $v) {
                                                 // if($k=="title"){
                                                 //   $title=$v
                                                 // }
                                                 //}
-                                                //print("<tr>");
+                                                print("<tr><tg>Blaaaghh!</td>");
                                                 //$title = str_replace(" ","_",$title);
                                                 //$desc = str_replace(" ","_",$desc);
                                                 //print("<tr><td>Test</td></tr>");
 
                                                 /*print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
-                                                *///print("</tr>");
+                                                */print("</tr>");
                                                 }
                                            ?>
 
