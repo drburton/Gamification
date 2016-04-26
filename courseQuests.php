@@ -112,7 +112,7 @@
                                             echo(count($cursor));
                                             foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
-                                              foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
+                                              /*foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
                                                   if($k=="title"){
                                                     $title=$v;
@@ -131,7 +131,7 @@
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
-                                                //print "<td>$desc</td>";
+                                                //print "<td>$desc</td>";*/
 
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
