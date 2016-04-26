@@ -163,10 +163,15 @@
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
 
+                                            /*$results = array('course_id' => $course);//$course);
+                                            $cursor = $collection2->find($results); //Return a quest result set
+                                            $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
+                                            $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
+
+
                                             $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
-                                            $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
-                                            echo count("<tr><td>".$cursor2."</td></tr>");
+                                            //$cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
                                             $due_date="";
                                             $xp="";
                                             $desc='';
