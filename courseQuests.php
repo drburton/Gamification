@@ -206,6 +206,7 @@
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
                                               print "</tr>";
                                               }
+                                              print("After Loop");
                                            ?>
 
                                   </table>
