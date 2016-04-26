@@ -9,9 +9,10 @@
     $name=$_SESSION["login"];
     $course=$_POST["course"];
     //print $newDesc;
+    $new = str_replace(" ","_",$course);
 
     $newquest=array('title' => $_POST["title"], 'course_id'=>$_POST["course"], 'user_id'=>$name);
     $collection2->save($newquest);
 
-    header("Location: /courseQuests.php?course=".$_POST["course"]);//Kick user back to quests page after inputting new quest into database
+    header("Location: /courseQuests.php?course=".$new);//Kick user back to quests page after inputting new quest into database
 ?>
