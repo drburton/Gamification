@@ -7,6 +7,6 @@
     $collection = new MongoCollection( $db, "quests");
     $collection->remove(array('title'=>$_POST["deleteTitle"],'course_id'=>$course));
 	
-	header("Location: http://gamedev.garrettyamada.com/quests.php?course=".$new);
+	header("Location: /quests.php?course=".$new);
 
 ?>

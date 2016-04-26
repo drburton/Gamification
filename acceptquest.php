@@ -13,5 +13,5 @@
     $newquest=array('title' => $_POST["title"], 'course_id'=>$_POST["course"], 'user_id'=>$name);
     $collection2->save($newquest);
 
-    header("Location: http://gamedev.garrettyamada.com/courseQuests.php?course=".$_POST["course"]);//Kick user back to quests page after inputting new quest into database
+    header("Location: /courseQuests.php?course=".$_POST["course"]);//Kick user back to quests page after inputting new quest into database
 ?>
