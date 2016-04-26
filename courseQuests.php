@@ -170,13 +170,13 @@
                                               $desc='';
                                               $dbid="";
                                               $title="";
-                                              /*foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
+                                              foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
                                                 foreach ($doc as $k => $v) {
                                                  if($k=="title"){
                                                    $title=$v
                                                  }
                                                 }
-                                                  $title = str_replace(" ","_",$title);
+                                              /*    $title = str_replace(" ","_",$title);
                                                   $desc = str_replace(" ","_",$desc);
                                                   //print "<td>$desc</td>";
 
