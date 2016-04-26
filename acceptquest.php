@@ -9,7 +9,7 @@
     $name=$_SESSION["login"];
     $course=$_POST["course"];
     //print $newDesc;
-    $new = str_replace(" ","_",$course);
+    $new = str_replace("_"," ",$course);
 
     $newquest=array('title' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name);
     $collection2->save($newquest);
