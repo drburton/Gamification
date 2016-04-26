@@ -165,6 +165,7 @@
                                               $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                               $cursor2 = $collection4->find($results);
                                               $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
+                                              echo count($cursor2);
                                               $due_date="";
                                               $xp="";
                                               $desc='';
