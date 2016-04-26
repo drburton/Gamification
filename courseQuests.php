@@ -171,11 +171,11 @@
                                               $dbid="";
                                               $title="";
                                               foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                                foreach ($doc as $k => $v) {
-                                                 if($k=="title"){
-                                                   $title=$v
-                                                 }
-                                                }
+                                                //foreach ($doc as $k => $v) {
+                                                // if($k=="title"){
+                                                //   $title=$v
+                                                // }
+                                                //}
                                                 //print("<tr>");
                                                 //$title = str_replace(" ","_",$title);
                                                 //$desc = str_replace(" ","_",$desc);
