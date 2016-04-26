@@ -169,9 +169,8 @@
                                             $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
 
 
-                                            $results = array('course_id' => $course);//$course);
+                                            $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
-                                            echo(count($cursor2));
                                             $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
                                             //print($cursor2);
                                             $due_date="";
@@ -179,8 +178,9 @@
                                             $desc='';
                                             $dbid="";
                                             $title="";
+                                            echo(count($cursor2));
                                             foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
-                                              print "<tr>";
+                                              print "Inside";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
                                                   if($k=="title"){
