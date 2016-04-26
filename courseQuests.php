@@ -112,7 +112,7 @@
                                             echo(count($cursor));
                                             foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
-                                              /*foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
+                                              foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                 if ($k != "desc"){
                                                   if($k=="title"){
                                                     $title=$v;
@@ -131,7 +131,7 @@
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
-                                                //print "<td>$desc</td>";*/
+                                                //print "<td>$desc</td>";
 
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
@@ -169,7 +169,7 @@
                                             $cursor->fields(array("title" => true, 'due_date' => true, 'xp' => true, 'desc' => true, '_id' => false)); //Get specific data
                                             $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
 
-
+                                            echo($_SESSION['login']);
                                             $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
                                             $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
