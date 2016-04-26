@@ -169,7 +169,7 @@
                                             $cursor=$cursor->sort(array("title"=>1)); //Sort by title*/
 
 
-                                            $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
+                                            $results = array('course_id' => $course);//$course);
                                             $cursor2 = $collection4->find($results);
                                             echo(count($cursor2));
                                             $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
