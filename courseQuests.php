@@ -25,7 +25,7 @@
       }
     }
 
-    $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
+    $results = array('course_id' => 'DET_350', 'user_id'=> $_SESSION["login"]);
     $cursor = $collection->find($results);
     $cursor->fields(array('user_role' => true,'_id' => false));
     //$cursor=$cursor->sort(array("title"=>1));
