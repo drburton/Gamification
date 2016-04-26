@@ -14,5 +14,6 @@
     $newquest=array('title' => $_POST["title"], 'course_id'=>$_POST["course"], 'user_id'=>$name);
     $collection2->save($newquest);
 
-    header("Location: /courseQuests.php?course=".$new);//Kick user back to quests page after inputting new quest into database
+    print("/courseQuests.php?course=".$new);
+    //header("Location: /courseQuests.php?course=".$new);//Kick user back to quests page after inputting new quest into database
 ?>
