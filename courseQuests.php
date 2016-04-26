@@ -177,8 +177,8 @@
                                                  }
                                                 }
                                                 print("<tr>");
-                                                $title = str_replace(" ","_",$title);
-                                                $desc = str_replace(" ","_",$desc);
+                                                //$title = str_replace(" ","_",$title);
+                                                //$desc = str_replace(" ","_",$desc);
                                                 /*print "<td>$desc</td>";
 
                                                 /*print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
