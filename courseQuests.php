@@ -165,7 +165,6 @@
                                               $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                               $cursor2 = $collection4->find($results);
                                               $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
-                                              echo count($cursor2);
                                               $due_date="";
                                               $xp="";
                                               $desc='';
@@ -177,14 +176,14 @@
                                                 //   $title=$v
                                                 // }
                                                 //}
-                                                print("<tr>");
+                                                //print("<tr>");
                                                 //$title = str_replace(" ","_",$title);
                                                 //$desc = str_replace(" ","_",$desc);
-                                                print "<td>Test</td>";
+                                                print("<tr><td>Test</td></tr>");
 
                                                 /*print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                                 print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
-                                                */print("</tr>");
+                                                *///print("</tr>");
                                                 }
                                            ?>
 
