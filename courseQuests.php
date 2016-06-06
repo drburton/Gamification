@@ -55,7 +55,7 @@
        // $curQuests[]=$v;
       }
     }
-    print_r($curQuests);
+    //print_r($curQuests);
 ?>
 
 
@@ -116,23 +116,21 @@
                                             foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                if ($k != "desc"){
                                                   if($k=="title"){
                                                     $title=$v;
                                                   }
-                                                  if($k=="due_date"){
+                                                  elseif($k=="due_date"){
                                                     $due_date=$v;
                                                   }
-                                                  if($k=="xp"){
+                                                  elseif($k=="xp"){
                                                     $xp=$v;
                                                   }
-                                                  //if(!in_array($title, $curQuests){
-                                                  	print "<td>$v</td>";
-                                                  //}
-                                                }
-                                                else{
-                                                  $desc=$v;
-                                                }
+                                                  elseif($k=="desc"){
+                                                  	$desc=$v;
+                                              	  }
+                                              	  if ($k != "desc"){
+                                                	print "<td>$v</td>";
+                                                  }
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
