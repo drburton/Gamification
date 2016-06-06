@@ -49,7 +49,7 @@
       foreach($doc as $k=>$v){
         $title=$v;
         array_push($curQuests,$v);
-        $curQuests[]=$v;
+       // $curQuests[]=$v;
       }
     }
 ?>
