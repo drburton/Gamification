@@ -41,7 +41,7 @@
       exit;
     }
 
-    $curQuests=array();
+    $curQuests=[];
     $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
     $cursor = $collection4->find($results); //Return a quest result set
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
@@ -52,7 +52,6 @@
         $curQuests[]=$v;
       }
     }
-    print(count($curQuests);
 ?>
 
 
@@ -64,7 +63,9 @@
       <?php include_once "headStyle.php"; ?>
   </head>
   <body class="skin-blue">
-
+  	  <?php
+  	  	print(count($curQuests);
+  	  ?>
       <!-- Header Navbar and left User Sidebar
       --------------------------------------------- -->
       <?php include_once "navTemplate.php";?>
