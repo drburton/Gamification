@@ -109,7 +109,7 @@
                                             $xp="";
                                             $desc='';
                                             $dbid="";
-                                            echo(count($cursor));
+                                            //echo(count($cursor));
                                             foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
@@ -185,6 +185,7 @@
                                                   if($k=="xp"){
                                                     $xp=$v;
                                                   }
+                                                  echo ($v);
                                                   print "<td>$v</td>";
                                                 }
                                                 else{
@@ -199,7 +200,7 @@
                                               print "<td><a href=\"#\"><button class=\"btn btn-alert btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$Ucourse data-id=$title>Drop Quest</button></a></td>";
                                               print "</tr>";
                                               }
-                                              print("After Loop");
+                                              //print("After Loop");
                                            ?>
 
                                   </table>
