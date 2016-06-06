@@ -158,6 +158,7 @@
                               </div><!-- /.box-header -->
                               <div class="box-body table-responsive no-padding">
                                   <table class="table table-hover">
+                                  <thead>
                                       <tr>
                                           <th>Quest</th>
                                           <th>XP</th>
@@ -165,6 +166,8 @@
                                           <th>Details</th>
                                           <th>Accept</th>
                                       </tr>
+                                  </thead>
+                                  <tbody>
 
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
@@ -208,7 +211,7 @@
                                               }
                                               //print("After Loop");
                                            ?>
-
+                                  </tbody>
                                   </table>
                               </div><!-- /.box-body -->
                           </div><!-- /.box -->
