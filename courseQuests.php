@@ -63,9 +63,6 @@
       <?php include_once "headStyle.php"; ?>
   </head>
   <body class="skin-blue">
-  	  <?php
-  	  	print(count($curQuests);
-  	  ?>
       <!-- Header Navbar and left User Sidebar
       --------------------------------------------- -->
       <?php include_once "navTemplate.php";?>
