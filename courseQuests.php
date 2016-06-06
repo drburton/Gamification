@@ -199,7 +199,7 @@
                                               print("<td>Item</td>");
                                               print("<td>Item</td>");
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$Ucourse data-id=$title>Drop Quest</button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$Ucourse data-id=$title>Drop Quest</button></a></td>";
                                               print "</tr>";
                                               }
                                               //print("After Loop");
