@@ -52,6 +52,7 @@
        // $curQuests[]=$v;
       }
     }
+    print(count($curQuests));
 ?>
 
 
