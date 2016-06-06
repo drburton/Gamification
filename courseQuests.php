@@ -42,7 +42,7 @@
     }
 
     $curQuests=[];
-    $results = array('course_id' => 'DET 350', 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
+    $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
     foreach($cursor as $doc){
