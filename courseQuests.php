@@ -47,11 +47,12 @@
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-        //$title=$v;
-        //array_push($curQuests,$v);
+        $title=$v;
+        array_push($curQuests,$v);
         $curQuests[]=$v;
       }
     }
+    print(count($curQuests);
 ?>
 
 
