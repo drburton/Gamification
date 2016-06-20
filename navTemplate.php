@@ -5,6 +5,10 @@
     // if (!loggedIn()){
     //     header("Location: /index.php");
     // }
+    $showPeople = false;
+    if isset($_GET["course"]!=""){
+        $showPeople = true;
+    }
 ?>
 
 
@@ -137,6 +141,11 @@
                         <li>
                             <a href="#">
                                 <i class="fa fa-user"></i> <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-users"></i> <span>People</span>
                             </a>
                         </li>
                         <li>
