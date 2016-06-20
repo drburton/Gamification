@@ -5,10 +5,10 @@
     // if (!loggedIn()){
     //     header("Location: /index.php");
     // }
-    $showPeople = false;
-    if isset($_GET["course"]!=""){
-        $showPeople = true;
-    }
+    //$showPeople = false;
+    //if isset($_GET["course"]!=""){
+    //    $showPeople = true;
+    //}
 ?>
 
 
