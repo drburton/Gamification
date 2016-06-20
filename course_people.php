@@ -5,7 +5,8 @@
     $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: /index.php");
+        //header("Location: /index.php");
+        echo("not logged in!");
     }
     else{
         if($_GET["course"]!=""){
@@ -13,11 +14,13 @@
             $course = str_replace("_"," ",$course);
             $courseCursor = $collection->find(array('c_number' => $course));
             if($courseCursor->count()==0){
-                header("Location: 404.php");
+                //header("Location: 404.php");
+                echo("not a course!");
             }
         }
         else{
-            header("Location: 404.php");
+            //header("Location: 404.php");
+            echo("default redirect");
         }
         $cMax=0;
          foreach ($courseCursor as $doc) {
