@@ -6,10 +6,10 @@
     //     header("Location: /index.php");
     // }
     $showPeople = false;
-    //if isset($_GET["course"]){
+    if(isset($_GET["course"])){
     //    //$showPeople = true;
-    //    echo("set");
-    //}
+        echo("set");
+    }
     echo("Stuff");
 ?>
 
