@@ -79,10 +79,10 @@
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
-                    <!-- Notification from teacher -->
-                    <!-- Course Progress -->
                     
-                    
+                    <div class="navbar">
+                        <i class="fa fa-users"></i> <span>People</span>
+                    </div>
 
 
                 </section><!-- right col -->
