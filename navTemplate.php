@@ -145,7 +145,7 @@
                         </li>
                         <?php if($showPeople){ ?>
                         <li>
-                            <a href="course_people.php/course=<?php print($course); ?>">
+                            <a href="course_people.php/course=<?php print($course_under); ?>">
                                 <i class="fa fa-users"></i> <span>People</span>
                             </a>
                         </li>

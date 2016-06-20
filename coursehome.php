@@ -9,8 +9,8 @@
     }
     else{
         if($_GET["course"]!=""){
-            $course=$_GET["course"];
-            $course = str_replace("_"," ",$course);
+            $course_under=$_GET["course"];
+            $course = str_replace("_"," ",$course_under);
             $courseCursor = $collection->find(array('c_number' => $course));
             if($courseCursor->count()==0){
                 header("Location: 404.php");
