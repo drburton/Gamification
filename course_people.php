@@ -78,7 +78,9 @@
                     <!-- Notification from teacher -->
                     <!-- Course Progress -->
                     
-                    
+                    <div class="navbar">
+                        <i class="fa fa-users"></i> <span>People</span>
+                    </div>
 
 
                 </section><!-- right col -->
