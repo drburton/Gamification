@@ -59,7 +59,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Course Home</title>
+        <title>EduQuest | Course People</title>
         <?php include_once "headStyle.php"; ?>
     </head>
     <body class="skin-blue">
@@ -73,14 +73,16 @@
                     </h1>
                 </section>
 
+                <div class="navbar">
+                    <i class="fa fa-users"></i> <span>People</span>
+                </div>
+
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <!-- Notification from teacher -->
                     <!-- Course Progress -->
                     
-                    <div class="navbar">
-                        <i class="fa fa-users"></i> <span>People</span>
-                    </div>
+                    
 
 
                 </section><!-- right col -->
