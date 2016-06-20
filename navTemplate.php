@@ -7,7 +7,8 @@
     // }
     $showPeople = false;
     if !isset($_GET["course"]){
-        $showPeople = true;
+        //$showPeople = true;
+        echo("set");
     }
 ?>
 
