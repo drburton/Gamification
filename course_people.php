@@ -76,7 +76,7 @@
                 <nav class="navbar course-nav navbar-default navbar-collapse" style="margin:0px;">
                     <div class="navbar-left">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-users fa-inverse"></i> People</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> People</a></li>
                         </ul>
                     </div>
                 </nav>
