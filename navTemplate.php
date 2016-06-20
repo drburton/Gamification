@@ -9,9 +9,6 @@
     if(isset($_GET["course"])){
         $showPeople = true;
     }
-    if(!$showPeople){
-        echo("Non-course");
-    }
 ?>
 
 
@@ -146,11 +143,13 @@
                                 <i class="fa fa-user"></i> <span>Profile</span>
                             </a>
                         </li>
+                        <?php if($showPeople){ ?>
                         <li>
                             <a href="#">
                                 <i class="fa fa-users"></i> <span>People</span>
                             </a>
                         </li>
+                        <?php } ?>
                         <li>
                             <a href="#">
                                 <i class="fa fa-gear"></i> <span>Settings</span>
