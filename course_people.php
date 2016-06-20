@@ -73,16 +73,13 @@
                     </h1>
                 </section>
 
-                <div class="navbar">
+                <div class="navbar course-nav" style="margin:0px;">
                     <i class="fa fa-users"></i> <span>People</span>
                 </div>
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     
-                    <div class="navbar">
-                        <i class="fa fa-users"></i> <span>People</span>
-                    </div>
 
 
                 </section><!-- right col -->
