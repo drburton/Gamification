@@ -73,13 +73,11 @@
                     </h1>
                 </section>
 
-                <nav class="navbar course-nav navbar-default" style="margin:0px;">
-                    <div class="container-fluid">
-                        <div class="navbar-right">
-                            <ul class="nav navbar-nav">
-                                <li><i class="fa fa-users fa-inverse"></i> People</li>
-                            </ul>
-                        </div>
+                <nav class="navbar course-nav navbar-default navbar-collapse" style="margin:0px;">
+                    <div class="navbar-left">
+                        <ul class="nav navbar-nav">
+                            <li><i class="fa fa-users fa-inverse"></i> People</li>
+                        </ul>
                     </div>
                 </nav>
 
