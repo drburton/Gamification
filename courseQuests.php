@@ -11,8 +11,8 @@
     }
     else{
       if($_GET["course"]!=""){
-        $Ucourse=$_GET["course"];
-        $course = str_replace("_"," ",$Ucourse);
+        $course_under=$_GET["course"];
+        $course = str_replace("_"," ",$course_under);
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         if($courseCursor->count()==0){
@@ -91,7 +91,7 @@
                         </ul>
                     </div>
                 </nav>
-              
+
               <!-- Main content -->
               <section class="content">
 
@@ -152,7 +152,7 @@
 
 	                                              if(!in_array($title, $curQuests)){
 	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
+	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course_under data-id=$title>Accept Quest</button></a></td>";
 	                                              	print "</tr>";
 	                                          	  }
                                               }
@@ -220,7 +220,7 @@
                                               print("<td>Item</td>");
                                               print("<td>Item</td>");
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$Ucourse data-id=$title>Drop Quest</button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$title>Drop Quest</button></a></td>";
                                               print "</tr>";
                                               }
                                               //print("After Loop");
