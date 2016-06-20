@@ -7,7 +7,7 @@
     // }
     $showPeople = false;
     if(isset($_GET["course"])){
-    //    //$showPeople = true;
+        $showPeople = true;
     }
     if(!$showPeople){
         echo("Non-course");
