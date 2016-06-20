@@ -73,13 +73,15 @@
                     </h1>
                 </section>
 
-                <div class="navbar course-nav" style="margin:0px;">
-                    <div class="navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li><i class="fa fa-users fa-inverse"></i> People</li>
-                        </ul>
+                <nav class="navbar course-nav navbar-default" style="margin:0px;">
+                    <div class="container-fluid">
+                        <div class="navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li><i class="fa fa-users fa-inverse"></i> People</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </nav>
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
