@@ -74,7 +74,11 @@
                 </section>
 
                 <div class="navbar course-nav" style="margin:0px;">
-                    <i class="fa fa-users"></i> <span>People</span>
+                    <div class="navbar-left">
+                        <ul class="nav navbar-nav">
+                            <li><i class="fa fa-users fa-inverse"></i> People</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Main content -->
