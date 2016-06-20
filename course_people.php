@@ -5,8 +5,7 @@
     $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
-        //header("Location: /index.php");
-        echo("not logged in!");
+        header("Location: /index.php");
     }
     else{
         if($_GET["course"]!=""){
@@ -14,13 +13,11 @@
             $course = str_replace("_"," ",$course);
             $courseCursor = $collection->find(array('c_number' => $course));
             if($courseCursor->count()==0){
-                //header("Location: 404.php");
-                echo("not a course!");
+                header("Location: 404.php");
             }
         }
         else{
-            //header("Location: 404.php");
-            echo("default redirect");
+            header("Location: 404.php");
         }
         $cMax=0;
          foreach ($courseCursor as $doc) {
@@ -79,35 +76,9 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <!-- Notification from teacher -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Notification Test</h4>
-                                <p>Do this one quest and stuff.</p>
-                            </div>
-                        </div>
-                        <!-- Link to Quests & Awards -->
-                        <?php 
-                        $new = str_replace(" ","_",$course);
-                        print"<a href='/courseQuests.php?course=".$new."'><button class='btn btn-default btn-lg'>Quests</button></a>";
-                        ?>
-                        <button class="btn btn-default btn-lg">Awards</button>
-                    </div>
                     <!-- Course Progress -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Course Progress</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
-                                        <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
-                                        <span class="sr-only">60% Complete</span>
-                                        <?php print $xp." points / ".$cMax." points" ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
 
 
                 </section><!-- right col -->
