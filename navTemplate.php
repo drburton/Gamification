@@ -6,9 +6,9 @@
     //     header("Location: /index.php");
     // }
     $showPeople = false;
-    //if isset($_GET["course"]!=""){
-    //    $showPeople = true;
-    //}
+    if !isset($_GET["course"]){
+        $showPeople = true;
+    }
 ?>
 
 
