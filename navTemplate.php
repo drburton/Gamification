@@ -8,9 +8,10 @@
     $showPeople = false;
     if(isset($_GET["course"])){
     //    //$showPeople = true;
-        echo("set");
     }
-    echo("Stuff");
+    if(!$showPeople){
+        echo("Non-course");
+    }
 ?>
 
 
