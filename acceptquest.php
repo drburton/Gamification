@@ -1,7 +1,7 @@
 <?php
     include_once "config.php";
     echo("Something");
-    /*if(isset($_POST("action"))){
+    if(isset($_POST("action"))){
         if($_POST("action")=="drop"){
             echo("Drop");
         }elseif($_POST("action")=="accept"){
@@ -9,7 +9,9 @@
         }else{
             echo("null"); 
         }
-    }*/
+    }else{
+        echo("no action"); 
+    }
     /*$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection2 = new MongoCollection( $db, "users-quests");
