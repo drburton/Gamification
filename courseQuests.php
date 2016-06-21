@@ -300,7 +300,7 @@
                    <h4 class="modal-title" id="dropLabel">Quest Details</h4>
                  </div>
                  <div class="modal-body">
-                  <form action="functions.php" method="POST">
+                  <form action="acceptquest.php" method="POST">
                       <div class="form-group" align="center">
                         <h4>Are You Sure You Want To Drop This Quest?</h4>
                       </div>
