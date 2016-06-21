@@ -280,6 +280,9 @@
                      <div class="form-group">
                        <input type="hidden" class="form-control" id="acceptCourse" name="course"></input>
                      </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="action" name="action" value="accept"></input>
+                     </div>
                  </div>
                  <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
