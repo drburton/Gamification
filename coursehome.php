@@ -80,7 +80,6 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <!-- Notification from teacher -->
-                    <?php print($role); ?>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="callout callout-info">

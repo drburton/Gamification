@@ -10,8 +10,8 @@
     }
     else{
       if($_GET["course"]!=""){
-        $Ucourse=$_GET["course"];
-        $course = str_replace("_"," ",$Ucourse);
+        $course_under=$_GET["course"];
+        $course = str_replace("_"," ",$course_under);
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         if($courseCursor->count()==0){
