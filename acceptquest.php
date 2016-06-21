@@ -8,7 +8,7 @@
         if($_POST("action")=="drop"){
             echo("Drop");
         }elseif($_POST("action")=="accept"){
-            $newDesc = $_POST["desc"];
+            /*$newDesc = $_POST["desc"];
             $newDesc = str_replace("\r\n",'~',$newDesc);
             $name=$_SESSION["login"];
             $course=$_POST["course"];
@@ -20,7 +20,7 @@
 
             //print("/courseQuests.php?course=".$course);
             header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
-
+            */
         }else{
             echo("null"); 
         }
