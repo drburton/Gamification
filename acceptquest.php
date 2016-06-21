@@ -1,6 +1,6 @@
 <?php
     include_once "config.php";
-    echo("Something");
+    echo("Something/n");
     if(isset($_POST["action"])){
         /*if($_POST("action")=="drop"){
             echo("Drop");
