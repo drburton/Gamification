@@ -1,6 +1,16 @@
 <?php
     include_once "config.php";
-    $m = new MongoClient();
+
+    if(isset($_POST("action"))){
+        if($_POST("action")=="drop"){
+            echo("Drop");
+        }elseif($_POST("action")=="accept"){
+           echo("accept"); 
+        }else{
+            echo("null"); 
+        }
+    }
+    /*$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection2 = new MongoCollection( $db, "users-quests");
     //print $_POST["desc"];
@@ -15,5 +25,5 @@
     $collection2->save($newquest);
 
     //print("/courseQuests.php?course=".$course);
-    header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
+    header("Location: /courseQuests.php?course=".$course);*///Kick user back to quests page after inputting new quest into database
 ?>

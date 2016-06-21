@@ -367,7 +367,7 @@
         var questId = button.data('id') // Extract info from data-* attributes
         var questCourse = button.data('course')
         var modal = $(this)
-        modal.find('#dropLabel').text("Accept Quest: "+questId) //Input results returned into the modals.
+        modal.find('#dropLabel').text("Drop Quest: "+questId) //Input results returned into the modals.
         modal.find('#dropTitle').val(questId)
         modal.find('#dropCourse').val(questCourse)
       });
