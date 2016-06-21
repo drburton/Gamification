@@ -261,7 +261,7 @@
                    <h4 class="modal-title" id="acceptLabel">Quest Details</h4>
                  </div>
                  <div class="modal-body">
-                  <form action="acceptquest.php" method="POST">
+                  <form action="questFunctions.php" method="POST">
                       <div class="form-group" align="center">
                         <h4>Are You Sure You Want To Accept This Quest?</h4>
                       </div>
@@ -294,7 +294,7 @@
                    <h4 class="modal-title" id="dropLabel">Quest Details</h4>
                  </div>
                  <div class="modal-body">
-                  <form action="acceptquest.php" method="POST">
+                  <form action="questFunctions.php" method="POST">
                       <div class="form-group" align="center">
                         <h4>Are You Sure You Want To Drop This Quest?</h4>
                       </div>
