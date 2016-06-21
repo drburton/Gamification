@@ -28,7 +28,7 @@
             }
         }
 
-        $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
+        $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
@@ -80,6 +80,7 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     <!-- Notification from teacher -->
+                    <?php print($role); ?>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="callout callout-info">

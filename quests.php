@@ -65,6 +65,9 @@
                   </h1>
               </section>
 
+              <?php 
+                include_once "courseNav.php";
+              ?>
                 <!-- Main content -->
                 <section class="content">
                 	<div class="row">
