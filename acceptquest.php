@@ -2,13 +2,14 @@
     include_once "config.php";
     echo("Something");
     if(isset($_POST("action"))){
-        if($_POST("action")=="drop"){
+        /*if($_POST("action")=="drop"){
             echo("Drop");
         }elseif($_POST("action")=="accept"){
            echo("accept"); 
         }else{
             echo("null"); 
-        }
+        }*/
+        echo("action!");
     }else{
         echo("no action"); 
     }
