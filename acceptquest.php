@@ -5,9 +5,9 @@
         $db = $m->selectDB("gamification_db");
         $collection2 = new MongoCollection( $db, "users-quests");
 
-        if($_POST("action")=="drop"){
+        if($_POST["action"]=="drop"){
             echo("Drop");
-        }elseif($_POST("action")=="accept"){
+        }elseif($_POST["action"]=="accept"){
             /*$newDesc = $_POST["desc"];
             $newDesc = str_replace("\r\n",'~',$newDesc);
             $name=$_SESSION["login"];
