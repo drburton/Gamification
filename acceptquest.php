@@ -1,6 +1,6 @@
 <?php
     include_once "config.php";
-    /*if(isset($_POST["action"])){
+    if(isset($_POST["action"])){
         $m = new MongoClient();
         $db = $m->selectDB("gamification_db");
         $collection2 = new MongoCollection( $db, "users-quests");
@@ -26,7 +26,8 @@
         }
     }else{
         echo("Bad Wolf");
-    }*/
+    }
+    /*
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection2 = new MongoCollection( $db, "users-quests");
@@ -42,5 +43,5 @@
     $collection2->save($newquest);
 
     //print("/courseQuests.php?course=".$course);
-    header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
+    header("Location: /courseQuests.php?course=".$course);*/ //Kick user back to quests page after inputting new quest into database
 ?>
