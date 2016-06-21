@@ -1,7 +1,7 @@
 <?php
     include_once "config.php";
     echo("Something");
-    if(isset($_POST("action"))){
+    if(isset($_POST["action"])){
         /*if($_POST("action")=="drop"){
             echo("Drop");
         }elseif($_POST("action")=="accept"){
