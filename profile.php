@@ -71,7 +71,7 @@
                         print("<br/>");
                     }
                 }*/
-                print($courseCursor);
+                //print($courseCursor);
                 print("<br/>");
                 //$userCollection = new MongoCollection( $db, "users");
                 //$user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
@@ -80,7 +80,7 @@
                 ?>
 
                 <form method="POST" action="functions.php">
-                    <input type="hidden" name="program" value="<?php print($testId); ?>"/>
+                    <input type="hidden" name="program" value="<?php print('DET'); ?>"/>
                     <input type="hidden" name="form" value="changeProgram"/>
                     <input type="hidden" name="login" value="<?php print($_SESSION["login"]);?>"/>
                     <button type="button submit">Click Me!</button>
