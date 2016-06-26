@@ -85,7 +85,7 @@
 	    $programCollection = new MongoCollection( $db, "programs");
 	    $userCollection = new MongoCollection( $db, "users");
 
-	    $programCursor = $programCollection->find(array('_id' => $newProgram));
+	    $programCursor = $programCollection->find(array('_id' => new MongoId($newProgram)));
 	    print("Count: ".$programCursor->count());
 	     if($programCursor->count()>0){
 	     	$user=$userCollection->findOne(array('_id' => $login));
