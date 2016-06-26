@@ -10,3 +10,4 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+<link href="css/application.css" rel="stylesheet" type="text/css" />
