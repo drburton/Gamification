@@ -8,7 +8,7 @@
     }
 
     $collection = new MongoCollection( $db, "programs");
-    $courseCursor = $collection->find(array('short' => 'DET')).pretty();
+    $courseCursor = $collection->find(array('short' => 'DET'));
     $testId=null;
 ?>
 
