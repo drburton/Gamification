@@ -5,6 +5,10 @@
     // if (!loggedIn()){
     //     header("Location: /index.php");
     // }
+    $userCollection = new MongoCollection( $db, "users");
+    $userIcon;
+    $user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
+    $userIcon = $user['icon']?:'img/avatar5.png';
 ?>
 
 
@@ -42,7 +46,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="img/avatar5.png" class="img-circle" alt="User Image" />
+                                    <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" />
                                     <p>
                                         <?php print $_SESSION["name"]; ?>
                                         <small>Level 25 Web Developer</small>
@@ -84,7 +88,7 @@
 
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="img/avatar5.png" class="img-circle" alt="User Image" />
+                            <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p><?php print $_SESSION["name"]; ?></p>
