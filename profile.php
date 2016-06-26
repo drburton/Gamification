@@ -10,6 +10,16 @@
     $collection = new MongoCollection( $db, "programs");
     $courseCursor = $collection->findOne(array('short' => 'DET'));
     $testId=null;
+
+    //vars to display on page
+    $program;
+    $specialization;
+    //find user data
+    $userCollection = new MongoCollection( $db, "users");
+    $user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
+    //set vars
+    $program = $user['program_id']?:'None';
+    $specialization = $user['specialization']?:'Unknown';
 ?>
 
 <!DOCTYPE html>
@@ -48,10 +58,10 @@
                                     <td>Username: <?php print($_SESSION["login"]); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Major/Program: Unknown</td>
+                                    <td>Major/Program: <?php print($program); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Specialization: Unknown</td>
+                                    <td>Specialization: <?php print($specialization); ?></td>
                                 </tr>
                                 <tr>
                                     <td>Current Title: None</td>

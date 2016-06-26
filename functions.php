@@ -91,6 +91,7 @@
 	     		//array('$set'=>array(
 	     	$update=array('$set'=>array('program_id' => new MongoId($newProgram)));
     		$userCollection->update(array("_id" => $login),$update);
+    		header("Location: profile.php");
 	    }
 	}
 
