@@ -8,7 +8,7 @@
     }
 
     $collection = new MongoCollection( $db, "programs");
-    $courseCursor = $collection->find(array('short' => 'DET'));
+    $courseCursor = $collection->find(array('short' => 'DET')).pretty();
     $testId=null;
 ?>
 
@@ -62,7 +62,7 @@
                 </div>
 
                 <?php
-                foreach ($courseCursor as $doc) {
+                /*foreach ($courseCursor as $doc) {
                     foreach ($doc as $k => $v) {
                         if($k=="_id"){
                             $testId = $v;
@@ -70,10 +70,11 @@
                         print($v);
                         print("<br/>");
                     }
-                }
-
+                }*/
+                print($courseCursor);
+                print("<br/>");
                 $userCollection = new MongoCollection( $db, "users");
-                $user=$userCollection->findOne(array('_id' => $login)).pretty();
+                $user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
                 print($user);
 
                 ?>
