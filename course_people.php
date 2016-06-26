@@ -79,10 +79,14 @@
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
+
+                    <p>Search People</p>
+                    <button style="float:right;">Add People</button>
+
                     <!-- table box div -->
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Available Quests</h3>
+                            <h3 class="box-title">People in this course:</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table id="coursePeople" class="table table-hover">
