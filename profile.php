@@ -36,7 +36,7 @@
                             <h3 class="box-title">My Stats:</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table>
+                            <table class="table">
                                 <tr>
                                     <td>Name:</td>
                                     <td>Test</td>
