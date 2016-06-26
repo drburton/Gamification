@@ -20,6 +20,12 @@
     //set vars
     $program = $user['program_id']?:'None';
     $specialization = $user['specialization']?:'Unknown';
+
+    //get the correct program title to display
+    $programCollection = new MongoCollection( $db, "programs");
+    $courseCursor = $collection->findOne(array('_id' => $program));
+    //display var
+    $displayProgram = $courseCursor['name'];
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +64,7 @@
                                     <td>Username: <?php print($_SESSION["login"]); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Major/Program: <?php print($program); ?></td>
+                                    <td>Major/Program: <?php print($displayProgram); ?></td>
                                 </tr>
                                 <tr>
                                     <td>Specialization: <?php print($specialization); ?></td>
