@@ -18,14 +18,14 @@
     $userCollection = new MongoCollection( $db, "users");
     $user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
     //set vars
-    $program = $user['program_id']?:'None';
+    $program = $user['program_id'];
     $specialization = $user['specialization']?:'Unknown';
 
     //get the correct program title to display
     $programCollection = new MongoCollection( $db, "programs");
     $courseCursor = $collection->findOne(array('_id' => $program));
     //display var
-    $displayProgram = $courseCursor['name'];
+    $displayProgram = $courseCursor['name']?:'None';
 ?>
 
 <!DOCTYPE html>
