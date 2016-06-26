@@ -72,11 +72,11 @@
                     }
                 }
 
-                $userCollection = new MongoCollection( $db, "users");
-                $user=$userCollection->findOne(array('_id' => $login));
-                print_r($user);
-                print("br/>");
-                print($user['_id']);
+                //$userCollection = new MongoCollection( $db, "users");
+                //$user=$userCollection->findOne(array('_id' => $login));
+                //print_r($user);
+                //print("br/>");
+                //print($user['_id']);
 
                 <form method="POST" action="functions.php">
                     <input type="hidden" name="program" value="<?php print($testId); ?>"/>
