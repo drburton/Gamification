@@ -73,8 +73,8 @@
                 }
 
                 $userCollection = new MongoCollection( $db, "users");
-                $user=$userCollection->findOne(array('_id' => $login));
-                print_r($user);
+                $user=$userCollection->findOne(array('_id' => $login)).pretty();
+                print_r($user;
                 print("<br/>");
                 print(gettype($user));
                 ?>
