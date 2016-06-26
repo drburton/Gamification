@@ -63,7 +63,8 @@
                 <?php
                 foreach ($courseCursor as $doc) {
                     foreach ($doc as $k => $v) {
-                        print($v);
+                        print(gettype($v));
+                        print("<br/>");
                     }
                 }
                 ?>
