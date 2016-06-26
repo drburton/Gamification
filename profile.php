@@ -79,9 +79,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="box-body table-responsive no-padding">
-                        <div class="pull-left image">
-                            <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" />
+                    <div class="box">
+                        <div class="box-body table-responsive no-padding">
+                            <div class="pull-left image">
+                                <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" width:"25%" height:"25%" />
+                            </div>
                         </div>
                     </div>
                 </div>
