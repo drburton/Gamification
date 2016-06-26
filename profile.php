@@ -8,7 +8,7 @@
     }
 
     $collection = new MongoCollection( $db, "programs");
-    $courseCursor = $collection->find(array('short' => 'DET'));
+    $courseCursor = $collection->find(array('_id' => '577028ea36b5d5437c161c05'));
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
                 <?php
                 foreach ($courseCursor as $doc) {
                     foreach ($doc as $k => $v) {
-                        print(gettype($v));
+                        print($v);
                         print("<br/>");
                     }
                 }
