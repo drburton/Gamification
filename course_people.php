@@ -80,7 +80,17 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     
-
+                    <table id="coursePeople">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Role</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
@@ -89,7 +99,7 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
+        
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

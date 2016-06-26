@@ -45,6 +45,7 @@
     $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
+    $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
       	if($k=="title"){
