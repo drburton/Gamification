@@ -65,6 +65,7 @@
 
 		if(isset($_POST["form"])){
 			$methodName = $_POST["form"];
+			print($methodName);
 			switch($methodName){
 				case "changeProgram":
 					changeProgram($_POST["login"], $_POST["program"]);
