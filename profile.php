@@ -36,10 +36,12 @@
                             <h3 class="box-title">My Stats:</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table class="table">
+                            <table class="table" style="font-size:15px;">
                                 <tr>
                                     <td>Name: Test</td>
-                                    <td>Specialization: Null</td>
+                                </tr>
+                                <tr>
+                                    <td>Specialization: Unknown</td>
                                 </tr>
                             </table>
                         </div>
