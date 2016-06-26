@@ -38,7 +38,10 @@
                         <div class="box-body table-responsive no-padding">
                             <table class="table stats-table">
                                 <tr>
-                                    <td>Name: Test</td>
+                                    <td>Name: <?php print($_SESSION["name"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Username: <?php print($_SESSION["login"]); ?></td>
                                 </tr>
                                 <tr>
                                     <td>Specialization: Unknown</td>
