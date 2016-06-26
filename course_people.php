@@ -80,7 +80,7 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
                     
-                    <table id="coursePeople">
+                    <table id="coursePeople" class="table table-hover">
                         <thead>
                             <tr>
                                 <td>Name</td>
