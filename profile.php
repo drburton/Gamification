@@ -30,7 +30,7 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="box">
                         <div class="box-header">
                             <h3 class="box-title">My Stats:</h3>
@@ -44,7 +44,13 @@
                                     <td>Username: <?php print($_SESSION["login"]); ?></td>
                                 </tr>
                                 <tr>
+                                    <td>Major/Program: Unknown</td>
+                                </tr>
+                                <tr>
                                     <td>Specialization: Unknown</td>
+                                </tr>
+                                <tr>
+                                    <td>Current Title: None</td>
                                 </tr>
                             </table>
                         </div>
