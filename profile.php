@@ -62,26 +62,12 @@
                 </div>
 
                 <?php
-                /*foreach ($courseCursor as $doc) {
-                    foreach ($doc as $k => $v) {
-                        if($k=="_id"){
-                            $testId = $v;
-                        }
-                        print($v);
-                        print("<br/>");
-                    }
-                }*/
-                print_r($courseCursor);
-                print("<br/>");
-                print($courseCursor['_id']);
-                //$userCollection = new MongoCollection( $db, "users");
-                //$user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
-                //print($user);
+                $testId = $courseCursor['_id'];
 
                 ?>
 
                 <form method="POST" action="functions.php">
-                    <input type="hidden" name="program" value="<?php print('DET'); ?>"/>
+                    <input type="hidden" name="program" value="<?php print($testId); ?>"/>
                     <input type="hidden" name="form" value="changeProgram"/>
                     <input type="hidden" name="login" value="<?php print($_SESSION["login"]);?>"/>
                     <button type="button submit">Click Me!</button>
