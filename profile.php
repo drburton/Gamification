@@ -30,6 +30,14 @@
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
 
+                <div class="col-md-8">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">My Stats:</h3>
+                        </div><!-- /.box-header -->
+                        <p>Test</p>
+                    </div>
+                </div>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
