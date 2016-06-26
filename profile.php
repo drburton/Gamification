@@ -75,7 +75,9 @@
                 $userCollection = new MongoCollection( $db, "users");
                 $user=$userCollection->findOne(array('_id' => $login)).pretty();
                 print_r($user);
-                print($user['_id']);
+                printjson($user);
+                $jUser = tojson($user);
+                print($jUser['_id']);
                 ?>
 
                 <form method="POST" action="functions.php">
