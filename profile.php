@@ -6,6 +6,9 @@
     if (!loggedIn()){
         header("Location: /index.php");
     }
+
+    $collection = new MongoCollection( $db, "programs");
+    $courseCursor = $collection->find(array('short' => 'DET'));
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +59,14 @@
                         </div>
                     </div>
                 </div>
+
+                <?php
+                foreach ($courseCursor as $doc) {
+                    foreach ($doc as $k => $v) {
+                        print($v);
+                    }
+                }
+                ?>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
