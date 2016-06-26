@@ -35,7 +35,14 @@
                         <div class="box-header">
                             <h3 class="box-title">My Stats:</h3>
                         </div><!-- /.box-header -->
-                        <p>Test</p>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td>Test</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
