@@ -22,46 +22,13 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php print $course; ?><!-- DET 210 -->
+                        Profile
                     </h1>
                 </section>
 
-                <?php 
-                	include_once "courseNav.php";
-                ?>
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
-                    <!-- Notification from teacher -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Notification Test</h4>
-                                <p>Do this one quest and stuff.</p>
-                            </div>
-                        </div>
-                        <!-- Link to Quests & Awards -->
-                        <?php 
-                        $new = str_replace(" ","_",$course);
-                        print"<a href='/courseQuests.php?course=".$new."'><button class='btn btn-default btn-lg'>Quests</button></a>";
-                        ?>
-                        <button class="btn btn-default btn-lg">Awards</button>
-                    </div>
-                    <!-- Course Progress -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Course Progress</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
-                                        <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
-                                        <span class="sr-only">60% Complete</span>
-                                        <?php print $xp." points / ".$cMax." points" ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
                 </section><!-- right col -->
