@@ -81,7 +81,7 @@
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
 
                     <p>Search People</p>
-                    <button style="float:right;">Add People</button>
+                    <button>Add People</button>
 
                     <!-- table box div -->
                     <div class="box">
