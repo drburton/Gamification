@@ -79,7 +79,7 @@
 	//==========================================================
 
 	function changeProgram($login, $newProgram){
-		print("I'm in change program.");
+		print($newProgram);
 		$m = new MongoClient();
 	    $db = $m->selectDB("gamification_db");
 	    $programCollection = new MongoCollection( $db, "programs");
