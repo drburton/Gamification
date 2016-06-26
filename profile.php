@@ -71,7 +71,7 @@
                         print("<br/>");
                     }
                 }*/
-                print($courseCursor[0]);
+                print_r($courseCursor);
                 print("<br/>");
                 //$userCollection = new MongoCollection( $db, "users");
                 //$user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
