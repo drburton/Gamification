@@ -135,7 +135,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="profile.php">
                                 <i class="fa fa-user"></i> <span>Profile</span>
                             </a>
                         </li>

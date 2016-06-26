@@ -1,55 +1,10 @@
 <?php
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
-    $collection = new MongoCollection( $db, "courses");
-    $collection2 = new MongoCollection( $db, "users-courses");
+    $collection = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
-    }
-    else{
-        if($_GET["course"]!=""){
-            $course_under=$_GET["course"];
-            $course = str_replace("_"," ",$course_under);
-            $courseCursor = $collection->find(array('c_number' => $course));
-            if($courseCursor->count()==0){
-                header("Location: 404.php");
-            }
-        }
-        else{
-            header("Location: 404.php");
-        }
-        $cMax=0;
-         foreach ($courseCursor as $doc) {
-            foreach ($doc as $k => $v) {
-                if($k=="max_points"){
-                    $cMax=$v;
-                }
-            }
-        }
-
-        $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
-        $cursor = $collection2->find($results);
-        $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
-        //$cursor=$cursor->sort(array("title"=>1));
-        $role="";
-        $xp="";
-        foreach ($cursor as $doc) {
-            foreach ($doc as $k => $v) {
-                if($k=="xp"){
-                    $xp=$v;
-                }
-                else{
-                    $role=$v;
-                }
-            }
-        }
-        if($xp<=$cMax){
-            $cPercent=floor(($xp/$cMax)*100);
-        }
-        else{
-            $cPercent=100;
-        }
     }
 ?>
 
