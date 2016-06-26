@@ -78,6 +78,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="box-body table-responsive no-padding">
+                        <div class="pull-left image">
+                            <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" />
+                        </div>
+                    </div>
+                </div>
 
                 <?php
                 $testId = $testCursor['_id'];
