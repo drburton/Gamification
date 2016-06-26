@@ -65,7 +65,6 @@
 
 		if(isset($_POST["form"])){
 			$methodName = $_POST["form"];
-			print($methodName);
 			switch($methodName){
 				case "changeProgram":
 					changeProgram($_POST["login"], $_POST["program"]);
@@ -80,12 +79,14 @@
 	//==========================================================
 
 	function changeProgram($login, $newProgram){
+		print("I'm in change program.");
 		$m = new MongoClient();
 	    $db = $m->selectDB("gamification_db");
 	    $programCollection = new MongoCollection( $db, "programs");
 	    $userCollection = new MongoCollection( $db, "users");
 
 	    $programCursor = $programCollection->find(array('_id' => $newProgram));
+	    print("Count: ".$programCursor->count());
 	     if($programCursor->count()>0){
 	     	$user=$userCollection->findOne(array('_id' => $login));
 	     		//array('$set'=>array(
