@@ -1,5 +1,8 @@
 <?php
 
+		//==========================================================
+		//user login and security functions
+		//==========================================================
 		function newUser($login, $name, $password)
 		{
 			global $coll;
@@ -52,5 +55,40 @@
 			  return False;
 			}
 		}
+		//==========================================================
+		//end user login and security functions
+		//==========================================================
+
+		//==========================================================
+		//dictate a function to use based on form input
+		//==========================================================
+
+		if(isset($_POST["form"])){
+			$methodName = $_POST["form"];
+			switch($methodName){
+				case "changeProgram":
+					changeProgram($_POST["login"], $_POST["program"]);
+					break;
+				default:
+					return;
+		}
+	}
+
+	//==========================================================
+	//change of profile values
+	//==========================================================
+
+	function changeProgram($login, $newProgram){
+		$m = new MongoClient();
+	    $db = $m->selectDB("gamification_db");
+	    $programCollection = new MongoCollection( $db, "programs");
+	    $userCollection = new MongoCollection( $db, "users");
+
+	    $programCursor = $programCollection->find(array('_id' => $newProgram));
+	     if($programCursor->count()>0){
+	     	$user=$userCollection->findOne(array('_id' => $login));
+	     		//array('$set'=>array(
+	     }
+	}
 
 ?>

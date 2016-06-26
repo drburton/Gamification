@@ -8,7 +8,8 @@
     }
 
     $collection = new MongoCollection( $db, "programs");
-    $courseCursor = $collection->find(array('_id' => '577028ea36b5d5437c161c05'));
+    $courseCursor = $collection->find(array('short' => 'DET'));
+    $testId=null;
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +64,26 @@
                 <?php
                 foreach ($courseCursor as $doc) {
                     foreach ($doc as $k => $v) {
+                        if($k=="_id"){
+                            $testId = $v;
+                        }
                         print($v);
                         print("<br/>");
                     }
                 }
-                ?>
+
+                $userCollection = new MongoCollection( $db, "users");
+                $user=$userCollection->findOne(array('_id' => $login));
+                print_r($user);
+                print("br/>");
+                print($user['_id']);
+
+                <form method="POST" action="functions.php">
+                    <input type="hidden" name="program" value="<?php print($testId); ?>"/>
+                    <input type="hidden" name="form" value="changeProgram"/>
+                    <input type="hidden" name="login" value="<?php print($_SESSION["login"]);?>"/>
+                    <button type="button submit">Click Me!</button>
+                </form>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
