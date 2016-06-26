@@ -88,6 +88,7 @@
 	     if($programCursor->count()>0){
 	     	$user=$userCollection->findOne(array('_id' => $login));
 	     		//array('$set'=>array(
+	     	header("Location: dashboard.php");
 	     }
 	}
 
