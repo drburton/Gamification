@@ -81,7 +81,7 @@
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
 
                     <p>Search People</p>
-                    <button>Add People</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createnewquest"><i class="fa fa-user-plus" aria-hidden="true"></i> Add People </button>
 
                     <!-- table box div -->
                     <div class="box">
