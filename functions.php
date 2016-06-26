@@ -89,7 +89,8 @@
 	    if($programCursor){
 	     	$user=$userCollection->findOne(array('_id' => $login));
 	     		//array('$set'=>array(
-	     	header("Location: dashboard.php");
+	     	$update=array('$set'=>array('program_id' => new MongoId($newProgram)));
+    		$userCollection->update(array("_id" => $login),$update);
 	    }
 	}
 
