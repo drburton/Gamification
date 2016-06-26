@@ -79,18 +79,24 @@
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
-                    <div class="box-body table-responsive no-padding">
-                        <table id="coursePeople" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Role</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr></tr>
-                            </tbody>
-                        </table>
+                    <!-- table box div -->
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Available Quests</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table id="coursePeople" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Role</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </section><!-- right col -->
