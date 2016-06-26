@@ -8,7 +8,7 @@
     }
 
     $collection = new MongoCollection( $db, "programs");
-    $courseCursor = $collection->findOne(array('short' => 'DET'));
+    $testCursor = $collection->findOne(array('short' => 'DET'));
     $testId=null;
 
     //vars to display on page
@@ -78,7 +78,7 @@
                 </div>
 
                 <?php
-                $testId = $courseCursor['_id'];
+                $testId = $testCursor['_id'];
 
                 ?>
 
