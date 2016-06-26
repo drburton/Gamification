@@ -82,7 +82,7 @@
 
                     <p>Search People</p>
                     <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-user-plus" aria-hidden="true">Add People</i></button>
-                    <i class="fa fa-user-plus" aria-hidden="true">Add People</i>
+                    <i class="fa fa-user" aria-hidden="true">Add People</i>
 
                     <!-- table box div -->
                     <div class="box">
