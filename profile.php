@@ -78,9 +78,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="box">
                         <div class="box-body table-responsive no-padding">
+                            <div>Current Avatar:</div>
                             <div class="pull-left image">
                                 <img src="<?php print($userIcon); ?>" class="img-circle img-responsive" alt="User Image" style="width:65px; height 65px;" />
                             </div>
