@@ -38,8 +38,8 @@
                         <div class="box-body table-responsive no-padding">
                             <table class="table">
                                 <tr>
-                                    <td>Name:</td>
-                                    <td>Test</td>
+                                    <td>Name: Test</td>
+                                    <td>Specialization: Null</td>
                                 </tr>
                             </table>
                         </div>
