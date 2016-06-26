@@ -82,7 +82,7 @@
                     <div class="box">
                         <div class="box-body table-responsive no-padding">
                             <div class="pull-left image">
-                                <img src="<?php print($userIcon); ?>" class="img-circle" alt="User Image" width:"65" height:"65" />
+                                <img src="<?php print($userIcon); ?>" class="img-circle img-responsive" alt="User Image" style="width:65px; height 65px;" />
                             </div>
                         </div>
                     </div>
