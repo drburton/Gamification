@@ -14,12 +14,14 @@
     //vars to display on page
     $program;
     $specialization;
+    $title;
     //find user data
     $userCollection = new MongoCollection( $db, "users");
     $user=$userCollection->findOne(array('_id' => $_SESSION["login"]));
     //set vars
     $program = $user['program_id'];
     $specialization = $user['specialization']?:'Unknown';
+    $title = $user['title']?:'None';
 
     //get the correct program title to display
     $programCollection = new MongoCollection( $db, "programs");
@@ -70,7 +72,7 @@
                                     <td>Specialization: <?php print($specialization); ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Current Title: None</td>
+                                    <td>Current Title: <?php print($title); ?></td>
                                 </tr>
                             </table>
                         </div>
