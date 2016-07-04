@@ -55,9 +55,6 @@
                 <div class="col-md-4">
                     <div class="box">
                         <div class="box-header">
-                            <div class="pull-left image">
-                                <img src="<?php print($userIcon); ?>" class="img-circle img-responsive" alt="User Image" style="width:65px; height 65px;" />
-                            </div>
                             <h3 class="box-title">My Stats:</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
@@ -89,6 +86,12 @@
                         <div class="box-body table-responsive no-padding">
                             <div class="pull-left image">
                                 <img src="<?php print($userIcon); ?>" class="img-circle img-responsive" alt="User Image" style="width:65px; height 65px;" />
+                            </div>
+                            <div>
+                                <form method="POST" action="functions.php">
+                                    <input type="hidden" name="form" value="changeProfileIcon"/>
+                                    <input type="text" name="link"/>
+                                </form>
                             </div>
                         </div>
                     </div>
