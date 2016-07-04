@@ -88,6 +88,7 @@
                                 <img src="<?php print($userIcon); ?>" class="img-circle img-responsive" alt="User Image" style="width:65px; height 65px;" />
                             </div>
                             <div>
+                                <p>Change My Profile Icon:</p>
                                 <form method="POST" action="functions.php">
                                     <input type="hidden" name="form" value="changeProfileIcon"/>
                                     <input type="text" name="link"/>
