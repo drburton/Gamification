@@ -91,7 +91,7 @@
                                 <p>Change My Profile Icon:</p>
                                 <form method="POST" action="functions.php">
                                     <input type="hidden" name="form" value="changeProfileIcon"/>
-                                    <input type="text" name="link"/>
+                                    Image URL: <input type="text" name="link"/>
                                 </form>
                             </div>
                         </div>
