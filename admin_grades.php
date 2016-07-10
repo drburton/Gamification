@@ -1,5 +1,5 @@
-<div class="col-xs-12" style="overflow:scroll;">
-  <div class="box">
+<!--<div class="col-xs-12" style="overflow:scroll;">-->
+  <div class="box" style="overflow:scroll;">
     <div class="box-body table-responsive no-padding">
         <table class="table table-bordered table-hover">
         <thead>
