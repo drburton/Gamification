@@ -137,7 +137,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and !in_array($title, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($title, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
