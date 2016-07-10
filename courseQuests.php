@@ -44,12 +44,11 @@
     $curQuests=[];
     $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
-    $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
+    $cursor->fields(array('_id' => true, 'title' => true)); //Get specific data
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-      	if($k=="title"){
-      		$title=$v;
+      	if($k!="title"){
         	array_push($curQuests,$v);
       	}
        // $curQuests[]=$v;
@@ -137,7 +136,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array($title, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }

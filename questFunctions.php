@@ -24,7 +24,7 @@
             //print $newDesc;
             $new = str_replace("_"," ",$course);
 
-            $newquest=array('title' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name, 'status'=>'accepted');
+            $newquest=array('quest_id' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name, 'status'=>'accepted');
             $collection2->save($newquest);
 
             //print("/courseQuests.php?course=".$course);
