@@ -14,7 +14,7 @@
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
-              print('<td>');
+              print('<th style="text-align:center;">');
               foreach ($doc as $k => $v) {
                 //print($k.": ".$v);
                 //print('<br/>');
@@ -24,7 +24,7 @@
                   $exp=$v;
                 }
               }
-              print($title."<br/>".$exp." xp</td>");
+              print($title."<br/>".$exp." xp</th>");
             }
 
             ?>
