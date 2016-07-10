@@ -161,6 +161,7 @@
                   </div>
                   <?php 
                     print_r($curQuests);
+                    print(in_array('5782aa8136b5d5ff22f035cd', $curQuests));
                   ?>
                   <div class="row">
                       <div class="col-xs-12">
