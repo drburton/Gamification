@@ -4,7 +4,7 @@
     $collection = new MongoCollection( $db, "courses");
     $collection2 = new MongoCollection( $db, "users-courses");
     $questCollection = new MongoCollection( $db, "quests");
-    //$userQuestsCollection = new MongoCollection( $db, "users-courses");
+    $userQuestsCollection = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: index.php");
