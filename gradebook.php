@@ -80,7 +80,7 @@
 
                         <?php 
                             if($role=='admin'){
-                                //include_once "admin_grades.php";
+                                include_once "admin_grades.php";
                             }
                         ?>
 
