@@ -143,7 +143,7 @@
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
                                                 //print($dbid->{"$id"});
-                                                print(!in_array($dbid->{"$id"}, $curQuests)));
+                                                print(!in_array($dbid, $curQuests)));
 
 	                                              if(!in_array($title, $curQuests)){
 	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
