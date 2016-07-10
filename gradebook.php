@@ -30,9 +30,6 @@
                 $role=$v;
             }
         }
-        if($role!="admin"){
-            header("Location: /coursehome.php?course=".$course_under);
-        }
     }
 ?>
 
@@ -65,7 +62,11 @@
                     <!-- Notification from teacher -->
                     <div class="row">
 
-
+                        <?php 
+                            if($role=='admin'){
+                                include_once "admin_grades.php";
+                            }
+                        ?>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
