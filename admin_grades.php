@@ -43,7 +43,6 @@
             $userCourseCursor = $collection2->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
             $userCourseCursor = $userCourseCursor->sort(array("name"=>1)); //Sort by title
-            print("<tr><td>Test</td></tr>");
 
             foreach ($userCourseCursor as $doc) {
               $userId;
@@ -55,6 +54,9 @@
               $userCursor = $userCollection->findOne(array('_id' => $userId));
 
               print('<td>'.$userCursor['name'].'</td>');
+              for ($i = 0; $i <= 5; $i++) {
+                print("<td style='min-width: 150px; text-align:center;'>-</td>");
+              }
               print('</tr>');
             }
 
