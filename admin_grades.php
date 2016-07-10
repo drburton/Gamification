@@ -14,7 +14,7 @@
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
-              print('<th style="text-align:center;">');
+              print('<th style="text-align:center; min-width: 150px;">');
               foreach ($doc as $k => $v) {
                 //print($k.": ".$v);
                 //print('<br/>');
@@ -28,7 +28,7 @@
             }
 
             for ($i = 0; $i <= 15; $i++) {
-                print("<th>Overflow Test</th>");
+                print("<th style='min-width: 150px;'>Overflow Test</th>");
             }
 
             ?>
