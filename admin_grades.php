@@ -1,8 +1,5 @@
 <div class="col-xs-12">
   <div class="box">
-    <div class="box-header">
-        <h3 class="box-title">Available Quests</h3>
-    </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
         <table class="table table-hover">
         <thead>
