@@ -42,6 +42,7 @@
             $user_results = array('course_id' => $course, 'role' => array('$ne' => 'admin'));
             $userCourseCursor = $collection2->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
+            print($userCourseCursor);
 
             foreach ($cursor as $doc) {
               $userId;
