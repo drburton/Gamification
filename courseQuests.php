@@ -49,9 +49,9 @@
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
       	if($k!="title"){
-          $idObject = $v;
-          print($idObject['$id']);
-        	array_push($curQuests,$v);
+          $idObject = $v->{'$id'};
+          print($idObject[$id]);
+        	array_push($curQuests,$idObject);
       	}
        // $curQuests[]=$v;
       }
