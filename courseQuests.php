@@ -54,7 +54,7 @@
        // $curQuests[]=$v;
       }
     }
-    //print_r($curQuests);
+    print_r($curQuests);
 ?>
 
 
