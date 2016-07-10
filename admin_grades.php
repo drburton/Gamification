@@ -44,7 +44,7 @@
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
             print("<tr><td>Test</td></tr>");
 
-            foreach ($cursor as $doc) {
+            foreach ($userCourseCursor as $doc) {
               $userId;
               print('<tr>');
               foreach ($doc as $k => $v) {
