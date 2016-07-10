@@ -31,7 +31,7 @@
             }
         }
         if($role!="admin"){
-            header("Location: index.php");
+            header("Location: /coursehome.php?course=".$course_under);
         }
     }
 ?>

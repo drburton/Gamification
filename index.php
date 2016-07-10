@@ -2,7 +2,7 @@
     include_once "config.php"; //Connecting to database and handling auth.
     $passMiss=false;
     if (loggedIn()){
-        header("Location: http://gamedev.garrettyamada.com/dashboard.php");
+        header("Location: dashboard.php");
     }
     else{
         if(isset($_POST["submit"])){
