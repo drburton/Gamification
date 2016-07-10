@@ -16,6 +16,7 @@
               //print "<tr>";
               foreach ($doc as $k => $v) {
                 print($v);
+                print('<br/>');
               }
             }
 
