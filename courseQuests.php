@@ -48,7 +48,8 @@
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-      	if($k=="_id"){
+        print($k);
+      	if($k!="title"){
           //print($v);
         	array_push($curQuests,$v);
       	}
