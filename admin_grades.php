@@ -9,7 +9,7 @@
                 <th>Due Date</th>
                 <th>Details</th>
                 <th>Accept</th> -->
-            <th style="text-align:center; vertical-align:middle; min-width: 175px;">Users</th>
+            <th style="text-align:center; vertical-align:middle; min-width: 175px;">Students</th>
             <?php
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
@@ -53,7 +53,7 @@
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
 
-              print('<td>'.$userCursor['name'].'</td>');
+              print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
               }
