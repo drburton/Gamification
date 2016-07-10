@@ -39,7 +39,7 @@
         <tbody>
 
           <?php
-            $user_results = array('course_id' => $course, 'role' => array('$ne' => 'admin'));
+            /*$user_results = array('course_id' => $course, 'role' => array('$ne' => 'admin'));
             $userCourseCursor = $userCourseCollection->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
 
