@@ -1,7 +1,7 @@
 <div class="col-xs-12">
   <div class="box">
-    <div class="box-body table-responsive no-padding">
-        <table class="table table-bordered table-hover" style="overflow:scroll;">
+    <div class="box-body table-responsive no-padding" style="overflow:scroll;">
+        <table class="table table-bordered table-hover">
         <thead>
             <tr><!--
                 <th>Quest</th>
