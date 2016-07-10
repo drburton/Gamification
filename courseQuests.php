@@ -190,7 +190,7 @@
                                             $title="";
                                             foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                if ($k != "desc"){
+                                                if ($k != "desc" and $k!= 'quest_id'){
                                                   if($k=="title"){
                                                     $title=$v;
                                                   }
@@ -200,13 +200,15 @@
                                                   if($k=="xp"){
                                                     $xp=$v;
                                                   }
-                                                  if($k=='quest_id'){
-                                                    $dbid = $v;
-                                                  }
+                        
                                                   print "<td>$v</td>";
                                                 }
                                                 else{
-                                                  $desc=$v;
+                                                  if($k=='quest_id'){
+                                                    $dbid = $v;
+                                                  }else{
+                                                    $desc=$v;
+                                                  }
                                                 }
                                                 }
                                                 $title = str_replace(" ","_",$title);
