@@ -125,7 +125,7 @@
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
                                                   if($k=='_id'){
-                                                    $dbid = $v;
+                                                    $dbid = $v->{'$id'};
                                                   }elseif($k=="title"){
                                                     $title=$v;
                                                   }
@@ -138,13 +138,13 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid->{'$id'}, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
-                                                //print "<td>$desc</td>";
+                                                print "<td>$dbid</td>";
 
 	                                              if(!in_array($title, $curQuests)){
 	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
