@@ -50,7 +50,7 @@
       foreach($doc as $k=>$v){
       	if($k!="title"){
           //print($v);
-        	array_push($curQuests,$v);
+        	array_push($curQuests,$v['id']);
       	}
        // $curQuests[]=$v;
       }
@@ -137,7 +137,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array(new MongoID($dbid), $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
