@@ -5,7 +5,7 @@
     $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: /index.php");
+        header("Location: index.php");
     }
     else{
         if($_GET["course"]!=""){
@@ -27,13 +27,11 @@
         $role="";
         foreach ($cursor as $doc) {
             foreach ($doc as $k => $v) {
-                print($v);
                 $role=$v;
             }
         }
-        print($role);
         if($role!="admin"){
-            //header("Location: /index.php");
+            header("Location: index.php");
         }
     }
 ?>

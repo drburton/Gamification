@@ -5,7 +5,7 @@
     $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
-        header("Location: /index.php");
+        header("Location: index.php");
     }
     else{
         if($_GET["course"]!=""){
