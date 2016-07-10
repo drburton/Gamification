@@ -136,7 +136,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid->{"$id"}, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
