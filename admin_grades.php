@@ -14,7 +14,7 @@
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
-              print('<th style="text-align:center; min-width: 1750px;">');
+              print('<th style="text-align:center; min-width: 175px;">');
               foreach ($doc as $k => $v) {
                 //print($k.": ".$v);
                 //print('<br/>');
