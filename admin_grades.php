@@ -32,7 +32,7 @@
             }*/
 
             ?>
-
+            <th style="text-align:center; vertical-align:middle; min-width: 175px;">Class Experience</th>
 
             </tr>
         </thead>
