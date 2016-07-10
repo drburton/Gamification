@@ -9,12 +9,12 @@
                 <th>Due Date</th>
                 <th>Details</th>
                 <th>Accept</th> -->
-            <th style="text-align:center; vertical-align:middle; width:75px;">Users</th>
+            <th style="text-align:center; vertical-align:middle;">Users</th>
             <?php
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
-              print('<th style="text-align:center; width:375px;">');
+              print('<th style="text-align:center;">');
               foreach ($doc as $k => $v) {
                 //print($k.": ".$v);
                 //print('<br/>');
@@ -27,7 +27,7 @@
               print($title."<br/>".$exp." xp</th>");
             }
 
-            for ($i = 0; $i <= 5; $i++) {
+            for ($i = 0; $i <= 15; $i++) {
                 print("<th>Overflow Test</th>");
             }
 
