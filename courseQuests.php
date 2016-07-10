@@ -156,10 +156,6 @@
                           </div><!-- /.box -->
                       </div>
                   </div>
-                  <?php 
-                    print_r($curQuests);
-                    print(in_array('5782aa8136b5d5ff22f035cd', $curQuests));
-                  ?>
                   <div class="row">
                       <div class="col-xs-12">
                           <div class="box">
@@ -185,7 +181,7 @@
 
                                             $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
-                                            $cursor2->fields(array("title" => true,'_id' => false)); //Get specific data 
+                                            $cursor2->fields(array('quest_id' =>true,"title" => true,'_id' => false)); //Get specific data 
                                             //print($cursor2);
                                             $due_date="";
                                             $xp="";
@@ -204,6 +200,9 @@
                                                   if($k=="xp"){
                                                     $xp=$v;
                                                   }
+                                                  if($k=='quest_id'){
+                                                    $dbid = $v;
+                                                  }
                                                   print "<td>$v</td>";
                                                 }
                                                 else{
@@ -219,7 +218,7 @@
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
                                               print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-course=$course_under data-id=$title>Turn In Quest <i class='fa fa-check-circle'
                                               aria-hidden='true'></button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$title>Drop Quest <i class='fa fa-times-circle'
+                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$dbid>Drop Quest <i class='fa fa-times-circle'
                                               aria-hidden='true'></button></a></td>";
                                               print "</tr>";
                                               }

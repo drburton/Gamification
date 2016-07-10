@@ -11,7 +11,7 @@
             $course=$_POST["course"];
             $new = str_replace("_"," ",$course);
 
-            $newquest=array('title' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name);
+            $newquest=array('course_id' => $_POST["title"], 'course_id'=>$new, 'user_id'=>$name);
             $collection2->remove($newquest);
 
             //print("/courseQuests.php?course=".$course);
