@@ -3,8 +3,7 @@
     <div class="box-body table-responsive no-padding">
         <table class="table table-hover">
         <thead>
-          <!--
-            <tr>
+            <tr><!--
                 <th>Quest</th>
                 <th>XP</th>
                 <th>Due Date</th>
@@ -13,11 +12,19 @@
 
             <?php
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
-              //print "<tr>";
+              $title;
+              $exp;
+              print('<td>');
               foreach ($doc as $k => $v) {
-                print($k.": ".$v);
-                print('<br/>');
+                //print($k.": ".$v);
+                //print('<br/>');
+                if($k=='title'){
+                  $title = $v;
+                }elseif($k=='xp'){
+                  $exp=$v;
+                }
               }
+              print($title."<br/>".$exp." xp</td>");
             }
 
             ?>
