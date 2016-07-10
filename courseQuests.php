@@ -44,11 +44,11 @@
     $curQuests=[];
     $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
-    $cursor->fields(array('_id' => true, 'title' => true)); //Get specific data
+    $cursor->fields(array('_id' => false, 'title' =>true,'quest_id' => true)); //Get specific data
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-      	if($k!="title"){
+      	if($k=="quest_id"){
           $idObject = $v->{'$id'};
           print($idObject[$id]);
         	array_push($curQuests,$idObject);
@@ -148,7 +148,7 @@
 
 	                                              if(!in_array($title, $curQuests)){
 	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course_under data-id=$dbid>Accept Quest</button></a></td>";
+	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course_under data-id=$dbid data-title = $title>Accept Quest</button></a></td>";
 	                                              	print "</tr>";
 	                                          	  }
                                               }
@@ -280,6 +280,9 @@
                        <input type="hidden" class="form-control" id="acceptTitle" name="title">
                      </div>
                      <div class="form-group">
+                       <input type="hidden" class="form-control" id="acceptId" name="id">
+                     </div>
+                     <div class="form-group">
                        <input type="hidden" class="form-control" id="acceptCourse" name="course"></input>
                      </div>
                      <div class="form-group">
@@ -363,10 +366,12 @@
       $('#acceptquest').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var questId = button.data('id') // Extract info from data-* attributes
+        var questTitle = button.data('title')
         var questCourse = button.data('course')
         var modal = $(this)
         modal.find('#acceptLabel').text("Accept Quest: "+questId) //Input results returned into the modals.
-        modal.find('#acceptTitle').val(questId)
+        modal.find('#acceptId').val(questId)
+        modal.find('#acceptTitle').val(questTitle)
         modal.find('#acceptCourse').val(questCourse)
       });
 
