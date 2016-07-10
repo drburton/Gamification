@@ -47,9 +47,10 @@
             foreach ($cursor as $doc) {
               $userId;
               print('<tr>');
-              /*foreach ($doc as $k => $v) {
-                $userId=$v;
-              }
+              foreach ($doc as $k => $v) {
+                //$userId=$v;
+                print($v."<br/>");
+              }/*
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
               $userCursor->fields(array('name' => true,'_id' => true));
