@@ -27,9 +27,11 @@
         $role="";
         foreach ($cursor as $doc) {
             foreach ($doc as $k => $v) {
+                print($v);
                 $role=$v;
             }
         }
+        print($role);
         if($role!="admin"){
             //header("Location: /index.php");
         }
