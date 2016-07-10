@@ -37,6 +37,28 @@
             </tr>
         </thead>
         <tbody>
+
+          <?php
+            $user_results = array('course_id' => $course, 'role' => array('$ne' => 'admin'));
+            $userCourseCursor = $userCourseCollection->find($user_results);
+            $userCourseCursor->fields(array('user_id' => true,'_id' => false));
+
+            foreach ($cursor as $doc) {
+              $userId;
+              print('<tr>');
+              foreach ($doc as $k => $v) {
+                $userId=$v;
+              }
+              $userCollection = new MongoCollection( $db, "users");
+              $userCursor = $userCollection->findOne(array('_id' => $userId));
+              $userCursor->fields(array('name' => true,'_id' => true));
+
+              print('<td>'.$userCursor['name'].'</td>');
+              print('</tr>');
+            }
+
+          ?>
+
         </tbody>
         </table>
     </div><!-- /.box-body -->
