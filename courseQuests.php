@@ -49,9 +49,7 @@
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
       	if($k=="quest_id"){
-          $idObject = $v->{'$id'};
-          print($idObject[$id]);
-        	array_push($curQuests,$idObject);
+        	array_push($curQuests,$v);
       	}
        // $curQuests[]=$v;
       }
@@ -138,7 +136,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid->{"$id"}, $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
