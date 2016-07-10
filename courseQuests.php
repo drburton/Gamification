@@ -50,7 +50,7 @@
       foreach($doc as $k=>$v){
       	if($k!="title"){
           //print($v);
-        	array_push($curQuests,($v['id']));
+        	array_push($curQuests,$v);
       	}
        // $curQuests[]=$v;
       }
