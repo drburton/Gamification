@@ -28,7 +28,7 @@
             }
         }
 
-        $results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
+        $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
         $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
@@ -59,7 +59,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Course Home</title>
+        <title>EduQuest | Course People</title>
         <?php include_once "headStyle.php"; ?>
     </head>
     <body class="skin-blue">
@@ -74,42 +74,35 @@
                 </section>
 
                 <?php 
-                	include_once "courseNav.php";
+                    include_once "courseNav.php";
                 ?>
 
                 <!-- Main content -->
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
-                    <!-- Notification from teacher -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Notification Test</h4>
-                                <p>Do this one quest and stuff.</p>
-                            </div>
-                        </div>
-                        <!-- Link to Quests & Awards -->
-                        <?php 
-                        $new = str_replace(" ","_",$course);
-                        print"<a href='/courseQuests.php?course=".$new."'><button class='btn btn-default btn-lg'>Quests</button></a>";
-                        ?>
-                        <button class="btn btn-default btn-lg">Awards</button>
-                    </div>
-                    <!-- Course Progress -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="callout callout-info">
-                                <h4>Course Progress</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
-                                        <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
-                                        <span class="sr-only">60% Complete</span>
-                                        <?php print $xp." points / ".$cMax." points" ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                    <p>Search People</p>
+                    <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
+                    aria-hidden="true"> Add People</i></button>
+
+                    <!-- table box div -->
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">People in this course:</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table id="coursePeople" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Role</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
@@ -118,7 +111,7 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
+        
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

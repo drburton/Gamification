@@ -11,8 +11,8 @@
     }
     else{
       if($_GET["course"]!=""){
-        $Ucourse=$_GET["course"];
-        $course = str_replace("_"," ",$Ucourse);
+        $course_under=$_GET["course"];
+        $course = str_replace("_"," ",$course_under);
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         if($courseCursor->count()==0){
@@ -41,17 +41,21 @@
       exit;
     }
 
-    $curQuests=array();
-    $results = array('course_id' => 'DET 210', 'user_id'=>$_SESSION['login']);//$course);
+    $curQuests=[];
+    $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
     $cursor->fields(array("title" => true, '_id' => false)); //Get specific data
+    $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-        //$title=$v;
-        //array_push($curQuests,$v);
-        $curQuests[]=$v;
+      	if($k=="title"){
+      		$title=$v;
+        	array_push($curQuests,$v);
+      	}
+       // $curQuests[]=$v;
       }
     }
+    //print_r($curQuests);
 ?>
 
 
@@ -63,7 +67,6 @@
       <?php include_once "headStyle.php"; ?>
   </head>
   <body class="skin-blue">
-
       <!-- Header Navbar and left User Sidebar
       --------------------------------------------- -->
       <?php include_once "navTemplate.php";?>
@@ -78,6 +81,10 @@
                   </h1>
               </section>
 
+              <?php 
+                include_once "courseNav.php";
+              ?>
+
               <!-- Main content -->
               <section class="content">
 
@@ -89,6 +96,7 @@
                               </div><!-- /.box-header -->
                               <div class="box-body table-responsive no-padding">
                                   <table class="table table-hover">
+                                  <thead>
                                       <tr>
                                           <th>Quest</th>
                                           <th>XP</th>
@@ -96,6 +104,8 @@
                                           <th>Details</th>
                                           <th>Accept</th>
                                       </tr>
+                                  </thead>
+                                  <tbody>
 
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
@@ -109,36 +119,38 @@
                                             $xp="";
                                             $desc='';
                                             $dbid="";
-                                            echo(count($cursor));
+                                            //echo(count($cursor));
                                             foreach ($cursor as $doc) { //Turn cursor (results) human readable
                                               print "<tr>";
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                if ($k != "desc"){
                                                   if($k=="title"){
                                                     $title=$v;
                                                   }
-                                                  if($k=="due_date"){
+                                                  elseif($k=="due_date"){
                                                     $due_date=$v;
                                                   }
-                                                  if($k=="xp"){
+                                                  elseif($k=="xp"){
                                                     $xp=$v;
                                                   }
-                                                  print "<td>$v</td>";
-                                                }
-                                                else{
-                                                  $desc=$v;
-                                                }
+                                                  elseif($k=="desc"){
+                                                  	$desc=$v;
+                                              	  }
+                                              	  if ($k != "desc" and !in_array($title, $curQuests)){
+                                                	print "<td>$v</td>";
+                                                  }
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
                                                 //print "<td>$desc</td>";
 
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$Ucourse data-id=$title>Accept Quest</button></a></td>";
-                                              print "</tr>";
+	                                              if(!in_array($title, $curQuests)){
+	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
+	                                              	print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#acceptquest\" data-course=$course_under data-id=$title>Accept Quest</button></a></td>";
+	                                              	print "</tr>";
+	                                          	  }
                                               }
                                            ?>
-
+                                  </tbody>
                                   </table>
                               </div><!-- /.box-body -->
                           </div><!-- /.box -->
@@ -153,13 +165,17 @@
                               </div><!-- /.box-header -->
                               <div class="box-body table-responsive no-padding">
                                   <table class="table table-hover">
+                                  <thead>
                                       <tr>
                                           <th>Quest</th>
                                           <th>XP</th>
                                           <th>Due Date</th>
                                           <th>Details</th>
-                                          <th>Accept</th>
+                                          <th>Turn In</th>
+                                          <th>Drop</th>
                                       </tr>
+                                  </thead>
+                                  <tbody>
 
                                       <!-- PHP to pull quest data and put in table -->
                                           <?php
@@ -195,13 +211,18 @@
                                                 $desc = str_replace(" ","_",$desc);
                                                 //print "<td>$desc</td>";
 
+                                              print("<td>Item</td>");
+                                              print("<td>Item</td>");
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$Ucourse data-id=$title>Drop Quest</button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-course=$course_under data-id=$title>Turn In Quest <i class='fa fa-check-circle'
+                                              aria-hidden='true'></button></a></td>";
+                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$title>Drop Quest <i class='fa fa-times-circle'
+                                              aria-hidden='true'></button></a></td>";
                                               print "</tr>";
                                               }
-                                              print("After Loop");
+                                              //print("After Loop");
                                            ?>
-
+                                  </tbody>
                                   </table>
                               </div><!-- /.box-body -->
                           </div><!-- /.box -->
@@ -245,7 +266,7 @@
                    <h4 class="modal-title" id="acceptLabel">Quest Details</h4>
                  </div>
                  <div class="modal-body">
-                  <form action="acceptquest.php" method="POST">
+                  <form action="questFunctions.php" method="POST">
                       <div class="form-group" align="center">
                         <h4>Are You Sure You Want To Accept This Quest?</h4>
                       </div>
@@ -254,6 +275,9 @@
                      </div>
                      <div class="form-group">
                        <input type="hidden" class="form-control" id="acceptCourse" name="course"></input>
+                     </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="action" name="action" value="accept"></input>
                      </div>
                  </div>
                  <div class="modal-footer">
@@ -265,6 +289,39 @@
              </div>
            </div>
         <!-- /Accept Quest Modal -->
+
+        <!-- Drop Quest Modal -->
+           <div class="modal fade" id="dropquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="dropLabel">Quest Details</h4>
+                 </div>
+                 <div class="modal-body">
+                  <form action="questFunctions.php" method="POST">
+                      <div class="form-group" align="center">
+                        <h4>Are You Sure You Want To Drop This Quest?</h4>
+                      </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="dropTitle" name="title">
+                     </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="dropCourse" name="course"></input>
+                     </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="action" name="action" value="drop"></input>
+                     </div>
+                 </div>
+                 <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <button type="button submit" class="btn btn-primary">Drop Quest</button>
+                 </div>
+                 </form>
+               </div>
+             </div>
+           </div>
+        <!-- /Drop Quest Modal -->
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
@@ -305,6 +362,16 @@
         modal.find('#acceptLabel').text("Accept Quest: "+questId) //Input results returned into the modals.
         modal.find('#acceptTitle').val(questId)
         modal.find('#acceptCourse').val(questCourse)
+      });
+
+      $('#dropquest').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var questId = button.data('id') // Extract info from data-* attributes
+        var questCourse = button.data('course')
+        var modal = $(this)
+        modal.find('#dropLabel').text("Drop Quest: "+questId) //Input results returned into the modals.
+        modal.find('#dropTitle').val(questId)
+        modal.find('#dropCourse').val(questCourse)
       });
     </script>
   </body>

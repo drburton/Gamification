@@ -10,8 +10,8 @@
     }
     else{
       if($_GET["course"]!=""){
-        $Ucourse=$_GET["course"];
-        $course = str_replace("_"," ",$Ucourse);
+        $course_under=$_GET["course"];
+        $course = str_replace("_"," ",$course_under);
         $search=array('c_number' => $course);
         $courseCursor = $collection3->find($search);
         if($courseCursor->count()==0){
@@ -65,6 +65,9 @@
                   </h1>
               </section>
 
+              <?php 
+                include_once "courseNav.php";
+              ?>
                 <!-- Main content -->
                 <section class="content">
                 	<div class="row">
