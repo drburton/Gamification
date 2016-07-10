@@ -49,13 +49,13 @@
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
       	if($k!="title"){
-          echo($v);
+          //print($v);
         	array_push($curQuests,$v);
       	}
        // $curQuests[]=$v;
       }
     }
-    print_r($curQuests);
+    //print_r($curQuests);
 ?>
 
 
@@ -158,7 +158,9 @@
                           </div><!-- /.box -->
                       </div>
                   </div>
-
+                  <?php 
+                    print(count($curQuests));
+                  ?>
                   <div class="row">
                       <div class="col-xs-12">
                           <div class="box">
