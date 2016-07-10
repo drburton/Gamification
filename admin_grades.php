@@ -42,6 +42,7 @@
             $user_results = array('course_id' => $course, 'user_role' => array('$ne' => 'admin'));
             $userCourseCursor = $collection2->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
+            $userCourseCursor = $userCourseCursor->sort(array("name"=>1)); //Sort by title
             print("<tr><td>Test</td></tr>");
 
             foreach ($userCourseCursor as $doc) {
@@ -49,7 +50,6 @@
               print('<tr>');
               foreach ($doc as $k => $v) {
                 $userId=$v;
-                print($v."<br/>");
               }
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
