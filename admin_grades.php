@@ -11,6 +11,7 @@
                 <th>Accept</th> -->
             <th style="text-align:center; vertical-align:middle; min-width: 175px;">Students</th>
             <?php
+            $allQuests=[];
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
@@ -22,6 +23,8 @@
                   $title = $v;
                 }elseif($k=='xp'){
                   $exp=$v;
+                }else{
+                  array_push($allQuests,$v);
                 }
               }
               print($title."<br/>".$exp." xp</th>");
@@ -54,6 +57,9 @@
               $userCursor = $userCollection->findOne(array('_id' => $userId));
 
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
+              foreach ($allQuests as $id) {
+                $quest = $collection2->findOne(array('_id' => new MongoId($id), 'user_id' => $user_id));
+              }
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
               }
