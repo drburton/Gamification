@@ -43,7 +43,7 @@
             $userCourseCursor = $userCourseCollection->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
 
-            foreach ($cursor as $doc) {
+            /*foreach ($cursor as $doc) {
               $userId;
               print('<tr>');
               foreach ($doc as $k => $v) {
@@ -54,7 +54,7 @@
               $userCursor->fields(array('name' => true,'_id' => true));
 
               print('<td>'.$userCursor['name'].'</td>');
-              print('</tr>');
+              print('</tr>');*/
             }
 
           ?>
