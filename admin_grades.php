@@ -1,6 +1,6 @@
-<div class="col-xs-12">
+<div class="col-xs-12" style="overflow:scroll;">
   <div class="box">
-    <div class="box-body table-responsive no-padding" style="overflow:scroll;">
+    <div class="box-body table-responsive no-padding">
         <table class="table table-bordered table-hover">
         <thead>
             <tr><!--
