@@ -49,6 +49,7 @@
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
       	if($k!="title"){
+          echo($v);
         	array_push($curQuests,$v);
       	}
        // $curQuests[]=$v;
