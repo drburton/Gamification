@@ -27,6 +27,10 @@
               print($title."<br/>".$exp." xp</th>");
             }
 
+            for ($i = 0; $i <= 5; $i++) {
+                print("<th>Overflow Test</th>");
+            }
+
             ?>
 
 
