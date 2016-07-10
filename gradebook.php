@@ -3,6 +3,7 @@
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "courses");
     $collection2 = new MongoCollection( $db, "users-courses");
+    $questCollection = new MongoCollection( $db, "quests");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: index.php");
@@ -30,6 +31,20 @@
                 $role=$v;
             }
         }
+
+        $maxEXP=0;
+         foreach ($courseCursor as $doc) {
+            foreach ($doc as $k => $v) {
+                if($k=="max_points"){
+                    $maxEXP=$v;
+                }
+            }
+        }
+
+        $questResults = array('course_id' => $course);
+        $questCursor = $collection2->find($results);
+        $questCursor->fields(array('course_id' => true,'title' => true,'xp' => true,'_id' => false));
+        $questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
     }
 ?>
 
