@@ -48,7 +48,6 @@
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
       foreach($doc as $k=>$v){
-        print($k);
       	if($k!="title"){
           //print($v);
         	array_push($curQuests,$v);
@@ -160,7 +159,7 @@
                       </div>
                   </div>
                   <?php 
-                    print(count($curQuests));
+                    print_r($curQuests);
                   ?>
                   <div class="row">
                       <div class="col-xs-12">
