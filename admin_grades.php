@@ -53,9 +53,8 @@
               }
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
-              $userCursor->fields(array('name' => true,'_id' => true));
 
-              //print('<td>'.$userCursor['name'].'</td>');
+              print('<td>'.$userCursor['name'].'</td>');
               print('</tr>');
             }
 
