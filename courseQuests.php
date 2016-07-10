@@ -137,7 +137,7 @@
                                                   elseif($k=="desc"){
                                                   	$desc=$v;
                                               	  }
-                                              	  if ($k != "desc" and $k!= "_id" and !in_array($dbid, $curQuests)){
+                                              	  if ($k != "desc" and $k!= "_id" and !in_array(new MongoID($dbid), $curQuests)){
                                                 	print "<td>$v</td>";
                                                   }
                                                 }
