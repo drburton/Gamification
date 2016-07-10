@@ -1,7 +1,7 @@
 <div class="col-xs-12">
   <div class="box">
     <div class="box-body table-responsive no-padding">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
         <thead>
             <tr><!--
                 <th>Quest</th>
@@ -14,7 +14,7 @@
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
               $exp;
-              print('<th style="text-align:center;">');
+              print('<th style="text-align:center; overflow:scroll;">');
               foreach ($doc as $k => $v) {
                 //print($k.": ".$v);
                 //print('<br/>');
