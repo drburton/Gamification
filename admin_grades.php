@@ -57,6 +57,7 @@
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
               }
+              print("<td style='min-width: 150px; text-align:center;'>- / $maxEXP</td>");
               print('</tr>');
             }
 
