@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav">
         	<li><a href="/coursehome.php?course=<?php print($course_under);?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
             <li><a href="#"><i class="fa fa-exclamation" aria-hidden="true"></i> Announcements</a></li>
-            <li><a href="#"><i class="fa fa-book"></i> Grades</a></li>
+            <li><a href="/gradebook.php?course=<?php print($course_under);?>"><i class="fa fa-book"></i> Grades</a></li>
             <?php if($role=="admin"){ ?>
             <li><a href="/quests.php?course=<?php print($course_under);?>"><i class="fa fa-shield" aria-hidden="true"></i> Quests</a></li>
             <?php }else{ ?>
