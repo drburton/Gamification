@@ -44,7 +44,7 @@
         $questResults = array('course_id' => $course);
         $questCursor = $collection2->find($results);
         $questCursor->fields(array('course_id' => true,'title' => true,'xp' => true,'_id' => false));
-        $questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
+        //$questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
     }
 ?>
 
