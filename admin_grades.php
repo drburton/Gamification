@@ -9,7 +9,7 @@
                 <th>Due Date</th>
                 <th>Details</th>
                 <th>Accept</th> -->
-            <th style="text-align:center;">Users</th>
+            <th style="text-align:center; vertical-align:middle">Users</th>
             <?php
             foreach ($questCursor as $doc) { //Turn cursor (results) human readable
               $title;
