@@ -142,7 +142,7 @@
                                                 }
                                                 $title = str_replace(" ","_",$title);
                                                 $desc = str_replace(" ","_",$desc);
-                                                print($dbid->{"$id"});
+                                                //print($dbid->{"$id"});
                                                 print(!in_array($dbid->{"$id"}, $curQuests)));
 
 	                                              if(!in_array($title, $curQuests)){
