@@ -58,11 +58,9 @@
 
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
-                print($userId."<br/>");
-                print($id."<br/>");
-                $quest = $collection2->findOne(array('quest_id'=>$id));
+                $quest = $userQuestsCollection->findOne(array('quest_id'=>$id, 'user_id'=>$userId));
                 //print($id.'<br/>');
-                print($quest."<br/>");
+                print($quest['status']."<br/>");
               }
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
