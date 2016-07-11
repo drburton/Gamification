@@ -60,7 +60,7 @@
               foreach ($allQuests as $id) {
                 print($id.'<br/>');
                 print($userId.'<br/>');
-                $quest = $userQuestsCollection->findOne(array('quest_id'=>$id));
+                $quest = $userQuestsCollection->findOne(array('user_id'=>$userId));
                 //print($id.'<br/>');
                 print($quest['status']."<br/>");
               }
