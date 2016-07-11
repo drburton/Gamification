@@ -24,8 +24,7 @@
                 }elseif($k=='xp'){
                   $exp=$v;
                 }elseif($k=='_id'){
-                  $justId = $v->{"$id"};
-                  array_push($allQuests,$justId);
+                  array_push($allQuests,$v);
                 }
               }
               print($title."<br/>".$exp." xp</th>");
@@ -61,7 +60,7 @@
               foreach ($allQuests as $id) {
                 print($id.'<br/>');
                 print($userId.'<br/>');
-                $search = array('user_id'=>$userId,'quest_id'=>$id);
+                $search = array('user_id'=>$userId,'quest_id'=>$id->{"$id"});
                 print_r($search);
                 $quest = $userQuestsCollection->findOne($search);
                 //print($id.'<br/>');
