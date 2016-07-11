@@ -58,8 +58,8 @@
 
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
-                //$quest = $collection2->findOne(array('_id' => new MongoId($id), 'user_id' => $user_id));
-                print($id."<br/>");
+                $quest = $collection2->findOne(array('_id' => new MongoId($id), 'user_id' => $user_id));
+                //print($id."<br/>");
               }
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
