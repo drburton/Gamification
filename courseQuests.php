@@ -17,6 +17,8 @@
         $courseCursor = $collection3->find($search);
         if($courseCursor->count()==0){
           header("Location: 404.php");
+        }else{
+          //$course_id = 
         }
       }
       else{
