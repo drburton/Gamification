@@ -66,7 +66,7 @@
                   print("<td style='min-width: 150px; text-align:center;'>-</td>");
                 }elseif($quest['status']=='submitted'){
                   print("<td style='min-width: 150px; text-align:center;'><button class=\"btn btn-danger btn-sm\" 
-                    style='width:150px;'><b>Grade</b></button></td>");
+                    style='width:100px;'><b>Grade</b></button></td>");
                 }elseif($quest['status']=='graded'){
                   $totalXP+=$quest['grade'];
                   print("<td style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
