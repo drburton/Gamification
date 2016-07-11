@@ -67,7 +67,7 @@
                 $quest = $userQuestsCollection->findOne($search);
                 //print($id.'<br/>');
                 print($quest['status']."<br/>");
-                if($quest['status']!='submitted' or $quest['status']!='graded'){
+                if($quest['status']!='submitted' and $quest['status']!='graded'){
                   print("<td style='min-width: 150px; text-align:center;'>-</td>");
                 }elseif($quest['status']=='submitted'){
                   print("<td style='min-width: 150px; text-align:center;'>Submitted</td>");
