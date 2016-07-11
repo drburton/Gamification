@@ -60,7 +60,9 @@
               foreach ($allQuests as $id) {
                 print($id.'<br/>');
                 print($userId.'<br/>');
-                $quest = $userQuestsCollection->findOne(array('user_id'=>$userId));
+                $search = array('user_id'=>$userId,'quest_id'=>$id);
+                print_r($search);
+                $quest = $userQuestsCollection->findOne($search);
                 //print($id.'<br/>');
                 print($quest['status']."<br/>");
               }
