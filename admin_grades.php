@@ -60,7 +60,7 @@
               foreach ($allQuests as $id) {
                 $quest = $collection2->findOne(array('quest_id'=>$id));
                 //print($id.'<br/>');
-                print($quest['status']."<br/>");
+                print($quest."<br/>");
               }
               for ($i = 0; $i <= 5; $i++) {
                 print("<td style='min-width: 150px; text-align:center;'>-</td>");
