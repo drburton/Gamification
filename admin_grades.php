@@ -24,7 +24,7 @@
                 }elseif($k=='xp'){
                   $exp=$v;
                 }elseif($k=='_id'){
-                  array_push($allQuests,$v->'$id');
+                  array_push($allQuests,$v->{"$id"});
                 }
               }
               print($title."<br/>".$exp." xp</th>");
