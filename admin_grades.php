@@ -59,7 +59,7 @@
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
                 $quest = $collection2->findOne(array('_id' => new MongoId($id)));
-                print($quest);
+                print($id);
                 //print($id."<br/>");
               }
               for ($i = 0; $i <= 5; $i++) {
