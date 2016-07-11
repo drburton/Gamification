@@ -52,6 +52,7 @@
               print('<tr>');
               foreach ($doc as $k => $v) {
                 $userId=$v;
+                $totalXP=0;
               }
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
@@ -66,13 +67,14 @@
                 }elseif($quest['status']=='submitted'){
                   print("<td style='min-width: 150px; text-align:center;'>Submitted</td>");
                 }elseif($quest['status']=='graded'){
+                  $totalXP+=$quest['grade'];
                   print("<td style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
                 }
               }
               //for ($i = 0; $i <= 5; $i++) {
               //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
               //}
-              print("<td style='min-width: 150px; text-align:center;'>- / $maxEXP</td>");
+              print("<td style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
               print('</tr>');
             }
 
