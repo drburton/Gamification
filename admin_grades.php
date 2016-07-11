@@ -58,6 +58,8 @@
 
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
+                print($userId."<br/>");
+                print($id."<br/>");
                 $quest = $collection2->findOne(array('quest_id'=>$id));
                 //print($id.'<br/>');
                 print($quest."<br/>");
