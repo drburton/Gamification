@@ -23,7 +23,7 @@
                   $title = $v;
                 }elseif($k=='xp'){
                   $exp=$v;
-                }else{
+                }elseif($k=='_id'){
                   array_push($allQuests,$v);
                 }
               }
