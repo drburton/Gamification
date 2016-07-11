@@ -24,7 +24,7 @@
                 }elseif($k=='xp'){
                   $exp=$v;
                 }elseif($k=='_id'){
-                  $justId = $->{"$id"};
+                  $justId = $v->{"$id"};
                   array_push($allQuests,$justId);
                 }
               }
