@@ -67,10 +67,17 @@
                 $quest = $userQuestsCollection->findOne($search);
                 //print($id.'<br/>');
                 print($quest['status']."<br/>");
+                if($quest['status']!='submitted' or $quest['status']!='graded'){
+                  print("<td style='min-width: 150px; text-align:center;'>-</td>");
+                }elseif($quest['status']=='submitted'){
+                  print("<td style='min-width: 150px; text-align:center;'>Submitted</td>");
+                }elseif($quest['status']=='graded'){
+                  print("<td style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
+                }
               }
-              for ($i = 0; $i <= 5; $i++) {
-                print("<td style='min-width: 150px; text-align:center;'>-</td>");
-              }
+              //for ($i = 0; $i <= 5; $i++) {
+              //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
+              //}
               print("<td style='min-width: 150px; text-align:center;'>- / $maxEXP</td>");
               print('</tr>');
             }
