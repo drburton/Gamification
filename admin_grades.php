@@ -62,8 +62,8 @@
                 //print($userId.'<br/>');
                 $newId = $id->{'$id'};
                 $search = array('user_id'=>$userId,'quest_id'=>$newId);
-                print_r($search);
-                print('<br/>');
+                //print_r($search);
+                //print('<br/>');
                 $quest = $userQuestsCollection->findOne($search);
                 //print($id.'<br/>');
                 print($quest['status']."<br/>");
