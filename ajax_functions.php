@@ -6,16 +6,15 @@ if(isset($_GET['action'])){
 	$action = $_GET["action"];
 	if($action=="changeGrade"){
 		$user = $_GET["user"];
-		$response=$response."_".$user;
-		//$quest = $_GET["qid"];
+		//$response=$response."_".$user;
+		$quest = $_GET["qid"];
 		//$response+="_"+$quest;
-		//$grade = $_GET["grade"];
+		$grade = $_GET["grade"];
 		//$response+="_"+$grade;
 		print($response);
-		//changeGrade($user,$quest,$grade);
+		changeGrade($user,$quest,$grade);
 	}
 }
-/*
 function changeGrade($user,$questId,$grade){
 	$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
@@ -29,7 +28,6 @@ function changeGrade($user,$questId,$grade){
     		//header("Location: profile.php");
 	    }
 }
-*/
 
-//return true;
+//return response;
 ?>
