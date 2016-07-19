@@ -14,7 +14,7 @@ if(isset($_GET['action'])){
 		$grade = $_GET["grade"];
 		//$response+="_"+$grade;
 		//print($response);
-		changeGrade($user,$quest,$grade);
+		//changeGrade($user,$quest,$grade);
 	}
 }
 function changeGrade($user,$questId,$grade){
