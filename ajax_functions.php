@@ -29,6 +29,6 @@ function changeGrade($user,$questId,$grade){
     		//header("Location: profile.php");
 	    }
 }
-
+print('End');
 //return response;
 ?>
