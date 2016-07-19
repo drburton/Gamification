@@ -91,6 +91,7 @@
 	function gradeQuest(user,qId,button){
 		alert(user+"\n"+qId);
 		button.hide();
-		$('#'+qId+'_'+user).append("<b>Test</b>");
+		var id = '#'+qId+'_'+user;
+		$(id).append("<b>Test</b>");
 	}
 </script>
