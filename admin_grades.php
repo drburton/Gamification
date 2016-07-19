@@ -105,7 +105,9 @@
         	$(id).html(grade);
         	var total = 0;
         	var num;
-        	$("#"+user+" td").each(function(){
+        	var rowId = "#"+user+" td";
+        	alert(rowId);
+        	$(rowId).each(function(){
         		alert("Test");
         		if($.isNumeric(this.val())){
         			num = this.val();
