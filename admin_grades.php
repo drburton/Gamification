@@ -49,11 +49,11 @@
 
             foreach ($userCourseCursor as $doc) {
               $userId;
-              print('<tr id="'.$userId.'">');
               foreach ($doc as $k => $v) {
                 $userId=$v;
                 $totalXP=0;
               }
+              print('<tr id="'.$userId.'">');
               $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
 
