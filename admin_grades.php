@@ -93,7 +93,7 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		//alert(id);
-		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		var gradeForm = "<input type='number' align='center' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
@@ -107,6 +107,8 @@
         	var num;
         	var row = $("#"+user);
         	var fields = row.find("td");
+        	alert(row);
+        	alert(fields);
         	fields.each(function(){
         		if($.isNumeric(this.val())){
         			num = this.val();
