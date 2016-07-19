@@ -8,12 +8,12 @@ if(isset($_GET['action'])){
 	if($action=="changeGrade"){
 		print("Getting Data <br/>");
 		$user = $_GET["user"];
-		//$response=$response."_".$user;
+		$response=$response."_".$user;
 		$quest = $_GET["qid"];
-		//$response+="_"+$quest;
+		$response+="_"+$quest;
 		$grade = $_GET["grade"];
-		//$response+="_"+$grade;
-		//print($response);
+		$response+="_"+$grade;
+		print($response."<br/>");
 		//changeGrade($user,$quest,$grade);
 	}
 }
