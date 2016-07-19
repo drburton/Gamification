@@ -2,7 +2,7 @@
 
 $response = "";
 
-if(isset($_REQUEST['action'])){
+/*if(isset($_REQUEST['action'])){
 	$action = mysql_real_escape_string($_REQUEST["action"]);
 	if($action=="changeGrade"){
 		$user = mysql_real_escape_string($_REQUEST["user"]);
@@ -28,5 +28,7 @@ function changeGrade($user,$questId,$grade){
     		//header("Location: profile.php");
 	    }
 }
+*/
 
+return true;
 ?>
