@@ -101,7 +101,7 @@
 		alert(grade);
 		$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+quest+"'&grade='"+grade+"'", 
 			success: function(result){
-        		alert('Yes!');
+        		alert(result);
     	}});
     	/*
     	, error: function(result){

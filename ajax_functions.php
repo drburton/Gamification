@@ -2,7 +2,7 @@
 
 $response = "";
 
-/*if(isset($_REQUEST['action'])){
+*if(isset($_REQUEST['action'])){
 	$action = mysql_real_escape_string($_REQUEST["action"]);
 	if($action=="changeGrade"){
 		$user = mysql_real_escape_string($_REQUEST["user"]);
@@ -11,10 +11,10 @@ $response = "";
 		$response+="_"+$quest;
 		$grade = mysql_real_escape_string($_REQUEST["grade"]);
 		$response+="_"+$grade;
-
-		changeGrade($user,$quest,$grade);
+		print($response);
+		//changeGrade($user,$quest,$grade);
 	}
-
+/*
 function changeGrade($user,$questId,$grade){
 	$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
