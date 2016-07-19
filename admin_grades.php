@@ -94,7 +94,7 @@
 		var id = '#'+qId+'_'+user;
 		alert(id);
 		var gradeForm = "<input type='text' onchange='(changeGrade($(this).value))'/>"
-		$(id).append("<b>Test</b>");
+		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
 	function changeGrade(grade){
