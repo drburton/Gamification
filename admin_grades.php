@@ -107,7 +107,7 @@
         	var num;
         	var rowId = "#"+user;
         	alert(rowId);
-        	$('td', $(rowId)).each(function(){
+        	$(rowId).find("td").each(function(){
         		alert("Test");
         		if($.isNumeric(this.val())){
         			num = this.val();
