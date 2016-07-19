@@ -57,10 +57,6 @@
         <meta charset="UTF-8">
         <title>Course Gradebook</title>
         <?php include_once "headStyle.php"; ?>
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.css">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>
     </head>
     <body class="skin-blue">
         <?php include_once "navTemplate.php";?>
