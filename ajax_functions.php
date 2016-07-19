@@ -18,6 +18,8 @@ if(isset($_GET['action'])){
 	}
 }
 function changeGrade($user,$questId,$grade){
+	print("DB Function <br/>");
+	print($user."_".$questId."_".$grade."<br/>");
 	$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $user_quests = new MongoCollection( $db, "users-quests");
