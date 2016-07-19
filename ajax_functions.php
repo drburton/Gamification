@@ -3,13 +3,13 @@
 $response = "";
 
 *if(isset($_GET['action'])){
-	$action = mysql_real_escape_string($_GET["action"]);
+	$action = $_GET["action"];
 	if($action=="changeGrade"){
-		$user = mysql_real_escape_string($_GET["user"]);
+		$user = $_GET["user"];
 		$response+="_"+$user;
-		$quest = mysql_real_escape_string($_GET["qid"]);
+		$quest = $_GET["qid"];
 		$response+="_"+$quest;
-		$grade = mysql_real_escape_string($_GET["grade"]);
+		$grade = $_GET["grade"];
 		$response+="_"+$grade;
 		print($response);
 		//changeGrade($user,$quest,$grade);
