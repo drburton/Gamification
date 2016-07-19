@@ -93,7 +93,7 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		alert(id);
-		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade(0,$(this).val(),'"+user+"','"+qId+"'))'/>"
+		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade('0',$(this).val(),'"+user+"','"+qId+"'))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
