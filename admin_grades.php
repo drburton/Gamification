@@ -93,11 +93,11 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		alert(id);
-		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade('0',$(this).val(),'"+user+"','"+qId+"'))'/>"
+		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade($(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
-	function changeGrade(original,newGrade,user,qId){
+	function changeGrade(grade){
 		alert(grade);
 		/*$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+qId+"'&grade='"+newGrade+"'", 
 			success: function(result){
