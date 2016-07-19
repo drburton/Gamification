@@ -2,10 +2,10 @@
 
 $response = "";
 
-*if(isset($_GET['action'])){
+if(isset($_GET['action'])){
 	$action = $_GET["action"];
 	if($action=="changeGrade"){
-		$user = $_GET["user"];
+		//$user = $_GET["user"];
 		//$response=$response."_".$user;
 		//$quest = $_GET["qid"];
 		//$response+="_"+$quest;
@@ -14,6 +14,7 @@ $response = "";
 		print($response);
 		//changeGrade($user,$quest,$grade);
 	}
+}
 /*
 function changeGrade($user,$questId,$grade){
 	$m = new MongoClient();
@@ -30,5 +31,5 @@ function changeGrade($user,$questId,$grade){
 }
 */
 
-return true;
+//return true;
 ?>
