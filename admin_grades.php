@@ -99,7 +99,7 @@
 
 	function changeGrade(user,quest,grade){
 		alert(grade);
-		$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+qId+"'&grade='"+newGrade+"'", 
+		$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+quest+"'&grade='"+grade+"'", 
 			success: function(result){
         		alert('Yes!');
     	}});
