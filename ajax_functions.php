@@ -4,6 +4,7 @@ $response = "";
 
 if(isset($_GET['action'])){
 	$action = $_GET["action"];
+	print($action);
 	if($action=="changeGrade"){
 		$user = $_GET["user"];
 		//$response=$response."_".$user;
