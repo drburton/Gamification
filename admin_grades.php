@@ -93,6 +93,11 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		alert(id);
+		var gradeForm = "<input type='text' onchange='(changeGrade($(this).value))'/>"
 		$(id).append("<b>Test</b>");
+	}
+
+	function changeGrade(grade){
+		alert(grade);
 	}
 </script>
