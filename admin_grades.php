@@ -105,11 +105,8 @@
         	$(id).html(grade);
         	var total = 0;
         	var num;
-        	var row = $("#"+user);
-        	var fields = row.find("td");
-        	alert(row);
-        	alert(fields);
-        	fields.each(function(){
+        	$("#"+user+" td").each(function(){
+        		alert("Test");
         		if($.isNumeric(this.val())){
         			num = this.val();
         			total = total+num;
