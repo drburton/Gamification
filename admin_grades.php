@@ -49,7 +49,7 @@
 
             foreach ($userCourseCursor as $doc) {
               $userId;
-              print('<tr id="$userId">');
+              print('<tr id="'.$userId.'">');
               foreach ($doc as $k => $v) {
                 $userId=$v;
                 $totalXP=0;
@@ -93,7 +93,7 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		//alert(id);
-		var gradeForm = "<input type='number' align='center' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
