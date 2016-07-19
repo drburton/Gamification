@@ -10,9 +10,9 @@ if(isset($_GET['action'])){
 		$user = $_GET["user"];
 		$response=$response."_".$user;
 		$quest = $_GET["qid"];
-		$response+="_"+$quest;
+		$response=$response."_".$user;
 		$grade = $_GET["grade"];
-		$response+="_"+$grade;
+		$response=$response."_".$user;
 		print($response."<br/>");
 		//changeGrade($user,$quest,$grade);
 	}
