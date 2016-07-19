@@ -89,10 +89,10 @@
 
 <script>
 	function gradeQuest(user,qId,button){
-		//alert(user+"\n"+qId);
+		alert(user+"\n"+qId);
 		button.hide();
 		var id = '#'+qId+'_'+user;
-		//alert(id);
+		alert(id);
 		var gradeForm = "<input type='number' align='center' value='0' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
