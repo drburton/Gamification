@@ -23,14 +23,12 @@ function changeGrade($user,$questId,$grade){
 	$m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $user_quests = new MongoCollection( $db, "users-quests");
-    $cursor = $user_quests->findOne(array('_id' => new MongoId($newProgram)));
-	    if($programCursor){
-	     	$user=$userCollection->findOne(array('user_id' => $user, 'quest_id' => $quest_id));
-	     		//array('$set'=>array(
-	     	$update=array('$set'=>array('grade' => $grade, 'status' => 'graded'));
-    		$userCollection->update(array('user_id' => $user, 'quest_id' => $quest_id),$update);
-    		//header("Location: profile.php");
-	    }
+    $cursor = $user_quests->findOne(array('user_id' => $user, 'quest_id' => $quest_id));
+    if($cursor){
+     	$update=array('$set'=>array('grade' => $grade, 'status' => 'graded'));
+		$user_quests->update(array('user_id' => $user, 'quest_id' => $quest_id),$update);
+		//header("Location: profile.php");
+    }
 }
 print('End');
 //return response;
