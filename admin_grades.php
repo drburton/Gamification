@@ -89,6 +89,6 @@
 
 <script>
 	function gradeQuest(user,qId){
-		alert("Test");
+		alert(user+"\n"+qId);
 	}
 </script>
