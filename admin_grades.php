@@ -107,10 +107,10 @@
         	var num;
         	var rowId = "#"+user;
         	alert(rowId);
-        	$(rowId).find("td").each(function(){
+        	$(rowId).find("td").each(function(row){
         		alert("Test");
         		if($.isNumeric(this.val())){
-        			num = this.val();
+        			num = row.val();
         			total = total+num;
         		}
         	})
