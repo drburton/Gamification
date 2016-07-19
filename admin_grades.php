@@ -49,7 +49,7 @@
 
             foreach ($userCourseCursor as $doc) {
               $userId;
-              print('<tr>');
+              print('<tr id="$userId">');
               foreach ($doc as $k => $v) {
                 $userId=$v;
                 $totalXP=0;
@@ -75,7 +75,7 @@
               //for ($i = 0; $i <= 5; $i++) {
               //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
               //}
-              print("<td style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
+              print("<td id='".$user."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
               print('</tr>');
             }
 
@@ -98,11 +98,22 @@
 	}
 
 	function changeGrade(user,quest,grade){
-		alert(grade);
+		//alert(grade);
 		$.ajax({url: "ajax_functions.php?action=changeGrade&user="+user+"&qId="+quest+"&grade="+grade, 
 			success: function(result){
         	var id = '#'+quest+'_'+user;
-        	$(id).html(grade);	
+        	$(id).html(grade);
+        	var total = 0;
+        	var num;
+        	$("#"+user+" td").each(function(){
+        		if($.isNumeric(this.val())){
+        			num = this.val();
+        			total = total+num;
+        		}
+        	})
+        	//total = total - num;
+        	var oldTotal = $("#"+user+"_exp").val();
+        	$("#"+user+"_exp").html(total);
     	}});
     	/*
     	, error: function(result){
