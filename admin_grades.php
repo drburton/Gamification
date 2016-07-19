@@ -63,13 +63,13 @@
                 $search = array('user_id'=>$userId,'quest_id'=>$newId);
                 $quest = $userQuestsCollection->findOne($search);
                 if($quest['status']!='submitted' and $quest['status']!='graded'){
-                  print("<td id='$newId_userId' style='min-width: 150px; text-align:center;'>-</td>");
+                  print("<td id='".$newId."_".userId."' style='min-width: 150px; text-align:center;'>-</td>");
                 }elseif($quest['status']=='submitted'){
-                  print("<td id='$newId_userId' style='min-width: 150px; text-align:center;'><button class=\"btn btn-danger btn-sm\" 
+                  print("<td id='".$newId."_".userId."' style='min-width: 150px; text-align:center;'><button class=\"btn btn-danger btn-sm\" 
                     style='width:100px;' onclick=\"gradeQuest('$userId','$newId',$(this))\"><b>Grade</b></button></td>");
                 }elseif($quest['status']=='graded'){
                   $totalXP+=$quest['grade'];
-                  print("<td id='$newId_userId' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
+                  print("<td id='".$newId."_".userId."' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
                 }
               }
               //for ($i = 0; $i <= 5; $i++) {
@@ -92,6 +92,7 @@
 		alert(user+"\n"+qId);
 		button.hide();
 		var id = '#'+qId+'_'+user;
+		alert(id);
 		$(id).append("<b>Test</b>");
 	}
 </script>
