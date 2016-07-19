@@ -75,7 +75,7 @@
               //for ($i = 0; $i <= 5; $i++) {
               //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
               //}
-              print("<td id='".$user."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
+              print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
               print('</tr>');
             }
 
@@ -105,7 +105,9 @@
         	$(id).html(grade);
         	var total = 0;
         	var num;
-        	$("#"+user+" td").each(function(){
+        	var row = $("#"+user);
+        	var fields = row.find("td");
+        	fields.each(function(){
         		if($.isNumeric(this.val())){
         			num = this.val();
         			total = total+num;
