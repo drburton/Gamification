@@ -6,7 +6,7 @@ $response = "";
 	$action = $_GET["action"];
 	if($action=="changeGrade"){
 		$user = $_GET["user"];
-		$response=$response."_".$user;
+		//$response=$response."_".$user;
 		//$quest = $_GET["qid"];
 		//$response+="_"+$quest;
 		//$grade = $_GET["grade"];
