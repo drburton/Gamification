@@ -2,14 +2,14 @@
 
 $response = "";
 
-*if(isset($_REQUEST['action'])){
-	$action = mysql_real_escape_string($_REQUEST["action"]);
+*if(isset($_GET['action'])){
+	$action = mysql_real_escape_string($_GET["action"]);
 	if($action=="changeGrade"){
-		$user = mysql_real_escape_string($_REQUEST["user"]);
+		$user = mysql_real_escape_string($_GET["user"]);
 		$response+="_"+$user;
-		$quest = mysql_real_escape_string($_REQUEST["qid"]);
+		$quest = mysql_real_escape_string($_GET["qid"]);
 		$response+="_"+$quest;
-		$grade = mysql_real_escape_string($_REQUEST["grade"]);
+		$grade = mysql_real_escape_string($_GET["grade"]);
 		$response+="_"+$grade;
 		print($response);
 		//changeGrade($user,$quest,$grade);
