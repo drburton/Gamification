@@ -1,10 +1,10 @@
 <?php
-print("Page Loaded");
+print("Page Loaded<br/>");
 $response = "";
 
 if(isset($_GET['action'])){
 	$action = $_GET["action"];
-	print($action);
+	print($action."<br/>");
 	if($action=="changeGrade"){
 		$user = $_GET["user"];
 		//$response=$response."_".$user;
@@ -12,8 +12,8 @@ if(isset($_GET['action'])){
 		//$response+="_"+$quest;
 		$grade = $_GET["grade"];
 		//$response+="_"+$grade;
-		print($response);
-		//changeGrade($user,$quest,$grade);
+		//print($response);
+		changeGrade($user,$quest,$grade);
 	}
 }
 function changeGrade($user,$questId,$grade){
