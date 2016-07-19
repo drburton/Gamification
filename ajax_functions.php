@@ -1,5 +1,5 @@
 <?php
-
+print("Page Loaded");
 $response = "";
 
 if(isset($_GET['action'])){
@@ -13,7 +13,6 @@ if(isset($_GET['action'])){
 		//$response+="_"+$grade;
 		print($response);
 		//changeGrade($user,$quest,$grade);
-		alert($response);
 	}
 }
 function changeGrade($user,$questId,$grade){
