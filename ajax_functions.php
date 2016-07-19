@@ -9,12 +9,12 @@ if(isset($_GET['action'])){
 		print("Getting Data <br/>");
 		$user = $_GET["user"];
 		$response=$response."_".$user;
-		$quest = $_GET["qid"];
+		$quest = $_GET["qId"];
 		$response=$response."_".$quest;
 		$grade = $_GET["grade"];
 		$response=$response."_".$grade;
 		print($response."<br/>");
-		//changeGrade($user,$quest,$grade);
+		changeGrade($user,$quest,$grade);
 	}
 }
 function changeGrade($user,$questId,$grade){
