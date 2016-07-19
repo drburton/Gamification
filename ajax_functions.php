@@ -6,11 +6,11 @@ $response = "";
 	$action = $_GET["action"];
 	if($action=="changeGrade"){
 		$user = $_GET["user"];
-		$response+="_"+$user;
-		$quest = $_GET["qid"];
-		$response+="_"+$quest;
-		$grade = $_GET["grade"];
-		$response+="_"+$grade;
+		$response=$response."_".$user;
+		//$quest = $_GET["qid"];
+		//$response+="_"+$quest;
+		//$grade = $_GET["grade"];
+		//$response+="_"+$grade;
 		print($response);
 		//changeGrade($user,$quest,$grade);
 	}
