@@ -90,5 +90,6 @@
 <script>
 	function gradeQuest(user,qId){
 		alert(user+"\n"+qId);
+		$(this).hide();
 	}
 </script>
