@@ -99,11 +99,11 @@
 
 	function changeGrade(user,quest,grade){
 		alert(grade);
-		/*$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+qId+"'&grade='"+newGrade+"'", 
+		$.ajax({url: "ajax_functions.php?action='changeGrade'&user='"+user+"'&qId='"+qId+"'&grade='"+newGrade+"'", 
 			success: function(result){
         		alert('Yes!');
-    	}, error: function(result){
-    		alert("The site was unable to change the grade due to an error.");
-    	}});*/
+    	}//, error: function(result){
+    	//	alert("The site was unable to change the grade due to an error.");
+    	}});
 	}
 </script>
