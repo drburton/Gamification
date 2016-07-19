@@ -6,6 +6,7 @@ if(isset($_GET['action'])){
 	$action = $_GET["action"];
 	print($action."<br/>");
 	if($action=="changeGrade"){
+		print("Getting Data <br/>")
 		$user = $_GET["user"];
 		//$response=$response."_".$user;
 		$quest = $_GET["qid"];
