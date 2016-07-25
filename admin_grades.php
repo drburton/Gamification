@@ -89,7 +89,7 @@
 
 <script>
 
-  function test(form){
+  function handleInput(form){
     var data = $(form).serializeArray();
     var grade = data[0]['value'];
     var user = data[1]['value'];
@@ -116,7 +116,10 @@
 		var id = '#'+qId+'_'+user;
     $button = button;
 		//alert(id); //"+button+",$(this)
-		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		var gradeForm = "<form onsubmit='handleInput($(this))'>"+
+    "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)'/>"+
+    "<input type='hidden' name='user' value='"+user+"'/>"+
+    "<input type='hidden' name='quest' value='"+qId+"'/></form>"
 		$(id).append(gradeForm);
 	}
 
@@ -127,7 +130,7 @@
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
     var gradeForm = 
-    "<form onsubmit='test($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' />"+
+    "<form onsubmit='handleInput($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' />"+
     "<input type='hidden' name='user' value='"+user+"'/>"+
     "<input type='hidden' name='quest' value='"+qId+"'/></form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
     $(id).append(gradeForm);
