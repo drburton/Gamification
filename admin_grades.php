@@ -103,7 +103,7 @@
 			success: function(result){
         	var id = '#'+quest+'_'+user;
         	$(id).html(grade);
-        	var total = 0;
+        	int total = 0;
         	var num;
         	var rowId = "#"+user;
         	alert(rowId);
