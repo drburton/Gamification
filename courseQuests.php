@@ -46,26 +46,15 @@
     $curQuests=[];
     $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
-    $cursor->fields(array('_id' => false, 'status'=>true,'title' =>true,'quest_id' => true)); //Get specific data
+    $cursor->fields(array('_id' => false,'quest_id' => true)); //Get specific data
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
-      $id;
-      $title;
-      $status;
       foreach($doc as $k=>$v){
       	if($k=="quest_id"){
-        	//array_push($curQuests,$v);
-          $id = $v;
-      	}elseif($k=="status"){
-          $status = $v;
-        }elseif($k=="title"){
-          $title=$v;
+        	array_push($curQuests,$v);
         }
-       // $curQuests[]=$v;
       }
-      $curQuests[$id]=array('title'=>$title,'status'=>$status);
     }
-    print_r($curQuests);
 ?>
 
 
@@ -192,49 +181,46 @@
 
                                             $results = array('course_id' => $course,'user_id'=>$_SESSION['login']);//$course);
                                             $cursor2 = $collection4->find($results);
-                                            $cursor2->fields(array('quest_id' =>true,"title" => true,'_id' => false)); //Get specific data 
+                                            $cursor2->fields(array('quest_id' =>true,"status"=>true,"title" => true,'_id' => false)); //Get specific data 
                                             //print($cursor2);
                                             $due_date="";
                                             $xp="";
                                             $desc='';
                                             $dbid="";
                                             $title="";
+                                            $status="";
                                             foreach ($cursor2 as $doc) { //Turn cursor (results) human readable
                                               foreach ($doc as $k => $v) { //Filter out keys from key-value pairs in the returned array
-                                                if ($k != "desc" and $k!= 'quest_id'){
-                                                  if($k=="title"){
-                                                    $title=$v;
-                                                  }
-                                                  if($k=="due_date"){
-                                                    $due_date=$v;
-                                                  }
-                                                  if($k=="xp"){
-                                                    $xp=$v;
-                                                  }
-                        
-                                                  print "<td>$v</td>";
+                                                if($k=="status"){
+                                                  $status=$v;
+                                                }elseif($k=="quest_id"){
+                                                  $dbid = $v;
+                                                }elseif($k=="title"){
+                                                  $title=$v;
                                                 }
-                                                else{
-                                                  if($k=='quest_id'){
-                                                    $dbid = $v;
-                                                  }else{
-                                                    $desc=$v;
-                                                  }
-                                                }
-                                                }
-                                                $title = str_replace(" ","_",$title);
-                                                $desc = str_replace(" ","_",$desc);
-                                                //print "<td>$desc</td>";
-
-                                              print("<td>Item</td>");
-                                              print("<td>Item</td>");
-                                              print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Turn In Quest <i class='fa fa-check-circle'
-                                              aria-hidden='true'></button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$dbid>Drop Quest <i class='fa fa-times-circle'
-                                              aria-hidden='true'></button></a></td>";
-                                              print "</tr>";
                                               }
+                                              $title = str_replace(" ","_",$title);
+                                              //print "<td>$desc</td>";
+                                              if($status!="graded"){
+                                                print("<td>".$title."</td>");
+                                                print("<td>Item</td>");
+                                                print("<td>Item</td>");
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
+                                                if($status=="accepted"){
+
+                                                print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Turn In Quest <i class='fa fa-check-circle'
+                                                aria-hidden='true'></button></a></td>";
+
+                                                }elseif($status=="submitted"){
+
+                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Retract Submission</button></a></td>";
+
+                                                }
+                                                print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$dbid>Drop Quest <i class='fa fa-times-circle'
+                                                aria-hidden='true'></button></a></td>";
+                                                print "</tr>";
+                                              }
+                                            }
                                               //print("After Loop");
                                            ?>
                                   </tbody>
