@@ -110,9 +110,9 @@
         	$(rowId).find("td").each(function(index){
         		alert(index);
             var cell = $(this).html();
-        		//if($.isNumeric(cell)){
-        			//total = total+cell;
-        		//}
+        		if($.isNumeric(cell)){
+        			total = total+cell;
+        		}
         	})
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
