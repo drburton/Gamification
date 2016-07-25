@@ -89,17 +89,18 @@
 
 <script>
 
-  function undoGrade(button,form){
-    button.show();
-    form.remove();
+  function undoGrade(){//(button,form){
+    //button.show();
+    //form.remove();
+    alert("Lost Focus");
   }
 
 	function gradeQuest(user,qId,button){
 		//alert(user+"\n"+qId);
 		button.hide();
 		var id = '#'+qId+'_'+user;
-		//alert(id);
-		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade("+button+",$(this))' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		//alert(id); //"+button+",$(this)
+		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade()' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
