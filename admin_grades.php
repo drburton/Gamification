@@ -90,8 +90,9 @@
 <script>
 
   function test(formData){
-    var data = $(formData).serializeArray();
+    var data = $(formData).serialize();
     alert(data);
+    event.preventDefault();
   }
 
   function undoGrade(form, button){
