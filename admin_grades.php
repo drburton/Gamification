@@ -89,10 +89,12 @@
 
 <script>
 
-  function test(form,user,quest){
+  function test(form){
     var data = $(form).serializeArray();
     var grade = data[0]['value'];
-    alert(grade);
+    var user = data[1]['value'];
+    var quest = data[2]['value'];
+    alert(user);
     changeGrade(user,quest,grade);
     event.preventDefault();
   }
@@ -124,7 +126,10 @@
     var oldHTML = $(element).html();
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
-    var gradeForm = "<form onsubmit='test($(this),\""+user+"\""+qId+"\")'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' /></form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
+    var gradeForm = "<form onsubmit='test($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' />
+    <input type='hidden' name='user' value='"+user+"'/>
+    <input type='hidden' name='quest' value='"+qId+"'/>
+    </form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
     $(id).append(gradeForm);
 
   }
