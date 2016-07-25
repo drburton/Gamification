@@ -90,8 +90,9 @@
 <script>
 
   function test(form){
-    var data = $(form).serialize();
-    alert(JSON.stringify($(form).serializeArray()));
+    var data = $(form).serializeArray();
+    var grade = data[0]['value'];
+    alert(grade);
     event.preventDefault();
   }
 
