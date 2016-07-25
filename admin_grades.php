@@ -114,7 +114,7 @@
         	var total = 0;
         	var num;
         	var rowId = "#"+user;
-        	alert(rowId);
+        	//alert(rowId);
         	$(rowId).find("td").each(function(index){
         		//alert(index);
             var cell = $(this).html();
