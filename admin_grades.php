@@ -110,6 +110,7 @@
         	$(rowId).find("td").each(function(index){
         		alert(index);
             var cell = $(this).html();
+            alert(parseInt(cell,10));
         		//if($.isNumeric(cell)){
         			total = total+parseInt(cell,10);
         		//}
