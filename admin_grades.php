@@ -94,7 +94,7 @@
     var grade = data[0]['value'];
     var user = data[1]['value'];
     var quest = data[2]['value'];
-    alert(user);
+    //alert(user);
     changeGrade(user,quest,grade);
     event.preventDefault();
   }
