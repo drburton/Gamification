@@ -112,6 +112,7 @@
             var cell = $(this).html();
             if(parseInt(cell,10)){
         			total = total+parseInt(cell,10);
+              alert(total);
         		}
         	})
         	//total = total - num;
