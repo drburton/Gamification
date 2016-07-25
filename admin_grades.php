@@ -110,7 +110,7 @@
         	$(rowId).find("td").each(function(index){
         		//alert(index);
             var cell = $(this).html();
-            alert($(this).id);
+            alert($(this).attr('id'));
             if(parseInt(cell,10)){ //&& !$(this).id == user+"_exp"){
         			total = total+parseInt(cell,10);
               alert(total);
