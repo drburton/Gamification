@@ -100,7 +100,7 @@
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		//alert(id); //"+button+",$(this)
-		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade("+button+","+$(this)+")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade("+button+",$(this))' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
