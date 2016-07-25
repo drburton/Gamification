@@ -96,7 +96,7 @@
   }
 
   function returnGrade(form,element,id){
-    form.remove();
+    //form.remove();
     element.show();
   }
 
