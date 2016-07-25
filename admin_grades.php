@@ -122,7 +122,7 @@
     var oldHTML = $(element).html();
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
-    var gradeForm = "<form onsubmit='test($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/></form>"
+    var gradeForm = "<form onsubmit='test($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' /></form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
     $(id).append(gradeForm);
 
   }
