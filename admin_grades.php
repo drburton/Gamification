@@ -106,7 +106,7 @@
   }
 
   function returnGrade(form,oldDiv,id){
-    //form.remove();
+    form.remove();
     oldDiv.show();
   }
 
