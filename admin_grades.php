@@ -93,8 +93,8 @@
     var data = $(form).serializeArray();
     var grade = data[0]['value'];
     alert(grade);
-    event.preventDefault();
     changeGrade(user,quest,grade);
+    event.preventDefault();
   }
 
   function undoGrade(form, button){
