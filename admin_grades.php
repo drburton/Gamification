@@ -126,7 +126,7 @@
 		$.ajax({url: "ajax_functions.php?action=changeGrade&user="+user+"&qId="+quest+"&grade="+grade, 
 			success: function(result){
         	var id = '#'+quest+'_'+user;
-        	$(id).html(grade);
+        	$(id).html("<div onclick='editGrade($(this),\""+userId+"\",\""+quest+"\")'>"+grade+"</div>");
         	var total = 0;
         	var num;
         	var rowId = "#"+user;
