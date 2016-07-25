@@ -89,7 +89,7 @@
 
 <script>
 
-  function undoGrade(){//(button,form){
+  function undoGrade((button,form){
     //button.show();
     //form.remove();
     alert("Lost Focus");
