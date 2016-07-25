@@ -69,7 +69,7 @@
                     style='width:100px;' onclick=\"gradeQuest('$userId','$newId',$(this))\"><b>Grade</b></button></td>");
                 }elseif($quest['status']=='graded'){
                   $totalXP+=$quest['grade'];
-                  print("<td id='".$newId."_".$userId."' onclick='editGrade($(this),\"$userId\",\"$newId\")' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
+                  print("<td id='".$newId."_".$userId."' style='min-width: 150px; text-align:center;'><div onclick='editGrade($(this),\"$userId\",\"$newId\")'>".$quest['grade']."</div></td>");
                 }
               }
               //for ($i = 0; $i <= 5; $i++) {
@@ -97,7 +97,7 @@
 
   function returnGrade(form,oldHTML,id){
     form.remove();
-    $(id).html(oldHTML);
+    $(id).append(oldHTML);
   }
 
 	function gradeQuest(user,qId,button){
@@ -114,7 +114,7 @@
     var oldHTML = $(element).html();
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
-    var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),\""+grade+"\",\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+    var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),\""+element+"\",\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
     $(id).html("<b>"+gradeForm+"</b>");
 
   }
