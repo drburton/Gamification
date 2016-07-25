@@ -117,7 +117,7 @@
     $button = button;
 		//alert(id); //"+button+",$(this)
 		var gradeForm = "<form onsubmit='handleInput($(this))'>"+
-    "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)'/>"+
+    "<input autofocus type='number' name='grade' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)'/>"+
     "<input type='hidden' name='user' value='"+user+"'/>"+
     "<input type='hidden' name='quest' value='"+qId+"'/></form>"
 		$(id).append(gradeForm);
