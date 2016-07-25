@@ -95,9 +95,9 @@
     //alert("Lost Focus");
   }
 
-  function returnGrade(form,element,id){
+  function returnGrade(form,oldDiv,id){
     //form.remove();
-    element.show();
+    oldDiv.show();
   }
 
 	function gradeQuest(user,qId,button){
@@ -116,7 +116,7 @@
     var oldHTML = $(element).html();
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
-    var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),\"$element\",\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+    var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
     $(id).append("<b>"+gradeForm+"</b>");
 
   }
