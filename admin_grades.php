@@ -111,7 +111,7 @@
         		alert(index);
             var cell = $(this).html());
         		if($.isNumeric(cell)){
-        			total = total+Number(cell);
+        			total = total+cell
         		}
         	})
         	//total = total - num;
