@@ -213,7 +213,8 @@
 
                                                 }elseif($status=="submitted"){
 
-                                                print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Retract Submission</button></a></td>";
+                                                print("Grade Pending");
+                                                //print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Retract Submission</button></a></td>";
 
                                                 }
                                                 print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$dbid>Drop Quest <i class='fa fa-times-circle'
