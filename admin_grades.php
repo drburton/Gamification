@@ -107,7 +107,7 @@
     $button = button;
 		//alert(id); //"+button+",$(this)
 		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
-		$(id).append("<b>"+gradeForm+"</b>");
+		$(id).append(gradeForm);
 	}
 
   function editGrade(element, user, qId){
@@ -117,7 +117,7 @@
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
     var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
-    $(id).append("<b>"+gradeForm+"</b>");
+    $(id).append(gradeForm);
 
   }
 
