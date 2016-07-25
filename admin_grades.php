@@ -111,6 +111,9 @@
         		alert(index);
             var cell = $(this).html();
             alert(parseInt(cell,10));
+            if(parseInt(cell,10)){
+              alert("Converted");
+            }
         		//if($.isNumeric(cell)){
         			total = total+parseInt(cell,10);
         		//}
