@@ -92,7 +92,7 @@
   function undoGrade(form, button){
     button.show();
     form.remove();
-    alert("Lost Focus");
+    //alert("Lost Focus");
   }
 
 	function gradeQuest(user,qId,button){
