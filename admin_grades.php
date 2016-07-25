@@ -88,12 +88,18 @@
 </div>
 
 <script>
+
+  function undoGrade(button,form){
+    button.show();
+    form.remove();
+  }
+
 	function gradeQuest(user,qId,button){
 		//alert(user+"\n"+qId);
 		button.hide();
 		var id = '#'+qId+'_'+user;
 		//alert(id);
-		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade("+button+",$(this))' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
 
