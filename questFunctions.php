@@ -29,6 +29,17 @@
 
             //print("/courseQuests.php?course=".$course);
             header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
+        }elseif($_POST["action"]=="submit"){
+            $name=$_SESSION["login"];
+            $course=$_POST["course"];
+            $quest=$_POST["title"];
+            //print $newDesc;
+            $new = str_replace("_"," ",$course);
+            $update=array('$set'=>array('status' => 'submitted'));
+            $collection2->update(array('user_id' => $name, 'quest_id' => $quest),$update);
+
+            //print("/courseQuests.php?course=".$course);
+            header("Location: /courseQuests.php?course=".$course);//Kick user back to quests page after inputting new quest into database
         }else{
             header("Location: /courseQuests.php?course=".$course); //not a valid action so send them back 
         }
