@@ -109,7 +109,7 @@
         	alert(rowId);
         	$(rowId).find("td").each(function(index){
         		alert(index);
-            alert($(this).html();
+            alert($(this).html());
         		//if($.isNumeric(this.innerHTML())){
         		//	num = this.innerHTML();
         		//	total = total+num;
