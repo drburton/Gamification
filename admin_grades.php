@@ -69,7 +69,7 @@
                     style='width:100px;' onclick=\"gradeQuest('$userId','$newId',$(this))\"><b>Grade</b></button></td>");
                 }elseif($quest['status']=='graded'){
                   $totalXP+=$quest['grade'];
-                  print("<td id='".$newId."_".$userId."' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
+                  print("<td id='".$newId."_".$userId."' onclick='editGrade($(this))' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
                 }
               }
               //for ($i = 0; $i <= 5; $i++) {
@@ -95,6 +95,11 @@
     //alert("Lost Focus");
   }
 
+  function returnGrade(form,oldHTML,id){
+    form.remove();
+    $(id).html(oldHTML);
+  }
+
 	function gradeQuest(user,qId,button){
 		//alert(user+"\n"+qId);
 		button.hide();
@@ -104,6 +109,14 @@
 		var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='undoGrade($(this),$button)' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
 		$(id).append("<b>"+gradeForm+"</b>");
 	}
+
+  function editGrade(element, user, qId){
+    var oldHTML = $(element).html();
+    var id = '#'+qId+'_'+user;
+    var gradeForm = "<input autofocus type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$oldHTML,"+id+"' onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'/>"
+    $(id).html("<b>"+gradeForm+"</b>");
+
+  }
 
 	function changeGrade(user,quest,grade){
 		//alert(grade);
