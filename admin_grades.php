@@ -112,12 +112,12 @@
             var cell = $(this).html();
             if(parseInt(cell,10) && $(this).attr('id') != user+"_exp"){
         			total = total+parseInt(cell,10);
-              alert(total);
+              //alert(total);
         		}
         	})
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
-        	$("#"+user+"_exp").html(total);
+        	$("#"+user+"_exp").html(total+<?php print("' / ".$maxEXP."'");?>);
     	}});
     	/*
     	, error: function(result){
