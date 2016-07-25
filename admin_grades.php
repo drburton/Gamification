@@ -91,7 +91,7 @@
 
   function test(form){
     var data = $(form).serialize();
-    alert(data);
+    alert(JSON.stringify($(form).serializeArray()));
     event.preventDefault();
   }
 
