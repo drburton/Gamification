@@ -89,11 +89,12 @@
 
 <script>
 
-  function test(form){
+  function test(form,user,quest){
     var data = $(form).serializeArray();
     var grade = data[0]['value'];
     alert(grade);
     event.preventDefault();
+    changeGrade(user,quest,grade);
   }
 
   function undoGrade(form, button){
@@ -123,7 +124,7 @@
     var oldHTML = $(element).html();
     var grade = parseInt(oldHTML,10);
     var id = '#'+qId+'_'+user;
-    var gradeForm = "<form onsubmit='test($(this))'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' /></form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
+    var gradeForm = "<form onsubmit='test($(this),\""+user+"\""+qId+"\")'><input autofocus name='grade' type='number' align='center' style='borderStyle=\"none\"' onfocusout='returnGrade($(this),$element,\""+id+"\")' /></form>" //onchange='(changeGrade(\""+user+"\",\""+qId+"\",$(this).val()))'
     $(id).append(gradeForm);
 
   }
