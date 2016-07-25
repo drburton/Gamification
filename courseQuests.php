@@ -213,7 +213,7 @@
 
                                                 }elseif($status=="submitted"){
 
-                                                print("Grade Pending");
+                                                print("<td>Grade Pending</td>");
                                                 //print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Retract Submission</button></a></td>";
 
                                                 }
