@@ -109,10 +109,10 @@
         	alert(rowId);
         	$(rowId).find("td").each(function(index){
         		alert(index);
-        		if($.isNumeric(this.innerHTML())){
-        			num = this.innerHTML();
-        			total = total+num;
-        		}
+        		//if($.isNumeric(this.innerHTML())){
+        		//	num = this.innerHTML();
+        		//	total = total+num;
+        		//}
         	})
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
