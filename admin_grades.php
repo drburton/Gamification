@@ -69,7 +69,7 @@
                     style='width:100px;' onclick=\"gradeQuest('$userId','$newId',$(this))\"><b>Grade</b></button></td>");
                 }elseif($quest['status']=='graded'){
                   $totalXP+=$quest['grade'];
-                  print("<td id='".$newId."_".$userId."' onclick='editGrade($(this),'$userId','$newId')' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
+                  print("<td id='".$newId."_".$userId."' onclick='editGrade($(this),\"$userId\",\"$newId\")' style='min-width: 150px; text-align:center;'>".$quest['grade']."</td>");
                 }
               }
               //for ($i = 0; $i <= 5; $i++) {
