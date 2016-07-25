@@ -108,15 +108,11 @@
         	var rowId = "#"+user;
         	alert(rowId);
         	$(rowId).find("td").each(function(index){
-        		alert(index);
+        		//alert(index);
             var cell = $(this).html();
-            alert(parseInt(cell,10));
             if(parseInt(cell,10)){
-              alert("Converted");
-            }
-        		//if($.isNumeric(cell)){
         			total = total+parseInt(cell,10);
-        		//}
+        		}
         	})
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
