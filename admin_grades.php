@@ -89,6 +89,11 @@
 
 <script>
 
+  function test(formData){
+    var data = $(formData).serializeArray();
+    alert(data);
+  }
+
   function undoGrade(form, button){
     button.show();
     form.remove();
