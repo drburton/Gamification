@@ -91,7 +91,7 @@
 
   function undoGrade(form){
     //button.show();
-    //form.remove();
+    form.remove();
     alert("Lost Focus");
   }
 
