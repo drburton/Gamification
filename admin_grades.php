@@ -103,16 +103,16 @@
 			success: function(result){
         	var id = '#'+quest+'_'+user;
         	$(id).html(grade);
-        	int total = 0;
+        	var total = 0;
         	var num;
         	var rowId = "#"+user;
         	alert(rowId);
         	$(rowId).find("td").each(function(index){
         		alert(index);
             var cell = $(this).html();
-        		if($.isNumeric(cell)){
-        			total = total+cell;
-        		}
+        		//if($.isNumeric(cell)){
+        			total = total+parseInt(cell,10);
+        		//}
         	})
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
