@@ -46,15 +46,24 @@
     $curQuests=[];
     $results = array('course_id' => $course, 'user_id'=>$_SESSION['login']);//$course);array('course_id' => $course,'user_id'=>$_SESSION['login']);
     $cursor = $collection4->find($results); //Return a quest result set
-    $cursor->fields(array('_id' => false, 'title' =>true,'quest_id' => true)); //Get specific data
+    $cursor->fields(array('_id' => false, 'status'=>true,'title' =>true,'quest_id' => true)); //Get specific data
     $cursor->sort(array("title"=>1));
     foreach($cursor as $doc){
+      $id;
+      $title;
+      $status;
       foreach($doc as $k=>$v){
       	if($k=="quest_id"){
-        	array_push($curQuests,$v);
-      	}
+        	//array_push($curQuests,$v);
+          $id = $v;
+      	}elseif($k=="status"){
+          $status = $v;
+        }elseif($k=="title"){
+          $title=$v;
+        }
        // $curQuests[]=$v;
       }
+      $curQuests[$id]=array('title'=>$title,'status'=>$status);
     }
     //print_r($curQuests);
 ?>
