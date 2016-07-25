@@ -65,7 +65,7 @@
       }
       $curQuests[$id]=array('title'=>$title,'status'=>$status);
     }
-    //print_r($curQuests);
+    print_r($curQuests);
 ?>
 
 
