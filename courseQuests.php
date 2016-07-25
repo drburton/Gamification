@@ -220,7 +220,7 @@
                                               print("<td>Item</td>");
                                               print("<td>Item</td>");
                                               print "<td><a href=\"#\"><button class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#seedetails\" data-id=$title data-due=$due_date data-xp=$xp data-desc=$desc>See Details</button></a></td>";
-                                              print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-course=$course_under data-id=$title>Turn In Quest <i class='fa fa-check-circle'
+                                              print "<td><a href=\"#\"><button class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#submitquest\" data-course=$course_under data-id=$dbid>Turn In Quest <i class='fa fa-check-circle'
                                               aria-hidden='true'></button></a></td>";
                                               print "<td><a href=\"#\"><button class=\"btn btn-danger btn-sm\" data-toggle=\"modal\" data-target=\"#dropquest\" data-course=$course_under data-id=$dbid>Drop Quest <i class='fa fa-times-circle'
                                               aria-hidden='true'></button></a></td>";
@@ -331,6 +331,38 @@
              </div>
            </div>
         <!-- /Drop Quest Modal -->
+        <!-- Turn In Quest Modal -->
+           <div class="modal fade" id="submitquest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="submitLabel">Quest Details</h4>
+                 </div>
+                 <div class="modal-body">
+                  <form action="questFunctions.php" method="POST">
+                      <div class="form-group" align="center">
+                        <h4>Are You Sure You Want To Turn In This Quest?</h4>
+                      </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="submitTitle" name="title">
+                     </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="submitCourse" name="course"></input>
+                     </div>
+                     <div class="form-group">
+                       <input type="hidden" class="form-control" id="action" name="action" value="submit"></input>
+                     </div>
+                 </div>
+                 <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <button type="button submit" class="btn btn-primary">Turn In Quest</button>
+                 </div>
+                 </form>
+               </div>
+             </div>
+           </div>
+        <!-- /Turn In Quest Modal -->
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
@@ -383,6 +415,16 @@
         modal.find('#dropLabel').text("Drop Quest: "+questId) //Input results returned into the modals.
         modal.find('#dropTitle').val(questId)
         modal.find('#dropCourse').val(questCourse)
+      });
+
+      $('#submitquest').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var questId = button.data('id') // Extract info from data-* attributes
+        var questCourse = button.data('course')
+        var modal = $(this)
+        modal.find('#submitLabel').text("Submit Quest: "+questId) //Input results returned into the modals.
+        modal.find('#submitTitle').val(questId)
+        modal.find('#submitCourse').val(questCourse)
       });
     </script>
   </body>
