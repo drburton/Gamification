@@ -3,12 +3,7 @@
     <div class="box-body table-responsive no-padding" style="overflow:scroll;">
         <table class="table table-bordered table-hover">
         <thead>
-            <tr><!--
-                <th>Quest</th>
-                <th>XP</th>
-                <th>Due Date</th>
-                <th>Details</th>
-                <th>Accept</th> -->
+            <tr>
             <th style="text-align:center; vertical-align:middle; min-width: 175px;">Students</th>
             <?php
             $allQuests=[];
@@ -17,8 +12,6 @@
               $exp;
               print('<th style="text-align:center; min-width: 175px;">');
               foreach ($doc as $k => $v) {
-                //print($k.": ".$v);
-                //print('<br/>');
                 if($k=='title'){
                   $title = $v;
                 }elseif($k=='xp'){
@@ -29,10 +22,6 @@
               }
               print($title."<br/>".$exp." xp</th>");
             }
-
-            /*for ($i = 0; $i <= 15; $i++) {
-                print("<th style='min-width: 150px;'>Overflow Test</th>");
-            }*/
 
             ?>
             <th style="text-align:center; vertical-align:middle; min-width: 175px;">Class Experience</th>

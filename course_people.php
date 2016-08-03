@@ -83,8 +83,16 @@
                     <!--<p>Search People</p>-->
 
                     <?php if($role=="admin"){ ?>
-                    <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
+
+                    <button type="button" id="addButton" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
                     aria-hidden="true"> Add People</i></button><br/><br/>
+
+                    <div id="addFormDiv" display="none">
+                        <form method="POST" action="functions.php">
+                            <input name="user" type="text"/>
+                            <input class="btn btn-primary" type="submit"/>
+                        </form>
+                    </div>
 
                     <?php } ?>
 
@@ -159,7 +167,11 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        
+        <script>
+            $("#addButton").click(function(){
+                $("#addFormDiv").toggle();
+            })
+        </script>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
