@@ -65,7 +65,7 @@ if(isset($_POST["submit"])){
                     </div> */?>
 
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your First Name"
+                        <input type="text" name="first_name" class="form-control" placeholder="Your First Name"
                         value="<?php print isset($_POST["first_name"]) ? $_POST["first_name"] : "" ; ?>"maxlength="50" required="true">
                     </div>
 
