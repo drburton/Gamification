@@ -59,10 +59,21 @@ if(isset($_POST["submit"])){
                         <input type="text" name="login" class="form-control" placeholder="ACU ID (abc12d)"
                         value="<?php print isset($_POST["login"]) ? $username : "" ; ?>" minlength="6" maxlength="6" required="true">
                     </div>
-                    <div class="form-group">
+                    <?php /*<div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Your Name"
                         value="<?php print isset($_POST["name"]) ? $_POST["name"] : "" ; ?>"maxlength="50" required="true">
+                    </div> */?>
+
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your First Name"
+                        value="<?php print isset($_POST["first_name"]) ? $_POST["first_name"] : "" ; ?>"maxlength="50" required="true">
                     </div>
+
+                    <div class="form-group">
+                        <input type="text" name="last_name" class="form-control" placeholder="Your Last Name"
+                        value="<?php print isset($_POST["last_name"]) ? $_POST["last_name"] : "" ; ?>"maxlength="50" required="true">
+                    </div>
+
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password" required="true">
                     </div>
