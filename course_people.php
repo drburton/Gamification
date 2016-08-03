@@ -110,16 +110,21 @@
 
                                         foreach ($userCourseCursor as $doc) {
                                           $userId;
+                                          $user_role;
                                           foreach ($doc as $k => $v) {
-                                            $userId=$v;
-                                            $totalXP=0;
+                                            if($k=='role'){
+                                                $user_role=$v
+                                            }elseif($k=="user_id"){
+                                                $userId=$v;
+                                            }
+                                            
                                           }
                                           print('<tr id="'.$userId.'">');
                                           $userCollection = new MongoCollection( $db, "users");
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
 
                                           print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
-                                          print('<td>'.$userCursor['role'].'</td>');
+                                          print('<td>'.$user_role.'</td>');
                                           //for ($i = 0; $i <= 5; $i++) {
                                           //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
                                           //}
