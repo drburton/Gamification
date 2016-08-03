@@ -95,11 +95,11 @@
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table id="coursePeople" class="table table-hover">
-                                <thead>
-                                    <tr><strong>
+                                <thead style="font-wieght:bold;">
+                                    <tr>
                                         <td>Name</td>
                                         <td>Role</td>
-                                    </strong></tr>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <?php
