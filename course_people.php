@@ -127,7 +127,7 @@
                                           $lastName = $userCursor['last_name'];
                                           $userArray[$lastName]=array('userId'=>$userId,'role'=>$user_role);
                                         }
-                                        asort($userArray, SORT_ASC);
+                                        asort($userArray);
                                         print_r($userArray);
                                         /*foreach ($userArray as $entry) {
                                           print('<tr id="'.$userId.'">');
