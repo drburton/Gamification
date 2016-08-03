@@ -170,7 +170,7 @@
         <script>
             $("#addButton").click(function(){
                 alert("Button!");
-                $("#addFormDiv").toggle();
+                //$("#addFormDiv").toggle();
             });
         </script>
 
