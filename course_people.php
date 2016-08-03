@@ -84,7 +84,7 @@
 
                     <?php if($role=="admin"){ ?>
 
-                    <button type="button" id="addButton" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
+                    <button type="button" id="addButton" class="btn btn-primary btn-md"><i class="fa fa-user-plus"
                     aria-hidden="true"> Add People</i></button><br/><br/>
 
                     <div id="addFormDiv" style='display:none;'>
@@ -171,7 +171,7 @@
             $("#addButton").click(function(){
                 alert("Button!");
                 $("#addFormDiv").toggle();
-            })
+            });
         </script>
 
 
