@@ -14,7 +14,7 @@ if(isset($_POST["submit"])){
     $username=strtolower($_POST['login']);
     $query = $coll->findOne(array('_id' => $username));
   	if(empty($query)){
-  	 	newUser($username, $_POST["name"], $_POST["password"]);
+  	 	newUser($username, $_POST["first_name"], $_POST["last_name"], $_POST["password"]);
   	 	cleanMemberSession($username);
   	 	header("Location: dashboard.php");
     }

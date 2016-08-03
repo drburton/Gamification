@@ -3,10 +3,11 @@
 		//==========================================================
 		//user login and security functions
 		//==========================================================
-		function newUser($login, $name, $password)
+		function newUser($login, $first_name, $last_name, $password)
 		{
 			global $coll;
-			$coll->insert(array('_id' => $login, 'name'=> $name, 'password' => md5($password)));
+			$coll->insert(array('_id' => $login, 'first_name' => $first_name,'last_name' => $last_name,
+			'name'=> $first_name.' '.$last_name, 'password' => md5($password)));
 			return true;
 		}
 
