@@ -129,6 +129,7 @@
                                         }
                                         asort($userArray);
                                         print_r($userArray);
+                                        print($userArray['Graham']);
                                         /*foreach ($userArray as $entry) {
                                           print('<tr id="'.$userId.'">');
                                           $userCollection = new MongoCollection( $db, "users");
