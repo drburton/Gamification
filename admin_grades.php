@@ -53,7 +53,7 @@
               $userId;
               foreach ($doc as $k => $v) {
                 $userId=$v;
-                $totalXP=0;
+                //$totalXP=0;
               }
               print('<tr id="'.$userId.'">');
               $userCursor = $userCollection->findOne(array('_id' => $userId));
@@ -61,7 +61,9 @@
             }
             ksort($sortedUsers);
             foreach ($sortedUsers as $k => $v) {
-              $userCursor = $userCollection->findOne(array('_id' => $v));
+              $totalXP=0;
+              $userId = $v;
+              $userCursor = $userCollection->findOne(array('_id' => $userId));
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
                 $newId = $id->{'$id'};
