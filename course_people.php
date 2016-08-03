@@ -127,6 +127,7 @@
                                           $lastName = $userCursor['last_name'];
                                           array_push($userArray, array($lastName=>array('userId'=>$userId,'role'=>$user_role)));
                                         }
+                                        array_multisort($userArray, SORT_ASC);
                                         print_r($userArray);
                                         /*foreach ($userArray as $entry) {
                                           print('<tr id="'.$userId.'">');
