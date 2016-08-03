@@ -112,7 +112,7 @@
                                           $userId;
                                           $user_role;
                                           foreach ($doc as $k => $v) {
-                                            if($k=='role'){
+                                            if($k=='user_role'){
                                                 $user_role=$v;
                                             }elseif($k=="user_id"){
                                                 $userId=$v;
