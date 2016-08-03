@@ -125,7 +125,7 @@
                                           }
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
                                           $lastName = $userCursor['last_name'];
-                                          array_push($userArray, array($lastName=>array('userId'=>$userId,'role'=>$user_role)));
+                                          $userArray[$lastName]=array('userId'=>$userId,'role'=>$user_role);
                                         }
                                         array_multisort($userArray, SORT_ASC);
                                         print_r($userArray);
