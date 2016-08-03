@@ -87,7 +87,7 @@
                     <button type="button" id="addButton" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
                     aria-hidden="true"> Add People</i></button><br/><br/>
 
-                    <div id="addFormDiv" display="none">
+                    <div id="addFormDiv" style='display=none;'>
                         <form method="POST" action="functions.php">
                             <input name="user" type="text"/>
                             <input class="btn btn-primary" type="submit"/>
