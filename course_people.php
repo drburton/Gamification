@@ -96,10 +96,10 @@
                         <div class="box-body table-responsive no-padding">
                             <table id="coursePeople" class="table table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr><strong>
                                         <td>Name</td>
                                         <td>Role</td>
-                                    </tr>
+                                    </strong></tr>
                                 </thead>
                                 <tbody>
                                     <?php
