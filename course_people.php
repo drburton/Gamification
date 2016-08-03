@@ -127,7 +127,7 @@
                                           $lastName = $userCursor['last_name'];
                                           $userArray[$lastName]=array('userId'=>$userId,'role'=>$user_role);
                                         }
-                                        asort($userArray);
+                                        ksort($userArray);
                                         print_r($userArray);
                                         print("<br/>");
                                         print_r($userArray['Graham']);
