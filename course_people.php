@@ -169,6 +169,7 @@
 
         <script>
             $("#addButton").click(function(){
+                alert("Button!");
                 $("#addFormDiv").toggle();
             })
         </script>
