@@ -128,9 +128,9 @@
                                           $userArray[$lastName]=array('userId'=>$userId,'role'=>$user_role);
                                         }
                                         ksort($userArray);
-                                        print_r($userArray);
-                                        print("<br/>");
-                                        print_r($userArray['Graham']);
+                                        //print_r($userArray);
+                                        //print("<br/>");
+                                        //print_r($userArray['Graham']);
                                         foreach ($userArray as $k => $v) {
                                           print('<tr id="'.$v['userId'].'">');
                                           $userCollection = new MongoCollection( $db, "users");

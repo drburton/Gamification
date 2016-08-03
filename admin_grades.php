@@ -46,6 +46,8 @@
             $userCourseCursor = $collection2->find($user_results);
             $userCourseCursor->fields(array('user_id' => true,'_id' => false));
             $userCourseCursor = $userCourseCursor->sort(array("name"=>1)); //Sort by title
+            $userCollection = new MongoCollection( $db, "users");
+            $sortedUsers=[];
 
             foreach ($userCourseCursor as $doc) {
               $userId;
@@ -54,9 +56,12 @@
                 $totalXP=0;
               }
               print('<tr id="'.$userId.'">');
-              $userCollection = new MongoCollection( $db, "users");
               $userCursor = $userCollection->findOne(array('_id' => $userId));
-
+              $sortedUsers[$userCursor['last_name']]=$userId;
+            }
+            ksort($sortedUsers);
+            foreach ($sortedUsers as $k => $v) {
+              $userCursor = $userCollection->findOne(array('_id' => $v));
               print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
               foreach ($allQuests as $id) {
                 $newId = $id->{'$id'};
