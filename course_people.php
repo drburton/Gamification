@@ -106,7 +106,7 @@
                                         $user_results = array('course_id' => $course);
                                         $userCourseCursor = $collection2->find($user_results);
                                         $userCourseCursor->fields(array('user_id' => true,'user_role' => true,'_id' => false));
-                                        $userCourseCursor = $userCourseCursor->sort(array("name"=>1)); //Sort by title
+                                        $userCourseCursor = $userCourseCursor->sort(array("user_id"=>1)); //Sort by title
 
                                         foreach ($userCourseCursor as $doc) {
                                           $userId;
