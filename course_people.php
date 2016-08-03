@@ -84,7 +84,7 @@
 
                     <?php if($role=="admin"){ ?>
                     <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
-                    aria-hidden="true"> Add People</i></button><br/>
+                    aria-hidden="true"> Add People</i></button><br/><br/>
 
                     <?php } ?>
 
