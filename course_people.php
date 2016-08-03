@@ -107,10 +107,14 @@
                                         $userCourseCursor = $collection2->find($user_results);
                                         $userCourseCursor->fields(array('user_id' => true,'user_role' => true,'_id' => false));
                                         $userCourseCursor = $userCourseCursor->sort(array("user_id"=>1)); //Sort by title
+                                        $userArray = [];
+
+                                        $userCollection = new MongoCollection( $db, "users");
 
                                         foreach ($userCourseCursor as $doc) {
                                           $userId;
                                           $user_role;
+                                          $last_name;
                                           foreach ($doc as $k => $v) {
                                             if($k=='user_role'){
                                                 $user_role=$v;
@@ -119,6 +123,12 @@
                                             }
                                             
                                           }
+                                          $userCursor = $userCollection->findOne(array('_id' => $userId));
+                                          $lastName = $userCursor['last_name'];
+                                          array_push($userArray, array($last_name=>array('userId'=>$userId,'role'=>$user_role)));
+                                        }
+                                        print_r($userArray);
+                                        /*foreach ($userArray as $entry) {
                                           print('<tr id="'.$userId.'">');
                                           $userCollection = new MongoCollection( $db, "users");
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
@@ -130,7 +140,7 @@
                                           //}
                                           //print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
                                           print('</tr>');
-                                        }
+                                        }*/
 
                                       ?>
                                     
