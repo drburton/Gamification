@@ -95,7 +95,7 @@
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table id="coursePeople" class="table table-hover">
-                                <thead style="font-wieght:bold;">
+                                <thead style="font-weight:bold;">
                                     <tr>
                                         <td>Name</td>
                                         <td>Role</td>
