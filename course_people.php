@@ -102,7 +102,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr></tr>
+                                    <?php
+                                        $user_results = array('course_id' => $course);
+                                        $userCourseCursor = $collection2->find($user_results);
+                                        $userCourseCursor->fields(array('user_id' => true,'role' => true,'_id' => false));
+                                        $userCourseCursor = $userCourseCursor->sort(array("name"=>1)); //Sort by title
+
+                                        foreach ($userCourseCursor as $doc) {
+                                          $userId;
+                                          foreach ($doc as $k => $v) {
+                                            $userId=$v;
+                                            $totalXP=0;
+                                          }
+                                          print('<tr id="'.$userId.'">');
+                                          $userCollection = new MongoCollection( $db, "users");
+                                          $userCursor = $userCollection->findOne(array('_id' => $userId));
+
+                                          print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
+                                          print('<td>'.$userCursor['role'].'</td>');
+                                          //for ($i = 0; $i <= 5; $i++) {
+                                          //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
+                                          //}
+                                          //print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
+                                          print('</tr>');
+                                        }
+
+                                      ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
