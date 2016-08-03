@@ -113,7 +113,7 @@
                                           $user_role;
                                           foreach ($doc as $k => $v) {
                                             if($k=='role'){
-                                                $user_role=$v
+                                                $user_role=$v;
                                             }elseif($k=="user_id"){
                                                 $userId=$v;
                                             }
