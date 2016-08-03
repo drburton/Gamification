@@ -2,7 +2,7 @@
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "courses");
-    $user_course_collection = new MongoCollection( $db, "users-courses");
+    $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
@@ -29,7 +29,7 @@
         }
 
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
-        $cursor = $user_course_collection->find($results);
+        $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
         $role="";
