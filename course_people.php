@@ -134,7 +134,7 @@
                                         foreach ($userArray as $k => $v) {
                                           print('<tr id="'.$v['userId'].'">');
                                           $userCollection = new MongoCollection( $db, "users");
-                                          $userCursor = $userCollection->findOne(array('_id' => $userId));
+                                          $userCursor = $userCollection->findOne(array('_id' => $v['userId']));
 
                                           print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
                                           print('<td>'.$v['role'].'</td>');
