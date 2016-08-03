@@ -131,19 +131,19 @@
                                         print_r($userArray);
                                         print("<br/>");
                                         print_r($userArray['Graham']);
-                                        /*foreach ($userArray as $entry) {
-                                          print('<tr id="'.$userId.'">');
+                                        foreach ($userArray as $k => $v) {
+                                          print('<tr id="'.$v['userId'].'">');
                                           $userCollection = new MongoCollection( $db, "users");
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
 
                                           print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
-                                          print('<td>'.$user_role.'</td>');
+                                          print('<td>'.$v['role'].'</td>');
                                           //for ($i = 0; $i <= 5; $i++) {
                                           //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
                                           //}
                                           //print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
                                           print('</tr>');
-                                        }*/
+                                        }
 
                                       ?>
                                     
