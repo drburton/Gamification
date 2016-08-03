@@ -2,7 +2,7 @@
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "courses");
-    $user_course_collection = new MongoCollection( $db, "users-courses");
+    $collection2 = new MongoCollection( $db, "users-courses");
     include_once "config.php";
     if (!loggedIn()){
         header("Location: /index.php");
@@ -29,7 +29,7 @@
         }
 
         $results = array('course_id' => 'DET 210', 'user_id'=> $_SESSION["login"]);
-        $cursor = $user_course_collection->find($results);
+        $cursor = $collection2->find($results);
         $cursor->fields(array("xp" => true, 'user_role' => true,'_id' => false));
         //$cursor=$cursor->sort(array("title"=>1));
         $role="";
@@ -81,12 +81,12 @@
                 <section class="content" style="background-image: url(img/wood4.png); background-repeat: repeat; height:100vh;">
 
                     <p>Search People</p>
-
-
+                    
+                    <?php if($role=="admin"){ ?>
                     <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-user-plus"
                     aria-hidden="true"> Add People</i></button>
 
-
+                    <?php } ?>
 
                     <!-- table box div -->
                     <div class="box">
