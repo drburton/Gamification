@@ -81,6 +81,8 @@
                         <?php 
                             if($role=='admin'){
                                 include_once "admin_grades.php";
+                            }else{
+                               include_once "student_grades.php"; 
                             }
                         ?>
 
