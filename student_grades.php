@@ -12,9 +12,9 @@
 			<?php print($gradePercentage);?>
 			<h1 class="centered-text">Course Progress: <?php print($userXP);?>XP</h1>
 			<div class="progress horizontal-centered" style="width:80%;">
-			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?print("$gradePercentage"); ?>
-			  aria-valuemin="0" aria-valuemax="100" style=<?print("width:".$gradePercentage."%");?>>
-			    <?print($gradePercentage."/".$maxEXP); ?>
+			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print("$gradePercentage"); ?>
+			  aria-valuemin="0" aria-valuemax="100" style=<?php print("width:".$gradePercentage."%");?>>
+			    <?php print($gradePercentage."/".$maxEXP); ?>
 			  </div>
 			</div><br/>
 		</div>
