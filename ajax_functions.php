@@ -3,7 +3,6 @@
 
 $m = new MongoClient();
 $db = $m->selectDB("gamification_db");
-$user_quests = new MongoCollection( $db, "users-quests");
 
 $response = "";
 
@@ -27,6 +26,7 @@ function changeGrade($user,$questId,$grade){
 	//print($user."_".$questId."_".$grade."<br/>");
     //print_r(array('user_id' => $user, 'quest_id' => $questId));
     //print("<br/>");
+    $user_quests = new MongoCollection( $db, "users-quests");
     $cursor = $user_quests->findOne(array('user_id' => $user, 'quest_id' => $questId));
     if($cursor){
     	//print("Updating <br/>");
