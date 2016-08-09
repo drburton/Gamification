@@ -16,7 +16,7 @@
 			    <?php print($userXP."/".$maxEXP); ?>
 			  </div>
 			</div><br/>
-			<div class="horizontal-centered">
+			<div class="centered-text">
 				<p>Next Milestone:</p>
 			</div>
 		</div>
