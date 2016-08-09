@@ -7,27 +7,22 @@
     $letterMilestone;
     $milestoneValue;
 
-//switch to determine the next milestone for the student
-    switch($gradePercentage){
-		case $gradePercentage<60:
-			$letterMilestone="D";
-			$milestoneValue = $maxEXP*0.60;
-			break;
-		case $gradePercentage<70:
-			$letterMilestone="C";
-			$milestoneValue = $maxEXP*0.70;
-			break;
-		case $gradePercentage<80:
-			$letterMilestone="B";
-			$milestoneValue = $maxEXP*0.80;
-			break;
-		case $gradePercentage<90:
-			$letterMilestone="A";
-			$milestoneValue = $maxEXP*0.90;
-			break;
-		default:
-			$letterMilestone="None";
-			return;
+//determine the next milestone for the student
+    if($gradePercentage<60){
+		$letterMilestone="D";
+		$milestoneValue = $maxEXP*0.60;
+	}elseif($gradePercentage<70){
+		$letterMilestone="C";
+		$milestoneValue = $maxEXP*0.70;
+	}elseif($gradePercentage<80){
+		$letterMilestone="B";
+		$milestoneValue = $maxEXP*0.80;
+	}elseif($gradePercentage<90){
+		$letterMilestone="A";
+		$milestoneValue = $maxEXP*0.90;
+	}else{
+		$letterMilestone="None";
+	}
 ?>
 
 <div class="col-xs-12">
@@ -41,7 +36,7 @@
 			  </div>
 			</div>
 			<div class="centered-text">
-				<p>EXP Required for Next Milestone (<?php //print($letterMilestone);?>): <?php //print($milestoneValue-$userXP);?></p>
+				<!--<p>EXP Required for Next Milestone (<?php //print($letterMilestone);?>): <?php //print($milestoneValue-$userXP);?></p>-->
 			</div>
 		</div>
 	</div>
