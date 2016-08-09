@@ -23,6 +23,10 @@
 	}else{
 		$letterMilestone="None";
 	}
+
+	if($gradePercentage>100){
+		$gradePercentage = 100;
+	}
 ?>
 
 <div class="col-xs-12">
