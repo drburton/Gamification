@@ -34,7 +34,7 @@ function changeGrade($user,$questId,$grade){
      	$update=array('$set'=>array('grade' => $grade, 'status' => 'graded'));
 		$user_quests->update(array('user_id' => $user, 'quest_id' => $questId),$update);
 		//header("Location: profile.php");
-		updateUserExperience($user,$cursor["course_id"]);
+		//updateUserExperience($user,$cursor["course_id"]);
     }
 }
 
