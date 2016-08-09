@@ -1,11 +1,5 @@
 <?php
 //print("Page Loaded<br/>");
-
-$m = new MongoClient();
-$db = $m->selectDB("gamification_db");
-$user_quests = new MongoCollection( $db, "users-quests");
-$user_courses = new MongoCollection( $db, "users-courses");
-
 $response = "";
 
 if(isset($_GET['action'])){
@@ -26,6 +20,9 @@ if(isset($_GET['action'])){
 function changeGrade($user,$questId,$grade){
 	//print("DB Function <br/>");
 	//print($user."_".$questId."_".$grade."<br/>");
+	$m = new MongoClient();
+    $db = $m->selectDB("gamification_db");
+    $user_quests = new MongoCollection( $db, "users-quests");
     //print_r(array('user_id' => $user, 'quest_id' => $questId));
     //print("<br/>");
     $cursor = $user_quests->findOne(array('user_id' => $user, 'quest_id' => $questId));
@@ -38,7 +35,7 @@ function changeGrade($user,$questId,$grade){
     }
 }
 
-function updateUserExperience($user,$course){
+//function updateUserExperience($user,$course){
 	/*$userQuests = $user_quests->find(array('user_id' => $user, 'course_id' => $course));
 	$userQuests->fields(array('grade' => true,'_id' => false));
 	$expTotal=0;
@@ -50,7 +47,7 @@ function updateUserExperience($user,$course){
 	$userCourse = $user_courses->findOne(array('user_id' => $user, 'course_id' => $course));
 	$update=array('$set'=>array('xp' => $expTotal));
 	$user_courses->update(array('user_id' => $user, 'course_id' => $course),$update);*/
-}
+//}
 
 
 
