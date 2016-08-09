@@ -9,12 +9,11 @@
 <div class="col-xs-12">
 	<div class="box">
 		<div>
-			<?php print($gradePercentage);?>
-			<h1 class="centered-text">Course Progress: <?php print($userXP);?>XP</h1>
+			<h1 class="centered-text">Course Progress: <?php print($gradePercentage);?>%</h1>
 			<div class="progress horizontal-centered" style="width:80%;">
 			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print("$gradePercentage"); ?>
 			  aria-valuemin="0" aria-valuemax="100" style=<?php print("width:".$gradePercentage."%");?>>
-			    <?php print($gradePercentage."/".$maxEXP); ?>
+			    <?php print($userXP."/".$maxEXP); ?>
 			  </div>
 			</div><br/>
 		</div>
