@@ -1,7 +1,7 @@
 <?php
     $user_results = array('course_id' => $course, 'user_id'=> $_SESSION["login"]);
-    $userCourseCursor = $collection2->findOne($user_results);
-    $userCourseCursor->fields(array('xp' => true,'_id' => false));
+    //$userCourseCursor = $collection2->findOne($user_results);
+    //$userCourseCursor->fields(array('xp' => true,'_id' => false));
     $userXP = 0;//$userCourseCursor["xp"];
 ?>
 
