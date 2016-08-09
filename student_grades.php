@@ -41,12 +41,12 @@
 			</div>
 			<div class="centered-text">
 				<?php if($letterMilestone!=="None"){ ?>
-					<p>Next Milestone: <?php print($letterMilestone." (".$milestoneValue." points)");?><br/>
+					<p>Next Milestone: <?php print($letterMilestone." (".$milestoneValue." points)");?>&emsp;
 					EXP Required for Next Milestone: <?php print($milestoneValue-$userXP);?> points</p>
 				<?php }?>
 			</div>
 			<div>
-				<h2>Quest Grades:</h2>
+				<h2> Quest Grades:</h2>
 			</div>
 		</div>
 	</div>
