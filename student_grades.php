@@ -1,3 +1,5 @@
 <div class="col-xs-12">
-	<h1>Test</h1>
+	<div class="box">
+		<h1>Test</h1>
+	</div>
 </div>
