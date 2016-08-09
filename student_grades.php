@@ -3,6 +3,7 @@
     $userCourseCursor = $collection2->findOne($user_results);
     $userXP = $userCourseCursor["xp"];
     $gradePercentage = $userXP/$maxEXP;
+    $gradePercentage = round($gradePercentage, 2, PHP_ROUND_HALF_DOWN);
 ?>
 
 <div class="col-xs-12">
