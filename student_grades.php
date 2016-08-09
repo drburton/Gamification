@@ -16,7 +16,7 @@
 			    <?php print($userXP."/".$maxEXP); ?>
 			  </div>
 			</div><br/>
-			<h3>Grade Breakdown:</h3>
+			<p>Next Milestone:</p>
 		</div>
 	</div>
 </div>
