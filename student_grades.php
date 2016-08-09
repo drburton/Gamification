@@ -36,7 +36,7 @@
 			  </div>
 			</div>
 			<div class="centered-text">
-				<p>EXP Required for Next Milestone (<?php print($letterMilestone);?>): <?php print($milestoneValue-$userXP);?> points</p>
+				<p>EXP Required for Next Milestone (<?php print($letterMilestone.": ".$milestoneValue);?>): <?php print($milestoneValue-$userXP);?> points</p>
 			</div>
 		</div>
 	</div>
