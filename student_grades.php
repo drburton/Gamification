@@ -32,7 +32,7 @@
 			<div class="progress horizontal-centered" style="width:80%;">
 			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print("$gradePercentage"); ?>
 			  aria-valuemin="0" aria-valuemax="100" style=<?php print("width:".$gradePercentage."%");?>>
-			    <?php print($userXP."/".$maxEXP); ?>
+			    <strong><?php print($userXP."/".$maxEXP); ?></strong>
 			  </div>
 			</div>
 			<div class="centered-text">
