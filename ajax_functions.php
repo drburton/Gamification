@@ -39,7 +39,7 @@ function changeGrade($user,$questId,$grade){
 }
 
 function updateUserExperience($user,$course){
-	$userQuests = $user_quests->find(array('user_id' => $user, 'course_id' => $course));
+	/*$userQuests = $user_quests->find(array('user_id' => $user, 'course_id' => $course));
 	$userQuests->fields(array('grade' => true,'_id' => false));
 	$expTotal=0;
 	foreach ($userQuests as $doc) {
@@ -49,7 +49,7 @@ function updateUserExperience($user,$course){
 	}
 	$userCourse = $user_courses->findOne(array('user_id' => $user, 'course_id' => $course));
 	$update=array('$set'=>array('xp' => $expTotal));
-	$user_courses->update(array('user_id' => $user, 'course_id' => $course),$update);
+	$user_courses->update(array('user_id' => $user, 'course_id' => $course),$update);*/
 }
 
 
