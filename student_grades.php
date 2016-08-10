@@ -46,7 +46,7 @@
 				<?php }?>
 			</div>
 			<div>
-				<h2> Quest Grades:</h2>
+				<h2> Quest Grades: work in Progress</h2>
 			</div>
 		</div>
 	</div>
