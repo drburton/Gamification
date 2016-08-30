@@ -5,6 +5,13 @@ if(loggedIn()){
 }
 $submitted=false;
 $test="test";
+
+ $m = new MongoClient();
+$db = $m->selectDB("gamification_db");
+$secCollection = new MongoCollection( $db, "security-questions");
+$results = $secCollection->find();
+$results->fields(array('name' => true,'question' => true,'_id' => false));
+
 if(isset($_POST["submit"])){
   $submitted=true;
 	if(!($_POST["password"] == $_POST["password2"])){
@@ -72,6 +79,30 @@ if(isset($_POST["submit"])){
                     <div class="form-group">
                         <input type="text" name="last_name" class="form-control" placeholder="Your Last Name"
                         value="<?php print isset($_POST["last_name"]) ? $_POST["last_name"] : "" ; ?>"maxlength="50" required="true">
+                    </div>
+
+                    Select your security questions:
+                    <div class="form-group">
+                        <select type="select" name="security_question" class="form-control" required="true">
+                          <?php 
+                            foreach ($results as $doc) {
+                              $name;
+                              $question;
+                              foreach ($doc as $k => $v) {
+                                if($k=="name"){
+                                  $name=$v;
+                                }else{
+                                  $question=$v;
+                                }
+                              }
+                              print("<option value=".$name.">".$question."</option>");
+                            }
+                          ?>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="sec_answer" class="form-control" placeholder="Answer"
+                        value="" required="true">
                     </div>
 
                     <div class="form-group">
