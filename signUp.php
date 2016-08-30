@@ -81,8 +81,8 @@ if(isset($_POST["submit"])){
                         value="<?php print isset($_POST["last_name"]) ? $_POST["last_name"] : "" ; ?>"maxlength="50" required="true">
                     </div>
 
-                    Select your security questions:
                     <div class="form-group">
+                      Select your security questions:
                         <select type="select" name="security_question" class="form-control" required="true">
                           <?php 
                             foreach ($results as $doc) {
@@ -99,7 +99,11 @@ if(isset($_POST["submit"])){
                             }
                           ?>
                         </select>
-                        <input type="text" name="sec_answer" class="form-control" placeholder="Answer"
+                        
+                    </div>
+
+                    <div class="form-group">
+                       <input type="text" name="sec_answer" class="form-control" placeholder="Answer"
                         value="" required="true">
                     </div>
 
