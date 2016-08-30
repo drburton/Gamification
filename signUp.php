@@ -98,9 +98,7 @@ if(isset($_POST["submit"])){
                               print("<option value=".$name.">".$question."</option>");
                             }
                           ?>
-                    </div>
-
-                    <div class="form-group">
+                        </select>
                         <input type="text" name="sec_answer" class="form-control" placeholder="Answer"
                         value="" required="true">
                     </div>
