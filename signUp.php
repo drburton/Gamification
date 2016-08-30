@@ -6,7 +6,7 @@ if(loggedIn()){
 $submitted=false;
 $test="test";
 
- $m = new MongoClient();
+$m = new MongoClient();
 $db = $m->selectDB("gamification_db");
 $secCollection = new MongoCollection( $db, "security-questions");
 $results = $secCollection->find();
