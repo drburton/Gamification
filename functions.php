@@ -12,15 +12,6 @@
 			return true;
 		}
 
-		/*function newUser($login, $first_name, $last_name, $security_question, $sec_answer, $password)
-		{
-			global $coll;
-			$coll->insert(array('_id' => $login, 'first_name' => $first_name,'last_name' => $last_name,
-			'name'=> $first_name.' '.$last_name, 'password' => md5($password), 'security_ques' => $security_question,
-			'sec_answer' => $sec_answer);
-			return true;
-		}*/
-
 
 		function checkPass($login, $password)
 		{

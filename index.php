@@ -50,6 +50,7 @@
                     <button type="button" class="btn btn-primary" onClick="location.href='/signUp.php';"
                         style="width:46%; display:inline-block;">Create Account</button><br/>
                     <!-- <button type="submit" name="submit" class="btn bg-primary btn-block" style="width:45%;">Sign me in</button> -->
+                    <a href="/forgotPassword.php">Forgot Password?</a>
                 </div>
             </form>
 
