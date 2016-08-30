@@ -51,7 +51,8 @@
                         value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>"/>
                     </div>
                     <div class="form-group">
-                        <p><?php print($securityQuestion["questoin"]); ?></p>
+                        <p><?php print($securityQuestion["question"]); ?></p>
+                        <p>Test</p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
                     </div>
                 </div>
