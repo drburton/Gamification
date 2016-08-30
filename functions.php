@@ -7,7 +7,8 @@
 		{
 			global $coll;
 			$coll->insert(array('_id' => $login, 'first_name' => $first_name,'last_name' => $last_name,
-			'name'=> $first_name.' '.$last_name, 'password' => md5($password)));
+			'name'=> $first_name.' '.$last_name, 'security_question' => $security_question, 'sec_answer' => $sec_answer, 
+			'password' => md5($password)));
 			return true;
 		}
 
