@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
     $username=strtolower($_POST['login']);
     $query = $coll->findOne(array('_id' => $username));
   	if(empty($query)){
-  	 	newUser($username, $_POST["first_name"], $_POST["last_name"], $_POST["password"]);
+  	 	newUser($username, $_POST["first_name"], $_POST["last_name"], $_POST["security_question"], $_POST["sec_answer"],$_POST["password"]);
   	 	cleanMemberSession($username);
   	 	header("Location: dashboard.php");
     }
@@ -103,7 +103,7 @@ if(isset($_POST["submit"])){
                     </div>
 
                     <div class="form-group">
-                       <input type="text" name="sec_answer" class="form-control" placeholder="Answer"
+                       <input type="text" name="sec_answer" class="form-control" placeholder="Security Question Answer"
                         value="" required="true">
                     </div>
 
