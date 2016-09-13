@@ -87,12 +87,6 @@
                                 <p>Do this one quest and stuff.</p>
                             </div>
                         </div>
-                        <!-- Link to Quests & Awards -->
-                        <?php 
-                        $new = str_replace(" ","_",$course);
-                        print"<a href='/courseQuests.php?course=".$new."'><button class='btn btn-default btn-lg'>Quests</button></a>";
-                        ?>
-                        <button class="btn btn-default btn-lg">Awards</button>
                     </div>
                     <!-- Course Progress -->
                     <div class="row">
