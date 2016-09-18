@@ -15,11 +15,12 @@
         $user_answer;
 
         if(isset($_POST["userId"])){
-            print(" User Id exists");
+            print(" User Id exists ");
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
-            print(!$securityQuestion);
+            print($securityQuestion);
+            print("Test");
         }
 
         if(isset($_POST["sec_answer"])){
