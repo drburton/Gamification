@@ -14,10 +14,12 @@
         $securityQuestion;
 
         if(isset($_POST["userId"])){
+            print("IsSet");
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
         }
+        print("Test");
 
 
         /*if(isset($_POST["submit"])){
@@ -51,15 +53,18 @@
                             print "<div class='alert alert-danger' align='center'><b>Incorrect Information. Please Try Again.</b></div>";
                         }
                     ?>
+                    <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
                         <input type="text" name="userId" class="form-control" placeholder="ACU Username"
                         value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
                     </div>
+                    <?php }else{?>
                     <div class="form-group">
                         <p><?php print($securityQuestion["question"]); ?></p>
                         <p>Test</p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
                     </div>
+                    <?php }?>
                 </div>
                 <div class="footer" align="center">
                     <?php /*<button type="submit" name="submit" class="btn btn-primary btn-block" style="width:46%; display:inline-block;">Sign In</button>
