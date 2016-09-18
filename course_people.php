@@ -133,16 +133,16 @@
                                           }
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
                                           $lastName = $userCursor['last_name'];
-                                          $userArray[$lastName]=array('userId'=>$userId,'role'=>$user_role);
+                                          $userArray[$userId]=array('last_name'=>$lastName,'role'=>$user_role);
                                         }
-                                        ksort($userArray);
+                                        asort($userArray);
                                         //print_r($userArray);
                                         //print("<br/>");
                                         //print_r($userArray['Graham']);
                                         foreach ($userArray as $k => $v) {
-                                          print('<tr id="'.$v['userId'].'">');
+                                          print('<tr id="'.$k.'">');
                                           $userCollection = new MongoCollection( $db, "users");
-                                          $userCursor = $userCollection->findOne(array('_id' => $v['userId']));
+                                          $userCursor = $userCollection->findOne(array('_id' => $k));
 
                                           print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
                                           print('<td>'.$v['role'].'</td>');
