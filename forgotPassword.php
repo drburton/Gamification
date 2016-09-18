@@ -20,7 +20,7 @@
         }
 
 
-        if(isset($_POST["submit"])){
+        /*if(isset($_POST["submit"])){
           if(!($row = checkPass($_POST["userId"], $_POST["password"]))){
             $passMiss=true;
           }
@@ -28,7 +28,7 @@
               cleanMemberSession($_POST["userId"]);
               header("Location: dashboard.php");
           }
-      }
+        }*/
     }
 ?>
 <!DOCTYPE html>
