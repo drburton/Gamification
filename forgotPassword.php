@@ -37,7 +37,7 @@
         if(isset($_POST["input1"])&&isset($_POST["input2"])){
             $validAnswer = true;
             if($_POST["input1"]==$_POST["input2"]){
-                updatePassword($userId, $_POST["input1"])
+                updatePassword($userId, $_POST["input1"]);
                 cleanMemberSession($userId);
                 header("Location: dashboard.php");
             }
