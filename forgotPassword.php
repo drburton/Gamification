@@ -12,13 +12,16 @@
         $secCollection = new MongoCollection( $db, "security-questions");
         $results;
         $securityQuestion;
+        $user_answer;
 
         if(isset($_POST["userId"])){
-            print("Id exists");
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
-            print($securityQuestion);
+        }
+
+        if(isset($_POST["sec_answer"])){
+            $user_answer=$_POST["sec_answer"];
         }
 
 
@@ -58,10 +61,9 @@
                         <p>Please Enter Your Username:</p>
                         <input type="text" name="userId" required class="form-control"/>
                     </div>
-                    <?php }else{?>
+                    <?php }elseif(!$user_answer){?>
                     <div class="form-group">
                         <p><?php print($securityQuestion["question"]); ?></p>
-                        <p>Test</p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
                     </div>
                     <?php }?>
