@@ -63,6 +63,7 @@
                     </div>
                     <?php }elseif(!$user_answer){?>
                     <div class="form-group">
+                        <input type="hidden" value="<?php print($userId); ?>"/>
                         <p><?php print($securityQuestion["question"]); ?></p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
                     </div>
