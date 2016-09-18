@@ -51,11 +51,7 @@
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
-                    <?php
-                        if($passMiss){
-                            print "<div class='alert alert-danger' align='center'><b>Incorrect Information. Please Try Again.</b></div>";
-                        }
-                    ?>
+                    <div class='alert alert-danger' align='center' display="none"><b>Incorrect Information. Please Try Again.</b></div>
                     <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
                         <p>Please Enter Your Username:</p>
@@ -63,9 +59,17 @@
                     </div>
                     <?php }elseif(!$user_answer){?>
                     <div class="form-group">
-                        <input type="hidden" value="<?php print($userId); ?>"/>
+                        <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
                         <p><?php print($securityQuestion["question"]); ?></p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
+                    </div>
+                    <?php }else{?>
+                    <div class="form-group">
+                        <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
+                        <p>Please type your new password:</p>
+                        <input type="password" name="input1" class="form-control" required/>
+                        <p>Please re-enter your new password:</p>
+                        <input type="password" name="input2" class="form-control" required/>
                     </div>
                     <?php }?>
                 </div>
