@@ -104,6 +104,8 @@
             $("#recoveryForm").submit(function(){
                 if($("#input1").val()!=$("#input2").val()){
                     alert("Not the Same!");
+                    $("#errorMessage").html("<b>The New Passwords Do Not Match.</b>");
+                    $("#errorMessage").slideDown();
                     return false;
                 }else{
                     return true;
