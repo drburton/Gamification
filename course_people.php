@@ -122,7 +122,6 @@
                                         foreach ($userCourseCursor as $doc) {
                                           $userId;
                                           $user_role;
-                                          $last_name;
                                           foreach ($doc as $k => $v) {
                                             if($k=='user_role'){
                                                 $user_role=$v;
@@ -142,15 +141,10 @@
                                         //print_r($userArray['Graham']);
                                         foreach ($userArray as $k => $v) {
                                           print('<tr id="'.$k.'">');
-                                          $userCollection = new MongoCollection( $db, "users");
-                                          $userCursor = $userCollection->findOne(array('_id' => $k));
-
-                                          print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
+                                          $lastName = $v['last_name'];
+                                          $firstName = $v['first_name'];
+                                          print('<td>'.$firstName.' '.$lastName.' ('.$k.')</td>');
                                           print('<td>'.$v['role'].'</td>');
-                                          //for ($i = 0; $i <= 5; $i++) {
-                                          //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
-                                          //}
-                                          //print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
                                           print('</tr>');
                                         }
 
