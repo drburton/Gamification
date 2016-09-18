@@ -14,19 +14,24 @@
         $results;
         $securityQuestion;
         $user_answer;
+        $validAnswer = false;
+        $error;
 
         if(isset($_POST["userId"])){
-            print(" User Id exists ");
             $userId = $_POST["userId"];
             $results = $userCollection->findOne(array('_id' => $userId));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
-            print($securityQuestion);
-            print("Test");
         }
 
         if(isset($_POST["sec_answer"])){
             $user_answer=$_POST["sec_answer"];
+            if($user_answer==$results['sec_answer']){
+                $validAnswer = true;
+            }else{
+                $error = "Incorrect Information";
+            }
+
         }
 
 
@@ -56,13 +61,14 @@
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
-                    <div class='alert alert-danger' align='center' style="display:none"><b>Incorrect Information. Please Try Again.</b></div>
+                    <div class='alert alert-danger' align='center' <?php if(!$error){?>style="display:none"<?php }?>>
+                    <b><?php print($error)?></b></div>
                     <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
                         <p>Please Enter Your Username:</p>
                         <input type="text" name="userId" required class="form-control"/>
                     </div>
-                    <?php }elseif(!$user_answer){?>
+                    <?php }elseif(!$validAnswer){?>
                     <div class="form-group">
                         <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
                         <p><?php print($securityQuestion["question"]); ?></p>
