@@ -42,7 +42,7 @@
     <body class="bg-black">
         <div class="form-box" id="security-box">
 
-            <div class="header">EduQuest</div>
+            <div class="header">EduQuest: Password Recovery</div>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
@@ -54,8 +54,7 @@
                     <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
                         <p>Please Enter Your Username:</p>
-                        <input type="text" name="userId" class="form-control"
-                        value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
+                        <input type="text" name="userId" required class="form-control"/>
                     </div>
                     <?php }else{?>
                     <div class="form-group">
