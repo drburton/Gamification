@@ -10,22 +10,19 @@
         $db = $m->selectDB("gamification_db");
         $userCollection = new MongoCollection( $db, "users");
         $secCollection = new MongoCollection( $db, "security-questions");
+        $results = $userCollection->findOne(array('_id' => $_POST["userid"]));
 
-        //if(isset($_POST["userId"])){
-            $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
-
-            $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
-        //}
+        $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
 
 
-        /*if(isset($_POST["submit"])){
-          if(!($row = checkPass($_POST["userId"], $_POST["password"]))){
+        if(isset($_POST["submit"])){
+          if(!($row = checkPass($_POST["userid"], $_POST["password"]))){
             $passMiss=true;
           }
           else{
-              cleanMemberSession($_POST["userId"]);
+              cleanMemberSession($_POST["userid"]);
               header("Location: dashboard.php");
-          }*/
+          }
       }
     }
 ?>
@@ -33,7 +30,7 @@
 <html class="bg-black">
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Forgot Password</title>
+        <title>EduQuest | Log in</title>
         <?php include_once "headStyle.php"; ?>
 
     </head>
@@ -50,8 +47,8 @@
                         }
                     ?>
                     <div class="form-group">
-                        <input type="text" name="userId" class="form-control" placeholder="ACU Username"
-                        value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
+                        <input type="text" name="userid" class="form-control" placeholder="ACU Username"
+                        value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>"/>
                     </div>
                     <div class="form-group">
                         <p><?php print($securityQuestion["question"]); ?></p>
