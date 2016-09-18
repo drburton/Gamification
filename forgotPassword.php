@@ -58,22 +58,28 @@
         <div class="form-box" id="security-box">
 
             <div class="header">EduQuest: Password Recovery</div>
-            <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
+            <form id="recoveryForm" action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
-                    <div class='alert alert-danger' align='center' <?php if(!$error){?>style="display:none"<?php }?>>
+                    <div class='alert alert-danger' id="errorMessage" align='center' <?php if(!$error){?>style="display:none"<?php }?>>
                     <b><?php print($error)?></b></div>
-                    <?php if(!$securityQuestion){ ?>
+
+                    <?php //begin first stage of user input -> username?>
+                    <?php if(!$userId){ ?>
                     <div class="form-group">
                         <p>Please Enter Your Username:</p>
                         <input type="text" name="userId" required class="form-control"/>
                     </div>
+
+                    <?php //begin second stage of user input -> getting securty question answer?>
                     <?php }elseif(!$validAnswer){?>
                     <div class="form-group">
                         <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
                         <p><?php print($securityQuestion["question"]); ?></p>
                         <input type="password" name="sec_answer" class="form-control" placeholder="Security Question Answer"/>
                     </div>
+
+                    <?php //finally, upon correct answer, create new password?>
                     <?php }else{?>
                     <div class="form-group">
                         <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
@@ -85,8 +91,6 @@
                     <?php }?>
                 </div>
                 <div class="footer" align="center">
-                    <?php /*<button type="submit" name="submit" class="btn btn-primary btn-block" style="width:46%; display:inline-block;">Sign In</button>
-                    <div style="width:5%; display:inline-block;"></div> */?>
                     <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
                 </div>
             </form>
@@ -95,6 +99,11 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+        <script >
+            $("#recoveryForm").submit(function(){
+                alert("Submitting");
+            });
+        </script>
 
     </body>
 </html>
