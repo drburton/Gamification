@@ -10,17 +10,22 @@
         $db = $m->selectDB("gamification_db");
         $userCollection = new MongoCollection( $db, "users");
         $secCollection = new MongoCollection( $db, "security-questions");
-        $results = $userCollection->findOne(array('_id' => $_POST["userid"]));
+        $results;
+        $securityQuestion;
 
-        $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
+        if(isset($_POST["userId"])){
+            $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
+
+            $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
+        }
 
 
         if(isset($_POST["submit"])){
-          if(!($row = checkPass($_POST["userid"], $_POST["password"]))){
+          if(!($row = checkPass($_POST["userId"], $_POST["password"]))){
             $passMiss=true;
           }
           else{
-              cleanMemberSession($_POST["userid"]);
+              cleanMemberSession($_POST["userId"]);
               header("Location: dashboard.php");
           }
       }
@@ -47,8 +52,8 @@
                         }
                     ?>
                     <div class="form-group">
-                        <input type="text" name="userid" class="form-control" placeholder="ACU Username"
-                        value="<?php print isset($_POST["userid"]) ? $_POST["userid"] : "" ; ?>"/>
+                        <input type="text" name="userId" class="form-control" placeholder="ACU Username"
+                        value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
                     </div>
                     <div class="form-group">
                         <p><?php print($securityQuestion["question"]); ?></p>
