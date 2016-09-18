@@ -51,7 +51,7 @@
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
-                    <div class='alert alert-danger' align='center' display="none"><b>Incorrect Information. Please Try Again.</b></div>
+                    <div class='alert alert-danger' align='center' style="display:none"><b>Incorrect Information. Please Try Again.</b></div>
                     <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
                         <p>Please Enter Your Username:</p>
