@@ -51,7 +51,7 @@
                             print "<div class='alert alert-danger' align='center'><b>Incorrect Information. Please Try Again.</b></div>";
                         }
                     ?>
-                    <?php if(!$securityQuestion){ ?>
+                    <?php if($securityQuestion!=null){ ?>
                     <div class="form-group">
                         <input type="text" name="userId" class="form-control" placeholder="ACU Username"
                         value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
