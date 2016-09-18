@@ -22,37 +22,28 @@
             $results = $userCollection->findOne(array('_id' => $userId));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
-        }
 
-        if(isset($_POST["sec_answer"])){
-            $user_answer=$_POST["sec_answer"];
-            if($user_answer==$results['sec_answer']){
+            if(isset($_POST["sec_answer"])){
+                $user_answer=$_POST["sec_answer"];
+                if($user_answer==$results['sec_answer']){
+                    $validAnswer = true;
+                }else{
+                    $error = "Incorrect Information. Please Try Again.";
+                }
+
+            }
+
+            if(isset($_POST["input1"])&&isset($_POST["input2"])){
                 $validAnswer = true;
-            }else{
-                $error = "Incorrect Information. Please Try Again.";
-            }
-
-        }
-
-        if(isset($_POST["input1"])&&isset($_POST["input2"])){
-            $validAnswer = true;
-            if($_POST["input1"]==$_POST["input2"]){
-                updatePassword($userId, $_POST["input1"]);
-                cleanMemberSession($userId);
-                header("Location: dashboard.php");
+                if($_POST["input1"]==$_POST["input2"]){
+                    updatePassword($userId, $_POST["input1"]);
+                    cleanMemberSession($userId);
+                    header("Location: dashboard.php");
+                }else{
+                    $error = "The New Passwords Did Not Match.";
+                }
             }
         }
-
-
-        /*if(isset($_POST["submit"])){
-          if(!($row = checkPass($_POST["userId"], $_POST["password"]))){
-            $passMiss=true;
-          }
-          else{
-              cleanMemberSession($_POST["userId"]);
-              header("Location: dashboard.php");
-          }
-        }*/
     }
 ?>
 <!DOCTYPE html>
