@@ -10,13 +10,15 @@
         $db = $m->selectDB("gamification_db");
         $userCollection = new MongoCollection( $db, "users");
         $secCollection = new MongoCollection( $db, "security-questions");
+        $userId;
         $results;
         $securityQuestion;
         $user_answer;
 
         if(isset($_POST["userId"])){
             print(" User Id exists ");
-            $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
+            $userId = $_POST["userId"];
+            $results = $userCollection->findOne(array('_id' => $userId));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
             print($securityQuestion);
