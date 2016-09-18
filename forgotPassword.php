@@ -14,6 +14,7 @@
         $securityQuestion;
 
         if(isset($_POST["userId"])){
+            print("Id exists");
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
