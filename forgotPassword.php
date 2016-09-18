@@ -29,7 +29,7 @@
             if($user_answer==$results['sec_answer']){
                 $validAnswer = true;
             }else{
-                $error = "Incorrect Information";
+                $error = "Incorrect Information. Please Try Again.";
             }
 
         }
@@ -84,9 +84,9 @@
                     <div class="form-group">
                         <input type="hidden" name="userId" value="<?php print($userId); ?>"/>
                         <p>Please type your new password:</p>
-                        <input type="password" name="input1" class="form-control" required/>
+                        <input type="password" id="input1" name="input1" class="form-control" required/>
                         <p>Please re-enter your new password:</p>
-                        <input type="password" name="input2" class="form-control" required/>
+                        <input type="password" id="input2" name="input2" class="form-control" required/>
                     </div>
                     <?php }?>
                 </div>
@@ -99,11 +99,18 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+        <?php if($validAnswer){?>
         <script >
             $("#recoveryForm").submit(function(){
-                alert("Submitting");
+                if($("#input1").val()!=$("#input2").val()){
+                    alert("Not the Same!");
+                    return false;
+                }else{
+                    return true;
+                }
             });
         </script>
+        <?php }?>
 
     </body>
 </html>
