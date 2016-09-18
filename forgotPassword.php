@@ -68,6 +68,7 @@
                 <div class="footer" align="center">
                     <?php /*<button type="submit" name="submit" class="btn btn-primary btn-block" style="width:46%; display:inline-block;">Sign In</button>
                     <div style="width:5%; display:inline-block;"></div> */?>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
                 </div>
             </form>
 
