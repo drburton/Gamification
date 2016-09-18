@@ -10,8 +10,6 @@
         $db = $m->selectDB("gamification_db");
         $userCollection = new MongoCollection( $db, "users");
         $secCollection = new MongoCollection( $db, "security-questions");
-        $results;
-        $securityQuestion;
 
         //if(isset($_POST["userId"])){
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
