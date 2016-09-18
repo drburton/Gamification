@@ -14,12 +14,10 @@
         $securityQuestion;
 
         if(isset($_POST["userId"])){
-            print("IsSet");
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['securityQuestion']));
         }
-        print("Test");
 
 
         /*if(isset($_POST["submit"])){
@@ -55,7 +53,8 @@
                     ?>
                     <?php if(!$securityQuestion){ ?>
                     <div class="form-group">
-                        <input type="text" name="userId" class="form-control" placeholder="ACU Username"
+                        <p>Please Enter Your Username:</p>
+                        <input type="text" name="userId" class="form-control"
                         value="<?php print isset($_POST["userId"]) ? $_POST["userId"] : "" ; ?>"/>
                     </div>
                     <?php }else{?>
