@@ -133,7 +133,8 @@
                                           }
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
                                           $lastName = $userCursor['last_name'];
-                                          $userArray[$userId]=array('last_name'=>$lastName,'role'=>$user_role);
+                                          $firstName = $userCursor['first_name'];
+                                          $userArray[$userId]=array('last_name'=>$lastName,'first_name'=>$firstName,'role'=>$user_role);
                                         }
                                         asort($userArray);
                                         //print_r($userArray);
