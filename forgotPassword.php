@@ -34,6 +34,15 @@
 
         }
 
+        if(isset($_POST["input1"])&&isset($_POST["input2"])){
+            $validAnswer = true;
+            if($_POST["input1"]==$_POST["input2"]){
+                updatePassword($userId, $_POST["input1"])
+                cleanMemberSession($userId);
+                header("Location: dashboard.php");
+            }
+        }
+
 
         /*if(isset($_POST["submit"])){
           if(!($row = checkPass($_POST["userId"], $_POST["password"]))){
@@ -103,8 +112,7 @@
         <script >
             $("#recoveryForm").submit(function(){
                 if($("#input1").val()!=$("#input2").val()){
-                    alert("Not the Same!");
-                    $("#errorMessage").html("<b>The New Passwords Do Not Match.</b>");
+                    $("#errorMessage").html("<b>The New Passwords Did Not Match.</b>");
                     $("#errorMessage").slideDown();
                     return false;
                 }else{
