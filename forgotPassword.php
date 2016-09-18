@@ -19,6 +19,7 @@
             $results = $userCollection->findOne(array('_id' => $_POST["userId"]));
 
             $securityQuestion = $secCollection->findOne(array('name' => $results['security_question']));
+            print(!$securityQuestion);
         }
 
         if(isset($_POST["sec_answer"])){
