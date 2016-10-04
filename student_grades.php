@@ -57,7 +57,8 @@
                         </thead>
                         <tbody>
                         	<?php 
-                        		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["login"],"status"=>"submitted");
+                        		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["login"],
+                        			"status"=>array('$in' => array('submitted', 'graded')));
 						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
 						        $userQuestCursor->fields(array('title' => true,'grade' => true, "_id" => false));
 						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
