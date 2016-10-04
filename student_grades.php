@@ -78,6 +78,8 @@
 						            }else{
 						            	print("<tr><td>".$title."</td><td>Grade Pending</td></tr>");
 						            }
+						            $title=null;
+						            $grade=null;
 					          	}
 
                         	?>
