@@ -62,7 +62,7 @@
 						        $userQuestCursor->fields(array('title' => true,'grade' => true, "_id" => false));
 						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
 
-						        foreach ($userCourseCursor as $doc) {
+						        foreach ($userQuestResults as $doc) {
 						        	$title;
 						        	$grade;
 						        	print("<tr><td>");
