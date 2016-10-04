@@ -66,7 +66,7 @@
 						        foreach ($userQuestCursor as $doc) {
 						        	$title;
 						        	$grade;
-						        	$status
+						        	$status;
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
