@@ -49,11 +49,14 @@
 				<h2> Quest Grades: work in Progress</h2>
 				<div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
-                    	<tr>
+                    	<thead>
                             <th>Quest Name</th>
                             <th>XP Earned</th>
                             <th>Due Date</th>
-                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
                     </table>
                 </div>
 			</div>
