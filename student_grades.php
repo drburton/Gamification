@@ -50,12 +50,36 @@
 				<div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                     	<thead>
-                            <th>Quest Name</th>
-                            <th>XP Earned</th>
-                            <th>Due Date</th>
+                    		<tr>
+	                            <th>Quest Name</th>
+	                            <th>XP Earned</th>
+                            <tr>
                         </thead>
                         <tbody>
+                        	<?php 
+                        		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["name"]);
+						        $userQuestCursor = $userQuestsCollection->find($questResults);
+						        $questCursor->fields(array('title' => true,'grade' => true));
+						        $questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
 
+						        foreach ($userCourseCursor as $doc) {
+						        	$title;
+						        	$grade;
+					             	foreach ($doc as $k => $v) {
+						            	if($k=="title"){
+						            		$title=$v;
+						            	}else{
+						            		$grade=$v;
+						            	}
+						            	//$totalXP=0;
+						            }
+						            print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
+					          	}
+
+                        	?>
+                        	<tr>
+                        			
+                        	</tr>
                         </tbody>
                     </table>
                 </div>
