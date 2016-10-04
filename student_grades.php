@@ -65,15 +65,17 @@
 						        foreach ($userCourseCursor as $doc) {
 						        	$title;
 						        	$grade;
+						        	print("<tr><td>");
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
 						            	}else{
 						            		$grade=$v;
 						            	}
+						            	print($v);
 						            	//$totalXP=0;
 						            }
-						            print("<tr><td>".$title."</td><td>test</td></tr>");
+						            print("</td><td>test</td></tr>");
 					          	}
 
                         	?>
