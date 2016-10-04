@@ -72,7 +72,7 @@
 						            	}else{
 						            		$grade=$v;
 						            	}
-						            	print($v);
+						            	print($k);
 						            	//$totalXP=0;
 						            }
 						            print("</td><td>test</td></tr>");
