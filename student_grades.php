@@ -61,11 +61,11 @@
 						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
 						        $userQuestCursor->fields(array('title' => true,'grade' => true, "_id" => false));
 						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
-
+						        print($userQuestResults["course_id"]);
 						        foreach ($userQuestCursor as $doc) {
 						        	$title;
 						        	$grade;
-						        	print("<tr><td>".$userQuestResults["course_id"]."</td><td>");
+						        	print("<tr><td>");
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
