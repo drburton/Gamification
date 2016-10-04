@@ -47,7 +47,7 @@
 			</div>
 			<div>
 				<h2> Quest Grades: work in Progress</h2>
-				<div class="box-body table-responsive no-padding">
+				<div class="box-body table-responsive no-padding" style="width:50%;">
                     <table class="table table-hover">
                     	<thead>
                     		<tr>
@@ -58,7 +58,7 @@
                         <tbody>
                         	<?php 
                         		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["name"]);
-						        $userQuestCursor = $userQuestsCollection->find($questResults);
+						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
 						        $questCursor->fields(array('title' => true,'grade' => true));
 						        $questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
 
@@ -73,7 +73,7 @@
 						            	}
 						            	//$totalXP=0;
 						            }
-						            print("<tr><td>test</td><td>test</td></tr>");
+						            print("<tr><td>".$title."</td><td>test</td></tr>");
 					          	}
 
                         	?>
