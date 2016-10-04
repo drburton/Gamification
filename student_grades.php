@@ -65,7 +65,7 @@
 						        foreach ($userQuestCursor as $doc) {
 						        	$title;
 						        	$grade;
-						        	print("<tr><td>");
+						        	print("<tr><td>".$userQuestResults["course_id"]."</td><td>");
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
