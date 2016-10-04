@@ -59,22 +59,29 @@
                         	<?php 
                         		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["login"]);
 						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
-						        $userQuestCursor->fields(array('title' => true,'grade' => true, "_id" => false));
+						        $userQuestCursor->fields(array('title' => true,'status' => true,'grade' => true, "_id" => false));
 						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
 						        print($userQuestResults["course_id"]);
 						        print($userQuestResults["user_id"]);
 						        foreach ($userQuestCursor as $doc) {
 						        	$title;
 						        	$grade;
+						        	$status
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
-						            	}else{
+						            	}elseif($k=="grade"){
 						            		$grade=$v;
+						            	}else{
+						            		$status=$v;
 						            	}
 						            	//$totalXP=0;
 						            }
-						            print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
+						            if($grade){
+						            	print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
+						            }else{
+						            	print("<tr><td>".$title."</td><td>".$status."</td></tr>");
+						            }
 					          	}
 
                         	?>
