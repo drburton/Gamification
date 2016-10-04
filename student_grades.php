@@ -73,7 +73,7 @@
 						            	}
 						            	//$totalXP=0;
 						            }
-						            print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
+						            print("<tr><td>test</td><td>test</td></tr>");
 					          	}
 
                         	?>
