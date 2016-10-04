@@ -59,8 +59,8 @@
                         	<?php 
                         		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["name"]);
 						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
-						        $questCursor->fields(array('title' => true,'grade' => true));
-						        $questCursor=$questCursor->sort(array("title"=>1)); //Sort by title
+						        $userQuestCursor->fields(array('title' => true,'grade' => true));
+						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
 
 						        foreach ($userCourseCursor as $doc) {
 						        	$title;
