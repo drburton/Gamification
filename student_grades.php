@@ -66,17 +66,15 @@
 						        foreach ($userQuestCursor as $doc) {
 						        	$title;
 						        	$grade;
-						        	print("<tr><td>");
 					             	foreach ($doc as $k => $v) {
 						            	if($k=="title"){
 						            		$title=$v;
 						            	}else{
 						            		$grade=$v;
 						            	}
-						            	print($k);
 						            	//$totalXP=0;
 						            }
-						            print("</td><td>".$title."</td></tr>");
+						            print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
 					          	}
 
                         	?>
