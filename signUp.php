@@ -44,7 +44,7 @@ if(isset($_POST["submit"])){
 
         <div class="form-box" id="login-box">
 
-            <div class="header">DET<sup>XP</sup> Registration</div>
+            <div class="header">Sign Up for DET<sup>XP</sup></div>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
