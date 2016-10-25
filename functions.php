@@ -25,6 +25,16 @@
 			}
 		}
 
+		function updatePassword($login, $password)
+		{
+			global $coll;
+			$res = $coll->findOne(array('_id' => $login));
+			if($res){
+				$update=array('$set'=>array('password' => md5($password)));
+    			$coll->update(array("_id" => $login),$update);
+			}
+		}
+
 		function cleanMemberSession($login)
 		{
 			global $coll;

@@ -122,7 +122,6 @@
                                         foreach ($userCourseCursor as $doc) {
                                           $userId;
                                           $user_role;
-                                          $last_name;
                                           foreach ($doc as $k => $v) {
                                             if($k=='user_role'){
                                                 $user_role=$v;
@@ -133,23 +132,19 @@
                                           }
                                           $userCursor = $userCollection->findOne(array('_id' => $userId));
                                           $lastName = $userCursor['last_name'];
-                                          $userArray[$userId]=array('userId'=>$userId,'role'=>$user_role);
+                                          $firstName = $userCursor['first_name'];
+                                          $userArray[$userId]=array('last_name'=>$lastName,'first_name'=>$firstName,'role'=>$user_role);
                                         }
-                                        ksort($userArray);
+                                        asort($userArray);
                                         //print_r($userArray);
                                         //print("<br/>");
                                         //print_r($userArray['Graham']);
                                         foreach ($userArray as $k => $v) {
-                                          print('<tr id="'.$v['userId'].'">');
-                                          $userCollection = new MongoCollection( $db, "users");
-                                          $userCursor = $userCollection->findOne(array('_id' => $v['userId']));
-
-                                          print('<td>'.$userCursor['name'].' ('.$userCursor['_id'].')</td>');
+                                          print('<tr id="'.$k.'">');
+                                          $lastName = $v['last_name'];
+                                          $firstName = $v['first_name'];
+                                          print('<td>'.$firstName.' '.$lastName.' ('.$k.')</td>');
                                           print('<td>'.$v['role'].'</td>');
-                                          //for ($i = 0; $i <= 5; $i++) {
-                                          //  print("<td style='min-width: 150px; text-align:center;'>-</td>");
-                                          //}
-                                          //print("<td id='".$userId."_exp' style='min-width: 150px; text-align:center;'>".$totalXP." / $maxEXP</td>");
                                           print('</tr>');
                                         }
 

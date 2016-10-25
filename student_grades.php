@@ -47,6 +47,48 @@
 			</div>
 			<div>
 				<h2> Quest Grades: work in Progress</h2>
+				<div class="box-body table-responsive no-padding" style="width:50%;">
+                    <table class="table table-hover">
+                    	<thead>
+                    		<tr>
+	                            <th>Quest Name</th>
+	                            <th>XP Earned</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        	<?php 
+                        		$userQuestResults = array('course_id' => $course, 'user_id' => $_SESSION["login"],
+                        			"status"=>array('$in' => array('submitted', 'graded')));
+						        $userQuestCursor = $userQuestsCollection->find($userQuestResults);
+						        $userQuestCursor->fields(array('title' => true,'grade' => true, "_id" => false));
+						        $userQuestCursor=$userQuestCursor->sort(array("title"=>1)); //Sort by title
+						        foreach ($userQuestCursor as $doc) {
+						        	$title;
+						        	$grade;
+					             	foreach ($doc as $k => $v) {
+						            	if($k=="title"){
+						            		$title=$v;
+						            	}else{
+						            		$grade=$v;
+						            	}
+						            	//$totalXP=0;
+						            }
+						            if($grade){
+						            	print("<tr><td>".$title."</td><td>".$grade."</td></tr>");
+						            }else{
+						            	print("<tr><td>".$title."</td><td>Grade Pending</td></tr>");
+						            }
+						            $title=null;
+						            $grade=null;
+					          	}
+
+                        	?>
+                        	<tr>
+                        			
+                        	</tr>
+                        </tbody>
+                    </table>
+                </div>
 			</div>
 		</div>
 	</div>
