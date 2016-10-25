@@ -20,14 +20,14 @@
 <html class="bg-black">
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Log in</title>
+        <title>DETXP | Log in</title>
         <?php include_once "headStyle.php"; ?>
 
     </head>
     <body class="bg-black">
         <div class="form-box" id="login-box">
 
-            <div class="header">EduQuest</div>
+            <div class="header">DET<sup>XP</sup></div>
             <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 
                 <div class="body bg-gray">
