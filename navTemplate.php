@@ -18,7 +18,7 @@
         <header class="header">
             <a href="dashboard.php" class="logo" >
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                EduQuest
+                DET<sup>XP</sup>
             </a>
 
             <!-- Header Navbar
