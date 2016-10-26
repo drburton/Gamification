@@ -102,7 +102,7 @@
                                 <span style=\"text-align:center;\">Class Average:</span>
                                 <div class=\"progress\" style=\"text-align:center;\">
                                   <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
-                                  style=\"width: 15%; color:black;\">");
+                                  style=\"width: 16%; color:black;\">");
                                 if($percentage>15){
                                     print($avg."/".$maxPoints."</div>");
                                 }else{
