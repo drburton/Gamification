@@ -102,12 +102,12 @@
                                 <span style=\"text-align:center;\">Class Average:</span>
                                 <div class=\"progress\" style=\"text-align:center;\">
                                   <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
-                                  style=\"width: 16%; color:black;\">");
-                                //if($percentage>15){
-                                    print($avg."/".$maxPoints."</div>");
-                                //}else{
-                                //    print("</div>".$avg."/".$maxPoints);
-                                //}
+                                  style=\"width: ".$percentage."%;\">");
+                                if($percentage>15){
+                                    print("<span style=\"color:white;\">".$avg."/".$maxPoints."</span></div>");
+                                }else{
+                                    print("</div><span style=\"color:black;\">".$avg."/".$maxPoints."</span>");
+                                }
                                 print("</div>");
                             }
                             print("
