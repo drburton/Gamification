@@ -33,22 +33,43 @@
                 <!-- Main content -->
                 <section class="content" >
                     <?php
-                      $results = array('user_id' => $_SESSION["login"]);//'jad00a');
-                      $count=1;
+                      $results = array('user_id' => $_SESSION["login"]);
                       $cursor = $collection->find($results);
-                      $cursor->fields(array("course_id" => true));
+                      $cursor->fields(array("course_id" => true,"xp" => true, 'user_role' => true,'_id' => false));
                       foreach ($cursor as $doc) {
+                        $title;
+                        $xp;
+                        $role;
                         foreach ($doc as $k => $v) {
-
-                          if($count%2==0){
-                            $new = str_replace(" ","_",$v);
-                            print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
-                            //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
-                          }
-
-                          $count++;
-
+                            if($k=="course_id"){
+                                $title=$v;
+                            }else if($k=="xp"){
+                                $xp=$v;
+                            }else if($k=="role"){
+                                $role=$v;
+                            }
                         }
+                        print("
+                        <div class=\"col-md-4\">
+                        <div class=\"box\">
+                            <div class=\"box-header\">
+                                <h3 class=\"box-title\">DET 310</h3>
+                                <div class=\"box-tools pull-right\">
+                                    <button class=\"btn btn-default btn-sm\" data-widget=\"collapse\" ><i class=\"fa fa-minus\"></i></button>
+                                </div>
+                            </div>
+                            <div class=\"box-body\">
+
+                            </div><!-- /.box-body -->
+                            <div class=\"box-footer\">
+                                <div class=\"progress\">
+                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">
+                                    60%
+                                  </div>
+                                </div>
+                            </div><!-- /.box-footer-->
+                        </div><!-- /.box -->
+                        </div>");
 
                       }
                     ?>
