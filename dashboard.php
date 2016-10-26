@@ -75,27 +75,6 @@
                       }
                     ?>
 
-                    <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">DET 310</h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                60%
-                              </div>
-                            </div>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
-                    </div>
-
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
 
