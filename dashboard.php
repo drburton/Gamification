@@ -95,7 +95,7 @@
                                 $results = array('c_number' => $title);
                                 $cursor = $course_collection->findOne($results);
                                 $maxPoints=$cursor['max_points'];
-                                $percentage = ($avg/$maxPoints);
+                                $percentage = ($avg/$count);
                                 $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
 
                                 print("
