@@ -99,11 +99,11 @@
                                 $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
 
                                 print("
-                                <div class=\"progress\" style=\"text-align:center;\">
+                                <div class=\"progress\">
                                   <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
                                   style=\"width: ".$percentage."%; color:black;\">
-                                    ".$avg."/".$maxPoints."
                                   </div>
+                                  ".$avg."/".$maxPoints."
                                 </div>Class Progress");
                             }
                             print("
