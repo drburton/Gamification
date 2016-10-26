@@ -2,6 +2,7 @@
     $m = new MongoClient();
     $db = $m->selectDB("gamification_db");
     $collection = new MongoCollection( $db, "users-courses");
+    $course_collection = new MongoCollection( $db, "courses");
     //include_once "navTemplate.php";
     include_once "config.php";
     if (!loggedIn()){
@@ -49,6 +50,11 @@
                                 $role=$v;
                             }
                         }
+                        $results = array('c_number' => $title);
+                        $cursor = $collection->findOne($results);
+                        $maxPoints=$cursor["max_points"];
+                        $percentage = ($xp/$maxPoints);
+                        $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
                         print("
                         <div class=\"col-md-4\">
                         <div class=\"box\">
@@ -65,10 +71,12 @@
                             if($role!="admin"){
                                 print("
                                 <div class=\"progress\">
-                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">
-                                    60%
+                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
+                                    ".$xp."/".$maxPoints."
                                   </div>
                                 </div>");
+                            }else{
+
                             }
                             print("
                             </div><!-- /.box-footer-->
