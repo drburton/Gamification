@@ -52,7 +52,7 @@
                         }
                         $results = array('c_number' => $title);
                         $cursor = $collection->findOne($results);
-                        $maxPoints=$cursor["max_points"];
+                        $maxPoints=$cursor['max_points'];
                         print($maxPoints);
                         print("test");
                         $percentage = ($xp/$maxPoints);
