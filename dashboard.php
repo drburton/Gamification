@@ -55,7 +55,7 @@
                         $maxPoints=$cursor['max_points'];
                         print($maxPoints);
                         print($title);
-                        print($cursor)
+                        print($cursor);
                         $percentage = ($xp/$maxPoints);
                         $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
                         print("
