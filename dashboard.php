@@ -55,15 +55,14 @@
                         <div class=\"col-md-4\">
                         <div class=\"box\">
                             <div class=\"box-header\">
-                                <h3 class=\"box-title\">".$title."</h3>
+                                <h3 class=\"box-title\">".$title.": ".$role."</h3>
                                 <div class=\"box-tools pull-right\">
                                     <button class=\"btn btn-default btn-sm\" data-widget=\"collapse\" ><i class=\"fa fa-minus\"></i></button>
                                 </div>
                             </div>
                             <div class=\"box-body\">
                             </div><!-- /.box-body -->
-                            <div class=\"box-footer\">
-                                <h4>Role: ".$role."</h4>");
+                            <div class=\"box-footer\">");
                             if($role!="admin"){
                                 $results = array('c_number' => $title);
                                 $cursor = $course_collection->findOne($results);
