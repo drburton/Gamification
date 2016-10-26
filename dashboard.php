@@ -32,56 +32,6 @@
 
                 <!-- Main content -->
                 <section class="content" >
-                    <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">Some Courses</h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-default btn-sm" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="box">
-                                <div class="box-body table-responsive no-padding">
-                                    <table class="table table-hover">
-                                        <tr>
-                                            <th>Course List</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        <?php
-
-                                            $results = array('user_id' => 'jad00a');
-                                            $count=1;
-                                            $cursor = $collection->find($results);
-                                            $cursor->fields(array("course_id" => true));
-                                            foreach ($cursor as $doc) {
-
-                                              foreach ($doc as $k => $v) {
-
-                                                if($count%2==0){
-                                                  print "<tr><td>$v</td></tr>";
-                                                }
-
-                                                $count++;
-
-                                              }
-
-                                            }
-
-                                         ?>
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                60%
-                              </div>
-                            </div>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
-                    </div>
 
                     <div class="col-md-4">
                     <div class="box">
