@@ -104,7 +104,7 @@
                                   <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
                                   style=\"width: 65%; color:black;\">
                                   </div>
-                                  ".$avg."/".$maxPoints."
+                                  ".$percentage."/".$maxPoints."
                                 </div>");
                             }
                             print("
