@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class=\"box-body\">
-                            <h3 class=\"box-title\">Role: ".$role."</h3>"
+                            <h3 class=\"box-title\">Role: ".$role."</h3>
                             </div><!-- /.box-body -->
                             <div class=\"box-footer\">
                                 <div class=\"progress\">
