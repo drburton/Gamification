@@ -50,11 +50,7 @@
                                 $role=$v;
                             }
                         }
-                        $results = array('c_number' => $title);
-                        $cursor = $course_collection->findOne($results);
-                        $maxPoints=$cursor['max_points'];
-                        $percentage = ($xp/$maxPoints);
-                        $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
+                        
                         print("
                         <div class=\"col-md-4\">
                         <div class=\"box\">
@@ -69,6 +65,11 @@
                             <div class=\"box-footer\">
                                 <h4>Role: ".$role."</h4>");
                             if($role!="admin"){
+                                $results = array('c_number' => $title);
+                                $cursor = $course_collection->findOne($results);
+                                $maxPoints=$cursor['max_points'];
+                                $percentage = ($xp/$maxPoints);
+                                $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
                                 print("
                                 <div class=\"progress\">
                                   <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
@@ -76,7 +77,33 @@
                                   </div>
                                 </div>");
                             }else{
+                                $results = array('course_id' => $title,"user_role" =>"student");
+                                $cursor = $collection->find($results);
+                                $cursor->fields(array("xp" => true,'_id' => false));
+                                $total;
+                                $counter=0;
+                                $avg;
+                                foreach ($cursor as $doc) {
+                                    foreach ($doc as $k => $v) {
+                                        $total=$total+$v;
+                                        $count++;
+                                    }
+                                }
 
+                                $avg = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN)
+
+                                $results = array('c_number' => $title);
+                                $cursor = $course_collection->findOne($results);
+                                $maxPoints=$cursor['max_points'];
+                                $percentage = ($avg/$maxPoints);
+                                $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
+
+                                print("
+                                <div class=\"progress\">
+                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
+                                    ".$avg."/".$maxPoints."
+                                  </div>
+                                </div>Class Progress");
                             }
                             print("
                             </div><!-- /.box-footer-->
