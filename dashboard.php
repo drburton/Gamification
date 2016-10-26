@@ -72,10 +72,14 @@
                                 print("
                                 Current Progess:
                                 <div class=\"progress\">
-                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
-                                    ".$xp."/".$maxPoints."
-                                  </div>
-                                </div>");
+                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
+                                  style=\"width: ".$percentage."%;\">");
+                                if($percentage>15){
+                                    print("<span style=\"color:white;\">".$xp."/".$maxPoints."</span></div>");
+                                }else{
+                                    print("</div><span style=\"color:black;\">".$xp."/".$maxPoints."</span>");
+                                }
+                                print("</div>");
                             }else{
                                 $results = array('course_id' => $title,"user_role" =>"student");
                                 $cursor = $collection->find($results);
