@@ -45,7 +45,7 @@
                                 $title=$v;
                             }else if($k=="xp"){
                                 $xp=$v;
-                            }else if($k=="role"){
+                            }else if($k=="user_role"){
                                 $role=$v;
                             }
                         }
