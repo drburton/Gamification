@@ -53,8 +53,9 @@
                         <div class=\"col-md-4\">
                         <div class=\"box\">
                             <div class=\"box-header\">
-                                <h3 class=\"box-title\">DET 310</h3>
+                                <h3 class=\"box-title\">".$title."</h3>
                                 <div class=\"box-tools pull-right\">
+                                    role: ".$role."
                                     <button class=\"btn btn-default btn-sm\" data-widget=\"collapse\" ><i class=\"fa fa-minus\"></i></button>
                                 </div>
                             </div>
