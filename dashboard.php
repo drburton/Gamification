@@ -32,6 +32,26 @@
 
                 <!-- Main content -->
                 <section class="content" >
+                    <?php
+                      $results = array('user_id' => $_SESSION["login"]);//'jad00a');
+                      $count=1;
+                      $cursor = $collection->find($results);
+                      $cursor->fields(array("course_id" => true));
+                      foreach ($cursor as $doc) {
+                        foreach ($doc as $k => $v) {
+
+                          if($count%2==0){
+                            $new = str_replace(" ","_",$v);
+                            print "<li><a href=\"coursehome.php?course=" . $new . "\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                            //print "<li><a href=\"coursehome.php\"><i class=\"fa fa-angle-double-right\"></i>$v</a></li>";
+                          }
+
+                          $count++;
+
+                        }
+
+                      }
+                    ?>
 
                     <div class="col-md-4">
                     <div class="box">
