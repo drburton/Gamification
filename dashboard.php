@@ -90,13 +90,13 @@
                                     }
                                 }
 
-                                $avg = round(($total/$counter), 2, PHP_ROUND_HALF_DOWN);
+                                $avg = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
 
                                 $results = array('c_number' => $title);
                                 $cursor = $course_collection->findOne($results);
                                 $maxPoints=$cursor['max_points'];
                                 $percentage = ($avg/$maxPoints);
-                                $percentage = round($percentage, 0, PHP_ROUND_HALF_DOWN)*100;
+                                $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
 
                                 print("
                                 <span style=\"text-align:center;\">Class Average:</span>
