@@ -70,6 +70,7 @@
                                 $percentage = ($xp/$maxPoints);
                                 $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
                                 print("
+                                Current Progess:
                                 <div class=\"progress\">
                                   <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
                                     ".$xp."/".$maxPoints."
