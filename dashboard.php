@@ -106,7 +106,7 @@
                                 if($percentage<15){
                                     print($avg."/".$maxPoints."</div>");
                                 }else{
-                                    print("</div>".$avg."/".$maxPoints)
+                                    print("</div>".$avg."/".$maxPoints);
                                 }
                                 print("</div>");
                             }
