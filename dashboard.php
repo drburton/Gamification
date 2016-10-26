@@ -90,12 +90,12 @@
                                     }
                                 }
 
-                                $avg = ($total);//round(($total/$counter), 2, PHP_ROUND_HALF_DOWN);
+                                $avg = ($total/$counter);//round(($total/$counter), 2, PHP_ROUND_HALF_DOWN);
 
                                 $results = array('c_number' => $title);
                                 $cursor = $course_collection->findOne($results);
                                 $maxPoints=$cursor['max_points'];
-                                $percentage = ($avg/$count);
+                                $percentage = ($avg/$maxPoints);
                                 $percentage = round($percentage, 2, PHP_ROUND_HALF_DOWN)*100;
 
                                 print("
