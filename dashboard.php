@@ -54,8 +54,8 @@
                         <div class=\"box\">
                             <div class=\"box-header\">
                                 <h3 class=\"box-title\">".$title."</h3>
+                                <h3 class=\"box-title\">Role: ".$role."</h3>
                                 <div class=\"box-tools pull-right\">
-                                    <h3>Role: ".$role."</h3>
                                     <button class=\"btn btn-default btn-sm\" data-widget=\"collapse\" ><i class=\"fa fa-minus\"></i></button>
                                 </div>
                             </div>
