@@ -86,7 +86,7 @@
                                 foreach ($cursor as $doc) {
                                     foreach ($doc as $k => $v) {
                                         $total=$total+$v;
-                                        $count++;
+                                        $counter++;
                                     }
                                 }
 
