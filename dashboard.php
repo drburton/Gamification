@@ -100,7 +100,7 @@
 
                                 print("
                                 <div class=\"progress\">
-                                  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
+                                  <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"".$percentage."\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ".$percentage."%;\">
                                     ".$avg."/".$maxPoints."
                                   </div>
                                 </div>Class Progress");
