@@ -46,7 +46,7 @@
 				<?php }?>
 			</div>
 			<div>
-				<h2> Quest Grades: work in Progress</h2>
+				<h2> Quest Grades:</h2>
 				<div class="box-body table-responsive no-padding" style="width:50%;">
                     <table class="table table-hover">
                     	<thead>
