@@ -89,6 +89,7 @@
                         </div>
                     </div>
                     <!-- Course Progress -->
+                    <?php if($role=="student"){?>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="callout callout-info">
@@ -103,6 +104,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php }?>
 
 
                 </section><!-- right col -->
