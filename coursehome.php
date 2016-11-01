@@ -59,7 +59,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>EduQuest | Course Home</title>
+        <title>DETXP | Course Home</title>
         <?php include_once "headStyle.php"; ?>
     </head>
     <body class="skin-blue">
@@ -83,8 +83,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="callout callout-info">
-                                <h4>Notification Test</h4>
-                                <p>Do this one quest and stuff.</p>
+                                <h4>Recent Notifications</h4>
+                                <p>There is nothing new to report.</p>
                             </div>
                         </div>
                     </div>
