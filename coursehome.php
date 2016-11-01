@@ -54,12 +54,11 @@
             $count=0;
             foreach ($classCursor as $doc) {
                 foreach ($doc as $k => $v) {
-                    print($v.":");
                     $total=$total+$v;
                     $count++;
                 }
             }
-            print($xp);
+            print($total);
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
         }
 
