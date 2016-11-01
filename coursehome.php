@@ -44,11 +44,11 @@
                 }
             }
         }
-        /*$classAverage;
+        $classAverage;
         if($role="admin"){
             $class_results = array('course_id' => $course, 'user_role'=> "student");
-            $cursor = $collection2->find($results);
-            $cursor->fields(array("xp" => true,'_id' => false));
+            $classCursor = $collection2->find($class_results);
+            $classCursor->fields(array("xp" => true,'_id' => false));
             $total=0;
             $count=0;
             foreach ($cursor as $doc) {
@@ -58,7 +58,7 @@
                 }
             }
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
-        }*/
+        }
 
         if($xp<=$cMax){
             $cPercent=floor(($xp/$cMax)*100);
