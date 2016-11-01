@@ -46,7 +46,6 @@
         }
 
         if($role=="admin"){
-            print("admin");
             $class_results = array('course_id' => $course, 'user_role'=> "student");
             $classCursor = $collection2->find($class_results);
             $classCursor->fields(array("xp" => true,'_id' => false));
@@ -58,7 +57,7 @@
                     $count++;
                 }
             }
-            print($total);
+            print($counter);
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
         }
 
