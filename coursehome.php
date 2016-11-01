@@ -57,7 +57,7 @@
                     $count++;
                 }
             }
-            print($counter);
+            print($count);
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
         }
 
