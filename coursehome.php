@@ -114,7 +114,13 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
-                                        <?php print $xp." points / ".$cMax." points" ?>
+                                        <?php
+                                        if($cPercent>15){
+                                            print("<span style=\"color:white;\">".$xp."/".$cMax."</span></div>");
+                                        }else{
+                                            print("</div><span style=\"color:black;\">".$xp."/".$cMax."</span>");
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
