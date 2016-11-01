@@ -44,7 +44,7 @@
                 }
             }
         }
-        $classAverage;
+
         if($role=="admin"){
             print("admin");
             $class_results = array('course_id' => $course, 'user_role'=> "student");
@@ -58,6 +58,7 @@
                     $count++;
                 }
             }
+            print($xp);
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
         }
 
