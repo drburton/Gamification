@@ -110,7 +110,7 @@
                         <div class="col-md-6">
                             <div class="callout callout-info">
                                 <h4>Course Progress</h4>
-                                <div class="progress">
+                                <div class="progress" style="text-align:center;">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
                                         <?php
@@ -131,8 +131,8 @@
                         <div class="col-md-6">
                             <div class="callout callout-info">
                                 <h4>Class Average</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" style="text-align:center;" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
+                                <div class="progress" style="text-align:center;">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
                                         <?php
                                         if($cPercent>15){
