@@ -44,6 +44,22 @@
                 }
             }
         }
+        $classAverage;
+        if($role="admin"){
+            $class_results = array('course_id' => $course, 'user_role'=> "student");
+            $cursor = $collection2->find($results);
+            $cursor->fields(array("xp" => true,'_id' => false));
+            $total=0;
+            $count=0;
+            foreach ($cursor as $doc) {
+                foreach ($doc as $k => $v) {
+                    $total=$total+$v;
+                    $count++;
+                }
+            }
+            $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
+        }
+
         if($xp<=$cMax){
             $cPercent=floor(($xp/$cMax)*100);
         }
@@ -97,7 +113,21 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
-                                        <span class="sr-only">60% Complete</span>
+                                        <?php print $xp." points / ".$cMax." points" ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }?>
+                    <?php if($role=="admin"){?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="callout callout-info">
+                                <h4>Class Average</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
+                                        <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
                                         <?php print $xp." points / ".$cMax." points" ?>
                                     </div>
                                 </div>
