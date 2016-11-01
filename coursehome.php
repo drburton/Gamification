@@ -132,13 +132,13 @@
                             <div class="callout callout-info">
                                 <h4>Class Average</h4>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
+                                    <div class="progress-bar progress-bar-success" style="text-align:center;" role="progressbar" aria-valuenow=<?php print $cPercent; ?> aria-valuemin="0" aria-valuemax="100" 
                                         <?php print "style=\"width: " . $cPercent . "%;\""; ?>>
                                         <?php
                                         if($cPercent>15){
                                             print("<span style=\"color:white;\">".$xp."/".$cMax."</span></div>");
                                         }else{
-                                            print("</div><span style=\"color:black;text-align:center;\">".$xp."/".$cMax."</span>");
+                                            print("</div><span style=\"color:black;\">".$xp."/".$cMax."</span>");
                                         }
                                         ?>
                                     </div>
