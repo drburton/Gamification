@@ -44,7 +44,7 @@
                 }
             }
         }
-        $classAverage;
+        /*$classAverage;
         if($role="admin"){
             $class_results = array('course_id' => $course, 'user_role'=> "student");
             $cursor = $collection2->find($results);
@@ -58,7 +58,7 @@
                 }
             }
             $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
-        }
+        }*/
 
         if($xp<=$cMax){
             $cPercent=floor(($xp/$cMax)*100);
