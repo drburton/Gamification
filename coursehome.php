@@ -57,8 +57,7 @@
                     $count++;
                 }
             }
-            print($total/$counter);
-            $xp = round(($total/$counter), 0, PHP_ROUND_HALF_DOWN);
+            $xp = round(($total/$count), 0, PHP_ROUND_HALF_DOWN);
         }
 
         if($xp<=$cMax){
