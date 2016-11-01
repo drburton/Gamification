@@ -117,7 +117,7 @@
                                         if($cPercent>15){
                                             print("<span style=\"color:white;\">".$xp."/".$cMax."</span></div>");
                                         }else{
-                                            print("</div><span style=\"color:black;\">".$xp."/".$cMax."</span>");
+                                            print("</div><span style=\"color:black;text-align:center;\">".$xp."/".$cMax."</span>");
                                         }
                                         ?>
                                     </div>
@@ -138,7 +138,7 @@
                                         if($cPercent>15){
                                             print("<span style=\"color:white;\">".$xp."/".$cMax."</span></div>");
                                         }else{
-                                            print("</div><span style=\"color:black;\">".$xp."/".$cMax."</span>");
+                                            print("</div><span style=\"color:black;text-align:center;\">".$xp."/".$cMax."</span>");
                                         }
                                         ?>
                                     </div>
