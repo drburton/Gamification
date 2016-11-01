@@ -51,7 +51,7 @@
             $classCursor->fields(array("xp" => true,'_id' => false));
             $total=0;
             $count=0;
-            foreach ($cursor as $doc) {
+            foreach ($classCursor as $doc) {
                 foreach ($doc as $k => $v) {
                     $total=$total+$v;
                     $count++;
