@@ -154,7 +154,6 @@
         	//total = total - num;
         	var oldTotal = $("#"+user+"_exp").val();
         	$("#"+user+"_exp").html(total+<?php print("' / ".$maxEXP."'");?>);
-          updateStudentScore(user,total);
     	}});
     	/*
     	, error: function(result){
@@ -162,8 +161,4 @@
     	}
     	*/
 	}
-
-  function updateStudentScore(user,total){
-    alert(user+"/"+total);
-  }
 </script>

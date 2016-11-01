@@ -54,7 +54,7 @@
             $count=0;
             foreach ($classCursor as $doc) {
                 foreach ($doc as $k => $v) {
-                    print($k."<br/>");
+                    print($v.":");
                     $total=$total+$v;
                     $count++;
                 }
