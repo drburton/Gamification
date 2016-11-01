@@ -62,6 +62,7 @@
 
         if($xp<=$cMax){
             $cPercent=floor(($xp/$cMax)*100);
+            print($cPercent);
         }
         else{
             $cPercent=100;
