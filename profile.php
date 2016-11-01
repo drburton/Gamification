@@ -93,7 +93,7 @@
                                     <input type="hidden" name="form" value="changeProfileIcon"/>
                                     Image URL: <input type="text" name="link"/>
                                     <button type="button">Submit</button>
-                                </form>
+                                </form><br/>
                             </div>
                         </div>
                     </div>
