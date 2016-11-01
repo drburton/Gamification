@@ -92,6 +92,7 @@
                                 <form method="POST" action="functions.php">
                                     <input type="hidden" name="form" value="changeProfileIcon"/>
                                     Image URL: <input type="text" name="link"/>
+                                    <button type="button">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -102,13 +103,6 @@
                 $testId = $testCursor['_id'];
 
                 ?>
-
-                <form method="POST" action="functions.php">
-                    <input type="hidden" name="program" value="<?php print($testId); ?>"/>
-                    <input type="hidden" name="form" value="changeProgram"/>
-                    <input type="hidden" name="login" value="<?php print($_SESSION["login"]);?>"/>
-                    <button type="button submit">Click Me!</button>
-                </form>
 
                 </section><!-- right col -->
                     </div><!-- /.row (main row) -->
