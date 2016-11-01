@@ -45,7 +45,7 @@
             }
         }
         $classAverage;
-        if($role="admin"){
+        if($role=="admin"){
             print("admin");
             $class_results = array('course_id' => $course, 'user_role'=> "student");
             $classCursor = $collection2->find($class_results);
